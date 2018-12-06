@@ -2674,3 +2674,16 @@ node_modules/use/package.json
 node_modules/use/README.md
 node_modules/use/test.js
 node_modules/use/utils.js
+node_modules/is-number/benchmark/check.js
+node_modules/is-number/benchmark/code/current.js
+node_modules/is-number/benchmark/code/isFinite.js
+node_modules/is-number/benchmark/code/parseFloat.js
+node_modules/is-number/benchmark/fixtures/all.js
+node_modules/is-number/benchmark/fixtures/infinity.js
+node_modules/is-number/benchmark/fixtures/null.js
+node_modules/is-number/benchmark/fixtures/number.js
+node_modules/is-number/benchmark/fixtures/string-number.js
+node_modules/is-number/benchmark/fixtures/string.js
+node_modules/is-number/benchmark/index.js
+node_modules/is-number/benchmark/last.txt
+node_modules/is-number/benchmark/support.js
