@@ -1,0 +1,260 @@
+<!-- 
+  componente: actas validadas en PROCESOS -> Validar Actas
+  controlador: validaciones-tablero-controller.js: ValidacionesTableroController()
+  servicio: remitos-actas-service.js: remitosActasService() 
+-->
+
+<!-- CONFIG DEL TEMPLATE -->
+<style type="text/css">
+.material-icons.md-12 { font-size: 12px; }
+  .material-icons.md-18 { font-size: 18px; }
+  .material-icons.md-24 { font-size: 24px; }
+  .material-icons.md-36 { font-size: 36px; }
+  .material-icons.md-48 { font-size: 48px; }
+  .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+  .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+  .material-icons.orange600 { color: #FB8C00; }
+  .material-icons.black { color: #000000; }
+  .material-icons.red {color: rgb(255, 51, 51);}
+  .material-icons.green_big {color: rgb(36, 191, 1);}
+  .material-icons.fadeout {color: rgba(76, 175, 80, 0.2);}
+
+
+  #md-sidenav-val, #md-sidenav-val.md-locked-open, #md-sidenav-val.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 50vw !important;
+  max-width: 200px !important;
+  }
+md-list-item + md-divider{
+    border-top-color: rgb(100, 100, 100) !important;
+  }
+.header-toolbar {
+    margin: 0px;
+    font-weight: bolder;
+    font-size: 16px;
+    color: rgb(38, 50, 56);
+  }
+
+  .header-toolbar-subtitle {
+    margin: 0px;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgb(38, 50, 56);
+  }
+
+  .item-datagrid {
+    cursor: pointer;
+  }
+
+.data-grid-selected-row {
+  background-color: rgb(255, 247, 196) !important;
+}
+
+.fila_seleccionada:hover{background-color:rgb(255, 247, 196)!important}
+
+
+  md-checkbox .md-icon {
+    transform: scale(.7);
+  }
+
+md-checkbox {padding: 0px !important; margin: 0px !important;}
+  
+  .md-label {
+    margin-left: 5px !important;
+  }
+}
+
+md-checkbox.md-checked.red .md-icon {
+ background-color: rgb(0, 0, 0);
+ border-color: rgb(0, 0, 0);
+}
+
+
+
+md-checkbox.dotted .md-icon {
+ border-width: 1px;
+ border-style: solid;
+ border-color: lightgray;
+}
+
+
+md-checkbox.md-checked.red .md-icon {
+ background-color: rgb(0, 0, 0);
+ border-color: rgb(0, 0, 0);
+}
+
+md-checkbox .md-container:after {box-sizing: border-box;
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;}
+
+
+
+
+      .titulo_caso_prueba_grid {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: white;
+}
+
+.titulo_caso_prueba_grid:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.gridListdemoBasicUsage md-grid-list {
+  margin: 8px; }
+
+.gridListdemoBasicUsage .gray {
+  background: #f5f5f5; }
+
+.gridListdemoBasicUsage .green {
+  background: #b9f6ca; }
+
+.gridListdemoBasicUsage .yellow {
+  background: #ffff8d; }
+
+.gridListdemoBasicUsage .blue {
+  background: #84ffff; }
+
+.gridListdemoBasicUsage .purple {
+  background: #b388ff; }
+
+.gridListdemoBasicUsage .red {
+  background: #ff8a80; }
+
+  md-grid-list md-grid-tile md-grid-tile-header, md-grid-list md-grid-tile md-grid-tile-footer {
+    height: 30px;
+    padding:0;
+  }
+
+md-grid-tile-footer figcaption  {
+  width:100% !important;
+}
+
+md-grid-tile-footer figcaption h3 {
+  margin: 0 !important;
+  font-weight: 500 !important;
+  width:100% !important;
+  text-align:center !important;
+  font-size: 1em;
+  line-height: 1em;
+  padding: 5px !important;
+  text-overflow: ellipsis;
+}
+
+md-grid-tile:hover {
+  border: solid 1px darkgray !important;
+  cursor: pointer;
+};
+
+</style>
+<!-- FIN CONFIG TEMPLATE -->
+
+
+<!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
+
+<md-content id="contenedor" style="height: 150px;">
+  
+    <div layout="row">
+      <div flex="100">
+        <md-toolbar style="min-height: 30px; height: 30px !important;">
+              <h2 class="md-toolbar-tools" style="font-size: 16px !important">Listado</h2>
+          </md-toolbar>
+      </div>
+    </div>
+        
+    <div>
+      <div layout="row" flex="100" layour-align="start center">  
+        <div layout="row" flex="50"></div>        
+        <div layout="row" flex="50" layout-align="end center">
+
+           <md-button class="md-primary md-raised md-small" ng-click="vm.crearProcesoMasivo({}, $event)">nuevo</md-button>
+
+          <md-button ng-hide="true" aria-label="Open phone interactions menu" class="md-icon-button" ng-click="vm.crearProcesoMasivo({}, $event)">
+                <md-icon class="material-icons md-24 toolbar-gray">add_box</md-icon>
+              </md-button>
+        </div>
+      </div>
+      <div layout="row" layout-fill flex="100" style="width: 100% !important; padding: 15px 5px 5px 5px;" >
+        <div layout="row" layout-fill flex="100" style="padding:0px; width: 100%; border: solid 1px #eee;">
+          <input type="text" ng-model="vm.dataset.texto_buscado" style="width: 95%; height: 25px; border: solid 0px red; padding-left:5px;">
+          <md-icon class="material-icons md-24 toolbar-gray" ng-click="vm.buscarProcesoMasivo()">search</md-icon>
+        </div>
+      </div>
+    </div>
+  
+</md-content>
+
+<md-content>
+      <!-- INICIO GRID -->
+
+       <div ng-if="vm.dataset.length == 0" style="padding: 5px;">
+          <span>No se encontraron resultados.</span>
+        </div>
+
+  <div>
+
+    <div class="gridListdemoBasicUsage" style="padding-left: 0px;" >
+
+      <md-grid-list md-cols="4" md-cols-xl="12" md-row-height="6:1" md-gutter="12px" >
+
+        <md-grid-tile style="border: solid 1px lightgray; border-radius: 5px;" class="gray otro"
+        md-rowspan="3" md-colspan="1" md-rowspan-xl="3" md-colspan-xl="3" layout="row" layout-align="center center"
+        ng-click="vm.abrirReporte('')" ng-repeat="proceso_masivo in vm.dataset track by $index" ng-mouseover="vm.menu_visible = $index" ng-mouseleave="vm.menu_visible = -1">
+
+          <div layout="column" flex="100" style="border: solid red 0px; font-size: 12px; position: absolute; top: 0 !important; margin: 0; min-width: 100%">
+
+            <md-menu  md-offset="0 -5" md-position-mode="target-right bottom" style="font-size: 0.8em !important; padding: 0px !important">    
+              <md-icon ng-show="vm.menu_visible === $index" ng-click="vm.openMenu($mdMenu, $event, item, $index)" style="position: absolute; right: 0 !important" class="material-icons md-18 toolbar-gray">more_horiz</md-icon>
+              <md-menu-content width="2" ng-mouseover="vm.menu_visible = $index">
+                <md-menu-item>
+                  <md-button ng-click="vm.eliminarProcesoMasivo(proceso_masivo.id_proceso_masivo, $index)">Eliminar proceso</md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+            <div layout="row" flex="100" style="padding: 0 0 0 5px; margin-top: 15px; line-height: 10px !important">
+              
+              <div layout="column" flex="70">
+
+
+              <span>Lotes NORTE: {{proceso_masivo.lotes_norte}} <span ng-if="proceso_masivo.pend_norte > 0" style="color: red">({{proceso_masivo.pend_norte}})</span></span>
+              <br>
+              <span>Lotes SUR: {{proceso_masivo.lotes_sur}} <span ng-if="proceso_masivo.pend_sur > 0" style="color: red">({{proceso_masivo.pend_sur}})</span></span>
+              <br>
+              <span>Total Actas: {{proceso_masivo.total_actas}}</span>
+              <br>
+              <span>Rechazos: <span style="color: red;">{{proceso_masivo.cantidad_rechazos || 0}}</span></span>
+              <br ng-hide="proceso_masivo.email_enviado">
+              <span ng-hide="proceso_masivo.email_enviado" style="color: red;">emails pendientes</span>
+
+            </div>
+
+            <div ng-if="proceso_masivo.pend_sur == 0 && proceso_masivo.pend_norte == 0 && proceso_masivo.email_enviado" flex="30" layout="row" layout-align="center center">
+              <md-icon class="material-icons md-36 fadeout" ng-click="vm.buscarProcesoMasivo()">check</md-icon>
+            </div>
+            
+
+          </div>
+
+        </div>
+
+          <md-grid-tile-footer style="background: rgba(0, 0, 0, 0.68);">
+            <h3 layout="row" layout-align="center" class="titulo_caso_prueba_grid" ng-click="vm.verDetalles(proceso_masivo, $event)">
+              <span>
+                {{proceso_masivo.tipo_proceso}}
+                <br>
+                {{proceso_masivo.fecha_proceso  | date:'dd MMMM @ HH:mm'}}
+              </span>
+            </h3>
+          </md-grid-tile-footer>
+        </md-grid-tile>
+       
+      </md-grid-list>
+    </div>
+  </div> <!-- FIN GRID -->
+</md-content>

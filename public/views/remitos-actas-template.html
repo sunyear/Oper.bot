@@ -1,0 +1,315 @@
+
+
+<md-card>
+	<md-card-header style="padding:0 !important;height:30px !important">
+		<md-toolbar style="min-height: 30px; height: 30px !important;">
+		    <h2 class="md-toolbar-tools" style="font-size: 16px !important">Informacion documental</h2>
+		</md-toolbar>
+	</md-card-header>
+	<md-card-content>
+		<div flex="100" layout="row">
+			<div flex="50" layout="column" layout-align="left center">
+
+				
+				<md-radio-group ng-model="data.modo_carga">
+					<div layout="row">
+			      		<md-radio-button value="csv" class="md-primary">Desde archivo CSV</md-radio-button>
+			      		<span flex="20"></span>
+			      		<md-radio-button value="form" class="md-primary">Desde formulario</md-radio-button>
+			      	</div>
+			    </md-radio-group>
+			    
+
+				<md-card layout-align="center center" ng-if="data.modo_carga == 'form'">
+					<md-card-header style="width:100%; padding:0 !important;height:30px !important">
+						<md-toolbar style="min-height: 30px; height: 30px !important;">
+						    <h2 class="md-toolbar-tools" style="font-size: 16px !important">Datos elementales</h2>
+						</md-toolbar>
+					</md-card-header>
+
+				   	<md-card-content>
+					   	<div layout="row">
+					   		
+				   			<md-input-container>
+								<label>Tipo Acta</label>
+								<md-select ng-model="items.selectedItem" md-selected-text="selTiposActas()">
+									<md-optgroup label="Tipos Actas">
+								    <md-option ng-value="tipo_acta" ng-repeat="tipo_acta in tipos_actas track by $index">{{tipo_acta.tipo_acta}}</md-option>
+								    <!--
+								    <md-option ng-value="3">Personal NO-notificada</md-option>
+								    <md-option ng-value="2">Personal Notificada</md-option>
+								    -->
+									</md-optgroup>
+								</md-select>
+							</md-input-container>
+				   		</div>
+						<div layout="row">
+								<div flex="33">
+								<md-input-container class="md-block" flex-gt-sm>
+									<label>Lote</label>
+									<input ng-model="items.selectedItem.lote" disabled style="font-weight: bolder">
+								</md-input-container>
+							</div>
+							<div flex="33">
+								<md-input-container class="md-block" flex-gt-sm>
+									<label>ID remito</label>
+									<input ng-model="items.selectedItem.id_remito" disabled style="font-weight: bolder">
+								</md-input-container>
+							</div>
+							<div flex="33">
+								<md-input-container class="md-block" flex-gt-sm>
+									<label>Nro remito</label>
+									<input ng-model="items.selectedItem.numero_remito" disabled style="font-weight: bolder">
+								</md-input-container>
+							</div>
+						</div>
+						<div class="flex flex-col" layout="row" layout-align="center center">
+							<div flex="50">
+								<md-input-container class="md-block" flex-gt-sm style=" margin-bottom:0">
+									<label>Min numero acta: {{items.selectedItem.id_remito}} - {{f_actas.r_acta_desde}}</label>
+									<input ng-model="f_actas.r_acta_desde" style="font-weight: bolder; color: brown">
+								</md-input-container>
+							</div>
+
+							<div flex="50">
+								<md-input-container class="md-block" flex-gt-sm style="margin-bottom:0">
+									<label>numero hasta: {{items.selectedItem.id_remito}} - {{f_actas.r_acta_hasta}}</label>
+									<input ng-model="f_actas.r_acta_hasta" style="font-weight: bolder; color: brown">
+								</md-input-container>
+							</div>
+						</div>
+				  	</md-card-content>
+
+				</md-card>
+
+				<!-- CARGAR DATOS DESDE ARCHIVO CSV -->
+    			<md-card layout-align="center center" ng-if="data.modo_carga == 'csv'">
+					<md-card-header style="width:100%; padding:0 !important;height:30px !important">
+						<md-toolbar style="min-height: 30px; height: 30px !important;">
+						    <h2 class="md-toolbar-tools" style="font-size: 16px !important">Datos elementales</h2>
+						</md-toolbar>
+					</md-card-header>
+
+				   	<md-card-content>
+				   		<div layout="row">
+				   			<div flex="100" layout="row" layout-align="center center" style="margin-bottom: 10px">
+								
+								<input class="ng-hide" id="input-file-id" multiple type="file" on-read-file="leerCSV(contents)"/>
+								<label for="input-file-id" class="md-button md-raised md-primary">Cargar CSV</label>
+								
+							</div>
+				   		</div>
+						<div layout="row">
+								<div flex="33">
+								<md-input-container class="md-block" flex-gt-sm>
+									<label>Lote</label>
+									<input ng-model="datos_csv.numero_lote" disabled style="font-weight: bolder">
+								</md-input-container>
+							</div>
+							<div flex="33">
+								<md-input-container class="md-block" flex-gt-sm>
+									<label>ID remito</label>
+									<input ng-model="data.id_remito" style="font-weight: bolder">
+								</md-input-container>
+							</div>
+							<div flex="33">
+								<md-input-container class="md-block" flex-gt-sm>
+									<label>Nro remito</label>
+									<input ng-model="datos_csv.numero_remito" disabled style="font-weight: bolder">
+								</md-input-container>
+							</div>
+						</div>
+						<div class="flex flex-col" layout="row" layout-align="center center">
+							<div flex="50">
+								<md-input-container class="md-block" flex-gt-sm style=" margin-bottom:0">
+									<label>numero desde:</label>
+									<input ng-model="datos_csv.numero_acta_min" disabled style="font-weight: bolder; color: brown">
+								</md-input-container>
+							</div>
+
+							<div flex="50">
+								<md-input-container class="md-block" flex-gt-sm style="margin-bottom:0">
+									<label>numero hasta:</label>
+									<input ng-model="datos_csv.numero_acta_max" disabled style="font-weight: bolder; color: brown">
+								</md-input-container>
+							</div>
+						</div>
+				  	</md-card-content>
+
+				</md-card>
+				   
+				  
+				  
+			</div>
+
+
+			<div flex="50" layout="row" layout-align="center center">
+				<md-card flex="100">
+					<md-card-header style="padding:0 !important;height:30px !important">
+						<md-toolbar style="min-height: 30px; height: 30px !important;">
+						    <h2 class="md-toolbar-tools" style="font-size: 16px !important">Documentos</h2>
+						</md-toolbar>
+					</md-card-header>
+					<md-card-content>
+						<md-list class="md-dense">
+							<md-list-item ng-repeat="archivo in archivos_salida track by $index">
+								<span>{{archivo.nombre}}</span>
+								<md-checkbox class="md-secondary md-primary" ng-model="archivo.imprime" aria-label="archivo.nombre"></md-checkbox>
+							</md-list-item>
+						</md-list>
+					</md-card-content>  
+				</md-card>
+			</div>
+		</div>
+	</md-card-content>
+  </md-card>
+
+<div layout="row" ng-hide="true">
+    <md-input-container class="md-block" flex-gt-sm>
+		<label>Documentos adjuntos (cantidad): {{items.selectedItem.id_remito}} (se eligen actas aleatoriamente)</label>
+		<input ng-model="f_actas.r_acta_hasta">
+	</md-input-container>
+</div>
+
+<md-content>
+	<section layout="row" layout-align="center center" layout-wrap>
+		<md-button class="md-raised md-primary" ng-click="generarActas($event)">GENERAR DOCUMENTOS</md-button>
+		<!--<md-button class="md-raised md-primary" ng-click="showAdvanced($event)">GENERAR ACTAS (dialog)</md-button>-->
+	</section>
+</md-content>
+
+
+<!--ng-click="showAdvanced($event)"-->
+
+
+
+
+<!--
+
+<div class="panel panel-default">
+	<div class="panel-heading">CABECERA</div>
+	<div class="panel-body">
+								
+		<form class="form-inline">
+			<div class="form-group">
+				<label for="s_tipo_acta"> Tipo acta </label>
+
+				<select name="s_tipo_acta" id="s_tipo_acta" ng-model="vmr.s_tipo_acta" ng-change="vmr.blanquearCampos()">
+		  			<option value="2">Personal Notificada</option>
+		  			<option value="3">Personal No notificada</option>
+				</select>
+			</div>
+			<div class="form-group">
+			 	<label for="id_remito">id_remito</label>
+			    <input type="text" class="form-control" id="id_remito" name="id_remito" value="{{vmr.remitos_params.params.tipos_actas[vmr.s_tipo_acta].id_remito}}" ng-disabled="true">
+				<label for="numero_remito">numero_remito</label>
+			    <input type="text" class="form-control" id="numero_remito" ng-model="vmr.remitos_params.params.tipos_actas[vmr.s_tipo_acta].numero_remito" ng-disabled="true">
+			</div>
+		</form>
+
+	  	<form class="form-inline" ng-show="false">
+		  <div class="form-group">
+		    <label for="">id_remito</label>
+		    <input type="text" class="form-control" id="">
+		  </div>
+		  <div class="form-group">
+		    <label for="">numero_remito</label>
+		    <input type="text" class="form-control" id="">
+		  </div>
+		  <div class="form-group">
+		    <label for="">cantidad_actas</label>
+		    <input type="text" class="form-control" id="">
+		  </div>
+		  <div class="form-group">
+		    <label for="">cantidad_fojas</label>
+		    <input type="text" class="form-control" id="">
+		  </div>
+		</form>
+
+		<form class="form-inline" ng-show="false">
+		  <div class="form-group">
+		    <label for="r_acta_desde">estado_remito</label>
+		    <input type="text" class="form-control" id="r_acta_desde">
+		  </div>
+		  <div class="form-group">
+		    <label for="r_acta_hasta">lugar_retiro</label>
+		    <input type="text" class="form-control" id="r_acta_hasta">
+		  </div>
+		  <div class="form-group">
+		    <label for="r_acta_desde">zona</label>
+		    <input type="text" class="form-control" id="r_acta_desde">
+		  </div>
+		</form>
+	</div>
+</div>
+
+
+<div class="panel panel-default" ng-show="true">
+	<div class="panel-heading">Detalle</div>
+	<div class="panel-body">
+	    <form class="form-inline">
+		 	<div class="form-group">
+		    	<label for="r_acta_desde">numero desde: {{vmr.remitos_params.params.tipos_actas[vmr.s_tipo_acta].id_remito}} - </label>
+		    	<input type="text" class="form-control" id="r_acta_desde" name="r_acta_desde" ng-model="vmr.f_actas.r_acta_desde" value="" >
+		  	</div>
+		  	<div class="form-group">
+		    	<label for="r_acta_desde">numero hasta: {{vmr.remitos_params.params.tipos_actas[vmr.s_tipo_acta].id_remito}} - </label>
+		    	<input type="text" class="form-control" id="r_acta_hasta" name="r_acta_hasta" ng-model="vmr.f_actas.r_acta_hasta" value="">
+		  	</div>
+		</form>
+
+		<form class="form-inline" style="width:100% !important">
+		 	<div class="form-group" style="width:100% !important">
+		 		<div class="panel panel-default" style='margin-top:10px; width:100% !important'>
+		 			<div class="panel-heading">Archivos a generar</div>
+  					<div class="panel-body">
+  						<div style="width:50%">
+  						<ul class="list-group">
+                                <li class="list-group-item">
+                                    <span class="badge">{{vmr.remitos_params.params.archivos_path}}</span>
+                                        ruta de archivos 
+                                 </li>
+                        </ul>
+  						</div>
+  						
+  						<label class="checkbox-inline"><input type="checkbox" ng-model="vmr.lst_archivos.jpg" >PDF y JPG</label>
+						<label class="checkbox-inline"><input type="checkbox" ng-model="vmr.lst_archivos.cod_jpg" >Codigos .JPG</label>
+						<label class="checkbox-inline"><input type="checkbox" ng-model="vmr.lst_archivos.barras" >Codigos de barra</label>
+						<label class="checkbox-inline"><input type="checkbox" ng-model="vmr.lst_archivos.sql" >SQL Remitos</label>
+  					</div>
+  				</div>
+		  	</div>
+		</form>
+
+		<form class="form-inline" ng-show="false">
+		 	<div class="form-group">
+		    	<label for="r_acta_desde">notificar</label>
+		    	<input type="text" class="form-control" id="r_acta_desde">
+		  	</div>
+		  	<div class="form-group">
+		    	<label for="r_acta_hasta">cantidad fojas</label>
+		    	<input type="text" class="form-control" id="r_acta_hasta">
+		  	</div>
+		</form>
+	</div>
+</div>
+
+<div class="panel panel-default" ng-show="true">
+	<div class="panel-heading">Resultados</div>
+	<div class="panel-body">
+	    <div style="">
+	    	<ul class="list-group">
+			  <li class="list-group-item" ng-repeat="resultado in vmr.resultados_genera_remito track by $index">{{resultado}}</li>
+			</ul>
+	    </div>
+	</div>
+</div>
+
+<div>
+	<button type="button" class="btn btn-default btn-lg" ng-click="vmr.generarActas(809051, 809090, 2)">GENERAR ACTAS</button>
+	<button ng-show="false" type="button" class="btn btn-default btn-lg" ng-click="vmr.generarActas(808001, 808050, 3)">GENERAR ACTAS NO NOTIFICADAS</button>
+	<button ng-show="false" type="button" class="btn btn-default btn-lg" ng-click="vmr.generaCodigoBarras56(808001, 808050)">GENERAR CODIGOS 56</button>
+</div>
+</div>
+
+-->

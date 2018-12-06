@@ -1,0 +1,901 @@
+<!-- 
+  componente: actas validadas en PROCESOS -> Validar Actas
+  controlador: validaciones-tablero-controller.js: ValidacionesTableroController()
+  servicio: remitos-actas-service.js: remitosActasService() 
+-->
+
+<!-- CONFIG DEL TEMPLATE -->
+<style type="text/css">
+.material-icons.md-12 { font-size: 16px; }
+  .material-icons.md-18 { font-size: 18px; }
+  .material-icons.md-24 { font-size: 24px; }
+  .material-icons.md-36 { font-size: 36px; }
+  .material-icons.md-48 { font-size: 48px; }
+  .material-icons.md-64 { font-size: 64px; }
+  .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+  .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+  .material-icons.orange600 { color: #FB8C00; }
+  .material-icons.black { color: #000000; }
+  .material-icons.red {color: rgb(255, 51, 51);}
+  .material-icons.green_big {color: rgb(36, 191, 1);}
+  .material-icons {
+
+  }
+
+
+  #md-sidenav-val, #md-sidenav-val.md-locked-open, #md-sidenav-val.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 50vw !important;
+  max-width: 200px !important;
+  }
+md-list-item + md-divider{
+    border-top-color: rgb(100, 100, 100) !important;
+  }
+.header-toolbar {
+    margin: 0px;
+    font-weight: bolder;
+    font-size: 12px;
+    color: rgb(38, 50, 56);
+  }
+
+  .header-toolbar-subtitle {
+    margin: 0px;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(38, 50, 56);
+  }
+
+md-checkbox .md-icon {
+  transform: scale(.7);
+}
+
+md-checkbox {padding: 0px !important; margin: 0px !important;}
+  
+  .md-label {
+    margin-left: 5px !important;
+  }
+}
+
+md-checkbox.md-checked.red .md-icon {
+ background-color: rgb(0, 0, 0);
+ border-color: rgb(0, 0, 0);
+}
+
+
+
+md-checkbox.dotted .md-icon {
+ border-width: 1px;
+ border-style: solid;
+ border-color: lightgray;
+}
+
+.data-grid-selected-row {
+  background-color: rgb(255, 247, 196);
+}
+
+.fila_seleccionada:hover{background-color:rgb(255, 247, 196)!important}
+
+tbody td.col_border{
+
+  border: dotted 1px lightgray;
+  
+}
+
+tbody tr.row_css{
+  border-bottom: solid 1px lightgray;
+  height: 15px !important;
+  max-height: 15px !important;
+  min-height: 15px !important;
+  line-height: 15px !important;
+}
+
+md-checkbox.md-checked.red .md-icon {
+ background-color: rgb(0, 0, 0);
+ border-color: rgb(0, 0, 0);
+}
+
+md-checkbox .md-container:after {box-sizing: border-box;
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+md-chip{
+  font-size: 0.7em !important;
+  height: 20px !important;
+  width: auto !important;
+  line-height: 20px !important;
+  border: solid 0px red;
+  border-radius: 0px !important;
+  box-shadow: 0 0px !important;
+}
+
+.md-chip-ejecucion-rc{
+  background-color: #FF5722 !important;
+  color: white !important;
+}
+
+
+
+
+
+
+.md-chips { box-shadow: none !important; padding: 0 !important;}
+
+.md-card-interior {box-shadow: none !important; border: solid 1px lightgray;}
+
+.prueba_titulo{
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #37474F;
+}
+
+.md-button.md-small {
+    min-width: 1% !important;
+    font-size: 0.8em !important;
+    padding: 2px !important;
+    line-height: 0.8em !important;
+    height: 15px !important;
+  }
+
+
+.titulo_caso_prueba {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #37474F;
+}
+
+.titulo_caso_prueba:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.titulo_caso_prueba_grid {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: white;
+}
+
+.titulo_caso_prueba_grid:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.gridListdemoBasicUsage md-grid-list {
+  margin: 8px; }
+
+.gridListdemoBasicUsage .gray {
+  background: #f5f5f5; }
+
+.gridListdemoBasicUsage .green {
+  background: #b9f6ca; }
+
+.gridListdemoBasicUsage .yellow {
+  background: #ffff8d; }
+
+.gridListdemoBasicUsage .blue {
+  background: #84ffff; }
+
+.gridListdemoBasicUsage .purple {
+  background: #b388ff; }
+
+.gridListdemoBasicUsage .red {
+  background: #ff8a80; }
+
+md-grid-tile-footer figcaption  {
+  width:100% !important;
+}
+
+md-grid-tile-footer figcaption h3 {
+  margin: 0 !important;
+  font-weight: 500 !important;
+  width:100% !important;
+  text-align:center !important;
+  font-size: 1em;
+  line-height: 1em;
+  padding: 5px !important;
+  text-overflow: ellipsis;
+}
+
+</style>
+<!-- FIN CONFIG <TABLE></TABLE>EMPLATE -->
+
+<!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
+<md-content id="contenedor" layout-fill>
+
+<div layout="column" layout-fill>
+
+
+  <!-- escenarios en ejecucion -->
+
+<div>
+  <md-card>
+  <md-card-content>
+    <div class="gridListdemoBasicUsage" style="padding-left: 0px;">
+       
+
+
+<md-grid-list
+        md-cols="6" md-cols-xl="12"
+        md-row-height="16:9"
+        md-gutter="12px">
+
+
+        <md-grid-tile class="gray"
+        md-rowspan="2" md-colspan="2" md-rowspan-xl="3" md-colspan-xl="3" ng-repeat="reproduccion_ejecucion in vm.reproducciones.ejecucion track by $index">
+        <div layout="column" layout-fill style="border: solid 1px lightgray"  layout-fill>
+            <div>
+              <md-progress-linear md-mode="query"></md-progress-linear>
+            </div>
+          <div layout="column" flex="30" style="background-color: none; text-align: center;border: solid 0px blue" layout-align="center center">
+            <div style="border: solid 0px red" layout="column">
+              <span style="color: #303F9F; font-weight: 700; font-size: 20px;">en ejecucion</span>
+              <span style="color: #444" am-time-ago="vm.fInicio"></span>
+              <span style="color: #A3A3A3">desde {{vm.fInicio | date: 'dd-MM-yyyy hh:mm:ss'}}</span>
+            </div>
+          </div>
+          
+          <div flex="nogrow" layout-padding style="margin-top: 5px !important;border: solid 0px blue; height: 5px !important">
+            <md-divider></md-divider>
+          </div>
+          
+          <div  layout="column" flex="noshrink" style="background-color: none;border: solid 0px green; margin: 0 !important; padding: 0px 2px 0px 2px;">
+            <div layout="row" flex="nogrow" style="padding: 2px; border: solid 0px red">
+              <md-list-item style="margin: 0 !important; padding: 0 !important;">
+                <p style="color: #A3A3A3;margin: 0 !important; padding: 0 !important;">no hay errores</p>
+              </md-list-item>
+            </div>
+            <div layout="row" flex="nogrow" style="margin-bottom: 50px !important;border: solid 0px red" layout-align="start end">
+               <md-chips ng-model="reproduccion_ejecucion.etiquetas" readonly="true" class="custom-chips">
+                          <md-chip class="md-chip-ejecucion-rc">{{reproduccion_ejecucion.version_sijai}}</md-chip>
+                          <md-chip-template>{{$chip.titulo}}</md-chip-template>
+                      </md-chips>
+            </div>
+          </div>
+
+        </div>  
+      <md-grid-tile-footer style="background: rgba(0, 0, 0, 0.68);">
+        <h3 layout="row" class="titulo_caso_prueba_grid" ng-click="vm.abrirReproduccion(3, $event)">
+           {{reproduccion_ejecucion.titulo_reproduccion}}
+        </h3>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+
+
+  </md-grid-list>
+</div>
+  </md-card-content>
+</md-card>
+  
+</div>
+<!-- FIN escenarios en ejecucion -->
+
+
+<!-- INICIO escenarios en disponibles -->
+<div style="margin-top: 20px;">
+   
+ 
+    <div class="gridListdemoBasicUsage" style="padding-left: 0px;">
+       
+    <div layout="row" style="border: 0px solid red">
+      <div flex="50" layout="row" layout-align="start center">
+        <span style="color: #607D8B; font-weight: 600; font-size: 16px; padding: 5px">Escenarios disponibles</span>    
+      </div>
+      <div flex="50" layout="row" layout-align="end center">
+        <md-button class="md-raised md-small md-accent" md-colors="{background: 'green'}" ng-click="vm.crearReproduccion($event)">nuevo escenario</md-button>
+      </div>
+    </div>
+
+<md-grid-list
+        md-cols="6" md-cols-xl="12"
+        md-row-height="4:2"
+        md-gutter="12px">
+
+
+        <md-grid-tile class="gray"
+        md-rowspan="2" md-colspan="2" md-rowspan-xl="3" md-colspan-xl="3" ng-repeat="reproduccion in vm.reproducciones.disponibles track by $index">
+          <div layout="column" layout-fill style="border: solid 1px lightgray;background-color: none; text-align: center;"  layout-fill>
+
+                <div layout="row" flex="60"  style=";padding: 5px;background: rgba(0, 0, 0, 0.68); overflow-y: auto; margin: 0px !important; line-height: 1.3em" class="titulo_caso_prueba_grid" ng-click="vm.abrirReproduccion(3, $event)" layout-align="center center">
+                  <span style="font-size: 1.3em">{{reproduccion.titulo_reproduccion}}</span>
+                </div>
+
+              <div  layout="column" flex style="background-color: none;border: solid 0px green; padding: 0 10px 0 10px;">  
+                <div layout="row" flex="100" layout-align="start end" style="border-bottom: lightgray 1px solid; padding-bottom: 5px">
+                
+                    <md-chips ng-model="reproduccion.etiquetas" readonly="true" class="custom-chips">
+                      <md-chip-template>{{$chip.titulo}}</md-chip-template>
+                    </md-chips>
+                  
+                </div>
+               
+              </div>
+
+               <div ng-if="false" layout="row" layout-align="center center"  style="border: solid 0px red; padding: 5px">
+
+                <div layout="row" flex=50 layout-align="space-between">
+                    
+                        <md-icon class="material-icons md-24 green_big" style="cursor: pointer;margin: 0px !important; padding: 0px !important;" ng-click="vm.ejecutarReproduccion({id_reproduccion: reproduccion.id_reproduccion}, $event)">play_circle_filled</md-icon>
+                        
+                        <md-icon class="material-icons md-24 orange600" style="margin: 0px !important; padding: 0px !important; ">delete_forever</md-icon>
+                      </div>
+                      
+                  </div>
+
+            </div>
+        </md-grid-tile>
+
+</div>
+  
+</div>
+<!-- FIN escenarios en disponibles -->
+
+
+<!-- INICIO escenarios en reproducidos -->
+
+
+<div style="margin-top: 30px;">
+
+    <div class="gridListdemoBasicUsage" style="padding-left: 0px;">
+       
+    <div layout="row" style="border: 0px solid red">
+      <div flex="50" layout="row" layout-align="start center">
+        <span style="color: #607D8B; font-weight: 600; font-size: 16px; padding: 5px">Escenarios reproducidos</span>    
+      </div>
+      <div flex="50" layout="row" layout-align="end center">
+        
+      </div>
+    </div>
+
+
+<md-grid-list
+        md-cols="6" md-cols-xl="12"
+        md-row-height="16:9"
+        md-gutter="12px">
+
+
+        <md-grid-tile class="gray"
+        md-rowspan="2" md-colspan="2" md-rowspan-xl="3" md-colspan-xl="3" ng-repeat="reproduccion_ejecucion in vm.reproducciones.ejecucion track by $index">
+        <div layout="column" layout-fill style="border: solid 1px lightgray"  layout-fill>
+          <div layout="column" flex="35" style="padding:5px;background-color: none; text-align: center;border: solid 0px blue" layout-align="center center">
+            <div style="border: solid 0px red" layout="column">
+              <span style="color: #4CAF50; font-weight: 700; font-size: 20px;">APROBADO</span>
+              <span style="color: #444" am-time-ago="vm.fInicio"></span>
+              <span style="color: #A3A3A3">desde {{vm.fInicio | date: 'dd-MM-yyyy hh:mm:ss'}}</span>
+            </div>
+          </div>
+          
+          <div flex="nogrow" layout-padding style="margin-top: 0px !important;border: solid 0px blue; height: 5px !important">
+            <md-divider></md-divider>
+          </div>
+          
+          <div  layout="column" flex="noshrink" style="background-color: none;border: solid 0px green; margin: 0 !important; padding: 0px 2px 0px 2px;">
+            <div layout="row" flex="nogrow" style="padding: 2px; border: solid 0px red">
+              <md-list-item style="margin: 0 !important; padding: 0 !important;">
+                <p style="color: #A3A3A3;margin: 0 !important; padding: 0 !important;">no hay errores</p>
+              </md-list-item>
+            </div>
+            <div layout="row" flex="nogrow" style="margin-bottom: 50px !important;border: solid 0px red" layout-align="start end">
+               <md-chips ng-model="reproduccion_ejecucion.etiquetas" readonly="true" class="custom-chips">
+                          <md-chip class="md-chip-ejecucion-rc">{{reproduccion_ejecucion.version_sijai}}</md-chip>
+                          <md-chip-template>{{$chip.titulo}}</md-chip-template>
+                      </md-chips>
+            </div>
+          </div>
+
+        </div>  
+      <md-grid-tile-footer style="background: rgba(0, 0, 0, 0.68);">
+        <h3 layout="row" class="titulo_caso_prueba_grid" ng-click="vm.abrirReproduccion(3, $event)">
+           {{reproduccion_ejecucion.titulo_reproduccion}}
+        </h3>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+
+
+     <md-grid-tile class="gray"
+        md-rowspan="2" md-colspan="2" md-rowspan-xl="3" md-colspan-xl="3" ng-repeat="reproduccion_ejecucion in vm.reproducciones.ejecucion track by $index">
+        <div layout="column" layout-fill style="border: solid 1px lightgray"  layout-fill>
+          <div layout="column" flex="35" style="padding:5px;background-color: none; text-align: center;border: solid 0px blue" layout-align="center center">
+            <div style="border: solid 0px red; " layout="column">
+              <span style="color: #F44336; font-weight: 700; font-size: 20px;">REPORTADO</span>
+              <span style="color: #444" am-time-ago="vm.fInicio"></span>
+              <span style="color: #A3A3A3">desde {{vm.fInicio | date: 'dd-MM-yyyy hh:mm:ss'}}</span>
+            </div>
+          </div>
+          
+          <div flex="nogrow" layout-padding style="margin-top: 0px !important;border: solid 0px blue; height: 5px !important">
+            <md-divider></md-divider>
+          </div>
+          
+          <div  layout="column" flex="noshrink" style="background-color: none;border: solid 0px green; margin: 0 !important; padding: 0px 2px 0px 2px;">
+            <div layout="row" flex="nogrow" style="padding: 2px; border: solid 0px red">
+              <md-list-item style="margin: 0 !important; padding: 0 !important;">
+                <p style="color: #FF5252;margin: 0 !important; padding: 0 !important;">2 errores encontrados</p>
+              </md-list-item>
+            </div>
+            <div layout="row" flex="nogrow" style="margin-bottom: 50px !important;border: solid 0px red" layout-align="start end">
+               <md-chips ng-model="reproduccion_ejecucion.etiquetas" readonly="true" class="custom-chips">
+                          <md-chip class="md-chip-ejecucion-rc">{{reproduccion_ejecucion.version_sijai}}</md-chip>
+                          <md-chip-template>{{$chip.titulo}}</md-chip-template>
+                      </md-chips>
+            </div>
+          </div>
+
+        </div>  
+      <md-grid-tile-footer style="background: rgba(0, 0, 0, 0.68);">
+        <h3 layout="row" class="titulo_caso_prueba_grid" ng-click="vm.abrirReproduccion(3, $event)">
+           {{reproduccion_ejecucion.titulo_reproduccion}}
+        </h3>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+
+
+  </md-grid-list>
+</div>
+  
+  
+</div>
+
+
+
+
+<div ng-if="false">
+  <md-card>
+  <md-card-content>
+<div class="gridListdemoBasicUsage" style="padding-left: 0px;">
+<div layout="row">
+          <div flex="noshrink">
+            <span style="color: #607D8B; font-weight: 600; font-size: 16px; padding: 5px">Escenarios reproducidos</span>    
+          </div>
+        </div>
+<md-grid-list
+        md-cols="6" md-cols-xl="12"
+        md-row-height="16:9"
+        md-gutter="12px">
+
+
+        
+
+    <md-grid-tile class="gray"
+        md-rowspan="3" md-colspan="2" md-rowspan-xl="3" md-colspan-xl="3">
+        <div layout="column" layout-fill style="border: solid 1px lightgray" layout-wrap layout-fill>
+
+          <div layout="column" flex="30" style="background-color: none; text-align: center;border: solid 0px blue">
+            <div style="border: solid 0px blue; padding: 0 !important">
+              <md-icon class="material-icons md-48 green_big" style=";margin: 0 !important; border: solid 0px green;min-width: 64px; min-height: 48px">check_circle</md-icon>
+            </div>
+            <div>
+              <span style="color: #388E3C; font-weight: 700; font-size: 20px;">APROBADO</span>
+            </div>
+          </div>
+          
+          <div flex="nogrow" layout-padding style="margin-top: 5px !important;border: solid 0px blue; height: 5px !important">
+            <md-divider></md-divider>
+          </div>
+          
+          <div  layout="column" flex="noshrink" style="background-color: none;border: solid 0px green; margin: 0 !important; padding: 0px 2px 0px 2px;">
+            <div layout="row" flex="nogrow" style="padding: 2px; border: solid 0px red">
+              <md-list-item style="margin: 0 !important; padding: 0 !important;">
+                <p style="color: #F44336;margin: 0 !important; padding: 0 !important;">3 errores encontrados</p>
+              </md-list-item>
+            </div>
+            <div layout="row" flex="nogrow" style="margin-bottom: 50px !important;border: solid 0px red" layout-align="start end">
+              <md-chips ng-model="vm.reproducciones.ejecucion[1].etiquetas" readonly="true" class="custom-chips">
+                          <md-chip class="md-chip-ejecucion-rc">{{vm.reproducciones.ejecucion[1].version_sijai}}</md-chip>
+                          <md-chip-template>{{$chip.titulo}}</md-chip-template>
+                      </md-chips>
+            </div>
+          </div>
+
+        </div>  
+      <md-grid-tile-footer style="background: rgba(0, 0, 0, 0.68);">
+        <h3 layout="row" class="titulo_caso_prueba_grid" ng-click="vm.abrirReproduccion(3, $event)">
+          Emision constancia de infraccion desde web infractor (cupones de pago)Emision constancia de infraccion desde web infractor (cupones de pago)
+        </h3>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+
+
+   <md-grid-tile class="gray"
+        md-rowspan="2" md-colspan="2" md-rowspan-xl="3" md-colspan-xl="3">
+        <div layout="column" layout-fill style="border: solid 1px lightgray" layout-wrap layout-fill>
+
+          <div layout="column" flex="30" style="background-color: none; text-align: center;border: solid 0px blue">
+            <div style="border: solid 0px blue; padding: 0 !important">
+              <md-icon class="material-icons md-48" style="color: rgb(255, 51, 51);margin: 0 !important; border: solid 0px green;min-width: 64px; min-height: 48px">bug_report</md-icon>
+            </div>
+            <div>
+              <span style="color: #D32F2F; font-weight: 700; font-size: 20px;">REPORTADO</span>
+            </div>
+          </div>
+          
+          <div flex="nogrow" layout-padding style="margin-top: 5px !important;border: solid 0px blue; height: 5px !important">
+            <md-divider></md-divider>
+          </div>
+          
+          <div  layout="column" flex="noshrink" style="background-color: none;border: solid 0px green; margin: 0 !important; padding: 0px 2px 0px 2px;">
+            <div layout="row" flex="grow" style="padding: 2px; border: solid 0px red">asdasdsd</div>
+            <div layout="row" flex="nogrow" style="margin-bottom: 50px !important;border: solid 0px red" layout-align="start end" ng-click="null">
+              <md-chips ng-model="vm.reproducciones.ejecucion[1].etiquetas" readonly="true" class="custom-chips" >
+                          <md-chip class="md-chip-ejecucion-rc">{{vm.reproducciones.ejecucion[1].version_sijai}}</md-chip>
+                          <md-chip-template>{{$chip.titulo}}</md-chip-template>
+                      </md-chips>
+            </div>
+          </div>
+
+        </div>  
+      <md-grid-tile-footer style="background: rgba(0, 0, 0, 0.68);">
+        <h3 layout="row" class="titulo_caso_prueba_grid" ng-click="vm.abrirReproduccion(3, $event)">
+          Emision constancia de infraccion desde web infractor (cupones de pago)Emision constancia de infraccion desde web infractor (cupones de pago)
+        </h3>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+    </md-grid-list>
+</div>
+</md-card-content>
+</md-card>
+</div>
+<!-- FIN escenarios en reproducidos -->
+
+
+<div ng-if="false">
+  <md-card>
+  <md-card-content>
+<div class="gridListdemoBasicUsage" style="padding-left: 0px;">
+
+<div layout="row" style="border: solid 1px red;">
+    
+    <div layout="row" flex="50" layout-align="center start">
+
+
+        <md-card class="card-round md-card-interior" style="height: 90%;width: 100% !important; background-color: rgba(38, 50, 56, .1)">
+          <md-card-header style="background-color: #607D8B; color: white; padding: 5px !important; height: 20px !important; min-height: 20px !important">
+            <md-toolbar style="background-color: #607D8B; color: white;height: 20px !important; min-height: 20px !important">
+              <div class="md-toolbar-tools" style="font-size: 0.8em !important">
+                <span flex md-truncate>Escenarios disponibles</span>
+
+                <div><md-icon class="material-icons md-20 toolbar-gray" style="line-height: 20px !important; min-height: 20px !important" ng-click="vm.reportarProblemaCasoPrueba($event)">search</md-icon></div>
+                <div>
+                  <md-menu md-position-mode="target-right target">
+                      <md-button class="md-icon-button" ng-click="vm.openMenu($mdMenu, $event)" style="line-height: 20px !important; padding: 0px !important; margin: 0px !important">
+                        <md-icon class="material-icons md-20 toolbar-gray" style="line-height: 20px !important; min-height: 20px !important">more_vert</md-icon>
+                      </md-button>
+                      <md-menu-content width="4">
+                        <md-menu-item>
+                          <md-button ng-click="vm.crearReproduccion($event)">
+                            Nueva reproduccion
+                          </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                          <md-button ng-click="vm.reportarProblemaCasoPrueba($event)">
+                            LAS
+                          </md-button>
+                        </md-menu-item>
+                      </md-menu-content>
+                    </md-menu>
+                  </div>                  
+
+              </div>
+            </md-toolbar>
+          </md-card-header>
+          <md-card-content style="overflow-y: auto">
+
+            <md-card ng-repeat="reproduccion in vm.reproducciones.disponibles track by $index" class="md-card-interior" style="height: 90%;width: 100% !important; margin: 0 0 8px 0 !important">
+              <md-card-content layout="row" style="padding: 5px !important;">
+                <div layout="row" flex="90">
+                  <div layout="column">
+                    <div class="">
+                       <span class="titulo_caso_prueba" ng-click="vm.abrirReproduccion(reproduccion.id_reproduccion, $event)">
+                         {{reproduccion.titulo_reproduccion}}
+                       </span>
+                    </div>
+                    <div class="prueba_subtitulo">
+                      <md-chips ng-model="reproduccion.etiquetas" readonly="true">
+                          <md-chip-template>{{$chip.titulo}}</md-chip-template>
+                      </md-chips>
+                      <!--
+                      <md-chips>
+                        <md-chip>{{etiqueta.titulo}}</md-chip>
+                      </md-chips>
+                    -->
+                    </div>
+                  </div>
+                </div>
+                <div layout="row" flex layout-align="center center">
+                
+                  <md-menu md-position-mode="target-right target">
+                    <md-button  class="md-icon-button" ng-click="vm.openMenu($mdMenu, $event)">
+                      <md-icon class="material-icons md-20 toolbar-gray" style="margin: 0 0 0 0 !important; padding: 0 0 0 0 !important; line-height: 20px !important">settings</md-icon>
+                    </md-button>
+                    <md-menu-content width="4">
+                      <md-menu-item>
+                        <md-button ng-click="vm.ejecutarReproduccion({id_reproduccion: reproduccion.id_reproduccion}, $event)">
+                          Reproducir
+                        </md-button>
+                      </md-menu-item>
+                      <md-menu-divider></md-menu-divider>
+                      <md-menu-item>
+                        <md-button ng-click="vm.editarReproduccion({id_reproduccion: reproduccion.id_reproduccion}, $event)">
+                          Editar
+                        </md-button>
+                      </md-menu-item>
+                      <md-menu-item>
+                        <md-button ng-click="vm.eliminarReproduccion($event)">
+                          Eliminar
+                        </md-button>
+                      </md-menu-item>
+                    </md-menu-content>
+                  </md-menu>
+                </div>
+              </md-card-content>
+            </md-card>
+
+          </md-card-content>
+        </md-card>
+      
+    </div>
+   
+
+    <div layout="row" flex="50" layout-align="center start">
+      
+        <md-card class="card-round md-card-interior" style="height: 90%; width: 100% !important; background-color: rgba(38, 50, 56, .1)">
+         <md-card-header style="background-color: #388E3C; color: white; padding: 5px !important; height: 20px !important; min-height: 20px !important">
+            <md-toolbar style="background-color: #388E3C; color: white;height: 20px !important; min-height: 20px !important">
+              <div class="md-toolbar-tools" style="font-size: 0.8em !important">
+                <span flex md-truncate>Escenarios en ejecucion</span>
+
+                <div><md-icon class="material-icons md-20 toolbar-gray" style="line-height: 20px !important; min-height: 20px !important">search</md-icon></div>
+                <div>
+                  <md-menu md-position-mode="target-right target">
+                      <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="vm.openMenu($mdMenu, $event)" style="line-height: 20px !important; padding: 0px !important; margin: 0px !important">
+                        <md-icon class="material-icons md-20 toolbar-gray" style="line-height: 20px !important; min-height: 20px !important">menu</md-icon>
+                      </md-button>
+                      <md-menu-content width="4">
+                        <md-menu-item>
+                          <md-button ng-click="vm.crearReproduccion($event)">
+                            Nueva reproduccion
+                          </md-button>
+                        </md-menu-item>
+                      </md-menu-content>
+                    </md-menu>
+                  </div>                  
+
+              </div>
+            </md-toolbar>
+          </md-card-header>
+        <md-card-content style="overflow-y: auto">
+
+          
+          <md-card ng-repeat="reproduccion_ejecucion in vm.reproducciones.ejecucion track by $index" class="md-card-interior" style="width: 100% !important; margin: 0 0 8px 0 !important;">
+            <md-card-content layout="row" style="padding: 5px !important;">
+              <div layout="row" flex="90">
+                <div layout="column">
+                <div class="">
+                  <md-icon ng-show="reproduccion_ejecucion.reproduccion_reportada === 1" class="md-menu-origin material-icons md-20 red" style="color: #D32F2F !important;" ng-click="vm.reportarProblemaCasoPrueba(item.id_caso_prueba)">bug_report<md-tooltip md-direction="bottom">caso de prueba reportado</md-tooltip></md-icon>
+                  <span class="titulo_caso_prueba" ng-click="vm.abrirReproduccion(reproduccion_ejecucion.id_reproduccion, $event)">
+                    {{reproduccion_ejecucion.titulo_reproduccion}}
+                  </span>
+                </div>
+                <div class="prueba_subtitulo">
+
+                   <md-chips ng-model="reproduccion_ejecucion.etiquetas" readonly="true" class="custom-chips">
+                          <md-chip class="md-chip-ejecucion-rc">{{reproduccion_ejecucion.version_sijai}}</md-chip>
+                          <md-chip-template>{{$chip.titulo}}</md-chip-template>
+                      </md-chips>
+                </div>
+              </div>
+              </div>
+              <div layout="row" flex layout-align="center center">
+               <md-menu md-position-mode="target-right target">
+             <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="vm.openMenu($mdMenu, $event)">
+                  <md-icon class="material-icons md-20 toolbar-gray" style="margin: 0 0 0 0 !important; padding: 0 0 0 0 !important; line-height: 20px !important">settings</md-icon>
+                </md-button>
+              <md-menu-content width="4">
+                <md-menu-item>
+                  <md-button ng-click="vm.finalizarEjecucionReproduccion($event)">
+                    Finalizar
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="vm.cancelarReproduccion(reproduccion_ejecucion.id_reproduccion, $event)">
+                    Cancelar
+                  </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item>
+                  <md-button ng-click="vm.crearReproduccion($event)">
+                    Editar
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+              </div>
+            </md-card-content>
+            <md-card-actions ng-if="false" layout="row" layout-align="end center" style="border: 0px solid red">
+              <md-button class="md-small" ng-click="vm.finalizarReproduccion($event)">cancelar</md-button>
+              <md-button class="md-small" ng-click="vm.finalizarReproduccion($event)">finalizar</md-button>
+            </md-card-actions>
+          </md-card>
+
+          
+
+
+          
+
+
+          </md-card-content>
+        </md-card>
+
+
+
+
+      
+    </div>
+  </div>
+
+
+</div>
+</md-card-content>
+</md-card>
+</div>
+
+
+
+
+  
+
+  <div layout="row" flex="5" style="background-color: none">
+      
+  </div>
+
+
+</div>
+
+
+    <div ng-if="false" grid-data id='test' grid-options="vm.gridOptions" grid-actions="vm.gridActions" flex>
+      
+      <div layout="row" flex="100" layour-align="start center">
+        
+        <div layout="row" flex="50">
+          <md-button ng-disabled="!vm.hayFilaSeleccionada( false )" ng-click="vm.borrarReproducciones($event)" class="md-primary" style="font-weight: 600; font-size: 12px !important">
+                <md-icon class="material-icons md-24 toolbar-gray">play_circle_filled</md-icon>
+                <label style="font-size: 14px !important">Iniciar testing</label>
+              </md-button>
+        </div>
+
+
+        
+        <div layout="row" flex="50" layout-align="end center">
+          <md-button ng-hide="vm.hayFilaSeleccionada( false )" class="md-icon-button" ng-click="vm.crearCasoUso({}, $event)">
+                <md-icon class="material-icons md-24 toolbar-gray">add_box</md-icon>
+              </md-button>
+          <md-button ng-show="vm.hayFilaSeleccionada( false )" ng-click="vm.borrarReproducciones($event)" class="md-icon-button">
+                <md-icon class="material-icons md-24 toolbar-gray">delete</md-icon>
+              </md-button>
+
+          <div class
+          ="menu-demo-container" layout="row">
+
+            <md-menu md-position-mode="target-right target">
+              <md-button ng-click="vm.openMenu($mdMenu, $event)">
+                <md-icon class="material-icons md-24 toolbar-gray">more_vert</md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item>
+                  <md-button ng-click="vm.crearReproduccion($event)">
+                    Nueva reproduccion
+                  </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item>
+                  <md-button ng-disabled="vm.habilitarBorrarReproduccion()" ng-click="vm.borrarReproduccion($event)">
+                    Generar reporte...
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+
+          
+        </div>
+        </div>
+
+      </div>
+
+
+        <div >
+          <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--1dp">
+              <thead>
+              <tr class="md-padding">
+                <th colspan="5">
+                  <div layout="row" layout-fill flex="100" style="width: 100% !important; padding: 15px 5px 5px 5px;" >
+                        <div layout="row" layout-fill flex="100" style="padding:0px; width: 100%; border: solid 1px #eee;">
+                          <input type="text" style="width: 95%; height: 25px; border: solid 0px red; padding-left:5px;">
+                          <md-icon class="material-icons md-24 toolbar-gray">search</md-icon>
+                        </div>
+                  </div>
+                </th>
+              </tr>
+              <tr>
+                  <th  class="mdl-data-table__cell--non-numeric" style="width: 5% !important; margin-top: 0px !important;">
+                       <md-checkbox class="red md-checkbox-small dotted" ng-click="vm.seleccionarTodo(this, $event)" ng-checked="vm.todosSeleccionados()" md-indeterminate="vm.isIndeterminate()"></md-checkbox>
+                  </th>
+                  
+                  <th sortable="item.nombre_caso_uso" class="sortable mdl-data-table__cell--non-numeric" style="padding-left: 0px; width: 5% !important">
+                      <span ng-hide="true">Estado</span>
+                  </th>
+                  <th sortable="item.descripcion_caso_uso" class="sortable mdl-data-table__cell--non-numeric" style="padding-left: 0px">
+                      <span>Prueba</span>
+                  </th>
+                  <th sortable="item.descripcion_caso_uso" class="sortable mdl-data-table__cell--non-numeric" style="padding-left: 0px">
+                      <span>Fecha</span>
+                  </th>
+                  <th sortable="item.especifaciones_cu" class="sortable mdl-data-table__cell--non-numeric" style="padding-left: 0px">
+                      <span>Version</span>
+                  </th>  
+                                
+                  
+              </tr>
+              </thead>
+              <tbody>
+              <tr grid-item ng-click="vm.abrirReproduccion(this, $event)" ng-class="{'data-grid-selected-row': vm.esFilaSeleccionada(this), 'fila_seleccionada': vm.esFilaSeleccionada(this)}" class="" style=" vertical-align: middle !important">
+                  
+                  <td class="mdl-data-table__cell--non-numeric col_border" style="width: 5% !important">
+                      <md-checkbox md-no-ink class="red md-checkbox-small dotted" ng-click="vm.seleccionarReproduccion(this, $event)" ng-checked="vm.esFilaSeleccionada(this)"></md-checkbox>
+                  </td>
+                  
+                  <td class="mdl-data-table__cell--non-numeric col_border" style="width: 5% !important">
+                      
+
+                      <md-icon class="material-icons md-24" ng-class="vm.widgets.reproduccion_estado[item.id_estado_reproduccion].class_estado.icon_class">{{vm.widgets.reproduccion_estado[item.id_estado_reproduccion].icon_estado}}</md-icon>
+                      <span>{{vm.widgets.reproduccion_estado[item.id_estado_reproduccion].txt_estado}}</span>
+
+                  </td>
+                  
+                  <td class="mdl-data-table__cell--non-numeric col_border" style="width: 1px !important">
+                      <span ng-bind="item.descripcion"></span>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric col_border" style="width: 1px !important">
+                      <span>{{item.f_reproduccion | date:'dd-MM-yyyy HH:mm:ss'}}</span>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric col_border" style="width: 1px !important">
+                      <span ng-bind="item.version_sijai"></span>
+                  </td>
+                  
+                  
+              </tr>
+              </tbody>
+          </table>
+      </div>
+      <div layout-xs="column" layout="row" layout-align-xs="end end" layout-align="end center">
+          <grid-pagination max-size="5"
+                           boundary-links="true"
+                           class="pagination"                                     
+                           ng-if="paginationOptions.totalItems  > paginationOptions.itemsPerPage"
+                           total-items="paginationOptions.totalItems"
+                           ng-model="paginationOptions.currentPage"
+                           ng-change="reloadGrid()"
+                           items-per-page="paginationOptions.itemsPerPage">
+          </grid-pagination>
+          <md-input-container flex-offset-gt-xs="5" class="items-per-page">
+              <md-select ng-init="paginationOptions.itemsPerPage = '10'" ng-model="paginationOptions.itemsPerPage" ng-change="reloadGrid()">
+                  <md-option>10</md-option>
+                  <md-option>25</md-option>
+                  <md-option>50</md-option>
+                  <md-option>75</md-option>
+              </md-select>
+          </md-input-container>
+      </div>
+    </div>
+  
+</md-content>

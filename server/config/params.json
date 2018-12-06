@@ -1,0 +1,139 @@
+{
+    "params": {
+            "tipos_actas": {
+                    "0": {
+                        "id_remito": 807,
+                        "numero_remito": 1703101001,
+                        "notificar": 1,
+                        "tipo_acta": "Personal Notificada (807)",
+                        "id_tipo_sijai": 2,
+                        "lote": 233,
+                        "cod_fiscalizacion": 2110
+                    },
+                    "1": {
+                        "id_remito": 809,
+                        "numero_remito": 1703101001,
+                        "notificar": 1,
+                        "tipo_acta": "Personal Notificada (809)",
+                        "id_tipo_sijai": 2,
+                        "lote": 233,
+                        "cod_fiscalizacion": 2210
+                    },
+                    "2": {
+                        "id_remito": 707,
+                        "numero_remito": 1703081001,
+                        "notificar": 0,
+                        "tipo_acta": "Personal No Notificada (707)",
+                        "id_tipo_sijai": 3,
+                        "lote": 233,
+                        "cod_fiscalizacion": 2221
+                    },
+                    "3": {
+                        "id_remito": 606,
+                        "numero_remito": 1706191001,
+                        "notificar": 0,
+                        "tipo_acta": "[2.9.4 RC2] Personal No Notificada (606)",
+                        "id_tipo_sijai": 3,
+                        "lote": 233,
+                        "cod_fiscalizacion": 2221
+                    },
+                    "3": {
+                        "id_remito": 808,
+                        "numero_remito": 1703081001,
+                        "notificar": 0,
+                        "tipo_acta": "[2.10.0 RC4] Personal No Notificada (808)",
+                        "id_tipo_sijai": 3,
+                        "lote": 233,
+                        "cod_fiscalizacion": 2221
+                    }
+            },
+            "datos_cod_bar": {
+                    "codigo_53": {
+                        "codigo_municipio": "000",
+                        "tipo_acta": "2",
+                        "codigo_grupo": "905",
+                        "codigo_fiscal": "03",
+                        "numero_acta": "", 
+                        "numero_ponderador": "01030507",
+                        "relleno": "0000000000000000000000000000"
+                    },
+                    "codigo_55": {
+                        "numero_contrato": "00000671",
+                        "numero_entidad": "330",
+                        "numero_acta": "", 
+                        "fecha_vencimiento": "20170523",
+                        "importe": "", 
+                        "ent_fisc": "003",
+                        "fijo": 1,
+                        "cod_aut_juz": "000"
+
+                    }
+            },
+            "rutas_archivos": {
+                "archivos_base_directorio": {
+                    "label": "DIRECTORIO BASE",    
+                    "tooltip": "Donde estan alojados los archivos base.pdf y base.jpg",
+                    "ruta": "E:/LOTES/GENERAR/"
+                },
+                "archivos_generados_directorio": {
+                    "label": "DIRECTORIO ARCHIVOS GENERADOS",    
+                    "tooltip": "Donde se alojan los archivos que genera la applicacion",
+                    "ruta": "E:/LOTES/GENERAR/archivos_generados/"
+                },
+                "archivos_validar_automaticas": {
+                    "label": "DIRECTORIO ACTAS AUTOMATICAS",    
+                    "tooltip": "Donde estan los lotes de actas automaticas",
+                    "ruta": "E:/LOTES/PROCESADOS/"
+                },
+                "directorio_assets": {
+                    "label": "DIRECTORIO PUBLICAR ACTAS",    
+                    "tooltip": "Donde son publicadas(copiadas) las actas que seran mostradas en la prevalidacion",
+                    "ruta": "E:/VALOR/Valor-material/public/assets/"
+                }
+            },
+            "archivos_base_directorio": "E:/LOTES/GENERAR/",
+            "archivos_generados_directorio": "E:/LOTES/GENERAR/archivos_generados/",
+            "archivos_validar_automaticas": "E:/LOTES/LOTES_AUTOMATICAS/",
+            "directorio_assets": "E:/VALOR/Valor-material/public/assets/",
+            "muestreo_automaticas": "3",
+            "archivos_salida": {
+                "0": {
+                    "nombre": "ACTAS_PAPEL_PDF",
+                    "imprime": false,
+                    "clonar": "base.pdf",
+                    "single": false,
+                    "tipo_archivo": ".pdf"
+                },
+                "1": {
+                    "nombre": "ACTAS_PAPEL_JPG",
+                    "imprime": false,
+                    "clonar": "base.jpg",
+                    "single": false,
+                    "tipo_archivo": ".jpg"
+                },
+                "2": {
+                    "nombre": "CODIGOS_DE_BARRAS_JPG",
+                    "imprime": false,
+                    "clonar": false,
+                    "single": false,
+                    "tipo_archivo": "txt"
+                },
+                "3": {
+                    "nombre": "CODIGOS_DE_BARRAS",
+                    "imprime": false,
+                    "clonar": "false",
+                    "base": false,
+                    "tipo_archivo": "txt"
+                },
+                "4": {
+                    "nombre": "SCRIPT_SQL_REMITOS",
+                    "imprime": false,
+                    "clonar": false,
+                    "single": false,
+                    "tipo_archivo": "sql"
+                }
+            }
+    }
+}
+
+

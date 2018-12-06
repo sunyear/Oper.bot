@@ -1,0 +1,303 @@
+<style type="text/css">
+	.material-icons.md-12 { font-size: 12px; }
+	.material-icons.md-18 { font-size: 18px; }
+	.material-icons.md-24 { font-size: 24px; }
+	.material-icons.md-36 { font-size: 36px; }
+	.material-icons.md-48 { font-size: 48px; }
+	.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+	.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+	.material-icons.orange600 { color: #FB8C00; }
+	.material-icons.black { color: #000000; }
+	.material-icons.red {color: rgb(255, 51, 51);}
+	.material-icons.green_big {color: rgb(36, 191, 1);}
+
+
+	#md-sidenav-val, #md-sidenav-val.md-locked-open, #md-sidenav-val.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 50vw !important;
+  max-width: 200px !important;
+  }
+
+  md-list-item + md-divider{
+    border-top-color: rgb(100, 100, 100) !important;
+  }
+
+.header-toolbar {
+  	margin: 0px;
+  	font-weight: bolder;
+  	font-size: 16px;
+  	color: rgb(38, 50, 56);
+  }
+
+  .header-toolbar-subtitle {
+  	margin: 0px;
+  	font-weight: 400;
+  	font-size: 12px;
+  	color: rgb(38, 50, 56);
+  }
+</style>
+<div class="padded" md-whiteframe="2">
+			<md-toolbar>
+	            <div layout="row" class="md-toolbar-tools" style="background-color: rgb(255, 255, 255) !important;">
+	            	<div layout="row" layout-align="" flex="33">
+	            		<div  layout="column" flex>
+	            			<p class="header-toolbar">Validaciones</p>
+	            			<p class="header-toolbar-subtitle" >pre-validacion</p>
+	            		</div>
+	            	</div>
+	            </div>
+	        </md-toolbar>
+        </div>
+<div flex="100" layout="row">
+	
+
+    <!-- LA VALIDACION PRINCIPAL -->
+    <div flex layout-align="left">
+    	<div flex="100" layout="column" layout-align="center center">
+			<div flex="100">
+		
+		<div layout="row" flex="100">
+				<md-card>
+					<md-card-header style="padding:0 !important;height:30px !important">
+						<md-toolbar style="min-height: 30px; height: 30px !important;">
+						    <h2 class="md-toolbar-tools" style="font-size: 16px !important">Asistente para validar actas automaticas</h2>
+						</md-toolbar>
+					</md-card-header>
+					<md-card-content>
+
+						
+
+							<xmd-wizard active-step="currentStep" on-change="stepChanged()" on-save="procesarLote($event)">
+								<xmd-step label="CARGAR CSV" xmd-required="true">
+									<div flex="100" layout="row" layout-align="center center" style="margin-bottom: 10px">
+								
+										<input class="ng-hide" id="input-file-id" multiple type="file" on-read-file="leerCSV(contents)"/>
+										<label for="input-file-id" class="md-button md-raised md-primary">Cargar ACTA CECAITRA (CSV)</label>
+										
+									</div>
+							
+							
+									<div layout="row" flex="100" ng-show="datos_csv.registros_totales > 0">
+										<div flex="66">
+											<md-input-container class="md-block" flex-gt-sm>
+												<label>Nombre</label>
+												<input ng-model="datos_csv.CSV_filename" required disabled style="font-weight: bolder">
+											</md-input-container>
+										</div>
+							   			<div flex="20">
+											<md-input-container class="md-block" flex-gt-sm>
+												<label>Lote</label>
+												<input ng-model="datos_csv.nro_lote" disabled style="font-weight: bolder">
+											</md-input-container>
+										</div>
+										
+										<div flex="7">
+											<md-input-container class="md-block" flex-gt-sm>
+												<label>Registros</label>
+												<input ng-model="datos_csv.registros_totales" disabled style="font-weight: bolder">
+											</md-input-container>
+										</div>
+										<div flex="7">
+											<md-input-container class="md-block" flex-gt-sm>
+												<label>Archivos</label>
+												<input ng-model="datos_csv.archivos_fs" disabled style="font-weight: bolder">
+											</md-input-container>
+										</div>
+
+								   	</div>
+
+								   	<div class="flex flex-col" layout="row" layout-align="center center" ng-show="datos_csv.registros_totales > 0">
+										<div flex="50">
+											<md-input-container class="md-block" flex-gt-sm style=" margin-bottom:0">
+												<label>Rango actas desde:</label>
+												<input ng-model="datos_csv.numero_acta_min" disabled style="font-weight: bolder; color: brown">
+											</md-input-container>
+										</div>
+
+										<div flex="50">
+											<md-input-container class="md-block" flex-gt-sm style="margin-bottom:0">
+												<label>Rango acta hasta:</label>
+												<input ng-model="datos_csv.numero_acta_max" disabled style="font-weight: bolder; color: brown">
+											</md-input-container>
+										</div>
+									</div>
+									<div flex ng-show="datos_csv.registros_totales > 0">
+								<md-content>
+									<section layout="row" layout-align="center center" layout-wrap>
+										<md-button class="md-raised md-accent" ng-click="mostrarDetalles()">detalles</md-button>
+										<!--<md-button class="md-raised md-primary" ng-click="showAdvanced($event)">GENERAR ACTAS (dialog)</md-button>-->
+									</section>
+
+									<div flex ng-if="(datos_csv.registros_totales > 0) && datos_csv.mostrar_detalles">
+										
+										<md-list class="md-dense" flex ng-cloak>
+							            <md-list-item class="secondary-button-padding" ng-repeat="registro in datos_csv.CSV_content track by $index">
+							              <div class="md-list-item-text" layout="column">
+							                <H5>{{registro}}</H5>
+							              </div>
+							              <md-divider ng-if="!$last"></md-divider>
+							            </md-list-item>             
+							          </md-list>	
+									</div>
+								</md-content>
+							</div>
+							</xmd-step>
+							<xmd-step label="Cargar Fecha">
+								
+							
+									<md-input-container class="md-block">
+										<label>Fecha lote</label>
+										<md-datepicker ng-model="fechas_csv.fecha_base" md-placeholder="+ 5 dias habiles" ng-change="calcularFechas()"></md-datepicker>
+									</md-input-container>
+							
+									<div layout="row" flex="100">
+							   			<div flex="50">
+											<md-input-container class="md-block" flex-gt-sm>
+												<label>Constatacion (-60 dias)</label>
+												<input ng-model="fechas_csv.fecha_const_calc" disabled style="font-weight: bolder">
+											</md-input-container>
+										</div>
+										<div flex="50">
+											<md-input-container class="md-block" flex-gt-sm>
+												<label>Vencimiento (+45 dias)</label>
+												<input ng-model="fechas_csv.fecha_venc_calc" disabled style="font-weight: bolder">
+											</md-input-container>
+										</div>
+								   	</div>
+
+								
+							</xmd-step>
+
+							<xmd-step label="Resumen">
+								<md-card>
+									<md-content>
+							        <pdf-viewer
+									    delegate-handle="my-pdf-container"
+									    url="pdfUrl"
+									    scale="1"
+									    show-toolbar="true"
+									    headers="{ 'x-you-know-whats-awesome': 'EVERYTHING' }">
+									</pdf-viewer>
+									</md-content>
+							        <md-card-content>
+							        <div>
+						              <md-list class="md-dense">
+						                  <md-divider ng-if="ctrl.lote_seleccionado.lote_estado.errores.validaciones.length > 0"></md-divider>
+						                  <md-divider></md-divider>
+						                  <md-list-item class="item-menu-open">
+						                      <md-icon class="material-icons md-18 black" style="margin-right:5px">assignment</md-icon>
+						                      
+						                          <p style="font-size:12px">015_0327_20170403_160749.csv</p>
+						                      
+						                  </md-list-item>
+						                  <md-divider></md-divider>
+						                  <md-list-item class="item-menu-open">
+						                      <md-icon class="material-icons md-18 black" style="margin-right:5px">event</md-icon>
+						                      
+						                          <p style="font-size:12px">{{ctrl.lote_seleccionado.lote.fecha_procesado}}</p>
+						                      
+						                  </md-list-item>
+						                  <md-divider></md-divider>
+						                  <md-list-item class="item-menu-open">
+						                      <md-icon class="material-icons md-18 black" style="margin-right:5px">list</md-icon>
+						                      
+						                          <p style="font-size:12px">3567 registros</p>
+						                      
+						                  </md-list-item>
+						                  <md-divider></md-divider>
+						                  <md-list-item class="item-menu-open">
+						                      <md-icon class="material-icons md-18 black" style="margin-right:5px">folder</md-icon>
+						                      
+						                          <p style="font-size:12px">3567 archivos</p>
+						                      
+						                  </md-list-item>
+						              </md-list>
+
+						            </div>
+
+		        					</md-card-content>
+
+							        <md-card-actions layout="row" layout-align="start center">
+							        	<md-card-icon-actions>
+								            <md-button class="md-icon-button" aria-label="Favorite">
+								              <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+								            </md-button>
+								            <md-button class="md-icon-button" aria-label="Share">
+								              <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
+								            </md-button>
+							          	</md-card-icon-actions>
+										<md-button>Aceptar</md-button>
+										<md-button>Rechazar</md-button>
+							        </md-card-actions>
+							    	
+      							</md-card>
+							</xmd-step>
+
+						</xmd-wizard>
+						
+						   	
+
+						   	
+						
+					</md-card-content>
+				</md-card>
+				
+			</div>
+
+		</div>
+
+
+
+		<div flex ng-if="false">
+			<md-divider></md-divider>
+			<md-content>
+				<section layout="row" layout-align="center center" layout-wrap>
+					<md-button class="md-raised md-primary" ng-click="procesarLote($event)">VALIDAR</md-button>
+					<!--<md-button class="md-raised md-primary" ng-click="showAdvanced($event)">GENERAR ACTAS (dialog)</md-button>-->
+				</section>
+			</md-content>
+		</div>
+
+
+
+    </div>
+    
+    <!-- SIDENAV CON LISTADO DE ACTAS VALIDADAS -->
+	<!-- DEPRECATED: este "componente" ahora tiene su propios ui-route, controlador y vista. Revisar validaciones-tablero-controller.js
+	<div flex layout-align="right">
+	 
+	 	
+		
+		    <md-sidenav
+		        class="md-sidenav-right"
+		        md-component-id="right"
+		        md-is-locked-open="true"
+		        md-whiteframe="2"
+		        md-disable-backdrop="true"
+		        id="md-sidenav-val"
+		        style="min-width: 200px; width:200px">
+		        
+
+		        
+		        	<md-subheader class="md-primary">Lotes validados</md-subheader>
+					<md-list class="md-dense" flex>
+
+		          		<md-list-item class="md-2-line item-menu-open" ng-click="showMenu($event, $index)" ng-repeat="lote_validado in lotes_validados track by $index">
+		            		<div class="md-list-item-text">
+		              			<h3><strong>{{lote_validado.lote}}</strong></h3>
+		              			<p style="font-size: 11px">{{lote_validado.fecha_procesado}}</p>
+		            		</div>
+		            		<md-icon ng-class="lotes_estados[lote_validado.id_estado].css_class">{{lotes_estados[lote_validado.id_estado].icon}}</md-icon>
+		          		</md-list-item>
+		          		<md-divider ng-if="!$last"></md-divider>
+		          		
+		          		
+		         	</md-list>
+
+		        
+			</md-sidenav>
+		</div>
+	-->
+    
+</div>
+

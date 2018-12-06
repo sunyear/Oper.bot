@@ -1,0 +1,142 @@
+<!-- 
+	componente: actas validadas en PROCESOS -> Validar Actas
+ 	controlador: validaciones-tablero-controller.js: ValidacionesTableroController()
+	servicio: remitos-actas-service.js: remitosActasService() 
+-->
+
+<!-- CONFIG DEL TEMPLATE -->
+<style type="text/css">
+.material-icons.md-12 { font-size: 12px; }
+	.material-icons.md-18 { font-size: 18px; }
+	.material-icons.md-24 { font-size: 24px; }
+	.material-icons.md-36 { font-size: 36px; }
+	.material-icons.md-48 { font-size: 48px; }
+	.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+	.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+	.material-icons.orange600 { color: #FB8C00; }
+	.material-icons.black { color: #000000; }
+	.material-icons.red {color: rgb(255, 51, 51);}
+	.material-icons.green_big {color: rgb(36, 191, 1);}
+
+
+	#md-sidenav-val, #md-sidenav-val.md-locked-open, #md-sidenav-val.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 50vw !important;
+  max-width: 200px !important;
+  }
+md-list-item + md-divider{
+    border-top-color: rgb(100, 100, 100) !important;
+  }
+.header-toolbar {
+  	margin: 0px;
+  	font-weight: bolder;
+  	font-size: 16px;
+  	color: rgb(38, 50, 56);
+  }
+
+  .header-toolbar-subtitle {
+  	margin: 0px;
+  	font-weight: 400;
+  	font-size: 12px;
+  	color: rgb(38, 50, 56);
+  }
+
+</style>
+<!-- FIN CONFIG TEMPLATE -->
+
+
+<!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
+
+<div class="padded" md-whiteframe="2">
+	<md-toolbar>
+	    <div layout="row" class="md-toolbar-tools" style="background-color: rgb(255, 255, 255) !important;">
+	    	<div layout="row" layout-align="" flex="33">
+	    		<div  layout="column" flex>
+	    			<p class="header-toolbar">QA</p>
+	    			<p class="header-toolbar-subtitle" >escenarios</p>
+	    		</div>
+	    	</div>
+	    </div>
+	</md-toolbar>
+</div>
+<div layout="column" flex>
+
+	<div layout="column" layout-fill>
+		<md-card>
+		<md-card-header style="padding:0 !important;height:30px !important">
+			<md-toolbar style="min-height: 30px; height: 30px !important;">
+			    <h2 class="md-toolbar-tools" style="font-size: 16px !important">escenarios cargados</h2>
+			</md-toolbar>
+		</md-card-header>
+		<md-card-content>
+			<div grid-data id='test' grid-options="gridOptions" grid-actions="gridActions">
+                <div>
+                    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                        <thead>
+                        <tr>
+                            <th sortable="code" class="sortable mdl-data-table__cell--non-numeric">
+                                <span>N°</span>
+                            </th>
+                            <th sortable="placed" class="sortable">
+                                <span>Nombre</span>
+                            </th>
+                            <th sortable='total.value' class="sortable">
+                                <span>Casos Uso</span>
+                            </th>
+                            <th sortable='total.value' class="sortable">
+                                <span>tickets</span>
+                            </th>
+                            <th sortable='total.value' class="sortable">
+                                <span>estado</span>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr grid-item>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <span ng-bind="item.ID"></span>
+                            </td>
+                            <td ng-bind="item.nombre"></td>
+                            <td ng-bind="item.casos_uso"></td>
+                            <td ng-bind="item.tickets"></td>
+                            <td ng-bind="item.estado"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div layout-xs="column" layout="row" layout-align-xs="end end" layout-align="end center">
+                    <grid-pagination max-size="5"
+                                     boundary-links="true"
+                                     class="pagination"
+                                     ng-if="paginationOptions.totalItems  > paginationOptions.itemsPerPage"
+                                     total-items="paginationOptions.totalItems"
+                                     ng-model="paginationOptions.currentPage"
+                                     ng-change="reloadGrid()"
+                                     items-per-page="paginationOptions.itemsPerPage"></grid-pagination>
+                    <md-input-container flex-offset-gt-xs="5" class="items-per-page">
+                        <md-select ng-init="paginationOptions.itemsPerPage = '10'" ng-model="paginationOptions.itemsPerPage" ng-change="reloadGrid()">
+                            <md-option>10</md-option>
+                            <md-option>25</md-option>
+                            <md-option>50</md-option>
+                            <md-option>75</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+            </div>
+		</md-card-content>
+		</md-card>
+	</div>
+	
+	<div layout="row" layout-align="center end">
+		<md-button class="md-fab md-primary" aria-label="Eat cake">
+			<md-icon class="material-icons">add_to_queue</md-icon>
+		</md-button>
+		<md-button class="md-fab md-primary" aria-label="Eat cake">
+			<md-icon class="material-icons">add_to_queue</md-icon>
+		</md-button>
+		<md-button class="md-fab md-primary" aria-label="Eat cake">
+			<md-icon class="material-icons">add_to_queue</md-icon>
+		</md-button>
+	</div>
+
+</div>

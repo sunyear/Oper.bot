@@ -1,0 +1,35 @@
+[0202/182553.054:INFO:installer_main.cc(296)] Opera installer starting - version 43.0.2442.686 beta
+[0202/182553.055:INFO:installer_main.cc(299)] Command line: "C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\installer.exe" --backend --silent --initial-pid=3824 --install --autoupdate --import-browser-data=1 --enable-stats=1 --enable-installer-stats=1 --launchopera=0 --installfolder="C:\Program Files (x86)\Opera beta" --profile-folder --language=es --setdefaultbrowser=0 --startmenushortcut=1 --desktopshortcut=0 --quicklaunchshortcut=0 --pintotaskbar=0 --server-tracking-data=server_tracking_data --crash-reporter-pid=4416
+[0202/182553.055:INFO:installer_main.cc(341)] Install folder from command line: C:\Program Files (x86)\Opera beta
+[0202/182553.055:INFO:installer_main.cc(361)] Uninstall:0
+[0202/182553.055:INFO:installer_main.cc(362)] Replace Presto installation:0
+[0202/182553.055:INFO:installer_main.cc(363)] Silent:1
+[0202/182553.055:INFO:installer_main.cc(364)] Run Immediately0
+[0202/182553.055:INFO:installer_main.cc(365)] Backend1
+[0202/182553.055:INFO:installer_main.cc(366)] Inside package1
+[0202/182553.055:INFO:installer_main.cc(367)] Autoupdate:1
+[0202/182553.055:INFO:settings.cc(507)] Found 5 paths for standalone install mode.
+[0202/182553.055:INFO:rc_l10n_handler.cc(131)] Language not in the available languages list: 
+[0202/182553.055:INFO:rc_l10n_handler.cc(137)] Trying language from system preferred list: es-ES
+[0202/182553.055:INFO:rc_l10n_handler.cc(180)] Retrying after adjustments: es
+[0202/182553.064:ERROR:utils.cc(435)] Couldn't find path to taskbar pins.
+[0202/182553.064:ERROR:utils.cc(435)] Couldn't find path to taskbar pins.
+[0202/182553.065:INFO:settings.cc(954)] Install folder set: C:\Program Files (x86)\Opera beta
+[0202/182553.065:INFO:settings.cc(985)] Operation: 2
+[0202/182553.066:INFO:installer.cc(217)] Beginning installation
+[0202/182553.066:INFO:installer.cc(460)] Write privileges for install folder: 1
+[0202/182553.066:INFO:installer.cc(574)] Read root files list
+[0202/182553.067:INFO:installer.cc(1602)] Removing installed files.
+[0202/182553.658:INFO:installer.cc(1592)] Removing old files from installation root
+[0202/182553.674:INFO:installer.cc(772)] Installing the launcher
+[0202/182553.691:WARNING:installer.cc(812)] Tracking data path specified on command line invalid
+[0202/182553.692:INFO:installer.cc(934)] Cleaning up registry
+[0202/182553.694:INFO:installer.cc(841)] Setting up the registry
+[0202/182553.698:INFO:installer.cc(1059)] Updating shortcuts
+[0202/182554.007:INFO:installer.cc(1267)] Writing installer prefs toC:\Program Files (x86)\Opera beta\installer_prefs.json
+[0202/182554.007:INFO:installer.cc(1359)] Preserving previous installer status.
+[0202/182554.008:INFO:installer.cc(1666)] Installing Components
+[0202/182554.023:INFO:installer.cc(1824)] Creating scheduled task
+[0202/182557.873:INFO:installer.cc(2152)] Finalizing successful installation
+[0202/182557.874:INFO:installer.cc(2328)] Installation succeeded
+[0202/182557.874:INFO:installer_runner_backend.cc(99)] Installer backend exiting

@@ -1,0 +1,37 @@
+<div layout="row" flex="100" style="padding:0px !important; margin-top: 0px !important">
+  
+  <div layout="column" style="border: solid blue 0px" flex="100">
+
+    <div ng-show="pdfobj.mostrar" layout="column" style="border: solid red 0px; margin-bottom: 0px !important">
+      
+      <md-input-container class="md-block" style="border: solid blue 0px;">
+        <label>PDF RAW</label>
+        <textarea ng-model="pdfobj.base64" rows="5" md-select-on-focus md-no-autogrow></textarea>
+      </md-input-container>
+        
+      <div layout="row">
+        <md-button class="md-raised md-accent" ng-click="cargarPDF()">genera pdf</md-button>
+        <md-button class="md-raised md-accent" ng-click="enviarSoap()">soap</md-button>
+      </div>
+
+    </div>
+
+    
+    
+    <md-card ng-hide="pdfobj.mostrar">
+
+      <md-input-container ng-hide="pdfobj.mostrar" class="md-block" flex-gt-sm>
+        <md-button class="md-raised md-accent" ng-click="limpiarFormulario()">Cargar otro</md-button>
+      </md-input-container>
+
+      <pdf-viewer
+          delegate-handle="my-pdf-container"
+          scale="1"
+          show-toolbar="true"
+          headers="{ 'x-you-know-whats-awesome': 'EVERYTHING' }">
+      </pdf-viewer>
+
+    </md-card>
+  </div>
+        
+</div>

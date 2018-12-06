@@ -1,0 +1,68 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="modal-title">
+    PREVALIDACION SIJAI
+    </h5>
+</div>
+<div class="modal-body" id="modal-body">
+   <div class="panel panel-primary" ng-show="$aCtrl.form_carga_visible">
+      <div class="panel-heading">
+            <h3 class="panel-title">Datos del CSV</h3>
+      </div>
+      <div class="panel-body">
+      <div class="form-group">
+          <label>Fecha Lote: <span class="muted-text">(<em>sumar 5 dias habiles</em>)</span></label>
+          <p class="input-group">
+            <input type="text" class="form-control" uib-datepicker-popup ng-model="dt" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" ng-change="calcularFechas()" />
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </p>
+        </div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <span class="badge">{{$aCtrl.fecha_const_calc | amDateFormat : 'DD-MM-YYYY'}}</span>
+          -60 dias: constatacion
+        </li>
+        <li class="list-group-item">
+          <span class="badge">{{$aCtrl.fecha_venc_calc | amDateFormat : 'DD-MM-YYYY'}}</span>
+          +45 dias: vencimiento
+        </li>
+      </ul>
+      <div class="p+ pt0">
+          <lx-file-input lx-label="Seleccionar CSV..." lx-callback="$aCtrl.manageFile(newFile)"></lx-file-input>
+      </div>
+        <label for="exampleInputFile">Cargar archivo CSV</label>
+      <input type="file" id="exampleInputFile" on-read-file="leerCSV(contents)">
+        <ul class="list-group">
+          <li class="list-group-item">
+              <span class="badge">{{$aCtrl.nro_lote}}</span>
+                Lote N° 
+           </li>
+          <li class="list-group-item">
+              <span class="badge">{{$aCtrl.CSV_filename || 'No hay CSV cargado'}}</span>
+                Nombre 
+           </li>
+           <li class="list-group-item">
+              <span class="badge">{{$aCtrl.registros_totales || 0}}</span>
+                Registros totales 
+           </li>
+           
+        </ul>
+      </div>
+  </div>
+  <div class="panel panel-primary" ng-show="$aCtrl.result_visible">
+        <div class="panel-heading">
+        <h3 class="panel-title">Resultados</h3>
+        </div>
+        <div class="panel-body">
+          <div  ng-include="$aCtrl.result_template_url"></div>
+        </div>
+      </div>
+  </div>
+<div class="modal-footer">
+    
+      <div style="width:100%; height:100%">
+        <button type="button" class="btn btn-primary btn-lg" ng-click="procesarLote()" ng-disabled="vm.btnProcesarDisabled">Procesar lote</button>
+      
+    </div>
+</div>

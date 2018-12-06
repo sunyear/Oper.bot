@@ -1,0 +1,384 @@
+<style>
+
+  .material-icons.md-12 { font-size: 12px; }
+  .material-icons.md-18 { font-size: 18px; }
+  .material-icons.md-24 { font-size: 24px; }
+  .material-icons.md-36 { font-size: 36px; }
+  .material-icons.md-48 { font-size: 48px; }
+  
+  .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+  .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+  .material-icons.orange600 { color: #FB8C00; }
+  .material-icons.black { color: #000000; }
+  .material-icons.red {color: rgb(249, 44, 44);}
+  .material-icons.green_big {color: rgb(36, 191, 1);}
+  .material-icons.yellow {color: rgb(247, 123, 14)}
+  .material-icons.gray { color: rgb(178, 176, 176); }
+
+  .md-16 { font-size: 16px; }
+  .md-16.red {color: rgb(249, 44, 44);}
+  .md-16.green_big {color: rgb(36, 191, 1);}
+  .md-16.orange600 { color: #FB8C00; }
+  .md-16.yellow {color: rgb(247, 123, 14)}
+  
+  .full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+  }
+
+  .partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+  }
+
+  .marco {
+    /*position: relative;*/
+    padding: 45px 15px 15px;
+    margin: 0 -15px 15px;
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0;
+    -webkit-box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+    box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+  }
+
+  .item-menu-activo {
+    background-color: rgb(3, 155, 229);  
+  }
+  .item-menu-activo md-icon   {
+    
+    color: #FFF !important;
+  }
+  .item-menu-activo > div h3 {
+    color: #FFF !important;
+    font-weight: bold !important;
+  }
+
+  #item-menu {
+    color: #FFF !important;
+  }
+
+  .md-sidenav-head {
+    background-color: #263238;
+    color: rgb(108, 112, 120);
+    font-size: 12px !important;
+  }
+
+
+  md-list-item {
+  height: 2em;
+  min-height: initial;   
+  }
+
+  md-list-item + md-divider{
+    border-top-color: rgb(100, 100, 100) !important;
+  }
+  
+
+  md-sidenav, md-sidenav.md-locked-open, md-sidenav.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 50vw !important;
+  max-width: 200px !important;
+  }
+
+
+  #style-3::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar-thumb
+{
+  background-color: #000000;
+}
+
+.header-toolbar {
+    margin: 0px;
+    font-weight: bolder;
+    font-size: 16px;
+    color: rgb(38, 50, 56);
+  }
+
+  .header-toolbar-subtitle {
+    margin: 0px;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgb(38, 50, 56);
+  }
+
+
+md-checkbox .md-icon {
+  transform: scale(.7);
+}
+
+md-checkbox {padding: 0px !important; margin: 0px !important;}
+  
+  .md-label {
+    margin-left: 5px !important;
+  }
+}
+
+md-checkbox.md-checked.red .md-icon {
+ background-color: rgb(0, 0, 0);
+ border-color: rgb(0, 0, 0);
+}
+
+
+
+md-checkbox.dotted .md-icon {
+ border-width: 1px;
+ border-style: solid;
+ border-color: lightgray;
+}
+
+
+  md-checkbox.md-checked.red .md-icon {
+ background-color: rgb(0, 0, 0);
+ border-color: rgb(0, 0, 0);
+}
+
+md-checkbox .md-container:after {box-sizing: border-box;
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+.highlight {
+  
+  font-weight: 600;
+  color: #000 !important;
+}
+
+.widget-info {
+    background-color: rgba(38, 50, 56, .8);
+    width: 98% !important;
+  }
+
+.widget-info-text-head, .widget-info-text-subhead {
+    color: rgba(255, 255, 255, .6);
+  }
+
+  .widget-info-text-head {
+    font-weight: 600;
+    margin-bottom: 0px;
+    color: rgba(255, 255, 255, .8);
+    font-size: 16px;
+  }
+
+  .widget-info-text-subhead {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+   .version {
+     color: rgba(255, 255, 255, .5);
+  }
+
+  .estado_exito   {
+     color: rgba(0, 255, 0, .7);
+  }
+
+  .estado_error {
+     color: rgba(255, 255, 255, .7);
+     font-weight: 600;
+      font-size: 1.2em !important;
+  }
+
+  .estado_pendiente  {
+     color: rgba(255, 255, 255, .7);
+     font-size: 1.2em !important;
+  }
+
+  .f_actualizacion {
+    color: rgba(200, 200, 200, .8);
+    font-style: normal;
+    font-size: 0.8em !important;
+  }
+
+  .estado_version {
+    color: yellow;
+    font-style: normal;
+    font-size: 0.8em !important;
+  }
+
+  
+  .estado_cp_fondo_error{
+    background: linear-gradient(to right, rgba(255,255,255,0.5),rgba(255,255,255,0.5), rgba(200,0,0,0.5)) !important;
+   
+  }
+
+  .estado-cp-fondo-exito{
+    background: linear-gradient(to right, rgba(255,255,255,0.5),rgba(255,255,255,0.5), rgba(0,200,0,0.5)) !important;
+  }
+
+  .estado_cp_fondo_pendiente{
+    background: linear-gradient(to right, rgba(255,255,255,0.1),rgba(255,255,255,0.1), rgba(200,200,200,0.5)) !important;
+  }
+
+  .estado_cp_string_error {
+    color: rgba(190, 20, 20, 0.6) !important;
+    font-weight: 600;
+    font-size: 1.1em !important;
+  }
+
+  .estado-cp-string-exito {
+    color: rgba(10, 170, 10, 1) !important;
+    font-weight: 600;
+    font-size: 1.1em !important;
+  }
+
+  .estado_cp_string_pendiente {
+    color: rgba(130, 130, 130, 1) !important;
+    font-weight: 600;
+    font-size: 1.1em !important;
+  }
+
+  md-menu-item {
+    font-size: 0.1em !important;
+  }
+
+
+  .md-button.md-small {
+    min-width: 1% !important;
+    font-size: 0.8em !important;
+  }
+
+
+.table > thead > tr > th {
+  vertical-align: middle; }
+
+.margin-bottom-basic {
+  margin-bottom: 15px; }
+
+.pagination {
+  margin: 0; }
+
+.items-per-page {
+  margin-left: 15px; }
+
+.sortable:after {
+  font: 14px/1 FontAwesome;
+  content: "\f0dc"; }
+
+.sortable.sort-ascent:after {
+  content: '\f0de';
+  vertical-align: bottom; }
+
+.sortable.sort-descent:after {
+  content: "\f0dd";
+  vertical-align: top; }
+
+
+
+#toolbar_ejecutar md-toolbar{
+  min-height: 64px !important;
+  padding: 5px !important;
+}
+
+
+ md-radio-button.radio-version .md-label {
+  margin-left: 40px !important;
+}
+
+md-input-container.lll .md-input{
+  border: 0px !important;
+}
+
+
+</style>
+
+
+
+<!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
+<md-dialog aria-label="Mango (Fruit)" flex="30">
+    
+      <md-toolbar id="toolbar_ejecutar">
+        <div class="md-toolbar-tools" style="margin: 0px !important" flex>
+          <span flex style="font-size: 12px !important; color: white; font-weight: 600;padding: 0px !important">Finalizar reproduccion: {{vm.reproduccion.titulo_reproduccion}}</span>
+          <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="vm.cancelarDialogo($mdMenu, $event)" style="line-height: 20px !important; padding: 0px !important; margin: 0px !important">
+                        <md-icon class="material-icons md-20 toolbar-gray" style="line-height: 20px !important; min-height: 20px !important">close</md-icon>
+                      </md-button>
+        </div>
+
+      </md-toolbar>
+      <md-dialog-content layout-padding flex style="background-color: rgba(38, 50, 56, .1); border-bottom: solid 1px lightgray" layout="column">
+
+          <div layout="column" flex="100">
+            
+            <div layout="row" layout-align="center center" flex style="border: solid 1px lightgray;padding: 0px !important">
+                  <div layout="row" layout-align="center center"  flex="50" class="layout-padding layaout-fill layout-margin" style="padding: 0px !important; border: solid 0px red;">
+                    <md-input-container >
+                      <md-radio-group  style="margin-right:20px;" layout="row" layour="start center" name="version_sijai" ng-model="vm.reproduccion.version_sijai" required>
+                        <md-radio-button value="true" class="md-warn radio-version" style="color: #FF5722"><md-icon class="material-icons md-48 green_big" style="line-height: 20px !important; min-height: 20px !important">check_circle</md-icon></md-radio-button>
+                      </md-radio-group>
+                    </md-input-container>
+                  </div>
+                  <div layout="row"  layout-align="center center" flex="50" class="layout-padding layaout-fill layout-margin" style="padding: 0px !important;  border: solid 0px red;">
+                    <md-input-container >
+                      <md-radio-group style="margin-right:20px;" layout="row" layour="start center" name="version_sijai" ng-model="vm.reproduccion.version_sijai" required>
+                        <md-radio-button layout="column" value="false" class="md-warn radio-version" style="color: #FF5722">
+                          <md-icon class="material-icons md-48 red" style="line-height: 20px !important; min-height: 20px !important">highlight_off</md-icon>
+                        </md-radio-button>
+                      </md-radio-group>
+                    </md-input-container>
+                  </div>
+          </div>
+          
+          <div layout="column" flex="100">
+            <div style="background-color: rgba(38, 50, 56, .1) !important;padding: 2px !important; border-bottom: solid 1px lightgray">
+              <span style="font-weight: 600;">Observaciones</span>
+            </div>
+            <div layout="column" flex style="border: solid 1px lightgray;padding: 0px !important">
+                  <div  layout="row" class="layout-padding layaout-fill layout-margin" flex style="padding: 0px !important; ">
+
+                    <md-input-container flex class="lll" style="padding: 0px !important; overflow-y: auto !important; width:200px">
+                      <form name="userForm">
+                        <textarea  style="padding: 0px !important; margin: 0px !important" ng-model="vm.reporte.descripcion" rows="2" aria-label="descripcion" ng-trim="false" focus-on="focusMe"></textarea>
+                      </form>
+                    </md-input-container>
+                  </div>
+                </div>
+        
+          </div>
+
+          <md-input-container ng-if="false" class="md-block" flex-gt-sm>
+            <label>Seleccionar version SIJAI</label>
+            <md-select ng-model="vm.reproduccion.version_sijai">
+              <md-option value="3.1.0 RC1">3.1.0 RC1</md-option>
+              <md-option value="3.1.0 RC2">3.1.0 RC2</md-option>
+              <md-option value="3.1.0 RC3">3.1.0 RC3</md-option>
+              <md-option value="3.1.0 RC4">3.1.0 RC4</md-option>
+            </md-select>
+          </md-input-container>
+        
+            
+      </md-dialog-content>
+      
+      <md-dialog-actions layout="row">
+        <md-button class="md-raised md-warn" ng-click="vm.guardarReproduccion( true )">
+         finalizar
+        </md-button>
+        <md-button ng-class="" ng-click="vm.cancelarDialogo()">
+         cancelar
+        </md-button>
+      </md-dialog-actions>
+
+    </md-dialog>

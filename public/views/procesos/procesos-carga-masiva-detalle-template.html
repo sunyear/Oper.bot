@@ -1,0 +1,836 @@
+<style>
+
+  .material-icons.md-12 { font-size: 12px; }
+  .material-icons.md-12 { font-size: 14px; }
+  .material-icons.md-18 { font-size: 18px; }
+  .material-icons.md-20 { font-size: 20px; }
+  .material-icons.md-24 { font-size: 24px; }
+  .material-icons.md-36 { font-size: 36px; }
+  .material-icons.md-48 { font-size: 48px; }
+  
+  .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+  .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+  .material-icons.orange600 { color: #FB8C00; }
+  .material-icons.black { color: #000000; }
+  .material-icons.red {color: rgb(249, 44, 44);}
+  .material-icons.green_big {color: rgb(36, 191, 1);}
+  .material-icons.yellow {color: rgb(247, 123, 14)}
+  .material-icons.gray { color: rgb(178, 176, 176);}
+    .material-icons.toolbar-gray {color: rgba(0, 0, 0, 0.5);}
+    .material-icons.toolbar-grayActivado {color: rgba(211, 47, 47, 1);}
+    .material-icons.toolbar-mailActivado {color: rgba(156, 39, 176, 1);}
+    .material-icons.toolbar-checkActivado {color: rgba(27, 150, 33, 1);}
+    .material-icons.toolbar-iconoDesactivado {color: rgba(0, 0, 0, 0.2);}
+
+  .md-16 { font-size: 16px; }
+  .md-16.red {color: rgb(249, 44, 44);}
+  .md-16.green_big {color: rgb(36, 191, 1);}
+  .md-16.orange600 { color: #FB8C00; }
+  .md-16.yellow {color: rgb(247, 123, 14)}
+  
+  .full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+  }
+
+  .partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+  }
+
+  .marco {
+    /*position: relative;*/
+    padding: 45px 15px 15px;
+    margin: 0 -15px 15px;
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0;
+    -webkit-box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+    box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+  }
+
+  .item-menu-activo {
+    background-color: rgb(3, 155, 229);  
+  }
+  .item-menu-activo md-icon   {
+    
+    color: #FFF !important;
+  }
+  .item-menu-activo > div h3 {
+    color: #FFF !important;
+    font-weight: bold !important;
+  }
+
+  #item-menu {
+    color: #FFF !important;
+  }
+
+  .md-sidenav-head {
+    background-color: #263238;
+    color: rgb(108, 112, 120);
+    font-size: 12px !important;
+  }
+
+
+  md-list-item {
+  height: 2em;
+  min-height: initial;   
+  }
+
+  md-list-item + md-divider{
+    border-top-color: rgb(100, 100, 100) !important;
+  }
+  
+
+  md-sidenav, md-sidenav.md-locked-open, md-sidenav.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 50vw !important;
+  max-width: 200px !important;
+  }
+
+
+  #style-3::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar-thumb
+{
+  background-color: #000000;
+}
+
+.header-toolbar {
+    margin: 0px;
+    font-weight: bolder;
+    font-size: 16px;
+    color: rgb(38, 50, 56);
+  }
+
+  .header-toolbar-subtitle {
+    margin: 0px;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgb(38, 50, 56);
+  }
+
+
+md-checkbox .md-icon {
+  transform: scale(.7);
+}
+
+md-checkbox {padding: 0px !important; margin: 0px !important;}
+  
+  .md-label {
+    margin-left: 5px !important;
+  }
+}
+
+md-checkbox.md-checked.red .md-icon {
+ background-color: rgb(0, 0, 0);
+ border-color: rgb(0, 0, 0);
+}
+
+
+
+md-checkbox.dotted .md-icon {
+ border-width: 1px;
+ border-style: solid;
+ border-color: lightgray;
+}
+
+
+  md-checkbox.md-checked.red .md-icon {
+ background-color: rgb(0, 0, 0);
+ border-color: rgb(0, 0, 0);
+}
+
+md-checkbox .md-container:after {box-sizing: border-box;
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+.highlight {
+  
+  font-weight: 600;
+  color: #000 !important;
+}
+
+.widget-info {
+    background-color: rgba(38, 50, 56, .8);
+    width: 98% !important;
+  }
+
+.widget-info-text-head, .widget-info-text-subhead {
+    color: rgba(255, 255, 255, .6);
+  }
+
+  .widget-info-text-head {
+    font-weight: 600;
+    margin-bottom: 0px;
+    color: rgba(255, 255, 255, .8);
+    font-size: 16px;
+  }
+
+  .widget-info-text-subhead {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+   .version {
+     color: rgba(255, 255, 255, .5);
+  }
+
+  .estado_exito   {
+     color: rgba(0, 255, 0, .7);
+  }
+
+  .estado_error {
+     color: rgba(255, 255, 255, .7);
+     font-weight: 600;
+      font-size: 1.2em !important;
+  }
+
+  .estado_pendiente  {
+     color: rgba(255, 255, 255, .7);
+     font-size: 1.2em !important;
+  }
+
+  .f_actualizacion {
+    color: rgba(200, 200, 200, .8);
+    font-style: normal;
+    font-size: 0.8em !important;
+  }
+
+  .estado_version {
+    color: yellow;
+    font-style: normal;
+    font-size: 0.8em !important;
+  }
+
+  
+  .estado_cp_fondo_error{
+    background: linear-gradient(left, rgba(255,255,255,0.5),rgba(255,255,255,0.5), rgba(200,0,0,0.5)) !important;
+   
+  }
+
+  .estado-cp-fondo-exito{
+    background: linear-gradient(left, rgba(255,255,255,0.5),rgba(255,255,255,0.5), rgba(0,200,0,0.5)) !important;
+  }
+
+  .estado_cp_fondo_pendiente{
+    background: linear-gradient(left, rgba(255,255,255,0.1),rgba(255,255,255,0.1), rgba(200,200,200,0.5)) !important;
+  }
+
+  .estado_cp_string_error {
+    color: rgba(190, 20, 20, 0.6) !important;
+    font-weight: 600;
+    font-size: 1.1em !important;
+  }
+
+  .estado-cp-string-exito {
+    color: rgba(10, 170, 10, 1) !important;
+    font-weight: 600;
+    font-size: 1.1em !important;
+  }
+
+  .estado_cp_string_pendiente {
+    color: rgba(130, 130, 130, 1) !important;
+    font-weight: 600;
+    font-size: 1.1em !important;
+  }
+
+  md-menu-item {
+    font-size: 0.1em !important;
+  }
+
+
+  .md-button.md-small {
+    min-width: 1% !important;
+    font-size: 0.8em !important;
+  }
+
+
+  md-chip {
+  font-size: 0.7em !important;
+  height: 20px !important;
+  width: auto !important;
+  line-height: 20px !important;
+  border: solid 0px red;
+  border-radius: 0px !important;
+  box-shadow: 0 0px !important;
+}
+
+md-chip.md-chip-ejecucion-rc {
+  background-color: #FF5722 !important;
+  color: white !important;
+}
+
+.md-chips { box-shadow: none !important; padding: 0 !important;}
+
+
+.md-chips md-chip .md-chip-remove {
+      width: 20px !important;
+      height: 20px !important;
+     }
+      .md-chips md-chip .md-chip-remove md-icon {
+        height: 15px !important;
+        width: 15px !important;}
+
+md-autocomplete {
+  /*min-width : 400px !important;*/
+  width: 100% !important;
+}
+
+
+.table > thead > tr > th {
+  vertical-align: middle; }
+
+.margin-bottom-basic {
+  margin-bottom: 15px; }
+
+.pagination {
+  margin: 0; }
+
+.items-per-page {
+  margin-left: 15px; }
+
+.sortable:after {
+  font: 14px/1 FontAwesome;
+  content: "\f0dc"; }
+
+.sortable.sort-ascent:after {
+  content: '\f0de';
+  vertical-align: bottom; }
+
+.sortable.sort-descent:after {
+  content: "\f0dd";
+  vertical-align: top; }
+
+
+.cp-descr-not-null {
+  font-style: italic; 
+  font-weight: 500; 
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.6rem;
+}
+
+.cp-descr-null {
+  font-style: normal; 
+  font-weight: 400; 
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 1.6rem;
+  text-align: center !important;
+  align-content: center !important;
+}
+
+.cd-descr-editando {
+  color: rgba(0, 0, 0, 0.3);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+
+md-input-container.lll .md-input{
+  border: 0px !important;
+}
+
+
+.md-toolbar {
+  display: block !important;
+  /*height: 25px !important;*/
+  line-height: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  background-color: #3F51B5 !important; 
+  padding-left: 10px !important;
+}
+
+.md-toolbar .md-toolbar-title{
+  font-size: 16px;
+  font-color: #101;
+}
+
+.card-header {
+  padding: 5px !important;
+  background-color: rgb(247, 247, 247);
+  
+}
+
+.card-header-toolbar {
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.dense-item-list {
+  max-height: 20px !important;
+  
+  min-height: 32px !important;
+}
+
+.md-toolbar-tools-card {
+  color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(247, 247, 247) !important;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.010em;
+  line-height: 1.2em;
+  height: 36px;
+  min-height: 36px;
+  max-height: 36px;
+  padding-right: 0;
+}
+
+
+.toolbar-header-title {
+  font-size: 14px !important;
+  font-weight: 600;
+}
+
+.toolbar-header-subtitle {
+  font-size: 12px !important;
+  font-weight: 300;
+}
+.md-toolbar-tools > div {
+  /*border: solid 1px green;*/
+}
+
+  .tipos_proceso_aceptar{
+    background: linear-gradient(to left, rgba(255,255,255,0.5),rgba(239, 108, 0,0.1), rgba(239, 108, 0,0.5)) !important;
+   
+  }
+
+  .tipos_proceso_calidad{
+    background: linear-gradient(to left, rgba(255,255,255,0.5),rgba(21, 101, 192,0.1), rgba(21, 101, 192,0.5)) !important;
+  }
+
+  .tipos_proceso_no-notificada{
+    background: linear-gradient(to left, rgba(255,255,255,0.5),rgba(255, 235, 59,0.1), rgba(255, 235, 59,0.5)) !important;
+  }
+
+  .estado_cp_fondo_pendiente{
+    background: linear-gradient(to right, rgba(255,255,255,0.1),rgba(255,255,255,0.1), rgba(200,200,200,0.5)) !important;
+  }
+
+  .md_list_item_c_nota {
+    min-height: 65px !important;
+    
+      
+  }
+
+  .md_list_item_s_nota {
+    min-height: 50px !important;
+    line-height: 50px !important;
+  }
+
+  .fila_nueva_edicion {
+    /*background-color: rgba(239, 108, 0,0.1);*/
+    
+    border: outset 2px;
+    /*border-color: #0288D1;*/
+    margin: 2px 5px 2px 5px;
+    background-color: rgb(247, 247, 247);
+
+  }
+
+</style>
+
+
+
+<!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
+    <md-content id="contenedor">
+        
+          
+  
+            <md-card flex>
+
+              
+
+
+              <md-card-content style="padding: 0 !important">
+                <div layout="row" flex style="">
+                    <md-button class="md-icon-button" ng-click="vm.cancelarDialogo()">
+                      <md-icon class="material-icons md-24 red">arrow_back</md-icon>
+                    </md-button>
+            
+           
+                    <div layout="row" layout-align="end center" flex>
+             
+                      <md-button class="md-icon-button" ng-click="vm.guardar( )">
+                        <md-icon class="material-icons md-24" style="color: #303F9F">save</md-icon>
+                      </md-button>
+              
+                    </div>
+                  </div>
+                  <div flex="100" layout="row" style="padding: 0 10px 0 10px;border: solid 0px red"  layout-align="center center">
+
+                    <div layout="row" flex="50" style="border: solid 0px blue">
+                    <md-input-container class="md-block" flex-gt-sm style="">
+                      <label style="font-size: 16px !important; color: gray; font-weight: 600;">Fecha</label>
+                      <md-datepicker ng-model="vm.obj_vista_modelo.cabecera.fecha_proceso"></md-datepicker>
+                    </md-input-container>
+                  </div>
+                    <div layout="row" flex="50" style="border: solid 0px red">
+                      <md-input-container class="md-block" flex-gt-sm style="">
+                        <label style="font-size: 16px !important; color: gray; font-weight: 600;">Tipo</label>
+                        <md-select ng-model="vm.obj_vista_modelo.cabecera.tipo_proceso">
+                          <md-option value="CARGA MASIVA">
+                            Carga masiva
+                          </md-option>
+                          <md-option value="REPROCESO">
+                            Reproceso
+                          </md-option>
+                        </md-select>
+                      </md-input-container>
+                  </div>
+                  
+                </div>
+
+                <!-- COMPONENTE REMITOS/LOTES -->
+                <div layout="column" flex>
+                    <md-card flex="100" >
+
+                      <md-toolbar style="min-height: 36px;">
+
+                        <div  class="md-toolbar-tools md-toolbar-tools-card" layout="row" layout-fill>
+                                      
+                            <div layout="row" flex="grow" class="card-header-toolbar">
+                                <span md-truncate flex>Lotes</span>  
+                            </div>
+
+                            <!--
+                            <div layout="row" class="md-toolbar-tools-card" flex="nogrow" ng-if="!vm.lotes_remitos[0].editar">
+                              <md-button class="md-icon-button md-mini toolbar-gray">
+                                <md-icon class="material-icons md-16 toolbar-gray" ng-click="vm.crearLote()">add</md-icon>
+                              </md-button>
+                            </div>
+                            -->
+
+                            <div class="menu-demo-container" layout="row">
+
+                              <md-menu ng-if="!vm.lotes_remitos[0].editar" md-position-mode="target-right target">
+                                <md-button  class="md-icon-button toolbar-gray">
+                                  <md-icon class="material-icons md-16 toolbar-gray" ng-click="vm.openMenu($mdMenu, $event)">filter_list</md-icon>
+                                </md-button>
+                                <md-menu-content width="4">
+                                  <md-menu-item>
+                                    <md-button ng-click="vm.filtrarDetalle(1)">
+                                      Filtrar no-notificadas
+                                    </md-button>
+                                  </md-menu-item>
+                                  <md-menu-item>
+                                    <md-button ng-click="vm.filtrarDetalle(2)">
+                                      Filtrar calidad
+                                    </md-button>
+                                  </md-menu-item>
+                                  <md-menu-item>
+                                    <md-button ng-click="vm.filtrarDetalle(3)">
+                                      Filtrar aceptar
+                                    </md-button>
+                                  </md-menu-item>
+                                  <md-menu-item>
+                              <md-menu style="padding: 0 !important">
+                                  <md-menu-item style="">
+                                 <md-button ng-click="ctrl.announceClick($index)">
+                  <div layout="row">
+                    <p flex>Zona</p>
+                    <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">keyboard_arrow_right</md-icon>
+                  </div>
+              </md-button>
+                      </md-menu-item>
+                      <md-menu-content>
+                        <md-menu-item>
+                          <md-button ng-click="vm.filtrarDetalle(3, $event)">
+                            <md-icon class="material-icons md-18">{{menu_item.icon}}</md-icon>Todos
+                          </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                          <md-button ng-click="vm.filtrarDetalle(1, $event)">
+                            <md-icon class="material-icons md-18">{{menu_item.icon}}</md-icon>Norte
+                          </md-button>
+                        </md-menu-item>
+
+                        <md-menu-item>
+                          <md-button ng-click="vm.filtrarDetalle(2, $event)">
+                            <md-icon class="material-icons md-18">{{menu_item.icon}}</md-icon>Sur
+                          </md-button>
+                        </md-menu-item>
+                      </md-menu-content>
+                     
+                              </md-menu>
+                            </md-menu-item>
+                                </md-menu-content>
+                              </md-menu>
+
+
+                              <md-menu ng-if="!vm.lotes_remitos[0].editar" md-position-mode="target-right target">
+                                <md-button  class="md-icon-button toolbar-gray">
+                                  <md-icon class="material-icons md-16 toolbar-gray" ng-click="vm.openMenu($mdMenu, $event)">add</md-icon>
+                                </md-button>
+                                <md-menu-content width="4">
+                                  <md-menu-item>
+                                    <md-button>
+                                    <input class="ng-hide" id="input-file-id" name="files[]" multiple type="file" on-read-file="vm.leerCSV( contents )"/>
+                                     <label for="input-file-id" class="" style="font-size: 12px !important">Desde CSV</label>
+                                    </md-button>
+                                  </md-menu-item>
+                                  <md-menu-divider></md-menu-divider>
+                                  <md-menu-item>
+                                    <md-button ng-click="vm.crearLote(null, true)">
+                                      Carga manual
+                                    </md-button>
+                                  </md-menu-item>
+                                </md-menu-content>
+                              </md-menu>
+
+
+
+                          </div>
+
+
+                            <div layout="row" class="md-toolbar-tools-card" flex="nogrow" ng-if="vm.lotes_remitos[0].editar">
+                                <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
+                                  <md-icon class="material-icons md-24 green_big" ng-click="vm.actualizarItem()">check_circle</md-icon>
+                                </md-button>
+                                <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
+                                  <md-icon class="material-icons md-24 red" ng-click="vm.cancelarEdicionItem(false)">cancel</md-icon>
+                                </md-button>
+                            </div>
+                        </div>
+
+                      </md-toolbar>                    
+                        
+                        <div >
+                        <md-list class="md-dense" style="height: 320px; overflow-y: auto;min-width: 100% !important">
+                          
+                          
+                          <md-list-item  ng-repeat="paso in vm.obj_vista_modelo.detalle track by $index" class="dense-item-list" ng-class="vm.setearCssFila( $index )" ng-if="paso.uid !== 'D'" flex="100">
+
+                          <div  layout="column" flex style="height: auto !important; border-bottom: 0px solid lightgray">
+                            
+                            <div layout="row">
+                             <!-- CAMPOS VISTA -->
+
+
+                              <div ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" style="margin-right:5px" >{{($index + 1) + ' -'}}</div>
+                              <md-icon ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="material-icons md-18 toolbar-gray" style="margin-right:5px" ng-click="vm.borrarItem($index, false)">delete</md-icon>
+                              <md-checkbox style="margin-right:0; margin-left: 0" ng-if="" class="md-primary"></md-checkbox>
+                              
+                              <div ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" style="font-weight: bolder; margin-right: 5px" flex>
+                                <span style="font-size:13px;">{{paso.remito}}</span>
+                              </div>
+
+                              <md-truncate ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" flex>
+                                <span style="font-size:12px">{{paso.lote}}</span>
+                              </md-truncate>
+
+
+                              <md-truncate ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" flex>
+                                <span style="font-size:12px">{{paso.actas}}</span><span ng-show="paso.indice_no_notificada > 0" style="font-size:12px"> ({{paso.indice_no_notificada}}%)</span>
+                              </md-truncate>
+
+
+                              <md-truncate ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" flex>
+                                <span style="font-size:12px">{{paso.notificada}}</span>
+                              </md-truncate>
+
+
+                              <md-truncate ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" flex>
+                                <span style="font-size:12px">{{paso.zona}}</span>
+                              </md-truncate>
+
+
+                              <!-- CAMPOS EDITABLES -->
+
+                              <md-input-container ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="md-block" flex>
+                                 <label ng-if="false" style="font-size: 16px !important; color: gray; font-weight: 600;">Remito</label>
+                                <input md-truncate ng-model="vm.obj_vista_modelo.detalle[$index].remito">
+                              </md-input-container>
+
+                              <md-input-container ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="md-block" flex>
+                                 <label ng-if="false" style="font-size: 16px !important; color: gray; font-weight: 600;">Lote</label>
+                                <input md-truncate ng-model="vm.obj_vista_modelo.detalle[$index].lote">
+                              </md-input-container>
+
+                              <md-input-container ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="md-block" flex>
+                                 <label ng-if="false" style="font-size: 16px !important; color: gray; font-weight: 600;">actas</label>
+                                <input md-truncate ng-model="vm.obj_vista_modelo.detalle[$index].actas">
+                              </md-input-container>
+
+                              <md-input-container ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="md-block" flex>
+                                 <label ng-if="false" style="font-size: 16px !important; color: gray; font-weight: 600;">Notificada</label>
+                                <md-select ng-model="vm.lotes_remitos[0].items[$index].notificada">
+                                  <md-option value="no">
+                                    NO
+                                  </md-option>
+                                  <md-option value="si">
+                                    SI
+                                  </md-option>
+                                </md-select>
+                              </md-input-container>
+
+                              <md-input-container ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="md-block" flex>
+                                 <label ng-if="false" style="font-size: 16px !important; color: gray; font-weight: 600;">Zona</label>
+                                <md-select ng-model="vm.lotes_remitos[0].items[$index].zona">
+                                  <md-option value="norte">
+                                    Norte
+                                  </md-option>
+                                  <md-option value="sur">
+                                    Sur
+                                  </md-option>
+                                </md-select>
+                              </md-input-container>
+                              <!-- FIN CAMPOS EDITABLES -->                
+
+                              <!--
+                              <md-button ng-show="vm.lotes_remitos[0].item_visible == $index && !vm.lotes_remitos[0].editar" class="md-icon-button md-secondary">
+                                <md-icon class="material-icons md-16 toolbar-gray" ng-click="vm.editarItem($index, false)">edit</md-icon>
+                            </md-button>
+
+                          -->
+
+
+                              <!--<div ng-init="colr_rech = false; colr_proc = false; colr_email = false"></div>-->
+
+                              <div ng-if="vm.obj_vista_modelo.detalle[$index].notificada == 'SI'">
+                                <md-icon style="cursor: pointer;" ng-if="!vm.lotes_remitos[0].editar || ($index !== vm.lotes_remitos[0].editar_index)" class="md-menu-origin material-icons md-20" ng-class="{'toolbar-grayActivado': paso.colr_rech, 'toolbar-iconoDesactivado': !paso.colr_rech}" ng-click="vm.rechazoProcesado($index)">cancel</md-icon>
+
+                                <md-icon style="cursor: pointer;" ng-if="!vm.lotes_remitos[0].editar || ($index !== vm.lotes_remitos[0].editar_index)" class="md-menu-origin material-icons md-20" ng-class="{'toolbar-checkActivado': paso.colr_proc, 'toolbar-iconoDesactivado': !paso.colr_proc}" ng-click=" vm.remitoProcesado($index)">check_circle</md-icon>
+                              </div>
+
+                              <div ng-if="vm.obj_vista_modelo.detalle[$index].notificada == 'NO'" style="width: 52px"></div>
+                              
+                              <div>
+                                <md-icon style="cursor: pointer;" ng-if="!vm.lotes_remitos[0].editar || ($index !== vm.lotes_remitos[0].editar_index)" class="md-menu-origin material-icons md-20" ng-class="{'toolbar-mailActivado': paso.colr_email, 'toolbar-iconoDesactivado': !paso.colr_email}" ng-click="vm.emailEnviado($index)">email</md-icon>
+                              </div>
+
+
+                           <md-menu ng-if="!vm.lotes_remitos[0].editar" md-offset="0 -5" md-position-mode="target-right bottom" style="font-size: 0.8em !important; padding: 0px !important">
+                           <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="vm.openMenu($mdMenu, $event, item, $index)">
+                              <md-icon class="md-menu-origin material-icons md-24 toolbar-gray">more_vert</md-icon>
+                            </md-button>
+                          <md-menu-content width="4">
+                            <md-menu-item>
+                              <md-button ng-click="vm.editarItem($index, falso)">Editar registro</md-button>
+                            </md-menu-item>
+                            
+                            
+                             <md-menu-item>
+                              <md-menu style="padding: 0 !important">
+                                  <md-menu-item style="">
+                                 <md-button ng-click="ctrl.announceClick($index)">
+                  <div layout="row">
+                    <p flex>Tipo envio</p>
+                    <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">keyboard_arrow_right</md-icon>
+                  </div>
+              </md-button>
+                      </md-menu-item>
+                      <md-menu-content>
+                        <md-menu-item style="background-color: #EF6C00; color: white">
+                          <md-button ng-click="vm.cambiarTipoEnvio($event, $index, 1)">
+                            <md-icon style="margin-right: 5px !important" class="material-icons md-18">{{menu_item.icon}}</md-icon>Aceptar lote
+                          </md-button>
+                        </md-menu-item>
+
+                        <md-menu-item style="background-color: #1565C0; color: white">
+                          <md-button ng-click="vm.cambiarTipoEnvio($event, $index, 2)">
+                            <md-icon style="margin-right: 5px !important" class="material-icons md-18">{{menu_item.icon}}</md-icon>Enviar lote a calidad
+                          </md-button>
+                        </md-menu-item>
+
+                        <md-menu-item style="background-color: #C62828; color: white">
+                          <md-button ng-click="vm.cambiarTipoEnvio($event, $index, 3)">
+                            <md-icon style="margin-right: 5px !important" class="material-icons md-18">{{menu_item.icon}}</md-icon>
+                            Actas no-notificadas
+                          </md-button>
+                        </md-menu-item>
+                      </md-menu-content>
+                     
+                              </md-menu>
+                            </md-menu-item>
+                            
+                            <md-menu-divider></md-menu-divider>
+                            <md-menu-item>
+                              <md-button ng-click="vm.editarNota($index)">Editar nota</md-button>
+                            </md-menu-item>
+                             <md-menu-divider></md-menu-divider>
+                            <md-menu-item>
+                              <md-button ng-click="vm.borrarItem($index, falso)">
+                                  <div layout="row" layout->
+                                    <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">delete_forever</md-icon>
+                                    <p flex>Eliminar registro</p>
+                                  </div>
+                              </md-button>
+                            </md-menu-item>
+                            
+                          </md-menu-content>
+                        </md-menu>
+                          </div>
+
+                            <div layout="row" style="padding: 0px !important">
+                              <label ng-show="(paso.nota.editar === false && paso.nota.texto !== '')" style="padding: 0!important">
+                                <md-icon style="line-height: 14px !important; padding: 0 !important; margin: 0px !important; max-height: 14px !important; max-width: 14px !important; min-height: 14px !important; min-width: 14px !important" class="md-menu-origin material-icons md-14 red">notification_important</md-icon>
+                                <span style="color: #F44336; font-size: 10px; margin: 0px !important; padding: 0px !important">{{vm.obj_vista_modelo.detalle[$index].nota.texto}}</span>
+                              </label>
+
+                              <md-input-container style="padding: 0 !important; margin: 0 !important" ng-show="paso.nota.editar" class="md-block" flex >
+                                <input type="text" name="nota" ng-model="vm.obj_vista_modelo.detalle[$index].nota.texto" style="color: gray; font-size: 10px;" ng-model-options="{updateOn : 'change blur'}" ng-change="vm.editarNota($index)">
+                              </md-input-container>
+                            </div>
+
+                          </div>
+                        <md-divider ng-if="!$last"></md-divider>
+                        </md-list-item>
+                         
+                      </md-list>
+                    </md-card>
+                  </div>
+                  </div>
+                <!-- FIN COMPONENTE PASOS -->
+
+              </md-card-content>
+              <div layout="row" style="padding: 3px !important; font-size: 11px;border: solid 0px red">
+                <div layout="column" flex style="">
+                   
+                  <div layout="row" layout-align="start center" flex="65">
+                   NORTE: {{vm.estadisticas.zona_norte.total}} { no-notif: {{vm.estadisticas.zona_norte.no_notificadas}} | aceptar: {{vm.estadisticas.zona_norte.aceptado}}/{{vm.estadisticas.zona_norte.aceptar}} | calidad: {{vm.estadisticas.zona_norte.en_calidad}}/{{vm.estadisticas.zona_norte.calidad}} | email: {{vm.estadisticas.zona_norte.email}}/{{vm.estadisticas.zona_norte.total}} } 
+                  </div>
+
+                  <div layout="row" layout-align="start center" flex>
+                   SUR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{vm.estadisticas.zona_sur.total}} { no-notif: {{vm.estadisticas.zona_sur.no_notificadas}} | aceptar: {{vm.estadisticas.zona_sur.aceptado}}/{{vm.estadisticas.zona_sur.aceptar}} | calidad: {{vm.estadisticas.zona_sur.en_calidad}}/{{vm.estadisticas.zona_sur.calidad}} | email: {{vm.estadisticas.zona_sur.email}}/{{vm.estadisticas.zona_sur.total}} }
+                  </div>
+                 
+                </div>
+              </div>
+            </md-card>
+
+
+            
+            
+          
+      
+
+     
+
+    </md-content>
+
+

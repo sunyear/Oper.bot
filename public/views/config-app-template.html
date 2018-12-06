@@ -1,0 +1,469 @@
+
+<!-- 
+	componente: actas validadas en PROCESOS -> Validar Actas
+ 	controlador: validaciones-tablero-controller.js: ValidacionesTableroController()
+	servicio: remitos-actas-service.js: remitosActasService() 
+-->
+
+<!-- CONFIG DEL TEMPLATE -->
+<style type="text/css">
+.material-icons.md-12 { font-size: 12px; }
+	.material-icons.md-18 { font-size: 18px; }
+	.material-icons.md-24 { font-size: 24px; }
+	.material-icons.md-36 { font-size: 36px; }
+	.material-icons.md-48 { font-size: 48px; }
+	.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+	.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+	.material-icons.orange600 { color: #FB8C00; }
+	.material-icons.black { color: #000000; }
+	.material-icons.red {color: rgb(255, 51, 51);}
+	.material-icons.green_big {color: rgb(36, 191, 1);}
+
+
+	#md-sidenav-val, #md-sidenav-val.md-locked-open, #md-sidenav-val.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 50vw !important;
+  max-width: 200px !important;
+  }
+md-list-item + md-divider{
+    border-top-color: rgb(100, 100, 100) !important;
+  }
+.header-toolbar {
+  	margin: 0px;
+  	font-weight: bolder;
+  	font-size: 16px;
+  	color: rgb(38, 50, 56);
+  }
+
+  .header-toolbar-subtitle {
+  	margin: 0px;
+  	font-weight: 400;
+  	font-size: 12px;
+  	color: rgb(38, 50, 56);
+  }
+
+</style>
+<!-- FIN CONFIG TEMPLATE -->
+
+
+<!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
+
+<div class="padded" md-whiteframe="2">
+	<md-toolbar>
+	    <div layout="row" class="md-toolbar-tools" style="background-color: rgb(255, 255, 255) !important;">
+	    	<div layout="row" layout-align="" flex="33">
+	    		<div  layout="column" flex>
+	    			<p class="header-toolbar">APLICACION</p>
+	    			<p class="header-toolbar-subtitle" >opciones app</p>
+	    		</div>
+	    	</div>
+	    </div>
+	</md-toolbar>
+</div>
+
+<md-card>
+	<md-card-header style="width:100%; padding:0 !important;height:30px !important">
+		<md-toolbar style="min-height: 30px; height: 30px !important;">
+		    <h2 class="md-toolbar-tools" style="font-size: 16px !important">Parametros de configuracion</h2>
+		</md-toolbar>
+	</md-card-header>
+
+   	<md-card-content>
+		    <md-tabs md-dynamic-height md-border-bottom>
+		      
+		      <md-tab label="TIPOS ACTAS">
+		        <md-content class="md-padding">
+		        	<button ng-click="vm.onClick()">Load Values</button>
+		        	asd{{vm.data}}
+		        	<md-card>
+						<md-card-content>
+				          	<div layout="row">
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>ID REMITO</label>
+										<input ng-model="items.selectedItem.lote"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>NUMERO REMITO</label>
+										<input ng-model="items.selectedItem.id_remito"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>NOTIFICAR</label>
+										<input ng-model="items.selectedItem.numero_remito"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+							</div>
+							<div layout="row">
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>TIPO ACTA</label>
+										<input ng-model="items.selectedItem.numero_remito" disabled style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>ID TIPO SIJAI</label>
+										<input ng-model="items.selectedItem.numero_remito" disabled style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>LOTE</label>
+										<input ng-model="items.selectedItem.numero_remito" disabled style="font-weight: bolder">
+									</md-input-container>
+								</div>
+							</div>
+					  	</md-card-content>
+					</md-card>
+					<md-card>
+						<md-card-content>
+				          	<div layout="row">
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>ID REMITO</label>
+										<input ng-model="items.selectedItem.lote"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>NUMERO REMITO</label>
+										<input ng-model="items.selectedItem.id_remito"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>NOTIFICAR</label>
+										<input ng-model="items.selectedItem.numero_remito"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+							</div>
+							<div layout="row">
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>TIPO ACTA</label>
+										<input ng-model="items.selectedItem.numero_remito" disabled style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>ID TIPO SIJAI</label>
+										<input ng-model="items.selectedItem.numero_remito" disabled style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>LOTE</label>
+										<input ng-model="items.selectedItem.numero_remito" disabled style="font-weight: bolder">
+									</md-input-container>
+								</div>
+							</div>
+					  	</md-card-content>
+					</md-card>
+		        </md-content>
+		      </md-tab>
+
+		      <md-tab label="CODIGOS BARRAS">
+		        <md-content class="md-padding">
+		        	<md-card>
+						<md-card-content>
+							<div layout="row">
+						<div flex>
+							<md-input-container class="md-block" flex-gt-sm>
+								<label>CODIGO MUNICIPIO</label>
+								<input ng-model="items.selectedItem.lote"  style="font-weight: bolder">
+							</md-input-container>
+						</div>
+						<div flex>
+							<md-input-container class="md-block" flex-gt-sm>
+								<label>TIPO ACTA</label>
+								<input ng-model="items.selectedItem.id_remito"  style="font-weight: bolder">
+							</md-input-container>
+						</div>
+						<div flex>
+							<md-input-container class="md-block" flex-gt-sm>
+								<label>CODIGO GRUPO</label>
+								<input ng-model="items.selectedItem.numero_remito"  style="font-weight: bolder">
+							</md-input-container>
+						</div>
+						<div flex>
+							<md-input-container class="md-block" flex-gt-sm>
+								<label>CODIGO FISCALIZACION</label>
+								<input ng-model="items.selectedItem.numero_remito"  style="font-weight: bolder">
+							</md-input-container>
+						</div>
+					</div>
+					<div layout="row">
+						<div flex>
+							<md-input-container class="md-block" flex-gt-sm>
+								<label>NUMERO PONDERADOR</label>
+								<input ng-model="items.selectedItem.lote"  style="font-weight: bolder">
+							</md-input-container>
+						</div>
+						<div flex>
+							<md-input-container class="md-block" flex-gt-sm>
+								<label>RELLENO</label>
+								<input ng-model="items.selectedItem.id_remito"  style="font-weight: bolder">
+							</md-input-container>
+						</div>
+					</div>
+						</md-card-content>
+					</md-card>
+
+					<md-card>
+						<md-card-content>
+							<div layout="row">
+						<div flex>
+							<md-input-container class="md-block" flex-gt-sm>
+								<label>NUMERO CONTRATO</label>
+								<input ng-model="items.selectedItem.lote"  style="font-weight: bolder">
+							</md-input-container>
+						</div>
+						<div flex>
+							<md-input-container class="md-block" flex-gt-sm>
+								<label>NUMERO ANTIGUEDAD</label>
+								<input ng-model="items.selectedItem.id_remito"  style="font-weight: bolder">
+							</md-input-container>
+						</div>
+						<div flex>
+							<md-input-container class="md-block" flex-gt-sm>
+								<label>ENTIDAD FISCALIZADORA</label>
+								<input ng-model="items.selectedItem.numero_remito"  style="font-weight: bolder">
+							</md-input-container>
+						</div>
+						<div flex>
+							<md-input-container class="md-block" flex-gt-sm>
+								<label>CODIGO FISCALIZACION</label>
+								<input ng-model="items.selectedItem.numero_remito"  style="font-weight: bolder">
+							</md-input-container>
+						</div>
+					</div>
+					<div layout="row">
+						<div flex>
+							<md-input-container class="md-block" flex-gt-sm>
+								<label>CODIGO_AUTORIZADORA</label>
+								<input ng-model="items.selectedItem.lote"  style="font-weight: bolder">
+							</md-input-container>
+						</div>
+						<div flex>
+							<md-input-container class="md-block" flex-gt-sm>
+								<label>CODIGO_INFRACCION</label>
+								<input ng-model="items.selectedItem.id_remito"  style="font-weight: bolder">
+							</md-input-container>
+						</div>
+						<div flex>
+							<md-input-container class="md-block" flex-gt-sm>
+								<label>DV_INTERNO</label>
+								<input ng-model="items.selectedItem.id_remito"  style="font-weight: bolder">
+							</md-input-container>
+						</div>
+					</div>
+						</md-card-content>
+					</md-card>
+
+		        </md-content>
+		      </md-tab>
+		      <md-tab label="ARCHIVOS SALIDAS">
+		        <md-content class="md-padding">
+		         	<md-card ng-repeat="input in vm.input_grp.rutas_archivos track by $index">
+						<md-card-content>
+							<div layout="row">
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>NOMBRE</label>
+										<input ng-model="input.nombre" style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>TIPO_ARCHIVO</label>
+										<input ng-model="input_grp.archivos_salidas[0].tipo_archivo"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>CLONAR</label>
+										<input ng-model="input_grp.archivos_salidas[0].clonar"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>IMPRIME</label>
+										<input ng-model="input_grp.archivos_salidas[0].imprime"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+							</div>
+						</md-card-content>
+					</md-card>
+					<!--
+					<md-card>
+						<md-card-content>
+							<div layout="row">
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>NOMBRE</label>
+										<input ng-model="vm.inpt_grp.archivos" style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>TIPO_ARCHIVO</label>
+										<input ng-model="input_grp.archivos_salidas[1].tipo_archivo"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>CLONAR</label>
+										<input ng-model="input_grp.archivos_salidas[1].clonar"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>IMPRIME</label>
+										<input ng-model="input_grp.archivos_salidas[1].imprime"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+							</div>
+						</md-card-content>
+					</md-card>
+					<md-card>
+						<md-card-content>
+							<div layout="row">
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>NOMBRE</label>
+										<input ng-model="input_grp.archivos_salidas[2].nombre" style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>TIPO_ARCHIVO</label>
+										<input ng-model="input_grp.archivos_salidas[2].tipo_archivo"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>CLONAR</label>
+										<input ng-model="input_grp.archivos_salidas[2].clonar"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>IMPRIME</label>
+										<input ng-model="input_grp.archivos_salidas[2].imprime"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+							</div>
+						</md-card-content>
+					</md-card>
+					<md-card>
+						<md-card-content>
+							<div layout="row">
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>NOMBRE</label>
+										<input ng-model="input_grp.archivos_salidas[3].nombre" style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>TIPO_ARCHIVO</label>
+										<input ng-model="input_grp.archivos_salidas[3].tipo_archivo"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>CLONAR</label>
+										<input ng-model="input_grp.archivos_salidas[3].clonar"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>IMPRIME</label>
+										<input ng-model="input_grp.archivos_salidas[3].imprime"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+							</div>
+						</md-card-content>
+					</md-card>
+					<md-card>
+						<md-card-content>
+							<div layout="row">
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>NOMBRE</label>
+										<input ng-model="input_grp.archivos_salidas[4].nombre" style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>TIPO_ARCHIVO</label>
+										<input ng-model="input_grp.archivos_salidas[4].tipo_archivo"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>CLONAR</label>
+										<input ng-model="input_grp.archivos_salidas[4].clonar"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+								<div flex>
+									<md-input-container class="md-block" flex-gt-sm>
+										<label>IMPRIME</label>
+										<input ng-model="input_grp.archivos_salidas[4].imprime"  style="font-weight: bolder">
+									</md-input-container>
+								</div>
+							</div>
+						</md-card-content>
+					</md-card>
+				-->
+		        </md-content>
+		      </md-tab>
+		      <md-tab label="RUTAS DE ARCHIVO">
+		        <md-content class="md-padding">
+		         	<md-card>
+						<md-card-content>
+							<div layout="column">
+						<div flex>
+							<md-input-container class="md-block" flex-gt-sm ng-repeat="archivo in vm.params_data.rutas_archivos track by $index">
+								<label>{{archivo.label}}</label>
+								<md-tooltip>{{archivo.tooltip}}</md-tooltip>
+								<input ng-model="archivo.ruta"  style="font-weight: bolder">
+							</md-input-container>
+						</div>
+						<!--
+						<div flex>
+							<md-input-container class="md-block" flex-gt-sm>
+								<label>ARCHIVOS_DIR</label>
+								<md-tooltip>Directorio (se crea si no existe) donde se alojan los archivos generados por la app (se usa en: fs-routes.js:generaArchivoCodigosBarras, generaArchivoRemitosActas, generaArchivosActas</md-tooltip>
+								<input ng-model="input_grp.archivos_rutas.archivos_dir"  style="font-weight: bolder">
+							</md-input-container>
+						</div>
+						<div flex>
+							<md-input-container class="md-block" flex-gt-sm>
+								
+								<label>
+									ARCHIVOS_VALIDAR_AUTOMATICAS
+									<md-tooltip>directorio donde se alojan las imagenes y archivos pdf del lote. Para validar conteo de archivos vs conteo registros csv (se usa en fs-routes.js:leerDiretorioLote) </md-tooltip>
+								</label>
+								
+								<input ng-model="input_grp.archivos_rutas.archivos_validar_automaticas"  style="font-weight: bolder">
+
+							</md-input-container>
+							-->
+						</div>
+					</div>
+						</md-card-content>
+						<md-card-actions layout="row" layout-align="end center">
+          <md-button>Deshacer</md-button>
+          <md-button>Guardar</md-button>
+        </md-card-actions>
+					</md-card>
+		        </md-content>
+		      </md-tab>
+		    </md-tabs>
+  	</md-card-content>
+</md-card>

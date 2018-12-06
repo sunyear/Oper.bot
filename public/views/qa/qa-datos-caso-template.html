@@ -1,0 +1,388 @@
+<style type="text/css">
+
+
+  .material-icons.md-12 { font-size: 12px; }
+  .material-icons.md-16 { font-size: 16px; }
+  .material-icons.md-18 { font-size: 18px; }
+  .material-icons.md-24 { font-size: 24px; }
+  .material-icons.md-36 { font-size: 36px; }
+  .material-icons.md-48 { font-size: 48px; }
+  .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+  .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+  .material-icons.orange600 { color: #FB8C00; }
+  .material-icons.black { color: #000000; }
+  .material-icons.red {color: rgb(249, 44, 44);}
+  .material-icons.green_big {color: rgb(36, 191, 1);}
+  .material-icons.yellow {color: rgb(247, 123, 14)}
+  .material-icons.indigo {color: #3F51B5}
+
+  .material-icons.toolbar-gray {color: rgba(0, 0, 0, 0.5);}
+
+  .material-icons.md-16.red {color: rgb(249, 44, 44);}
+  .material-icons.md-16.green_big {color: rgb(36, 191, 1);}
+  .material-icons.md-16.orange600 { color: #FB8C00; }
+  .material-icons.md-16.yellow {color: rgb(247, 123, 14)}
+
+
+.card-round {
+  cursor: default;
+    border-radius: 4px;
+    background-color: #263238;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px !important;
+}
+
+
+.card-header-item-list {
+  padding: 5px !important;
+  background-color: rgb(247, 247, 247);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+
+.card-header {
+  padding: 5px !important;
+  background-color: rgb(247, 247, 247);
+  
+}
+
+.card-header-toolbar {
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.dense-item-list {
+  max-height: 20px !important;
+  
+  min-height: 32px !important;
+}
+
+.md-toolbar-tools-card {
+  color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(247, 247, 247) !important;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.010em;
+  line-height: 1.2em;
+  height: 36px;
+  min-height: 36px;
+  max-height: 36px;
+  padding-right: 0;
+}
+
+
+.toolbar-header-title {
+  font-size: 14px !important;
+  font-weight: 600;
+}
+
+.toolbar-header-subtitle {
+  font-size: 12px !important;
+  font-weight: 300;
+}
+.md-toolbar-tools > div {
+  /*border: solid 1px green;*/
+}
+
+.md-icon-button md-icon {
+  height:auto; // or 80%-90%
+  width:auto; // or 80%-90%
+}
+.md-button.md-icon-button.md-mini {
+  margin: 0 0.3rem;
+  height: 2.8rem;
+  line-height: 2.8rem;
+  width: 2.8rem;
+}
+
+.cp-descr-not-null {
+  font-style: italic; 
+  font-weight: 500; 
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.6rem;
+}
+
+.cp-descr-null {
+  font-style: normal; 
+  font-weight: 400; 
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 1.6rem;
+  text-align: center !important;
+  align-content: center !important;
+}
+
+.cd-descr-editando {
+  color: rgba(0, 0, 0, 0.3);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.titulo_caso_prueba_contenedor {
+  padding: 0 5 0 5 !important; 
+  margin: 0px !important;
+}
+
+.aprobado{
+  background: linear-gradient(to right, rgba(255,255,255,0.5),rgba(255,255,255,0.5), rgba(0,200,0,0.5)) !important;
+}
+
+
+.rechazado{
+  background: linear-gradient(to right, rgba(255,255,255,0.5),rgba(255,255,255,0.5), rgba(200,0,0,0.5)) !important;
+}
+
+.pendiente{
+  background: linear-gradient(to right, rgba(255,255,255,0.5),rgba(255,255,255,0.5), rgba(200,200,200,0.5)) !important;
+}
+
+
+
+
+md-dialog{
+  width: 50%;
+}
+
+</style>
+
+
+
+      
+     <md-list-item ng-show="esCuadroDialogo()" class="md-2-line titulo_caso_prueba_contenedor" ng-class="{'pendiente': (componentes.id_estado_caso == 2), 'rechazado': (componentes.id_estado_caso == 1),'aprobado': (componentes.id_estado_caso == 0)}" style=";border: solid 0px red; height: 60px !important">
+          <p class="md-list-item-text" ng-class="md-offset" layout="column">
+            <span class="md-title" style="font-size: 1em !important; font-weight: bold !important; color: rgba(100,100,100,1) !important">{{componentes.titulo}}</span>
+          </p>
+          <md-button class="md-secondary md-icon-button" ng-click="doSecondaryAction($event)" aria-label="call">
+            <md-icon class="material-icons md-24 toolbar-gray">more_vert</md-icon>
+          </md-button>
+        </md-list-item>
+
+       
+          
+        <md-content class="md-padding" style='border: solid 0px red'>
+       
+        
+        
+      
+     
+    
+
+          <div layout="column" flex>
+                  <div ng-if="!componentes.descripcion.editar" layout="row" class="layout-padding layaout-fill layout-margin" ng-class="::setCssClassDescr()" layout-align="{{::setAlignDescr()}}" ng-click="editarDescripcion()" flex>
+                    <h1 class="md-title">{{componentes.descripcion.texto}}</h1>
+                  </div>
+                  <div ng-if="componentes.descripcion.editar" layout="row" class="layout-padding layaout-fill layout-margin" flex style="margin-bottom: 0px !important">
+                 
+                    <md-input-container flex>
+                      <form name="userForm">
+                      <textarea ng-model="componentes.descripcion.texto" rows="2" aria-label="descripcion" ng-trim="false" focus-on="focusMe"></textarea>
+                      </form>
+                      <div layout="row" flex="100" class="cd-descr-editando">
+                        <div flex >
+                          editando descripcion
+                        </div>
+                        <div flex></div>
+                        <div layout="row" layout-align="end start">
+                          {{componentes.descripcion.left_chars}}
+                        </div>
+                      </div>
+                      
+                    </md-input-container>
+                    
+                  </div>
+                </div>
+
+                <!-- COMPONENTE PRECONDICIONES -->
+                <div layout="row" flex>
+                    <md-card flex>
+                      <md-toolbar style="min-height: 36px;" flex>
+                        <div class="md-toolbar-tools md-toolbar-tools-card" layout="row" layout-fill flex>
+                            <div layout="row" flex="grow" class="card-header-toolbar">
+                                <span md-truncate flex>Precondiciones</span>  
+                            </div>
+                            <div layout="row" class="md-toolbar-tools-card" flex="nogrow" ng-if="!componentes.precondiciones.editar">
+                              <md-button class="md-icon-button md-mini toolbar-gray">
+                                <md-icon class="material-icons md-16 toolbar-gray" ng-click="crearItem('precondiciones')">add</md-icon>
+                              </md-button>
+                            </div>
+
+                            <div layout="row" class="md-toolbar-tools-card" flex="nogrow" ng-if="componentes.precondiciones.editar">
+                                <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
+                                  <md-icon class="material-icons md-24 green_big" ng-click="actualizarItem('precondiciones')">check_circle</md-icon>
+                                </md-button>
+                                <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
+                                  <md-icon class="material-icons md-24 red" ng-click="cancelarEdicionItem('precondiciones', true)">cancel</md-icon>
+                                </md-button>
+                            </div>
+                        </div>
+                      </md-toolbar>                    
+                        
+                        
+                      <md-list class="md-dense" flex>
+                        
+                        <md-list-item  ng-repeat="precondicion in componentes.precondiciones.items track by $index" ng-class-odd="'par-css'" class="dense-item-list" ng-mouseover="componentes.precondiciones.item_visible = $index" ng-mouseleave="componentes.precondiciones.item_visible = null">
+                            <md-icon ng-if="!componentes.precondiciones.editar || componentes.precondiciones.editar_index !== $index" class="material-icons md-18 black" style="margin-right:5px">done</md-icon>
+                            <md-icon ng-if="componentes.precondiciones.editar && componentes.precondiciones.editar_index === $index" class="material-icons md-18 toolbar-gray" style="margin-right:5px" ng-click="borrarItem('precondiciones')">delete</md-icon>
+                            <md-checkbox style="margin-right:0; margin-left: 0" ng-if="" class="md-primary"></md-checkbox>
+                            <md-truncate ng-if="!componentes.precondiciones.editar || componentes.precondiciones.editar_index !== $index" class="md-ellipsis" flex>
+                              <span style="font-size:12px">{{precondicion}}</span>
+                            </md-truncate>
+                            <md-input-container ng-if="componentes.precondiciones.editar && componentes.precondiciones.editar_index === $index" class="md-block" flex>
+                              <input md-truncate ng-model="componentes.precondiciones.items[$index]" focus-on="focusPrecondicion">
+                            </md-input-container>
+                            <md-button ng-show="componentes.precondiciones.item_visible == $index && !componentes.precondiciones.editar" class="md-icon-button md-secondary" flex>
+                              <md-icon class="material-icons md-16 toolbar-gray" ng-click="editarItem('precondiciones', $index, false)">edit</md-icon>
+                            </md-button>
+                          
+                        </md-list-item>
+                        
+                      </md-list>
+                    </md-card>
+                </div>
+                <!-- FIN COMPONENTE PRECONDICIONES -->
+
+
+                <!-- COMPONENTE PASOS -->
+                <div layout="row" flex>
+                    <md-card flex="100">
+
+                      <md-toolbar style="min-height: 36px;">
+
+                        <div class="md-toolbar-tools md-toolbar-tools-card" layout="row" layout-fill>
+                                      
+                            <div layout="row" flex="grow" class="card-header-toolbar">
+                                <span md-truncate flex>PASOS</span>  
+                            </div>
+                            <div layout="row" class="md-toolbar-tools-card" flex="nogrow" ng-if="!componentes.pasos.editar">
+                              <md-button class="md-icon-button md-mini toolbar-gray">
+                                <md-icon class="material-icons md-16 toolbar-gray" ng-click="crearItem('pasos')">add</md-icon>
+                              </md-button>
+                            </div>
+
+                            <div layout="row" class="md-toolbar-tools-card" flex="nogrow" ng-if="componentes.pasos.editar">
+                                <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
+                                  <md-icon class="material-icons md-24 green_big" ng-click="actualizarItem('pasos')">check_circle</md-icon>
+                                </md-button>
+                                <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
+                                  <md-icon class="material-icons md-24 red" ng-click="cancelarEdicionItem('pasos', true)">cancel</md-icon>
+                                </md-button>
+                            </div>
+                        </div>
+
+                      </md-toolbar>                    
+                        
+                        
+                        <md-list class="md-dense">
+                          
+                          <md-list-item  ng-repeat="paso in componentes.pasos.items track by $index" class="dense-item-list" ng-mouseover="componentes.pasos.item_visible = $index" ng-mouseleave="componentes.pasos.item_visible = null">
+                              <div ng-if="!componentes.pasos.editar || componentes.pasos.editar_index !== $index" style="margin-right:5px">{{($index + 1) + ' -'}}</div>
+                              <md-icon ng-if="componentes.pasos.editar && componentes.pasos.editar_index === $index" class="material-icons md-18 toolbar-gray" style="margin-right:5px" ng-click="borrarItem('pasos')">delete</md-icon>
+                              <md-checkbox style="margin-right:0; margin-left: 0" ng-if="" class="md-primary"></md-checkbox>
+                              <md-truncate ng-if="!componentes.pasos.editar || componentes.pasos.editar_index !== $index" class="md-ellipsis" flex>
+                                <span style="font-size:12px">{{paso}}</span>
+                              </md-truncate>
+                              <md-input-container ng-if="componentes.pasos.editar && componentes.pasos.editar_index === $index" class="md-block" flex>
+                                <input md-truncate ng-model="componentes.pasos.items[$index]">
+                              </md-input-container>
+                              <md-button ng-show="componentes.pasos.item_visible == $index && !componentes.pasos.editar" class="md-icon-button md-secondary">
+                                <md-icon class="material-icons md-16 toolbar-gray" ng-click="editarItem('pasos', $index, false)">edit</md-icon>
+                            </md-button>
+                            
+                          </md-list-item>
+                          
+                        </md-list>
+                    </md-card>
+                    </div>
+                <!-- FIN COMPONENTE PASOS -->
+
+                <!-- COMPONENTE RESULTADOS ESPERADOS -->
+                <div layout="row" flex>
+
+                    <md-card flex="100">
+
+                      <md-toolbar style="min-height: 36px;">
+
+                        <div class="md-toolbar-tools md-toolbar-tools-card" layout="row" layout-fill>
+                                      
+                            <div layout="row" flex="grow" class="card-header-toolbar">
+                                <span md-truncate flex>Resultados Esperados</span>  
+                            </div>
+                            <div layout="row" class="md-toolbar-tools-card" flex="nogrow" ng-if="!componentes.resultados_esperados.editar">
+                              <md-button class="md-icon-button md-mini toolbar-gray">
+                                <md-icon class="material-icons md-16 toolbar-gray" ng-click="crearItem('resultados_esperados')">add</md-icon>
+                              </md-button>
+                            </div>
+
+                            <div layout="row" class="md-toolbar-tools-card" flex="nogrow" ng-if="componentes.resultados_esperados.editar">
+                                <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
+                                  <md-icon class="material-icons md-24 green_big" ng-click="actualizarItem('resultados_esperados')">check_circle</md-icon>
+                                </md-button>
+                                <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
+                                  <md-icon class="material-icons md-24 red" ng-click="cancelarEdicionItem('resultados_esperados', true)">cancel</md-icon>
+                                </md-button>
+                            </div>
+
+
+
+                        </div>
+
+                      </md-toolbar>                    
+                        
+                        
+                        <md-list class="md-dense">
+                          
+                          <md-list-item  ng-repeat="resultado_esperado in componentes.resultados_esperados.items track by $index" ng-class-odd="'par-css'" class="dense-item-list" ng-mouseover="componentes.resultados_esperados.item_visible = $index" ng-mouseleave="componentes.resultados_esperados.item_visible = null">
+                              <md-icon ng-if="!componentes.resultados_esperados.editar || componentes.resultados_esperados.editar_index !== $index" class="material-icons md-18 black" style="margin-right:5px">subdirectory_arrow_right</md-icon>
+                              <md-icon ng-if="componentes.resultados_esperados.editar && componentes.resultados_esperados.editar_index === $index" class="material-icons md-18 toolbar-gray" style="margin-right:5px" ng-click="borrarItem('resultados_esperados')">delete</md-icon>
+                              <md-checkbox style="margin-right:0; margin-left: 0" ng-if="" class="md-primary"></md-checkbox>
+                              <md-truncate ng-if="!componentes.resultados_esperados.editar || componentes.resultados_esperados.editar_index !== $index" class="md-ellipsis" flex>
+                                <span style="font-size:12px">{{resultado_esperado}}</span>
+                              </md-truncate>
+                              <md-input-container ng-if="componentes.resultados_esperados.editar && componentes.resultados_esperados.editar_index === $index" class="md-block" flex>
+                                <input md-truncate ng-model="componentes.resultados_esperados.items[$index]">
+                              </md-input-container>
+                              <md-button ng-show="componentes.resultados_esperados.item_visible == $index && !componentes.resultados_esperados.editar" class="md-icon-button md-secondary" flex>
+                                <md-icon class="material-icons md-16 toolbar-gray" ng-click="editarItem('resultados_esperados', $index, false)">edit</md-icon>
+                              </md-button>
+                            
+                          </md-list-item>
+                          
+                        </md-list>
+                    </md-card>
+                </div>
+                <!-- FIN COMPONENTE RESULTADOS ESPERADOS -->
+         
+        </md-content>
+
+        
+                <div>
+                  <md-button class="md-primary md-raised" flex>cerrar</md-button>
+                </div>
+      
+
+      
+      
+          
+      
+<!--    
+<div layout="row" flex-fill ng-if="">
+                    
+      <md-list class="md-dense">
+       
+        <md-list-item class="item-menu-open">
+          <md-card ng-if="caso_prueba.ticket_mantis.length > 0" ng-repeat="ticket_mantis in caso_prueba.ticket_mantis track by $index" layout="row" layout-align="center center" flex-fill style="padding: 5px" class="card-round">
+            <span>{{ticket_mantis}}</span>
+          </md-card>
+        </md-list-item>
+      </md-list>
+    
+</div>
+                
+-->
+                
+                
+        
+            
+     
+
+

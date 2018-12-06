@@ -1,0 +1,299 @@
+<style type="text/css">
+
+  .material-icons.md-12 { font-size: 12px; }
+  .material-icons.md-16 { font-size: 16px; }
+  .material-icons.md-18 { font-size: 18px; }
+  .material-icons.md-24 { font-size: 24px; }
+  .material-icons.md-36 { font-size: 36px; }
+  .material-icons.md-48 { font-size: 48px; }
+  .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+  .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+  .material-icons.orange600 { color: #FB8C00; }
+  .material-icons.black { color: #000000; }
+  .material-icons.red {color: rgb(249, 44, 44);}
+  .material-icons.green_big {color: rgb(36, 191, 1);}
+  .material-icons.yellow {color: rgb(247, 123, 14)}
+  .material-icons.indigo {color: #3F51B5}
+
+  .material-icons.toolbar-gray {color: rgba(0, 0, 0, 0.5);}
+
+  .material-icons.md-16.red {color: rgb(249, 44, 44);}
+  .material-icons.md-16.green_big {color: rgb(36, 191, 1);}
+  .material-icons.md-16.orange600 { color: #FB8C00; }
+  .material-icons.md-16.yellow {color: rgb(247, 123, 14)}
+
+
+.card-round {
+  cursor: default;
+    border-radius: 4px;
+    background-color: #263238;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px !important;
+}
+
+
+.card-header-item-list {
+  padding: 5px !important;
+  background-color: rgb(247, 247, 247);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+
+.card-header {
+  padding: 5px !important;
+  background-color: rgb(247, 247, 247);
+  
+}
+
+.card-header-toolbar {
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.dense-item-list {
+  max-height: 20px !important;
+  
+  min-height: 32px !important;
+}
+
+.md-toolbar-tools-card {
+  color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(247, 247, 247) !important;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.010em;
+  line-height: 1.2em;
+  height: 36px;
+  min-height: 36px;
+  max-height: 36px;
+  padding-right: 0;
+}
+
+
+.toolbar-header-title {
+  font-size: 14px !important;
+  font-weight: 600;
+}
+
+.toolbar-header-subtitle {
+  font-size: 12px !important;
+  font-weight: 300;
+}
+.md-toolbar-tools > div {
+  /*border: solid 1px green;*/
+}
+
+.md-icon-button md-icon {
+  height:auto; // or 80%-90%
+  width:auto; // or 80%-90%
+}
+.md-button.md-icon-button.md-mini {
+  margin: 0 0.3rem;
+  height: 2.8rem;
+  line-height: 2.8rem;
+  width: 2.8rem;
+}
+
+.cp-descr-not-null {
+  font-style: italic7; 
+  font-weight: 500; 
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.6rem;
+}
+
+.cp-descr-null {
+  font-style: normal; 
+  font-weight: 400; 
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 1.6rem;
+  text-align: center !important;
+  align-content: center !important;
+}
+
+.cd-descr-editando {
+  color: rgba(0, 0, 0, 0.3);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+
+.crear-nota-12 { font-size: 12px; }
+
+
+md-checkbox.md-checkbox-small {
+  .md-icon {
+    transform: scale(0.1) !important;
+  }
+  
+  .md-label {
+    margin-left: 5px !important;
+  }
+}
+
+md-checkbox.md-checked.red .md-icon {
+ background-color: rgb(0, 0, 0);
+ border-color: rgb(0, 0, 0);
+}
+
+
+
+md-checkbox.dotted .md-icon {
+ border-width: 1px;
+ border-style: solid;
+ border-color: lightgray;
+}
+
+.data-grid-selected-row {
+  background-color: rgb(255, 247, 196);
+}
+
+.fila_seleccionada:hover{background-color:rgb(255, 247, 196)!important}
+
+/*tbody tr:hover{background-color:rgb(255, 247, 196)!important}#datat*/
+
+
+</style>
+<md-content class="md-padding" id="contenedor">
+  <div layout="row">
+     
+    <div grid-data id='test' grid-options="vm.gridOptions" grid-actions="vm.gridActions" flex>
+      
+
+      <div layout="row" flex="100" layour-align="start center">
+        
+          
+
+        <div layout="row" flex="50">
+          <md-button ng-show="!vm.habilitarBorrarReproduccion()" ng-click="vm.borrarReproducciones($event)" aria-label="Open phone interactions menu" class="md-icon-button">
+                <md-icon class="material-icons md-24 toolbar-gray">delete</md-icon>
+              </md-button>
+        </div>
+
+
+        <div layout="row" flex="50" layout-align="end center">
+          <div class="menu-demo-container" layout="row">
+
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="vm.openMenu($mdMenu, $event)">
+                <md-icon class="material-icons md-24 toolbar-gray">more_vert</md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item>
+                  <md-button ng-click="vm.crearReproduccion($event)">
+                    Crear reproduccion
+                  </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item>
+                  <md-button ng-disabled="vm.habilitarBorrarReproduccion()" ng-click="vm.borrarReproduccion($event)">
+                    {{vm.label_menu_borrar}}
+                  </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item>
+                  <md-button disabled="true" ng-click="ctrl.toggleNotifications($event)">
+                    Exportar reproduccion
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+
+          </div>
+        </div>
+
+      </div>
+
+
+
+        
+
+          
+        
+
+        <div>
+          <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+              <thead>
+              <tr>
+                  <th  class="mdl-data-table__cell--non-numeric"">
+                       <md-checkbox class="red md-checkbox-small dotted" ng-click="vm.seleccionarTodo(this, $event)" ng-checked="vm.todosSeleccionados()" md-indeterminate="vm.isIndeterminate()"></md-checkbox>
+                  </th>
+                  <th  class="mdl-data-table__cell--non-numeric"">
+                      <span></span>
+                  </th>
+                  <th sortable="item.archivo_salida" class="sortable mdl-data-table__cell--non-numeric"">
+                      <span>ID</span>
+                  </th>
+                  <th sortable="item.f_reproduccion" class="sortable mdl-data-table__cell--non-numeric">
+                      <span>Fecha</span>
+                  </th>
+                  <th sortable="item.relase_candidate" class="sortable mdl-data-table__cell--non-numeric">
+                      <span>Version SIJAI</span>
+                  </th>
+                  <th sortable="item.archivo_entrada" class="sortable mdl-data-table__cell--non-numeric"">
+                      <span>CSV entrada</span>
+                  </th>
+                  
+                  
+              </tr>
+              </thead>
+              <tbody>
+              <tr grid-item ng-click="vm.abrirReproduccion(this)" ng-class="{'data-grid-selected-row': vm.esFilaSeleccionada(this), 'fila_seleccionada': vm.esFilaSeleccionada(this)}" >
+                  
+                  <td class="mdl-data-table__cell--non-numeric">
+                      <md-checkbox class="red md-checkbox-small dotted" ng-click="vm.seleccionarReproduccion(this, $event)" ng-checked="vm.esFilaSeleccionada(this)"></md-checkbox>
+                  </td>
+                
+                  <td class="mdl-data-table__cell--non-numeric" style="line-height: 18px;">
+                      <md-icon style="height: 20px !important" class="material-icons green_big md-16" ng-click="vm.cancelarEdicionNota()">check_circle</md-icon>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                      <span ng-bind="item.id_caso_reproduccion"></span>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                      <span ng-bind="item.f_reproduccion"></span>
+                  </td>
+                  <td ng-bind="item.version_sijai" class="mdl-data-table__cell--non-numeric"></td>
+                  <td ng-bind="item.archivo_entrada" class="mdl-data-table__cell--non-numeric"></td>
+                  <md-tooltip md-direction="top" md-delay="1">
+                    
+                    <div style="height: 100px !important;">
+                      Refresh
+                    </div>
+                  </md-tooltip>
+              </tr>
+              </tbody>
+          </table>
+      </div>
+      <div layout-xs="column" layout="row" layout-align-xs="end end" layout-align="end center">
+          <grid-pagination max-size="5"
+                           boundary-links="true"
+                           class="pagination"                                     
+                           ng-if="paginationOptions.totalItems  > paginationOptions.itemsPerPage"
+                           total-items="paginationOptions.totalItems"
+                           ng-model="paginationOptions.currentPage"
+                           ng-change="reloadGrid()"
+                           items-per-page="paginationOptions.itemsPerPage">
+          </grid-pagination>
+          <md-input-container flex-offset-gt-xs="5" class="items-per-page">
+              <md-select ng-init="paginationOptions.itemsPerPage = '10'" ng-model="paginationOptions.itemsPerPage" ng-change="reloadGrid()">
+                  <md-option>10</md-option>
+                  <md-option>25</md-option>
+                  <md-option>50</md-option>
+                  <md-option>75</md-option>
+              </md-select>
+          </md-input-container>
+      </div>
+    </div>
+  </div>
+<div layout="row" flex="grow" class="card-header-toolbar">
+                                <span md-truncate flex>{{vm.componentes.reproduccion_notas.titulo}}</span>  
+                            </div>
+   
+                          
+                        
+                        
+                      
+                    </md-card>
+                </div>
+</md-content>

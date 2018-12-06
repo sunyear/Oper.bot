@@ -1,0 +1,34 @@
+[1019/110413:INFO:installer_main.cc(294)] Opera installer starting - version 41.0.2353.30 beta
+[1019/110413:INFO:installer_main.cc(297)] Command line: "C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\installer.exe" --backend --silent --initial-pid=18612 --install --autoupdate --import-browser-data=1 --enable-stats=1 --enable-installer-stats=1 --launchopera=0 --installfolder="C:\Program Files (x86)\Opera beta" --profile-folder --language=es --setdefaultbrowser=0 --startmenushortcut=1 --desktopshortcut=0 --quicklaunchshortcut=0 --pintotaskbar=0 --server-tracking-data=server_tracking_data --crash-reporter-pid=7284
+[1019/110413:INFO:installer_main.cc(339)] Install folder from command line: C:\Program Files (x86)\Opera beta
+[1019/110413:INFO:installer_main.cc(359)] Uninstall:0
+[1019/110413:INFO:installer_main.cc(360)] Replace Presto installation:0
+[1019/110413:INFO:installer_main.cc(361)] Silent:1
+[1019/110413:INFO:installer_main.cc(362)] Run Immediately0
+[1019/110413:INFO:installer_main.cc(363)] Backend1
+[1019/110413:INFO:installer_main.cc(364)] Inside package1
+[1019/110413:INFO:installer_main.cc(365)] Autoupdate:1
+[1019/110413:INFO:rc_l10n_handler.cc(131)] Language not in the available languages list: 
+[1019/110413:INFO:rc_l10n_handler.cc(137)] Trying language from system preferred list: es-ES
+[1019/110413:INFO:rc_l10n_handler.cc(180)] Retrying after adjustments: es
+[1019/110413:INFO:settings.cc(484)] Retrieving default installation folder path - Using command line: 1 - Using the registry: 1
+[1019/110413:ERROR:utils.cc(425)] Couldn't find path to taskbar pins.
+[1019/110413:ERROR:utils.cc(425)] Couldn't find path to taskbar pins.
+[1019/110413:INFO:settings.cc(843)] Install folder set: C:\Program Files (x86)\Opera beta
+[1019/110413:INFO:settings.cc(866)] Operation: 2
+[1019/110413:INFO:installer.cc(189)] Beginning installation
+[1019/110413:INFO:installer.cc(410)] Write privileges for install folder: 1
+[1019/110413:INFO:installer.cc(520)] Read root files list
+[1019/110413:INFO:installer.cc(1317)] Removing installed files.
+[1019/110413:INFO:installer.cc(1307)] Removing old files from installation root
+[1019/110413:INFO:installer.cc(708)] Installing the launcher
+[1019/110414:WARNING:installer.cc(748)] Tracking data path specified on command line invalid
+[1019/110414:INFO:installer.cc(869)] Cleaning up registry
+[1019/110414:INFO:installer.cc(777)] Setting up the registry
+[1019/110414:INFO:installer.cc(959)] Updating shortcuts
+[1019/110414:INFO:installer.cc(1167)] Writing installer prefs toC:\Program Files (x86)\Opera beta\installer_prefs.json
+[1019/110414:INFO:installer.cc(1259)] Preserving previous installer status.
+[1019/110414:INFO:installer.cc(1409)] Creating scheduled task
+[1019/110416:INFO:installer.cc(1830)] Finalizing successful installation
+[1019/110416:INFO:installer.cc(2006)] Installation succeeded
+[1019/110416:INFO:installer_runner_backend.cc(92)] Installer backend exiting

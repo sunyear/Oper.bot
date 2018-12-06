@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!--<script src="example.js"></script>-->
+    <!--<link src="bower_components/angular-ui-bootstrap/dist/ui-bootstrap-csp" rel="stylesheet">-->
+    <!--<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/bower_components/xmdwizard/build/xmdWizard.css">
+    <link rel="stylesheet" href="/bower_components/angular-data-grid/dist/css/angular-data-grid.css">
+    <link rel="stylesheet" href="/bower_components/angular-data-grid/dist/css/angular-data-grid.material.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="/bower_components/angular-material-sidemenu/dest/angular-material-sidemenu.css">-->
+
+    <!--<link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.min.css">-->
+    <!--<link href="bower_components/lumx/dist/lumx.css" rel="stylesheet">-->
+    
+  </head>
+  
+  <body ng-app="lotes">
+  
+          
+  <ui-view></ui-view>
+  
+    
+
+  </body>
+</html>
+
+<!-- COMPONENTES DE ANGULAR -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<!--<script src="bower_components/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>-->
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/moment/locale/es.js"></script>
+<script src="bower_components/angular-moment/angular-moment.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<!--<script src="bower_components/velocity/velocity.js"></script>-->
+<script src="bower_components/pdfjs-dist/build/pdf.js"></script>
+<script src="bower_components/angular-pdf-viewer/dist/angular-pdf-viewer.min.js"></script>
+
+<script src="bower_components/moment/min/moment-with-locales.js"></script>
+<!--<script src="bower_components/lumx/dist/lumx.js"></script>-->
+<script src="bower_components/localforage/dist/localforage.js"></script>
+<script src="bower_components/angular-localforage/dist/angular-localForage.js"></script>
+
+<script src="/bower_components/angular-aria/angular-aria.js"></script>
+<script src="/bower_components/angular-material/angular-material.js"></script>
+<script src="/bower_components/ngscrollbar/ngscrollbar.js"></script>
+<!--<script src="/bower_components/angular-material-sidemenu/dest/angular-material-sidemenu.js"></script>-->
+<!--<script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>-->
+<script src="bower_components/angular-data-grid/dist/pagination.min.js"></script>
+<script src="bower_components/angular-data-grid/dist/dataGrid.min.js"></script>
+
+<script src="bower_components/angular-soap/soapclient.js"></script>
+<script src="bower_components/angular-soap/angular.soap.js"></script>
+
+
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/moment/locale/es.js"></script>
+<script src="bower_components/angular-moment/angular-moment.js"></script>
+<!--<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>-->
+
+
+<!-- COMPONENTES DE LA APLICACION -->
+<!-- CORE/MAIN -->
+<script src="js/main.js"></script>
+<script src="js/services/data-base-service.js"></script>
+<script src="js/lotes.js"></script>
+<script src="js/lotes-constants.js"></script>
+<script src="js/services/core-service.js"></script>
+<!-- DIRECTIVAS -->
+<script src="js/subir-archivo-directive.js"></script>
+<script src="js/directives/custom-chips-directive.js"></script>
+<script src="js/directives/focus-directive.js"></script>
+<script src="/bower_components/xmdwizard/build/xmdWizard.directive.js"></script>
+
+
+
+
+<!-- ************************ LAYOUT **************************** -->
+<!-- CONTROLLER -->
+<script src="js/controllers/layout/layout-controller.js"></script>
+<!-- SERVICE -->
+<!--<script src="js/controllers/layout/layout-controller.js"></script><-->
+
+    <!-- MENU -->
+    <script src="js/controllers/menu/menu-controller.js"></script>
+
+<!-- / -->
+
+
+<!-- ************************ VALIDACIONES **************************** -->
+<!-- CONTROLLER -->
+<script src="js/controllers/validaciones/validaciones-tablero-controller.js"></script>
+<script src="js/controllers/validaciones/validaciones-prevalidacion-controller.js"></script>
+<script src="js/controllers/validaciones/validador-cecaitra-modal-controller.js"></script>
+<script src="js/controllers/validaciones/visorpdf-modal-controller.js"></script>
+
+<!-- [/] -->
+
+
+
+<!-- ************************ PROCESOS **************************** -->
+<!-- CONTROLLER -->
+<script src="js/controllers/procesos/procesos-generar-archivos-controller.js"></script>
+<script src="js/controllers/procesos/procesos-generar-docs-correo-controller.js"></script>
+<script src="js/controllers/procesos/procesos-carga-masiva-controller.js"></script>
+<script src="js/controllers/procesos/procesos-carga-masiva-form-controller.js"></script>
+<!-- SERVICE -->
+<script src="js/services/procesos/procesos-service.js"></script>
+<script src="js/services/procesos-masivos-service.js"></script>
+<!-- / -->
+
+
+<!-- ************************ QA **************************** -->
+<!-- CONTROLLER -->
+<script src="js/controllers/qa/qa-tablero-controller.js"></script>
+<script src="js/controllers/qa/qa-casos-prueba-modal-form-controller.js"></script>
+<script src="js/controllers/qa/qa-casos-prueba-controller.js"></script>
+<script src="js/controllers/qa/qa-escenarios-controller.js"></script>
+<script src="js/controllers/qa/qa-validaciones-controller.js"></script>
+<script src="js/controllers/qa/qa-datos-caso-controller.js"></script>
+<!--<script src="js/controllers/qa/qa-ejecuciones-controller.js"></script>-->
+<script src="js/controllers/qa/qa-caso-reproducciones.js"></script>
+<script src="js/controllers/qa/qa-cp-reproduccion-controller.js"></script>
+<script src="js/controllers/qa/qa-casos-uso-controller.js"></script>
+<script src="js/controllers/qa/qa-cu-formulario-controller.js"></script>
+<script src="js/controllers/qa/visorpdf-controller.js"></script>
+<script src="js/controllers/qa/reproducciones/qa-reproduccion-controller.js"></script>
+<script src="js/controllers/qa/reproducciones/qa-reproducciones-controller.js"></script>
+<script src="js/controllers/qa/reproducciones/qa-nueva-reproduccion-modal-controller.js"></script>
+<script src="js/controllers/qa/reproducciones/qa-reportar-caso-prueba-controller.js"></script>
+<!-- SERVICE -->
+<script src="js/services/qa/qa-service.js"></script><!-- / -->
+<!-- / -->
+<!-- ***************************************************************** -->
+
+<!--<script src="js/controllers/lote-controller.js"></script><-->
+<script src="js/controllers/modal-controller.js"></script>
+
+<!--<script src="js/controllers/remitos-actas-controller.js"></script>-->
+<script src="js/controllers/gen-documentos-modal-controller.js"></script>
+
+
+
+<!-- ************************ REPORTES **************************** -->
+<!-- CONTROLLER -->
+<script src="js/controllers/reportes/reportes-tablero-controller.js"></script>
+<script src="js/controllers/reportes/reportes-dialogo-controller.js"></script>
+<!-- SERVICE -->
+
+<!-- ***************************************************************** -->
+
+
+<!-- ************************ CONFIG **************************** -->
+<!-- CONTROLLER -->
+<script src="js/controllers/config-app-controller.js"></script>
+<!-- SERVICE -->
+<script src="js/services/config-service.js"></script><!-- / -->
+<!-- ***************************************************************** -->
+
+<!-- SERVICIOS -->
+<script src="js/services/lotes-service.js"></script>
+<script src="js/services/remitos-actas-service.js"></script>
+
+<!-- APP -->
+<script src="js/app.js"></script>

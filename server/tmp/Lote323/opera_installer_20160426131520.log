@@ -1,0 +1,75 @@
+[0426/131520:VERBOSE1:installer_main.cc(225)] Ensuring that TLS 1.0 is enabled
+[0426/131520:INFO:installer_main.cc(348)] Opera installer starting - version 37.0.2178.27 beta
+[0426/131520:INFO:installer_main.cc(351)] Command line: "C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\installer.exe" --backend --silent --install --autoupdate --import-browser-data=1 --enable-stats=1 --enable-installer-stats=1 --launchopera=0 --installfolder="C:\Program Files (x86)\Opera beta" --profile-folder --language=es --setdefaultbrowser=0 --startmenushortcut=1 --desktopshortcut=1 --quicklaunchshortcut=0 --pintotaskbar=0 --server-tracking-data=server_tracking_data --initial-pid=7776 --crash-reporter-pid=12340 --wait-for-package="C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing" --initial-proc-handle=74030000
+[0426/131520:VERBOSE1:installer_main.cc(393)] Install folder from command line: C:\Program Files (x86)\Opera beta
+[0426/131520:INFO:installer_main.cc(413)] Uninstall:0
+[0426/131520:INFO:installer_main.cc(414)] Replace Presto installation:0
+[0426/131520:INFO:installer_main.cc(415)] Silent:1
+[0426/131520:INFO:installer_main.cc(416)] Run Immediately0
+[0426/131520:INFO:installer_main.cc(417)] Backend1
+[0426/131520:INFO:installer_main.cc(418)] Inside package1
+[0426/131520:INFO:installer_main.cc(419)] Autoupdate:1
+[0426/131520:VERBOSE1:settings.cc(361)] Install folder reg value: Last beta Install Path
+[0426/131520:VERBOSE1:settings.cc(384)] Install folder from reg value: 
+[0426/131520:VERBOSE1:rc_l10n_handler.cc(22)] Looking up LCID for es
+[0426/131520:VERBOSE1:settings.cc(152)] Settings from command line
+[0426/131520:VERBOSE1:settings.cc(847)] all_users_:1
+[0426/131520:VERBOSE1:settings.cc(848)] copy_only_:0
+[0426/131520:VERBOSE1:settings.cc(849)] launch_opera_:0
+[0426/131520:VERBOSE1:settings.cc(850)] default_browser_:0
+[0426/131520:VERBOSE1:settings.cc(851)] single_profile_:0
+[0426/131520:VERBOSE1:settings.cc(852)] desktop_shortcut_:1
+[0426/131520:VERBOSE1:settings.cc(853)] start_menu_shortcut_:1
+[0426/131520:VERBOSE1:settings.cc(854)] quick_launch_shortcut_:0
+[0426/131520:VERBOSE1:settings.cc(855)] pinned_shortcut_:0
+[0426/131520:VERBOSE1:settings.cc(856)] language:es
+[0426/131520:INFO:settings.cc(437)] Retrieving default installation folder pathUsing command line: 1Using the registry: 1
+[0426/131520:VERBOSE1:settings.cc(731)] Setting install folder to: C:\Program Files (x86)\Opera beta
+[0426/131520:VERBOSE1:status.cc(54)] Initializing status: C:\Program Files (x86)\Opera beta
+[0426/131520:VERBOSE1:status.cc(96)] Path is a folder
+[0426/131520:VERBOSE1:status.cc(117)] Path is a existing installation
+[0426/131520:VERBOSE1:status.cc(224)] Testing shortcuts
+[0426/131520:VERBOSE1:utils.cc(594)] Testing shortcutC:\Users\Public\Desktop\Opera beta.lnk
+[0426/131520:VERBOSE1:utils.cc(594)] Testing shortcutC:\ProgramData\Microsoft\Windows\Start Menu\Programs\Opera beta.lnk
+[0426/131520:VERBOSE1:utils.cc(594)] Testing shortcut
+[0426/131520:ERROR:utils.cc(407)] Couldn't find path to taskbar pins.
+[0426/131520:VERBOSE1:utils.cc(594)] Testing shortcut
+[0426/131520:ERROR:utils.cc(407)] Couldn't find path to taskbar pins.
+[0426/131520:VERBOSE1:settings.cc(759)] Install folder set: C:\Program Files (x86)\Opera beta
+[0426/131520:VERBOSE1:settings.cc(152)] Settings from command line
+[0426/131520:VERBOSE1:settings.cc(847)] all_users_:1
+[0426/131520:VERBOSE1:settings.cc(848)] copy_only_:0
+[0426/131520:VERBOSE1:settings.cc(849)] launch_opera_:0
+[0426/131520:VERBOSE1:settings.cc(850)] default_browser_:0
+[0426/131520:VERBOSE1:settings.cc(851)] single_profile_:0
+[0426/131520:VERBOSE1:settings.cc(852)] desktop_shortcut_:1
+[0426/131520:VERBOSE1:settings.cc(853)] start_menu_shortcut_:1
+[0426/131520:VERBOSE1:settings.cc(854)] quick_launch_shortcut_:0
+[0426/131520:VERBOSE1:settings.cc(855)] pinned_shortcut_:0
+[0426/131520:VERBOSE1:settings.cc(856)] language:es
+[0426/131520:VERBOSE1:settings.cc(782)] Operation: 2
+[0426/131520:VERBOSE1:settings.cc(786)] Using settings from existing installation
+[0426/131520:VERBOSE1:settings.cc(847)] all_users_:1
+[0426/131520:VERBOSE1:settings.cc(848)] copy_only_:0
+[0426/131520:VERBOSE1:settings.cc(849)] launch_opera_:0
+[0426/131520:VERBOSE1:settings.cc(850)] default_browser_:0
+[0426/131520:VERBOSE1:settings.cc(851)] single_profile_:0
+[0426/131520:VERBOSE1:settings.cc(852)] desktop_shortcut_:1
+[0426/131520:VERBOSE1:settings.cc(853)] start_menu_shortcut_:1
+[0426/131520:VERBOSE1:settings.cc(854)] quick_launch_shortcut_:0
+[0426/131520:VERBOSE1:settings.cc(855)] pinned_shortcut_:0
+[0426/131520:VERBOSE1:settings.cc(856)] language:es
+[0426/131520:VERBOSE1:settings.cc(847)] all_users_:1
+[0426/131520:VERBOSE1:settings.cc(848)] copy_only_:0
+[0426/131520:VERBOSE1:settings.cc(849)] launch_opera_:0
+[0426/131520:VERBOSE1:settings.cc(850)] default_browser_:0
+[0426/131520:VERBOSE1:settings.cc(851)] single_profile_:0
+[0426/131520:VERBOSE1:settings.cc(852)] desktop_shortcut_:1
+[0426/131520:VERBOSE1:settings.cc(853)] start_menu_shortcut_:1
+[0426/131520:VERBOSE1:settings.cc(854)] quick_launch_shortcut_:0
+[0426/131520:VERBOSE1:settings.cc(855)] pinned_shortcut_:0
+[0426/131520:VERBOSE1:settings.cc(856)] language:es
+[0426/131520:INFO:installer.cc(188)] Beginning installation
+[0426/131520:VERBOSE1:installer.cc(392)] Write privileges for install folder: 1
+[0426/131520:VERBOSE1:create_folder_operation.cc(22)] Attempting to create folder C:\Program Files (x86)\Opera beta
+[0426/131520:VERBOSE1:create_folder_operation.cc(24)] Folder already exists

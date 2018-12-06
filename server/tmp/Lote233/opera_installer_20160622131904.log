@@ -1,0 +1,26 @@
+[0622/131904:INFO:installer_main.cc(294)] Opera installer starting - version 39.0.2256.9 beta
+[0622/131904:INFO:installer_main.cc(297)] Command line: "C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\installer.exe" --backend --silent --install --autoupdate --import-browser-data=1 --enable-stats=1 --enable-installer-stats=1 --launchopera=0 --installfolder="C:\Program Files (x86)\Opera beta" --profile-folder --language=es --setdefaultbrowser=0 --startmenushortcut=1 --desktopshortcut=1 --quicklaunchshortcut=0 --pintotaskbar=0 --server-tracking-data=server_tracking_data --initial-pid=7232 --crash-reporter-pid=9864 --wait-for-package="C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing" --initial-proc-handle=D4030000
+[0622/131904:INFO:installer_main.cc(339)] Install folder from command line: C:\Program Files (x86)\Opera beta
+[0622/131904:INFO:installer_main.cc(359)] Uninstall:0
+[0622/131904:INFO:installer_main.cc(360)] Replace Presto installation:0
+[0622/131904:INFO:installer_main.cc(361)] Silent:1
+[0622/131904:INFO:installer_main.cc(362)] Run Immediately0
+[0622/131904:INFO:installer_main.cc(363)] Backend1
+[0622/131904:INFO:installer_main.cc(364)] Inside package1
+[0622/131904:INFO:installer_main.cc(365)] Autoupdate:1
+[0622/131904:INFO:rc_l10n_handler.cc(131)] Language not in the available languages list: 
+[0622/131904:INFO:rc_l10n_handler.cc(137)] Trying language from system preferred list: es-ES
+[0622/131904:INFO:rc_l10n_handler.cc(180)] Retrying after adjustments: es
+[0622/131904:INFO:settings.cc(452)] Retrieving default installation folder path - Using command line: 1 - Using the registry: 1
+[0622/131904:ERROR:utils.cc(408)] Couldn't find path to taskbar pins.
+[0622/131904:ERROR:utils.cc(408)] Couldn't find path to taskbar pins.
+[0622/131904:INFO:settings.cc(787)] Install folder set: C:\Program Files (x86)\Opera beta
+[0622/131904:INFO:settings.cc(810)] Operation: 2
+[0622/131904:INFO:installer.cc(189)] Beginning installation
+[0622/131904:INFO:installer.cc(410)] Write privileges for install folder: 1
+[0622/131904:INFO:installer.cc(203)] Need to wait for actual package
+[0622/131906:INFO:installer.cc(232)] Package is ready
+[0622/131906:INFO:installer.cc(251)] Running installer from the package with command line: "C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\installer.exe" --backend --silent --initial-pid=7232 --install --autoupdate --import-browser-data=1 --enable-stats=1 --enable-installer-stats=1 --launchopera=0 --installfolder="C:\Program Files (x86)\Opera beta" --profile-folder --language=es --setdefaultbrowser=0 --startmenushortcut=1 --desktopshortcut=1 --quicklaunchshortcut=0 --pintotaskbar=0 --server-tracking-data=server_tracking_data --crash-reporter-pid=9864
+[0622/131908:INFO:installer.cc(2004)] Installation succeeded
+[0622/131908:INFO:installer_runner_backend.cc(92)] Installer backend exiting
+[0622/131908:ERROR:ipc_sender.cc(106)] Cannot write to mailslot: Se ha alcanzado el final del archivo. (0x26)

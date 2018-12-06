@@ -1,0 +1,84 @@
+<!-- 
+	componente: actas validadas en PROCESOS -> Validar Actas
+ 	controlador: validaciones-tablero-controller.js: ValidacionesTableroController()
+	servicio: remitos-actas-service.js: remitosActasService() 
+-->
+
+<!-- CONFIG DEL TEMPLATE -->
+<style type="text/css">
+.material-icons.md-12 { font-size: 12px; }
+	.material-icons.md-18 { font-size: 18px; }
+	.material-icons.md-24 { font-size: 24px; }
+	.material-icons.md-36 { font-size: 36px; }
+	.material-icons.md-48 { font-size: 48px; }
+	.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+	.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+	.material-icons.orange600 { color: #FB8C00; }
+	.material-icons.black { color: #000000; }
+	.material-icons.red {color: rgb(255, 51, 51);}
+	.material-icons.green_big {color: rgb(36, 191, 1);}
+
+
+	#md-sidenav-val, #md-sidenav-val.md-locked-open, #md-sidenav-val.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 50vw !important;
+  max-width: 200px !important;
+  }
+	md-list-item + md-divider{
+    border-top-color: rgb(100, 100, 100) !important;
+  }
+
+
+  .header-toolbar {
+  	margin: 0px;
+  	font-weight: bolder;
+  	font-size: 16px;
+  	color: rgb(38, 50, 56);
+  }
+
+  .header-toolbar-subtitle {
+  	margin: 0px;
+  	font-weight: 400;
+  	font-size: 12px;
+  	color: rgb(38, 50, 56);
+  }
+
+</style>
+<!-- FIN CONFIG TEMPLATE -->
+
+
+<!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
+
+<div class="padded" md-whiteframe="2">
+	<md-toolbar>
+	    <div layout="row" class="md-toolbar-tools" style="background-color: rgb(255, 255, 255) !important;">
+	    	<div layout="row" layout-align="" flex="33">
+	    		<div  layout="column" flex>
+	    			<p class="header-toolbar">VALIDACIONES</p>
+	    			<p class="header-toolbar-subtitle" >tablero</p>
+	    		</div>
+	    	</div>
+	    </div>
+	</md-toolbar>
+</div>
+
+<md-card>
+	<md-card-header style="padding:0 !important;height:30px !important">
+		<md-toolbar style="min-height: 30px; height: 30px !important;">
+			<h2 class="md-toolbar-tools" style="font-size: 16px !important">Lotes validados</h2>
+		</md-toolbar>
+	</md-card-header>
+	<md-card-content>
+		<md-list class="md-dense" flex>
+
+      		<md-list-item class="md-2-line item-menu-open" ng-click="showMenu($event, $index)" ng-repeat="lote_validado in lotes_validados track by $index">
+        		<div class="md-list-item-text">
+          			<h3><strong>{{lote_validado.lote}}</strong></h3>
+          			<p style="font-size: 11px">{{lote_validado.fecha_procesado}}</p>
+        		</div>
+        		<md-icon ng-class="lotes_estados[lote_validado.id_estado].css_class">{{lotes_estados[lote_validado.id_estado].icon}}</md-icon>
+      		</md-list-item>
+      		<md-divider ng-if="!$last"></md-divider>
+     	</md-list>
+	</md-card-content>
+</md-card>

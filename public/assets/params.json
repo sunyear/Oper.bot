@@ -1,0 +1,20 @@
+{
+	"params": {
+            "tipos_actas":
+                {
+                    "2": {
+                        "id_remito": 809,
+                        "numero_remito": 1703101001,
+                        "notificar": 1,
+                        "tipo_acta": "Personal Notificada"
+                    },
+                    "3": {
+                        "id_remito": 808,
+                        "numero_remito": 1703081001,
+                        "notificar": 0,
+                        "tipo_acta": "Personal No Notificada"
+                    }
+                }
+            }
+    };
+}

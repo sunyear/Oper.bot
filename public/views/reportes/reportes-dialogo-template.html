@@ -1,0 +1,36 @@
+<md-dialog aria-label="Mango (Fruit)" style="width: 50%">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>SQL REPORTES</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+     
+        <md-card>
+              <md-content >
+              <md-input-container class="md-block">
+                <label>{{vm.data.titulo}}</label>
+                <textarea ng-model="vm.data.sql" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+              </md-input-container>
+              </md-content>
+          
+
+          </md-card>         
+                
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button class="md-raised md-primary" ng-click="cancel('not useful')">
+       Aceptar
+      </md-button>
+    </md-dialog-actions>
+
+  </form>
+</md-dialog>
+

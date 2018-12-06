@@ -1,0 +1,87 @@
+<style type="text/css">
+
+  .chip-error{
+    background-color: red;
+    color: white;
+  }
+  .chip-ok{
+    background-color: green;
+    color: white;
+    
+   
+  }
+  .chip-warn{
+    background-color: orange;
+    color: white;
+    
+   
+  }
+  .md-chips{
+  box-shadow: 0 0px !important;
+}
+
+</style>
+
+<div layout="column" flex="100" layout-align="center center">
+  <md-dialog aria-label="Mango (Fruit)">
+    
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>PREVALIDACION SIJAI: resultados</h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="cancel()">
+            <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+
+      <md-dialog-content>
+        <md-card>
+        
+          <md-list class="md-dense" flex ng-cloak>
+            <md-list-item class="secondary-button-padding md-2-line" ng-repeat="resultado in resultados track by $index">
+              <div class="md-list-item-text" layout="column">
+                <H3>{{resultado.validacion}}</H3>
+                <p>Tolerancia errores: {{resultado.tolerancia}}%</p>
+              </div>
+                  <!--<label class="md-button md-raised md-primary" ng-if="resultado.errores.length > 0">ERROR</label><-->
+              <md-chips readonly="true" ng-model="resultado.chips" class="md-secundary">
+                <md-chip-template ng-class="$chip.class" custom-chip>
+                  <span>{{$chip.msg}}</span>
+                  <md-tooltip md-direction="right" ng-if="resultado.errores.length > 0">
+                    {{resultado.errores.length}} registros con errores ({{resultado.indice_errores}}%)
+                  </md-tooltip>
+                </md-chip-template>
+              </md-chips>
+                  <!--
+                  <md-button ng-if="resultado.errores.length > 0" class="md-accent" ng-click="doSecondaryAction($event)">{{resultado.errores}}</md-button>-->
+              <md-divider ng-if="!$last"></md-divider>
+            </md-list-item>             
+          </md-list>
+
+        </md-card>   
+        
+        <div layout="row" flex="100">
+          
+          <md-list ng-cloak>
+            <md-list-item>
+              <md-input-container class="md-block">
+              <md-checkbox class="md-primary" ng-model="archivo.imprime" aria-label="archivo.nombre"><em>log de errores</em></md-checkbox>
+              </md-input-container>
+            </md-list-item>             
+          </md-list>
+          
+        </div>
+        <md-divider></md-divider>
+            
+      </md-dialog-content>
+      
+      <md-dialog-actions layout="row">
+        <md-button ng-class="btn_modal.css_style" ng-click="cancel('not useful')">
+         {{btn_modal.txt_button}}
+        </md-button>
+      </md-dialog-actions>
+
+    </md-dialog>
+
+</div>

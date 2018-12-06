@@ -1,0 +1,42 @@
+<div layout="column" flex="100" layout-align="center center">
+  <md-dialog aria-label="Mango (Fruit)">
+    
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>VISOR DE ACTAS PDF SIJAI - [acta n°: {{acta_pdf.numero_acta}} / notificacion n°: {{acta_pdf.numero_notificacion}}]</h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="cancel()">
+            <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+
+      <md-dialog-content>
+        <md-card>
+        
+          <pdf-viewer
+              delegate-handle="my-pdf-container"
+              url="pdfUrl"
+              scale="1"
+              show-toolbar="true"
+              headers="{ 'x-you-know-whats-awesome': 'EVERYTHING' }">
+          </pdf-viewer>
+
+        </md-card>   
+        
+        <md-divider></md-divider>
+            
+      </md-dialog-content>
+      
+      <md-dialog-actions layout="row">
+        <md-button class="md-primary md-raised" ng-click="respuestaValidacion(true)">
+         Aceptar acta
+        </md-button>
+        <md-button class="md-warn md-raised" ng-click="respuestaValidacion(false)">
+         Rechazar acta
+        </md-button>
+      </md-dialog-actions>
+
+    </md-dialog>
+
+</div>

@@ -1,0 +1,340 @@
+<style>
+
+  .material-icons.md-12 { font-size: 12px; }
+  .material-icons.md-18 { font-size: 18px; }
+  .material-icons.md-24 { font-size: 24px; }
+  .material-icons.md-36 { font-size: 36px; }
+  .material-icons.md-48 { font-size: 48px; }
+  .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+  .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+  .material-icons.orange600 { color: #FB8C00; }
+  .material-icons.black { color: #000000; }
+  .material-icons.red {color: rgb(249, 44, 44);}
+  .material-icons.green_big {color: rgb(36, 191, 1);}
+  .material-icons.yellow {color: rgb(247, 123, 14)}
+  .material-icons.gray { color: rgb(178, 176, 176); }
+
+  .md-16 { font-size: 16px; }
+  .md-16.red {color: rgb(249, 44, 44);}
+  .md-16.green_big {color: rgb(36, 191, 1);}
+  .md-16.orange600 { color: #FB8C00; }
+  .md-16.yellow {color: rgb(247, 123, 14)}
+  
+  .full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+  }
+
+  .partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+  }
+
+  .marco {
+    /*position: relative;*/
+    padding: 45px 15px 15px;
+    margin: 0 -15px 15px;
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0;
+    -webkit-box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+    box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+  }
+
+  .item-menu-activo {
+    background-color: rgb(3, 155, 229);  
+  }
+  .item-menu-activo md-icon   {
+    
+    color: #FFF !important;
+  }
+  .item-menu-activo > div h3 {
+    color: #FFF !important;
+    font-weight: bold !important;
+  }
+
+  #item-menu {
+    color: #FFF !important;
+  }
+
+  .md-sidenav-head {
+    background-color: #263238;
+    color: rgb(108, 112, 120);
+    font-size: 12px !important;
+  }
+
+
+  md-list-item {
+  height: 2em;
+  min-height: initial;   
+  }
+
+  md-list-item + md-divider{
+    border-top-color: rgb(100, 100, 100) !important;
+  }
+  
+
+  md-sidenav, md-sidenav.md-locked-open, md-sidenav.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 50vw !important;
+  max-width: 200px !important;
+  }
+
+
+ 
+
+
+  #style-3::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar-thumb
+{
+  background-color: #000000;
+}
+
+</style>
+
+
+  <div layout="row" layout-fill flex > 
+
+    <div layout="column" layout-fill style="width: 200px !important;">
+        <div layout="column">
+          <md-toolbar style="overflow: hidden" class="padded" md-whiteframe="2">
+            <div class="md-toolbar-tools" style="background-color: rgb(76, 81, 89) !important">
+                <h2 style="color: #FFF">operador.BOT</h2>
+                <md-button ng-hide="true" ng-click="vm.toggleLeft()" aria-label="Go Back">
+                  
+                </md-button>
+                
+            </div>
+          </md-toolbar>
+        </div>
+        <md-sidenav
+            
+            class="md-sidenav-left"
+            md-component-id="left"
+            md-is-locked-open="true"
+            md-whiteframe="5"
+            md-disable-backdrop="true"
+            style="background-color: #263238;"
+            flex layout="column">
+
+              
+              
+            
+            <div layout="column" layout-fill flex="100" ng-scrollbar scrollbar-dragSpeed="0.2" scrollbar-x="false" scrollbar-y="true" scrollbar-config="{show: false, scrollbar: {width: 4, hoverWidth: 6, color: 'rgb(105, 105, 105)'}}">
+              
+                <md-list class="md-dense" flex>
+                
+                <md-list-item class="" ng-click="null"  ui-sref=".vision_general"  ui-sref-active="item-menu-activo">
+                 <md-icon class="material-icons md-18 gray" style="margin-left:0px">apps</md-icon>           
+                    <span style="color: rgba(255, 255, 255, 0.7); margin-left: -30px">Vision general</span>
+                </md-list-item>
+
+                <md-divider></md-divider>
+                
+                <md-subheader class="md-no-sticky md-sidenav-head">VALIDACIONES</md-subheader>
+                <md-list-item class="" ng-click="null" ui-sref=".validaciones_tablero"  ui-sref-active="item-menu-activo">
+                 <md-icon class="material-icons md-18 gray" style="margin-left:0px">dashboard</md-icon>           
+                    <span style="color: rgba(255, 255, 255, 0.7); margin-left: -30px">Tablero</span>
+                </md-list-item>
+                <md-list-item class="" ng-click="null" ui-sref="lotes.validar_actas"  ui-sref-active="item-menu-activo">
+                  <md-icon class="material-icons md-18 gray" style="margin-left:0px">security</md-icon>           
+                  <span style="color: rgba(255, 255, 255, 0.7); margin-left: -30px">Pre-validacion actas</span>
+                </md-list-item>
+
+                <md-divider></md-divider>
+
+                <md-subheader class="md-no-sticky md-sidenav-head">PROCESOS</md-subheader>
+                <md-list-item class="" ng-click="null" ui-sref=".procesos_tablero"  ui-sref-active="item-menu-activo">
+                 <md-icon class="material-icons md-18 gray" style="margin-left:0px">dashboard</md-icon>           
+                    <span style="color: rgba(255, 255, 255, 0.7); margin-left: -30px">Tablero</span>
+                </md-list-item>
+                <md-list-item class="" ng-click="null" ui-sref=".generar_archivos"  ui-sref-active="item-menu-activo">
+                  <md-icon class="material-icons md-18 gray" style="margin-left: 0px">attach_file</md-icon>           
+                  <span style="color: rgba(255, 255, 255, 0.7); margin-left: -30px">Generar archivos</span>
+                </md-list-item>
+                <md-list-item class="" ng-click="null" ui-sref=".generar_docs"  ui-sref-active="item-menu-activo">
+                  <md-icon class="material-icons md-18 gray" style="margin-left: 0px">library_books</md-icon>           
+                  <span style="color: rgba(255, 255, 255, 0.7); margin-left: -30px">Generar documentos</span>
+                </md-list-item>
+                <md-list-item class="" ng-click="null" ui-sref=".generar_notif"  ui-sref-active="item-menu-activo">
+                  <md-icon class="material-icons md-18 gray" style="margin-left: 0px">notifications</md-icon>           
+                  <span style="color: rgba(255, 255, 255, 0.7); margin-left: -30px">Generar notificaciones</span>
+                </md-list-item>
+
+                <md-divider></md-divider>
+
+                <md-subheader class="md-no-sticky md-sidenav-head">QA</md-subheader>
+                <md-list-item class="" ng-click="null" ui-sref=".testing_tablero"  ui-sref-active="item-menu-activo">
+                 <md-icon class="material-icons md-18 gray" style="margin-left:0px">dashboard</md-icon>           
+                    <span style="color: rgba(255, 255, 255, 0.7); margin-left: -30px">Tablero</span>
+                </md-list-item>
+                <md-list-item class="" ng-click="null" ui-sref="lotes.casos_prueba"  ui-sref-active="item-menu-activo">
+                  <md-icon class="material-icons md-18 gray" style="margin-left:0px">bug_report</md-icon>           
+                  <span style="color: rgba(255, 255, 255, 0.7); margin-left: -30px">Casos de prueba</span>
+                </md-list-item>
+                <md-list-item class="" ng-click="null" ui-sref="lotes.testing_escenarios"  ui-sref-active="item-menu-activo">
+                  <md-icon class="material-icons md-18 gray" style="margin-left:0px">receipt</md-icon>           
+                  <span style="color: rgba(255, 255, 255, 0.7); margin-left: -30px">Escenarios</span>
+                </md-list-item>                
+                
+                <md-divider></md-divider>
+
+                <md-subheader class="md-no-sticky md-sidenav-head">AUTOGESTON</md-subheader>
+                <md-list-item class="" ng-click="null" ui-sref=".autogestion_tablero"  ui-sref-active="item-menu-activo">
+                 <md-icon class="material-icons md-18 gray" style="margin-left:0px">dashboard</md-icon>           
+                    <span style="color: rgba(255, 255, 255, 0.7); margin-left: -30px">Tablero</span>
+                </md-list-item>
+                <md-list-item class="" ng-click="null" ui-sref="lotes.autogestion_"  ui-sref-active="item-menu-activo">
+                  <md-icon class="material-icons md-18 gray" style="margin-left:0px">assignment</md-icon>           
+                  <span style="color: rgba(255, 255, 255, 0.7); margin-left: -30px">Programador de tareas</span>
+                </md-list-item>
+
+                <md-divider></md-divider>
+
+                <md-subheader class="md-no-sticky md-sidenav-head">APLICACION</md-subheader>
+                <md-list-item class="" ng-click="null" ui-sref=".conf_app"  ui-sref-active="item-menu-activo">
+                  <md-icon class="material-icons md-18 gray" style="margin-left:0px">settings</md-icon>           
+                  <span style="color: rgba(255, 255, 255, 0.7); margin-left: -30px">Opciones app</span>
+                </md-list-item>
+
+              </md-list>
+            </div>
+        </md-sidenav>
+    </div>
+    
+    <!-- LAS OPCIONES DEL MENU DEL SIDENAVBAR CARGAR SUS TEMPLATES EN ESTA VISTA -->
+    <md-content layout="column" flex layout-fill>
+      <div ui-view layout="column" flex="100" ng-cloak></div>
+    </md-content>
+  
+</div>
+
+
+
+    <!--
+    
+    <md-tabs md-dynamic-height md-border-bottom md-selected="0">
+      <md-tab label="Generar DOCUMENTOS">
+        <div ng-controller="RemitosActasController">
+	        <md-content class="md-padding">
+	          
+	        	<div ng-include="'/views/remitos-actas-template.html'"></div>
+	        </md-content>
+        </div>
+      </md-tab>
+      <md-tab label="GENERAR REMITOS">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">GENERAR REMITOS</h1>
+        </md-content>
+      </md-tab>
+      <md-tab label="Validar actas automaticas">
+        <div ng-controller="ValidadorCecaitraController">
+	        <md-content>
+	         
+	        	<div ng-include="'/views/validador-cecaitra-template.html'"></div>
+	        </md-content>
+        </div>
+      </md-tab>
+    </md-tabs>
+  
+  </div>
+  -->
+
+
+
+ <!--<div ng-include-template="/views/remitos-actas-template.html" ng-include-variables="{listado_archivos: vm.lst_archivos}"></div>-->
+<!--
+
+<section layout="row" flex>
+
+
+
+  <md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="true"
+        md-whiteframe="4">
+
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Sidenav Left</h1>
+      </md-toolbar>
+      <md-content layout-padding>
+        <md-button ng-click="close()" class="md-primary" hide-gt-md>
+          Close Sidenav Left
+        </md-button>
+        <p hide show-gt-md>
+          This sidenav is locked open on your device. To go back to the default behavior,
+          narrow your display.
+        </p>
+      </md-content>
+
+    </md-sidenav>
+    </section>
+  -->
+
+    <!--
+
+
+    <md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="$mdMedia('gt-md')"
+        md-whiteframe="4">
+
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Sidenav Left</h1>
+      </md-toolbar>
+      <md-content layout-padding>
+
+
+        <md-list flex>
+          
+
+          <md-subheader class="md-no-sticky">Classes</md-subheader>
+          <md-list-item class="md-2-line" ng-click="vm.loca()">
+              <md-icon md-svg-icon="apps"></md-icon>
+              <div class="md-list-item-text" layout="column">
+            <h3> titulos</h3>
+            <p> subtitulo </p>
+          </div>
+        </md-list-item>
+
+<md-list-item class="md-2-line">
+              <md-icon md-svg-icon="materialdesignicons-webfont:apps""></md-icon>
+              <div class="md-list-item-text" layout="column">
+            <h3> titulos</h3>
+            <p> subtitulo </p>
+          </div>
+        </md-list-item>
+
+        </md-list>
+        
+
+
+
+        <md-button ng-click="close()" class="md-primary" hide-gt-md>
+          Close Sidenav Left
+        </md-button>
+        <p hide show-gt-md>
+          This sidenav is locked open on your device. To go back to the default behavior,
+          narrow your display.
+        </p>
+      </md-content>
+
+    </md-sidenav>
+
+  </section>
+  -->

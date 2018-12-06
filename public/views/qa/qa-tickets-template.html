@@ -1,0 +1,188 @@
+<!-- 
+	componente: actas validadas en PROCESOS -> Validar Actas
+ 	controlador: validaciones-tablero-controller.js: ValidacionesTableroController()
+	servicio: remitos-actas-service.js: remitosActasService() 
+-->
+
+<!-- CONFIG DEL TEMPLATE -->
+<style type="text/css">
+	.material-icons.md-12 { font-size: 12px; }
+	.material-icons.md-18 { font-size: 18px; }
+	.material-icons.md-24 { font-size: 24px; }
+	.material-icons.md-36 { font-size: 36px; }
+	.material-icons.md-48 { font-size: 48px; }
+	.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+	.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+	.material-icons.orange600 { color: #FB8C00; }
+	.material-icons.black { color: #000000; }
+	.material-icons.red {color: rgb(255, 51, 51);}
+	.material-icons.green_big {color: rgb(36, 191, 1);}
+
+
+	#md-sidenav-val, #md-sidenav-val.md-locked-open, #md-sidenav-val.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 50vw !important;
+  max-width: 200px !important;
+  }
+md-list-item + md-divider{
+    border-top-color: rgb(100, 100, 100) !important;
+  }
+.header-toolbar {
+  	margin: 0px;
+  	font-weight: bolder;
+  	font-size: 16px;
+  	color: rgb(38, 50, 56);
+  }
+
+  .header-toolbar-subtitle {
+  	margin: 0px;
+  	font-weight: 400;
+  	font-size: 12px;
+  	color: rgb(38, 50, 56);
+  }
+
+</style>
+<!-- FIN CONFIG TEMPLATE -->
+
+
+<!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
+
+<div class="padded" md-whiteframe="2">
+	<md-toolbar>
+	    <div layout="row" class="md-toolbar-tools" style="background-color: rgb(255, 255, 255) !important;">
+	    	<div layout="row" layout-align="" flex="33">
+	    		<div  layout="column" flex>
+	    			<p class="header-toolbar">QA</p>
+	    			<p class="header-toolbar-subtitle" >tickets</p>
+	    		</div>
+	    	</div>
+	    </div>
+	</md-toolbar>
+</div>
+
+
+
+	<div layout="column">
+		<md-card>
+		<md-card-header style="padding:0 !important;height:30px !important">
+			<md-toolbar style="min-height: 30px; height: 30px !important;">
+			    <h2 class="md-toolbar-tools" style="font-size: 16px !important">Tickets</h2>
+			</md-toolbar>
+		</md-card-header>
+		<md-card-content>
+			
+			
+    
+          <div grid-data id='qa-tickets' grid-options="gridOptions" grid-actions="gridActions" style="z-index: 1 !important">
+                    <div>
+                        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                            <thead>
+                            <tr>
+                                <th sortable="code" class="sortable mdl-data-table__cell--non-numeric">
+                                    <span>#</span>
+                                </th>
+                                <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric">
+                                    <span>Titulo</span>
+                                </th>
+                                <th class="st-sort-disable th-dropdown">
+                                    <md-select filter-by="version_ticket"
+                                               filter-type="select"
+                                               ng-model="status"
+                                               placeholder="Version"
+                                               ng-change="filter()">
+                                        <md-option value="">Todas las version</md-option>
+                                        <md-option ng-repeat="option_v in statusOptions track by option_v.value"
+                                                   value="{{option_v.value}}">
+                                            {{option_v.text}}
+                                        </md-option>
+                                    </md-select>
+                                </th>
+                                <th class="st-sort-disable th-dropdown">
+                                    <md-select filter-by="subversion_ticket"
+                                               filter-type="select"
+                                               ng-model="subversion"
+                                               placeholder="Sub-version"
+                                               ng-change="filter()">
+                                        <md-option value="">Todas las subversion</md-option>
+                                        <md-option ng-repeat="option_subv in statusOptions track by option_subv.value"
+                                                   value="{{option_subv.value}}">
+                                            {{option_subv.text}}
+                                        </md-option>
+                                    </md-select>
+                                </th>
+                                
+                                <th sortable='total.value' class="sortable">
+                                    <span>Fecha</span>
+                                </th>
+                                <th sortable='total.value' class="sortable">
+                                    <span>Mantis</span>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr grid-item>
+                                <td class="mdl-data-table__cell--non-numeric">
+                                    <span ng-bind="item.numero_ticket"></span>
+                                </td>
+                                <td class="mdl-data-table__cell--non-numeric">
+                                  <span ng-bind="item.titulo_ticket"></span>
+                                </td>
+                                <td ng-bind="item.version_ticket"></td>
+                                <td ng-bind="item.subversion_ticket"></td>
+                                <td ng-bind="item.fecha_ticket | date:'MM/dd/yyyy'"></td>
+                                <td class="">
+                                  <md-icon class="material-icons md-24 gray">android</md-icon>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div layout-xs="column" layout="row" layout-align-xs="end end" layout-align="end center">
+                        <grid-pagination max-size="5"
+                                         boundary-links="true"
+                                         class="pagination"
+                                         ng-if="paginationOptions.totalItems  > paginationOptions.itemsPerPage"
+                                         total-items="paginationOptions.totalItems"
+                                         ng-model="paginationOptions.currentPage"
+                                         ng-change="reloadGrid()"
+                                         items-per-page="paginationOptions.itemsPerPage"></grid-pagination>
+                        <md-input-container flex-offset-gt-xs="5" class="items-per-page">
+                            <md-select ng-init="paginationOptions.itemsPerPage = '5'" ng-model="paginationOptions.itemsPerPage" ng-change="reloadGrid()">
+                                <md-option>5</md-option>
+                                <md-option>25</md-option>
+                                <md-option>50</md-option>
+                                <md-option>75</md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                </div>
+     
+            
+           
+		</md-card-content>
+		</md-card>
+	</div>
+	
+	<div layout="row" layout-align="center center">
+		<md-fab-speed-dial md-direction="down" class="md-fling" md-open="false">
+		  <md-fab-trigger>
+		    <md-button aria-label="Add..." class="md-fab md-primary md-hue-2">
+		    	<md-icon class="material-icons md-24">bug_report</md-icon>
+		    	
+		    </md-button>
+		  </md-fab-trigger>
+
+		  <md-fab-actions>
+		    <md-button aria-label="Add User" class="md-fab md-raised md-mini" ng-click="agregarTicket($event); gridActions.refresh();">
+		      <md-icon class="material-icons md-24">add</md-icon>
+		      <md-tooltip md-direction="right">Agregar ticket</md-tooltip>
+		    </md-button>
+
+		  </md-fab-actions>
+		</md-fab-speed-dial>
+	</div>
+
+
+ 
+
+

@@ -1,0 +1,165 @@
+<!-- 
+	componente: actas validadas en PROCESOS -> Validar Actas
+ 	controlador: validaciones-tablero-controller.js: ValidacionesTableroController()
+	servicio: remitos-actas-service.js: remitosActasService() 
+-->
+
+<!-- CONFIG DEL TEMPLATE -->
+<style type="text/css">
+.material-icons.md-12 { font-size: 12px; }
+	.material-icons.md-18 { font-size: 18px; }
+	.material-icons.md-24 { font-size: 24px; }
+	.material-icons.md-36 { font-size: 36px; }
+	.material-icons.md-48 { font-size: 48px; }
+	.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+	.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+	.material-icons.orange600 { color: #FB8C00; }
+	.material-icons.black { color: #000000; }
+	.material-icons.red {color: rgb(255, 51, 51);}
+	.material-icons.green_big {color: rgb(36, 191, 1);}
+
+
+	#md-sidenav-val, #md-sidenav-val.md-locked-open, #md-sidenav-val.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 50vw !important;
+  max-width: 200px !important;
+  }
+md-list-item + md-divider{
+    border-top-color: rgb(100, 100, 100) !important;
+  }
+.header-toolbar {
+  	margin: 0px;
+  	font-weight: bolder;
+  	font-size: 16px;
+  	color: rgb(38, 50, 56);
+  }
+
+  .header-toolbar-subtitle {
+  	margin: 0px;
+  	font-weight: 400;
+  	font-size: 12px;
+  	color: rgb(38, 50, 56);
+  }
+
+  .item-datagrid {
+    cursor: pointer;
+  }
+
+</style>
+<!-- FIN CONFIG TEMPLATE -->
+
+
+<!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
+
+<md-content id="contenedor">
+  <div layout="row">
+     <div flex="100">
+        <md-toolbar style="min-height: 30px; height: 30px !important;">
+              <h2 class="md-toolbar-tools" style="font-size: 16px !important">Listado de casos de uso</h2>
+          </md-toolbar>
+      </div>
+    </div>
+  		
+			<div grid-data id='test' grid-options="gridOptions" grid-actions="gridActions">
+        <div layout="row" flex="100" layour-align="start center">
+        
+        <div layout="row" flex="50">
+          <md-button ng-disabled="!vm.hayFilaSeleccionada( false )" ng-click="vm.borrarReproducciones($event)" aria-label="Open phone interactions menu" class="md-primary" style="font-weight: 600; font-size: 12px !important">
+                <md-icon class="material-icons md-24 toolbar-gray">play_circle_filled</md-icon>
+                <label style="font-size: 14px !important">Iniciar testing</label>
+              </md-button>
+        </div>
+
+
+        
+        <div layout="row" flex="50" layout-align="end center">
+          <md-button ng-hide="vm.hayFilaSeleccionada( false )" aria-label="Open phone interactions menu" class="md-icon-button" ng-click="vm.crearCasoUso({}, $event)">
+                <md-icon class="material-icons md-24 toolbar-gray">add_box</md-icon>
+              </md-button>
+          <md-button ng-show="vm.hayFilaSeleccionada( false )" ng-click="vm.borrarReproducciones($event)" aria-label="Open phone interactions menu" class="md-icon-button">
+                <md-icon class="material-icons md-24 toolbar-gray">delete</md-icon>
+              </md-button>
+
+          <div class="menu-demo-container" layout="row">
+
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="vm.openMenu($mdMenu, $event)">
+                <md-icon class="material-icons md-24 toolbar-gray">more_vert</md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item>
+                  <md-button ng-click="vm.crearReproduccion($event)">
+                    Nuevo caso de uso
+                  </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item>
+                  <md-button ng-disabled="vm.habilitarBorrarReproduccion()" ng-click="vm.borrarReproduccion($event)">
+                    Generar archivos...
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+
+          
+        </div>
+        </div>
+
+      </div>
+        <div>
+            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--1dp">
+                <thead>
+                <tr>
+                    <th sortable="code" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>N°</span>
+                    </th>
+                    <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>Nombre</span>
+                    </th>
+                    <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>Estado</span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr grid-item ng-click="verDetalles(this.item)" style="max-height: 12px !important; min-height: 12px !important; line-height: 12px !important; height: 12px !important;">
+                    <td class="mdl-data-table__cell--non-numeric" style="padding: 10px !important; max-height: 12px !important; min-height: 12px !important; line-height: 12px !important; height: 12px !important;">
+                        <span ng-bind="item.ID"></span>
+                    </td>
+                    <td ng-bind="item.nombre" class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 12px !important; min-height: 12px !important; line-height: 12px !important; height: 12px !important;"></td>
+                    
+                    <td ng-bind="item.estado" class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 12px !important; min-height: 12px !important; line-height: 12px !important; height: 12px !important;"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div layout-xs="column" layout="row" layout-align-xs="end end" layout-align="end center">
+            <grid-pagination max-size="5"
+                             boundary-links="true"
+                             class="pagination"
+                             ng-if="paginationOptions.totalItems  > paginationOptions.itemsPerPage"
+                             total-items="paginationOptions.totalItems"
+                             ng-model="paginationOptions.currentPage"
+                             ng-change="reloadGrid()"
+                             items-per-page="paginationOptions.itemsPerPage"></grid-pagination>
+            <md-input-container flex-offset-gt-xs="5" class="items-per-page">
+                <md-select ng-init="paginationOptions.itemsPerPage = '10'" ng-model="paginationOptions.itemsPerPage" ng-change="reloadGrid()">
+                    <md-option>10</md-option>
+                    <md-option>25</md-option>
+                    <md-option>50</md-option>
+                    <md-option>75</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+    </div>
+	
+	<div layout="row" layout-align="center end">
+		<md-button class="md-fab md-primary" aria-label="Eat cake">
+			<md-icon class="material-icons">add_to_queue</md-icon>
+		</md-button>
+		<md-button class="md-fab md-primary" aria-label="Eat cake">
+			<md-icon class="material-icons">add_to_queue</md-icon>
+		</md-button>
+	</div>
+
+</md-content>

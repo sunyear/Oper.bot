@@ -1,0 +1,219 @@
+<style type="text/css">
+
+  .material-icons.md-12 { font-size: 12px; }
+  .material-icons.md-18 { font-size: 18px; }
+  .material-icons.md-24 { font-size: 24px; }
+  .material-icons.md-36 { font-size: 36px; }
+  .material-icons.md-48 { font-size: 48px; }
+  .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+  .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+  .material-icons.orange600 { color: #FB8C00; }
+  .material-icons.black { color: #000000; }
+  .material-icons.red {color: rgb(249, 44, 44);}
+  .material-icons.green_big {color: rgb(36, 191, 1);}
+  .material-icons.yellow {color: rgb(247, 123, 14)}
+
+  .md-16 { font-size: 16px; }
+  .md-16.red {color: rgb(249, 44, 44);}
+  .md-16.green_big {color: rgb(36, 191, 1);}
+  .md-16.orange600 { color: #FB8C00; }
+  .md-16.yellow {color: rgb(247, 123, 14)}
+  
+  .demo-menu-example {
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2),
+                0 13px 19px 2px rgba(0, 0, 0, 0.14),
+                0 5px 24px 4px rgba(0, 0, 0, 0.12);
+    width: 256px;
+}
+    
+.demo-menu-item {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 60px;
+  padding: 0 16px;
+  position: relative;
+  width: auto;
+}
+
+.md-button.md-fab.md-mini-mini {
+      line-height: 2rem;
+      width: 2rem;
+      height: 2rem;
+}
+
+.chip-error{
+    background-color: red;
+    color: white;
+  }
+  .chip-ok{
+    background-color: green;
+    color: white;
+    
+   
+  }
+  .chip-warn{
+    background-color: orange;
+    color: white;
+    
+   
+  }
+  .md-chips{
+  box-shadow: 0 0px !important;
+}
+
+
+</style>
+
+<!--
+<div class="demo-menu-example" aria-label="Select your favorite dessert." role="listbox">
+
+  <div 
+  class="demo-menu-item"
+  ng-class="{selected : dessert == ctrl.favoriteDessert}"
+  aria-selected="{{dessert == ctrl.favoriteDessert}}" 
+  tabindex="-1"
+  role="option" 
+  ng-repeat="dessert in ctrl.desserts"
+  ng-click="ctrl.selectDessert(dessert)"
+  ng-keydown="ctrl.onKeydown($event, dessert)">
+           {{ dessert }}
+  </div>
+</div>
+-->
+
+<div class="demo-menu-example" aria-label="Select your favorite dessert." role="listbox">
+
+        <md-subheader class="md-primary" style="background-color: rgb(247, 247, 247) !important;"><span  layout="row" layout-align="center center">{{ctrl.lote_seleccionado.lote.lote}}</span></md-subheader>
+        <div layout="row" layout-align="center center" style="padding-top:15px; position:relative !important; left:-5px">
+         <div class="preview-glyphs">
+            <md-icon ng-class="ctrl.lote_seleccionado.lote_estado.css_class_big" style="display: block !important;">{{ctrl.lote_seleccionado.lote_estado.icon}}</md-icon>
+            </div>
+        </div>    
+        <div layout="row" layout-align="center center" style="padding-top:15px; ">
+            <h4 ng-class="ctrl.lote_seleccionado.lote_estado.css_font_big">{{ctrl.lote_seleccionado.lote_estado.estado}}</h4>
+        </div>
+        <md-divider></md-divider>
+        <div flex="100" layout-align="left">
+            <md-toolbar  style="background-color: rgb(247, 247, 247) !important">
+
+              <div class="md-toolbar-tools">
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="Favorite" ng-click="ctrl.mostrarInformacion('info_datos')">
+                  <md-icon class="material-icons md-24 black" ng-class="ctrl.paneles.info_datos.css">speaker_notes</md-icon>
+                </md-button>
+                <span flex></span>
+                 <md-button class="md-icon-button" aria-label="Favorite" ng-click="ctrl.mostrarInformacion('info_err')">
+                  <md-icon class="material-icons md-24 black">feedback</md-icon>
+                </md-button>
+                <span flex></span>
+                <md-button class="md-fab md-mini" aria-label="Favorite" style="background-color: rgb(249, 44, 44) !important;">
+                  <md-icon class="material-icons md-24" >delete_forever</md-icon>
+                </md-button>
+                <span flex></span>
+              </div>
+            </md-toolbar>
+
+            <!-- INFORMACION -->
+
+            <div ng-if="ctrl.paneles.info_datos">
+              <md-list class="md-dense">
+                  <md-divider ng-if="ctrl.lote_seleccionado.lote_estado.errores.validaciones.length > 0"></md-divider>
+                  <md-divider></md-divider>
+                  <md-list-item class="item-menu-open">
+                      <md-icon class="material-icons md-18 black" style="margin-right:5px">assignment</md-icon>
+                      
+                          <p style="font-size:12px">015_0327_20170403_160749.csv</p>
+                      
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item class="item-menu-open">
+                      <md-icon class="material-icons md-18 black" style="margin-right:5px">event</md-icon>
+                      
+                          <p style="font-size:12px">{{ctrl.lote_seleccionado.lote.fecha_procesado}}</p>
+                      
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item class="item-menu-open">
+                      <md-icon class="material-icons md-18 black" style="margin-right:5px">list</md-icon>
+                      
+                          <p style="font-size:12px">3567 registros</p>
+                      
+                  </md-list-item>
+                  <md-divider></md-divider>
+                  <md-list-item class="item-menu-open">
+                      <md-icon class="material-icons md-18 black" style="margin-right:5px">folder</md-icon>
+                      
+                          <p style="font-size:12px">3567 archivos</p>
+                      
+                  </md-list-item>
+              </md-list>
+
+            </div>
+
+            <!-- LISTADO DE ERRORES -->
+
+            <div ng-if="ctrl.paneles.info_err">
+              <md-list class="md-dense">
+                <md-list-item ng-if="ctrl.lote_seleccionado.lote_estado.errores.validaciones.length < 0" ng-repeat="validacion in ctrl.lote_seleccionado.lote_estado.errores.validaciones track by $index" class="item-menu-open">
+                  <div style="font-weight:bold; font-size:10px;padding:5px;color: rgb(249, 44, 44);"  flex>{{validacion}}</div>
+                </md-list-item>
+                <md-divider></md-divider>
+                      
+                <md-list-item class="item-menu-open">
+                    <md-icon class="material-icons md-18 black" style="margin-right:5px">attachment</md-icon>
+                    <md-truncate flex>
+                      <span style="font-size:12px">Archivos adjuntos</span>
+                    </md-truncate>
+                    <div layout="row">
+                      <div layout="end center">
+                        <span style="color: rgb(234, 39, 9); font-weight: bold; font-size: 12px">faltan archivos</span>
+                      </div>
+                    </div>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item class="item-menu-open">
+                    <md-icon class="material-icons md-18 black" style="margin-right:5px">event_note</md-icon>
+                    <md-truncate flex>
+                      <span style="font-size:12px">Fecha infraccion</span>
+                    </md-truncate>
+                    <div layout="row">
+                      <div layout="end center">
+                        <span style="color: rgb(234, 39, 9); font-weight: bold; font-size: 12px">4987 actas</span>
+                      </div>
+                    </div>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item class="item-menu-open">
+                    <md-icon class="material-icons md-18 black" style="margin-right:5px">schedule</md-icon>
+                    <md-truncate flex>
+                      <span style="font-size:12px">Fecha vencimiento</span>
+                    </md-truncate>
+                    <div layout="row">
+                      <div layout="end center">
+                        <span style="color: rgb(234, 39, 9); font-weight: bold; font-size: 12px">123 actas</span>
+                      </div>
+                    </div>                 
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item class="item-menu-open">
+                    <md-icon class="material-icons md-18 black" style="margin-right:5px">directions_car</md-icon>
+                    <md-truncate flex>
+                      <span style="font-size:12px">Toleranciaa velocidad</span>
+                    </md-truncate>
+                    <div layout="row">
+                      <div layout="end center">
+                        <span style="color: rgb(234, 39, 9); font-weight: bold; font-size: 12px">99 actas</span>
+                      </div>
+                    </div>
+                </md-list-item>
+              </md-list>
+
+            </div>
+        </div>
+        
+</div>
+
+

@@ -1,0 +1,984 @@
+[1215/112023:VERBOSE1:installer_main.cc(217)] Ensuring that TLS 1.0 is enabled
+[1215/112023:INFO:installer_main.cc(340)] Opera installer starting - version 35.0.2066.10 beta
+[1215/112023:INFO:installer_main.cc(343)] Command line: "C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\installer.exe" --install --silent --autoupdate --installfolder --installfolder="C:\Program Files (x86)\Opera beta" --launchopera=0
+[1215/112023:VERBOSE1:installer_main.cc(385)] Install folder from command line: C:\Program Files (x86)\Opera beta
+[1215/112023:INFO:installer_main.cc(405)] Uninstall:0
+[1215/112023:INFO:installer_main.cc(406)] Replace Presto installation:0
+[1215/112023:INFO:installer_main.cc(407)] Silent:1
+[1215/112023:INFO:installer_main.cc(408)] Run Immediately0
+[1215/112023:INFO:installer_main.cc(409)] Backend0
+[1215/112023:INFO:installer_main.cc(410)] Inside package1
+[1215/112023:INFO:installer_main.cc(411)] Autoupdate:1
+[1215/112023:VERBOSE1:settings.cc(348)] Install folder reg value: Last beta Install Path
+[1215/112023:VERBOSE1:settings.cc(371)] Install folder from reg value: 
+[1215/112023:VERBOSE1:rc_l10n_handler.cc(22)] Looking up LCID for es
+[1215/112023:VERBOSE1:settings.cc(152)] Settings from command line
+[1215/112023:VERBOSE1:settings.cc(818)] all_users_:1
+[1215/112023:VERBOSE1:settings.cc(819)] copy_only_:0
+[1215/112023:VERBOSE1:settings.cc(820)] launch_opera_:0
+[1215/112023:VERBOSE1:settings.cc(821)] default_browser_:0
+[1215/112023:VERBOSE1:settings.cc(822)] single_profile_:0
+[1215/112023:VERBOSE1:settings.cc(823)] desktop_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(824)] start_menu_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(825)] quick_launch_shortcut_:0
+[1215/112023:VERBOSE1:settings.cc(826)] pinned_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(827)] language:es
+[1215/112023:INFO:settings.cc(424)] Retrieving default installation folder pathUsing command line: 1Using the registry: 1
+[1215/112023:VERBOSE1:settings.cc(707)] Setting install folder to: C:\Program Files (x86)\Opera beta
+[1215/112023:VERBOSE1:status.cc(54)] Initializing status: C:\Program Files (x86)\Opera beta
+[1215/112023:VERBOSE1:status.cc(96)] Path is a folder
+[1215/112023:VERBOSE1:status.cc(117)] Path is a existing installation
+[1215/112023:VERBOSE1:status.cc(224)] Testing shortcuts
+[1215/112023:VERBOSE1:utils.cc(594)] Testing shortcutC:\Users\Public\Desktop\Opera beta.lnk
+[1215/112023:VERBOSE1:utils.cc(594)] Testing shortcutC:\ProgramData\Microsoft\Windows\Start Menu\Programs\Opera beta.lnk
+[1215/112023:INFO:installer_main.cc(464)] Installer download folder: C:\Windows\TEMP\Opera Installer
+[1215/112023:VERBOSE1:utils.cc(594)] Testing shortcut
+[1215/112023:ERROR:utils.cc(407)] Couldn't find path to taskbar pins.
+[1215/112023:VERBOSE1:utils.cc(594)] Testing shortcut
+[1215/112023:ERROR:utils.cc(407)] Couldn't find path to taskbar pins.
+[1215/112023:VERBOSE1:settings.cc(735)] Install folder set: C:\Program Files (x86)\Opera beta
+[1215/112023:VERBOSE1:settings.cc(152)] Settings from command line
+[1215/112023:VERBOSE1:settings.cc(818)] all_users_:1
+[1215/112023:VERBOSE1:settings.cc(819)] copy_only_:0
+[1215/112023:VERBOSE1:settings.cc(820)] launch_opera_:0
+[1215/112023:VERBOSE1:settings.cc(821)] default_browser_:0
+[1215/112023:VERBOSE1:settings.cc(822)] single_profile_:0
+[1215/112023:VERBOSE1:settings.cc(823)] desktop_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(824)] start_menu_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(825)] quick_launch_shortcut_:0
+[1215/112023:VERBOSE1:settings.cc(826)] pinned_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(827)] language:es
+[1215/112023:VERBOSE1:settings.cc(758)] Operation: 2
+[1215/112023:VERBOSE1:settings.cc(762)] Using settings from existing installation
+[1215/112023:VERBOSE1:settings.cc(818)] all_users_:1
+[1215/112023:VERBOSE1:settings.cc(819)] copy_only_:0
+[1215/112023:VERBOSE1:settings.cc(820)] launch_opera_:0
+[1215/112023:VERBOSE1:settings.cc(821)] default_browser_:0
+[1215/112023:VERBOSE1:settings.cc(822)] single_profile_:0
+[1215/112023:VERBOSE1:settings.cc(823)] desktop_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(824)] start_menu_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(825)] quick_launch_shortcut_:0
+[1215/112023:VERBOSE1:settings.cc(826)] pinned_shortcut_:0
+[1215/112023:VERBOSE1:settings.cc(827)] language:es
+[1215/112023:VERBOSE1:settings.cc(818)] all_users_:1
+[1215/112023:VERBOSE1:settings.cc(819)] copy_only_:0
+[1215/112023:VERBOSE1:settings.cc(820)] launch_opera_:0
+[1215/112023:VERBOSE1:settings.cc(821)] default_browser_:0
+[1215/112023:VERBOSE1:settings.cc(822)] single_profile_:0
+[1215/112023:VERBOSE1:settings.cc(823)] desktop_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(824)] start_menu_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(825)] quick_launch_shortcut_:0
+[1215/112023:VERBOSE1:settings.cc(826)] pinned_shortcut_:0
+[1215/112023:VERBOSE1:settings.cc(827)] language:es
+[1215/112023:INFO:settings.cc(424)] Retrieving default installation folder pathUsing command line: 0Using the registry: 0
+[1215/112023:VERBOSE1:settings.cc(461)] Default install folder: C:\Program Files (x86)\Opera beta
+[1215/112023:INFO:installer_runner.cc(57)] Beginning installation
+[1215/112023:VERBOSE1:installer_main.cc(217)] Ensuring that TLS 1.0 is enabled
+[1215/112023:INFO:installer_main.cc(340)] Opera installer starting - version 35.0.2066.10 beta
+[1215/112023:INFO:installer_main.cc(343)] Command line: "C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\installer.exe" --backend --silent --install --autoupdate --import-browser-data=1 --enable-stats=1 --launchopera=0 --installfolder="C:\Program Files (x86)\Opera beta" --profile-folder --language=es --setdefaultbrowser=0 --startmenushortcut=1 --desktopshortcut=1 --quicklaunchshortcut=0 --pintotaskbar=0 --server-tracking-data=server_tracking_data --initial-pid=3848 --crash-reporter-pid=3884 --initial-proc-handle=A0010000
+[1215/112023:VERBOSE1:installer_main.cc(385)] Install folder from command line: C:\Program Files (x86)\Opera beta
+[1215/112023:INFO:installer_main.cc(405)] Uninstall:0
+[1215/112023:INFO:installer_main.cc(406)] Replace Presto installation:0
+[1215/112023:INFO:installer_main.cc(407)] Silent:1
+[1215/112023:INFO:installer_main.cc(408)] Run Immediately0
+[1215/112023:INFO:installer_main.cc(409)] Backend1
+[1215/112023:INFO:installer_main.cc(410)] Inside package1
+[1215/112023:INFO:installer_main.cc(411)] Autoupdate:1
+[1215/112023:VERBOSE1:settings.cc(348)] Install folder reg value: Last beta Install Path
+[1215/112023:VERBOSE1:settings.cc(371)] Install folder from reg value: 
+[1215/112023:VERBOSE1:rc_l10n_handler.cc(22)] Looking up LCID for es
+[1215/112023:VERBOSE1:settings.cc(152)] Settings from command line
+[1215/112023:VERBOSE1:settings.cc(818)] all_users_:1
+[1215/112023:VERBOSE1:settings.cc(819)] copy_only_:0
+[1215/112023:VERBOSE1:settings.cc(820)] launch_opera_:0
+[1215/112023:VERBOSE1:settings.cc(821)] default_browser_:0
+[1215/112023:VERBOSE1:settings.cc(822)] single_profile_:0
+[1215/112023:VERBOSE1:settings.cc(823)] desktop_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(824)] start_menu_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(825)] quick_launch_shortcut_:0
+[1215/112023:VERBOSE1:settings.cc(826)] pinned_shortcut_:0
+[1215/112023:VERBOSE1:settings.cc(827)] language:es
+[1215/112023:INFO:settings.cc(424)] Retrieving default installation folder pathUsing command line: 1Using the registry: 1
+[1215/112023:VERBOSE1:settings.cc(707)] Setting install folder to: C:\Program Files (x86)\Opera beta
+[1215/112023:VERBOSE1:status.cc(54)] Initializing status: C:\Program Files (x86)\Opera beta
+[1215/112023:VERBOSE1:status.cc(96)] Path is a folder
+[1215/112023:VERBOSE1:status.cc(117)] Path is a existing installation
+[1215/112023:VERBOSE1:status.cc(224)] Testing shortcuts
+[1215/112023:VERBOSE1:utils.cc(594)] Testing shortcutC:\Users\Public\Desktop\Opera beta.lnk
+[1215/112023:VERBOSE1:utils.cc(594)] Testing shortcutC:\ProgramData\Microsoft\Windows\Start Menu\Programs\Opera beta.lnk
+[1215/112023:VERBOSE1:utils.cc(594)] Testing shortcut
+[1215/112023:ERROR:utils.cc(407)] Couldn't find path to taskbar pins.
+[1215/112023:VERBOSE1:utils.cc(594)] Testing shortcut
+[1215/112023:ERROR:utils.cc(407)] Couldn't find path to taskbar pins.
+[1215/112023:VERBOSE1:settings.cc(735)] Install folder set: C:\Program Files (x86)\Opera beta
+[1215/112023:VERBOSE1:settings.cc(152)] Settings from command line
+[1215/112023:VERBOSE1:settings.cc(818)] all_users_:1
+[1215/112023:VERBOSE1:settings.cc(819)] copy_only_:0
+[1215/112023:VERBOSE1:settings.cc(820)] launch_opera_:0
+[1215/112023:VERBOSE1:settings.cc(821)] default_browser_:0
+[1215/112023:VERBOSE1:settings.cc(822)] single_profile_:0
+[1215/112023:VERBOSE1:settings.cc(823)] desktop_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(824)] start_menu_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(825)] quick_launch_shortcut_:0
+[1215/112023:VERBOSE1:settings.cc(826)] pinned_shortcut_:0
+[1215/112023:VERBOSE1:settings.cc(827)] language:es
+[1215/112023:VERBOSE1:settings.cc(758)] Operation: 2
+[1215/112023:VERBOSE1:settings.cc(762)] Using settings from existing installation
+[1215/112023:VERBOSE1:settings.cc(818)] all_users_:1
+[1215/112023:VERBOSE1:settings.cc(819)] copy_only_:0
+[1215/112023:VERBOSE1:settings.cc(820)] launch_opera_:0
+[1215/112023:VERBOSE1:settings.cc(821)] default_browser_:0
+[1215/112023:VERBOSE1:settings.cc(822)] single_profile_:0
+[1215/112023:VERBOSE1:settings.cc(823)] desktop_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(824)] start_menu_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(825)] quick_launch_shortcut_:0
+[1215/112023:VERBOSE1:settings.cc(826)] pinned_shortcut_:0
+[1215/112023:VERBOSE1:settings.cc(827)] language:es
+[1215/112023:VERBOSE1:settings.cc(818)] all_users_:1
+[1215/112023:VERBOSE1:settings.cc(819)] copy_only_:0
+[1215/112023:VERBOSE1:settings.cc(820)] launch_opera_:0
+[1215/112023:VERBOSE1:settings.cc(821)] default_browser_:0
+[1215/112023:VERBOSE1:settings.cc(822)] single_profile_:0
+[1215/112023:VERBOSE1:settings.cc(823)] desktop_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(824)] start_menu_shortcut_:1
+[1215/112023:VERBOSE1:settings.cc(825)] quick_launch_shortcut_:0
+[1215/112023:VERBOSE1:settings.cc(826)] pinned_shortcut_:0
+[1215/112023:VERBOSE1:settings.cc(827)] language:es
+[1215/112023:INFO:installer.cc(189)] Beginning installation
+[1215/112023:VERBOSE1:installer.cc(393)] Write privileges for install folder: 1
+[1215/112023:VERBOSE1:create_folder_operation.cc(22)] Attempting to create folder C:\Program Files (x86)\Opera beta
+[1215/112023:VERBOSE1:create_folder_operation.cc(24)] Folder already exists
+[1215/112023:VERBOSE1:installer.cc(477)] Reading files list
+[1215/112023:VERBOSE1:installer.cc(513)] Installation subfolder35.0.2066.10
+[1215/112023:VERBOSE1:create_folder_operation.cc(22)] Attempting to create folder C:\Program Files (x86)\Opera beta\35.0.2066.10
+[1215/112023:VERBOSE1:create_folder_operation.cc(36)] Valid ancestor
+[1215/112023:VERBOSE1:create_folder_operation.cc(40)] Folder created successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file clearkeycdm.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\clearkeycdm.dll to C:\Program Files (x86)\Opera beta\35.0.2066.10\clearkeycdm.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file clearkeycdmadapter.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\clearkeycdmadapter.dll to C:\Program Files (x86)\Opera beta\35.0.2066.10\clearkeycdmadapter.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file d3dcompiler_47.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\d3dcompiler_47.dll to C:\Program Files (x86)\Opera beta\35.0.2066.10\d3dcompiler_47.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file dbghelp.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\dbghelp.dll to C:\Program Files (x86)\Opera beta\35.0.2066.10\dbghelp.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file icudtl.dat
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\icudtl.dat to C:\Program Files (x86)\Opera beta\35.0.2066.10\icudtl.dat
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file installer.exe
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\installer.exe to C:\Program Files (x86)\Opera beta\35.0.2066.10\installer.exe
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file libEGL.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\libEGL.dll to C:\Program Files (x86)\Opera beta\35.0.2066.10\libEGL.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file libGLESv2.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\libGLESv2.dll to C:\Program Files (x86)\Opera beta\35.0.2066.10\libGLESv2.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\af.pak
+[1215/112023:VERBOSE1:create_folder_operation.cc(22)] Attempting to create folder C:\Program Files (x86)\Opera beta\35.0.2066.10\localization
+[1215/112023:VERBOSE1:create_folder_operation.cc(36)] Valid ancestor
+[1215/112023:VERBOSE1:create_folder_operation.cc(40)] Folder created successfully
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\af.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\af.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\az.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\az.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\az.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\be.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\be.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\be.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\bg.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\bg.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\bg.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\bn.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\bn.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\bn.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\ca.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\ca.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ca.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\cs.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\cs.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\cs.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\da.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\da.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\da.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\de.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\de.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\de.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\el.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\el.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\el.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\en-GB.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\en-GB.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\en-GB.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\en-US.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\en-US.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\en-US.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\es-419.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\es-419.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\es-419.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\es.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\es.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\es.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\fi.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\fi.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fi.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\fil.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\fil.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fil.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\fr-CA.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\fr-CA.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fr-CA.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\fr.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\fr.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fr.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\fy.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\fy.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fy.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\gd.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\gd.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\gd.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\he.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\he.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\he.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\hi.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\hi.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\hi.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\hr.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\hr.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\hr.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\hu.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\hu.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\hu.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\id.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\id.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\id.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\it.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\it.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\it.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\ja.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\ja.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ja.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\kk.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\kk.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\kk.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\ko.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\ko.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ko.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\lt.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\lt.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\lt.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\lv.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\lv.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\lv.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\me.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\me.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\me.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\mk.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\mk.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\mk.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\ms.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\ms.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ms.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\nb.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\nb.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\nb.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\nl.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\nl.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\nl.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\nn.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\nn.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\nn.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\pa.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\pa.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\pa.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\pl.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\pl.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\pl.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\pt-BR.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\pt-BR.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\pt-BR.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\pt-PT.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\pt-PT.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\pt-PT.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\ro.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\ro.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ro.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\ru.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\ru.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ru.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\sk.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\sk.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\sk.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\sr.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\sr.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\sr.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\sv.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\sv.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\sv.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\sw.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\sw.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\sw.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\ta.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\ta.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ta.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\te.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\te.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\te.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\th.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\th.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\th.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\tr.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\tr.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\tr.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\uk.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\uk.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\uk.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\uz.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\uz.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\uz.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\vi.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\vi.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\vi.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\zh-CN.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\zh-CN.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\zh-CN.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\zh-TW.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\zh-TW.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\zh-TW.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file localization\zu.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\zu.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\zu.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file message_center_win8.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\message_center_win8.dll to C:\Program Files (x86)\Opera beta\35.0.2066.10\message_center_win8.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file mojo_public_test_support.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\mojo_public_test_support.dll to C:\Program Files (x86)\Opera beta\35.0.2066.10\mojo_public_test_support.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file msvcp100.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\msvcp100.dll to C:\Program Files (x86)\Opera beta\35.0.2066.10\msvcp100.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file msvcr100.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\msvcr100.dll to C:\Program Files (x86)\Opera beta\35.0.2066.10\msvcr100.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file natives_blob.bin
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\natives_blob.bin to C:\Program Files (x86)\Opera beta\35.0.2066.10\natives_blob.bin
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file opera.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera.dll to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file opera.exe
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera.exe to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera.exe
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file opera.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file opera_100_percent.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_100_percent.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_100_percent.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file opera_125_percent.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_125_percent.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_125_percent.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file opera_150_percent.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_150_percent.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_150_percent.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file opera_200_percent.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_200_percent.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_200_percent.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file opera_250_percent.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_250_percent.pak to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_250_percent.pak
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file opera_autoupdate.exe
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_autoupdate.exe to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_autoupdate.exe
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file opera_autoupdate.licenses
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_autoupdate.licenses to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_autoupdate.licenses
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file opera_autoupdate.version
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_autoupdate.version to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_autoupdate.version
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file opera_crashreporter.exe
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_crashreporter.exe to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_crashreporter.exe
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file osmesa.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\osmesa.dll to C:\Program Files (x86)\Opera beta\35.0.2066.10\osmesa.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\013E742B-287B-4228-A0B9-BD617E4E02A4.ico
+[1215/112023:VERBOSE1:create_folder_operation.cc(22)] Attempting to create folder C:\Program Files (x86)\Opera beta\35.0.2066.10\resources
+[1215/112023:VERBOSE1:create_folder_operation.cc(36)] Valid ancestor
+[1215/112023:VERBOSE1:create_folder_operation.cc(40)] Folder created successfully
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\013E742B-287B-4228-A0B9-BD617E4E02A4.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\013E742B-287B-4228-A0B9-BD617E4E02A4.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\07593226-C5C5-438B-86BE-3F6361CD5B10.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\07593226-C5C5-438B-86BE-3F6361CD5B10.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\07593226-C5C5-438B-86BE-3F6361CD5B10.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\0CD5F3A0-8BF6-11E2-9E96-0800200C9A66.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\0CD5F3A0-8BF6-11E2-9E96-0800200C9A66.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\0CD5F3A0-8BF6-11E2-9E96-0800200C9A66.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\1AF2CDD0-8BF3-11E2-9E96-0800200C9A66.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\1AF2CDD0-8BF3-11E2-9E96-0800200C9A66.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\1AF2CDD0-8BF3-11E2-9E96-0800200C9A66.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\1CF37043-6733-479C-9086-7B21A2292DDA.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\1CF37043-6733-479C-9086-7B21A2292DDA.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\1CF37043-6733-479C-9086-7B21A2292DDA.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\2A3F5C20-8BF5-11E2-9E96-0800200C9A66.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\2A3F5C20-8BF5-11E2-9E96-0800200C9A66.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\2A3F5C20-8BF5-11E2-9E96-0800200C9A66.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\2F8F0E41-F521-45A4-9691-F664AFAFE67F.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\2F8F0E41-F521-45A4-9691-F664AFAFE67F.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\2F8F0E41-F521-45A4-9691-F664AFAFE67F.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\3B6191A0-8BF3-11E2-9E96-0800200C9A66.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\3B6191A0-8BF3-11E2-9E96-0800200C9A66.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\3B6191A0-8BF3-11E2-9E96-0800200C9A66.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\3BFDFA54-5DD6-4DFF-8B6C-C1715F306D6B.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\3BFDFA54-5DD6-4DFF-8B6C-C1715F306D6B.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\3BFDFA54-5DD6-4DFF-8B6C-C1715F306D6B.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\4C95ADC1-5FD9-449D-BC75-77CA217403AE.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\4C95ADC1-5FD9-449D-BC75-77CA217403AE.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\4C95ADC1-5FD9-449D-BC75-77CA217403AE.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\5BBBDD5B-EDC7-4168-9F5D-290AF826E716.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\5BBBDD5B-EDC7-4168-9F5D-290AF826E716.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\5BBBDD5B-EDC7-4168-9F5D-290AF826E716.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\66DD4BB6-A3BA-4B11-AF7A-F4BF23E073B2.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\66DD4BB6-A3BA-4B11-AF7A-F4BF23E073B2.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\66DD4BB6-A3BA-4B11-AF7A-F4BF23E073B2.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\6D3582E1-6013-429F-BB34-C75B90CDD1F8.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\6D3582E1-6013-429F-BB34-C75B90CDD1F8.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\6D3582E1-6013-429F-BB34-C75B90CDD1F8.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\76C397A8-9E8E-4706-8203-BD2878E9C618.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\76C397A8-9E8E-4706-8203-BD2878E9C618.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\76C397A8-9E8E-4706-8203-BD2878E9C618.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\8D754F20-8BF5-11E2-9E96-0800200C9A66.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\8D754F20-8BF5-11E2-9E96-0800200C9A66.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\8D754F20-8BF5-11E2-9E96-0800200C9A66.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\AD2FD2BD-0727-4AF7-8917-AAED8627ED47.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\AD2FD2BD-0727-4AF7-8917-AAED8627ED47.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\AD2FD2BD-0727-4AF7-8917-AAED8627ED47.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\B478FE0C-0761-41C3-946F-CD1340356039.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\B478FE0C-0761-41C3-946F-CD1340356039.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\B478FE0C-0761-41C3-946F-CD1340356039.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\C665D993-1B49-4C2E-962C-BEB19993BB86.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\C665D993-1B49-4C2E-962C-BEB19993BB86.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\C665D993-1B49-4C2E-962C-BEB19993BB86.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\CCCED631-6DA2-4060-9824-95737E64350C.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\CCCED631-6DA2-4060-9824-95737E64350C.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\CCCED631-6DA2-4060-9824-95737E64350C.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\CFCE84E5-9A95-4B3F-B8E4-3E98CF7EE6C5.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\CFCE84E5-9A95-4B3F-B8E4-3E98CF7EE6C5.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\CFCE84E5-9A95-4B3F-B8E4-3E98CF7EE6C5.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\CFD4BE41-4C6D-496A-ADDB-4095DFA1DD0E.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\CFD4BE41-4C6D-496A-ADDB-4095DFA1DD0E.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\CFD4BE41-4C6D-496A-ADDB-4095DFA1DD0E.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\F3F34CBB-24FF-4830-9E87-1663E7A0A5EE.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\F3F34CBB-24FF-4830-9E87-1663E7A0A5EE.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\F3F34CBB-24FF-4830-9E87-1663E7A0A5EE.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\F98D4D4C-8AA7-4619-A1E7-AC89B24558DD.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\F98D4D4C-8AA7-4619-A1E7-AC89B24558DD.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\F98D4D4C-8AA7-4619-A1E7-AC89B24558DD.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\FDC2CCAB-E8F9-4620-91DD-B0B67285997C.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\FDC2CCAB-E8F9-4620-91DD-B0B67285997C.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\FDC2CCAB-E8F9-4620-91DD-B0B67285997C.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\FF57F01A-0718-44B7-8A1F-8B15BC33A50B.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\FF57F01A-0718-44B7-8A1F-8B15BC33A50B.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\FF57F01A-0718-44B7-8A1F-8B15BC33A50B.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\FFF3F819-B6CE-4DE6-B4E4-8E2618ABC0D9.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\FFF3F819-B6CE-4DE6-B4E4-8E2618ABC0D9.ico to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\FFF3F819-B6CE-4DE6-B4E4-8E2618ABC0D9.ico
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\ab_tests.json
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\ab_tests.json to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\ab_tests.json
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\default_localized_themes.json
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\default_localized_themes.json to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\default_localized_themes.json
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\default_partner_content.json
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\default_partner_content.json to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\default_partner_content.json
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\dictionaries.xml
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\dictionaries.xml to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\dictionaries.xml
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\license.txt
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\license.txt to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\license.txt
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\standard_themes\darkbreeze.zip
+[1215/112023:VERBOSE1:create_folder_operation.cc(22)] Attempting to create folder C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes
+[1215/112023:VERBOSE1:create_folder_operation.cc(36)] Valid ancestor
+[1215/112023:VERBOSE1:create_folder_operation.cc(40)] Folder created successfully
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\standard_themes\darkbreeze.zip to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\darkbreeze.zip
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\standard_themes\default_theme.zip
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\standard_themes\default_theme.zip to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\default_theme.zip
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\standard_themes\grey.zip
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\standard_themes\grey.zip to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\grey.zip
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\standard_themes\landscape_photo.zip
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\standard_themes\landscape_photo.zip to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\landscape_photo.zip
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file resources\standard_themes\reine.zip
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\standard_themes\reine.zip to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\reine.zip
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file snapshot_blob.bin
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\snapshot_blob.bin to C:\Program Files (x86)\Opera beta\35.0.2066.10\snapshot_blob.bin
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file widevinecdmadapter.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\widevinecdmadapter.dll to C:\Program Files (x86)\Opera beta\35.0.2066.10\widevinecdmadapter.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file win8_importing.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\win8_importing.dll to C:\Program Files (x86)\Opera beta\35.0.2066.10\win8_importing.dll
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file wow_helper.exe
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\wow_helper.exe to C:\Program Files (x86)\Opera beta\35.0.2066.10\wow_helper.exe
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-100.png for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-100.png.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-100_contrast-white.png for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-100_contrast-white.png.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-140.png for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-140.png.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-140_contrast-white.png for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-140_contrast-white.png.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-180.png for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-180.png.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-180_contrast-white.png for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-180_contrast-white.png.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-80.png for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-80.png.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-80_contrast-white.png for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-80_contrast-white.png.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-100.png for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-100.png.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-100_contrast-white.png for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-100_contrast-white.png.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-140.png for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-140.png.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-140_contrast-white.png for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-140_contrast-white.png.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-180.png for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-180.png.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-180_contrast-white.png for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-180_contrast-white.png.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-80.png for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-80.png.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-80_contrast-white.png for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-80_contrast-white.png.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\notification_default.png for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\notification_default.png.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Resources.pri for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Resources.pri.1450189223.old
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\launcher.visualelementsmanifest.xml for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\launcher.visualelementsmanifest.xml.1450189223.old
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Assets\150x150Logo.scale-100.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\150x150Logo.scale-100.png to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-100.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Assets\150x150Logo.scale-100_contrast-white.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\150x150Logo.scale-100_contrast-white.png to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-100_contrast-white.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Assets\150x150Logo.scale-140.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\150x150Logo.scale-140.png to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-140.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Assets\150x150Logo.scale-140_contrast-white.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\150x150Logo.scale-140_contrast-white.png to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-140_contrast-white.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Assets\150x150Logo.scale-180.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\150x150Logo.scale-180.png to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-180.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Assets\150x150Logo.scale-180_contrast-white.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\150x150Logo.scale-180_contrast-white.png to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-180_contrast-white.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Assets\150x150Logo.scale-80.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\150x150Logo.scale-80.png to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-80.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Assets\150x150Logo.scale-80_contrast-white.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\150x150Logo.scale-80_contrast-white.png to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-80_contrast-white.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Assets\70x70Logo.scale-100.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\70x70Logo.scale-100.png to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-100.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Assets\70x70Logo.scale-100_contrast-white.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\70x70Logo.scale-100_contrast-white.png to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-100_contrast-white.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Assets\70x70Logo.scale-140.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\70x70Logo.scale-140.png to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-140.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Assets\70x70Logo.scale-140_contrast-white.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\70x70Logo.scale-140_contrast-white.png to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-140_contrast-white.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Assets\70x70Logo.scale-180.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\70x70Logo.scale-180.png to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-180.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Assets\70x70Logo.scale-180_contrast-white.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\70x70Logo.scale-180_contrast-white.png to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-180_contrast-white.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Assets\70x70Logo.scale-80.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\70x70Logo.scale-80.png to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-80.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Assets\70x70Logo.scale-80_contrast-white.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\70x70Logo.scale-80_contrast-white.png to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-80_contrast-white.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Assets\notification_default.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\notification_default.png to C:\Program Files (x86)\Opera beta\Assets\notification_default.png
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file Resources.pri
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Resources.pri to C:\Program Files (x86)\Opera beta\Resources.pri
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(654)] Copying file launcher.visualelementsmanifest.xml
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\launcher.visualelementsmanifest.xml to C:\Program Files (x86)\Opera beta\launcher.visualelementsmanifest.xml
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(678)] Installing the launcher
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\launcher.exe for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\launcher.exe.1450189223.old
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\launcher.exe to C:\Program Files (x86)\Opera beta\launcher.exe
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Classes\Operabeta under 80000002
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Classes\Operabeta
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 2 values
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Classes\Operabeta\DefaultIcon
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 1 values
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Classes\Operabeta\shell
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 0 values
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Classes\Operabeta\shell\open
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 0 values
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Classes\Operabeta\shell\open\command
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 1 values
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Classes\Operabeta\DefaultIcon under 80000002
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Classes\Operabeta\shell\open under 80000002
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Classes\.oex under 80000002
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Classes\.oex
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 1 values
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Classes\.oex\OpenWithProgIDs
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 1 values
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Classes\.oex\OpenWithProgIDs under 80000002
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.opdownload\OpenWithProgIDs - Operabeta. New Type:4294967295
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.htm\OpenWithProgIDs - Operabeta. New Type:4294967295
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.html\OpenWithProgIDs - Operabeta. New Type:4294967295
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.pdf\OpenWithProgIDs - Operabeta. New Type:4294967295
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.shtml\OpenWithProgIDs - Operabeta. New Type:4294967295
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.xht\OpenWithProgIDs - Operabeta. New Type:4294967295
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.xhtml\OpenWithProgIDs - Operabeta. New Type:4294967295
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Compatibility Assistant\Persisted - C:\Program Files (x86)\Opera beta\Launcher.exe. New Type:4294967295
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\RegisteredApplications - Opera beta. New Type:4294967295
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Clients\StartMenuInternet\Operabeta under 80000002
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 1 values
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\Capabilities
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 3 values
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 9 values
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\Capabilities\Startmenu
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 1 values
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\Capabilities\UrlAssociations
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 4 values
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\DefaultIcon
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 1 values
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\InstallInfo
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 4 values
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\shell
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 0 values
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\shell\open
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 0 values
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\shell\open\command
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 1 values
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Clients\StartMenuInternet\Operabeta\DefaultIcon under 80000002
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Clients\StartMenuInternet\Operabeta\InstallInfo under 80000002
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Clients\StartMenuInternet\Operabeta\shell\open under 80000002
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Clients\StartMenuInternet\Operabeta\Capabilities under 80000002
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations under 80000002
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Clients\StartMenuInternet\Operabeta\Capabilities\Startmenu under 80000002
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Clients\StartMenuInternet\Operabeta\Capabilities\UrlAssociations under 80000002
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 34.0.2036.24 under 80000002
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 34.0.2036.24
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(98)] 11 values
+[1215/112023:VERBOSE1:installer.cc(731)] Setting up the registry
+[1215/112023:VERBOSE1:installer.cc(750)] Uninstall key: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.10
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\Operabeta - FriendlyTypeName. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Classes\Operabeta under 80000002
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Classes
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\Operabeta - URL Protocol. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\Operabeta\DefaultIcon - . New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Classes\Operabeta\DefaultIcon under 80000002
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Classes\Operabeta
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\Operabeta\shell\open\command - . New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Classes\Operabeta\shell\open\command under 80000002
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Classes\Operabeta
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Classes\{Product}{Stream}\shell\open\ddeexec under 80000002
+[1215/112023:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.oex - . New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Classes\.oex under 80000002
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Classes
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.oex\OpenWithProgIDs - Operabeta. New Type:0
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Classes\.oex\OpenWithProgIDs under 80000002
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Classes\.oex
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.opdownload\OpenWithProgIDs - Operabeta. New Type:0
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.htm\OpenWithProgIDs - Operabeta. New Type:0
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.html\OpenWithProgIDs - Operabeta. New Type:0
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.pdf\OpenWithProgIDs - Operabeta. New Type:0
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.shtml\OpenWithProgIDs - Operabeta. New Type:0
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.xht\OpenWithProgIDs - Operabeta. New Type:0
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.xhtml\OpenWithProgIDs - Operabeta. New Type:0
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Compatibility Assistant\Persisted - C:\Program Files (x86)\Opera beta\Launcher.exe. New Type:4
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\RegisteredApplications - Opera beta. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta - . New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Clients\StartMenuInternet\Operabeta under 80000002
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Clients\StartMenuInternet
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\DefaultIcon - . New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Clients\StartMenuInternet\Operabeta\DefaultIcon under 80000002
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Clients\StartMenuInternet\Operabeta
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\InstallInfo - ShowIconsCommand. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Clients\StartMenuInternet\Operabeta\InstallInfo under 80000002
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Clients\StartMenuInternet\Operabeta
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\InstallInfo - HideIconsCommand. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\InstallInfo - ReinstallCommand. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\InstallInfo - IconsVisible. New Type:4
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\shell\open\command - . New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Clients\StartMenuInternet\Operabeta\shell\open\command under 80000002
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Clients\StartMenuInternet\Operabeta
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities - ApplicationDescription. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Clients\StartMenuInternet\Operabeta\Capabilities under 80000002
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Clients\StartMenuInternet\Operabeta
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities - ApplicationIcon. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities - ApplicationName. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .crx. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations under 80000002
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Clients\StartMenuInternet\Operabeta\Capabilities
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .htm. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .html. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .nex. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .opdownload. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .pdf. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .shtml. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .xht. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .xhtml. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\Startmenu - StartMenuInternet. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Clients\StartMenuInternet\Operabeta\Capabilities\Startmenu under 80000002
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Clients\StartMenuInternet\Operabeta\Capabilities
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\UrlAssociations - http. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Clients\StartMenuInternet\Operabeta\Capabilities\UrlAssociations under 80000002
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Clients\StartMenuInternet\Operabeta\Capabilities
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\UrlAssociations - https. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\UrlAssociations - ftp. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\UrlAssociations - mailto. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.10 - DisplayName. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.10 under 80000002
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[1215/112023:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Microsoft\Windows\CurrentVersion\Uninstall
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.10 - DisplayIcon. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.10 - DisplayVersion. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.10 - HelpLink. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.10 - InstallLocation. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.10 - NoModify. New Type:4
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.10 - NoRepair. New Type:4
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.10 - Publisher. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.10 - UninstallString. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.10 - URLInfoAbout. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.10 - URLUpdateInfo. New Type:1
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[1215/112023:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[1215/112023:VERBOSE1:installer.cc(888)] Updating shortcuts
+[1215/112023:VERBOSE1:installer.cc(914)] Not using shortcut names with version number
+[1215/112023:VERBOSE1:installer.cc(920)] Handling desktop shortcut:
+[1215/112023:VERBOSE1:installer.cc(955)] Handling start menu shortcut:
+[1215/112023:VERBOSE1:installer.cc(971)] Recreating shortcut
+[1215/112023:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Opera beta.lnk for removal
+[1215/112023:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Opera beta.lnk.1450189223.old
+[1215/112023:VERBOSE1:installer.cc(990)] Handling quick launch shortcut:
+[1215/112023:VERBOSE1:installer.cc(1911)] Creating master shortcut
+[1215/112023:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Opera beta.lnk to C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Opera beta.lnk
+[1215/112023:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(1154)] Preserving previous installer status
+[1215/112023:VERBOSE1:create_folder_operation.cc(22)] Attempting to create folder C:\Program Files (x86)\Opera beta\old_status
+[1215/112023:VERBOSE1:create_folder_operation.cc(36)] Valid ancestor
+[1215/112023:VERBOSE1:create_folder_operation.cc(40)] Folder created successfully
+[1215/112023:VERBOSE1:move_file_operation.cc(37)] Moving C:\Program Files (x86)\Opera beta\installation_status.xmltoC:\Program Files (x86)\Opera beta\old_status\installation_status.xml.1450189223
+[1215/112023:VERBOSE1:move_file_operation.cc(55)] File copied successfully
+[1215/112023:VERBOSE1:installer.cc(1256)] Finalizing the installation
+[1215/112023:INFO:installer.cc(1288)] Creating scheduled task
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-100.png.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-100_contrast-white.png.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-140.png.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-140_contrast-white.png.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-180.png.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-180_contrast-white.png.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-80.png.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-80_contrast-white.png.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-100.png.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-100_contrast-white.png.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-140.png.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-140_contrast-white.png.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-180.png.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-180_contrast-white.png.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-80.png.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-80_contrast-white.png.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\notification_default.png.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Resources.pri.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\launcher.visualelementsmanifest.xml.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\launcher.exe.1450189223.old
+[1215/112024:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Opera beta.lnk.1450189223.old

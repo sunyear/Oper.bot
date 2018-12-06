@@ -1,0 +1,453 @@
+<!-- 
+  componente: actas validadas en PROCESOS -> Validar Actas
+  controlador: validaciones-tablero-controller.js: ValidacionesTableroController()
+  servicio: remitos-actas-service.js: remitosActasService() 
+-->
+
+<!-- CONFIG DEL TEMPLATE -->
+<style type="text/css">
+.material-icons.md-12 { font-size: 16px; }
+  .material-icons.md-18 { font-size: 18px; }
+  .material-icons.md-24 { font-size: 24px; }
+  .material-icons.md-36 { font-size: 36px; }
+  .material-icons.md-48 { font-size: 48px; }
+  .material-icons.md-64 { font-size: 64px; }
+  .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+  .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+  .material-icons.orange600 { color: #FB8C00; }
+  .material-icons.black { color: #000000; }
+  .material-icons.red {color: rgb(255, 51, 51);}
+  .material-icons.green_big {color: rgb(36, 191, 1);}
+  .material-icons {
+
+  }
+
+
+  #md-sidenav-val, #md-sidenav-val.md-locked-open, #md-sidenav-val.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 50vw !important;
+  max-width: 200px !important;
+  }
+md-list-item + md-divider{
+    border-top-color: rgb(100, 100, 100) !important;
+  }
+.header-toolbar {
+    margin: 0px;
+    font-weight: bolder;
+    font-size: 12px;
+    color: rgb(38, 50, 56);
+  }
+
+  .header-toolbar-subtitle {
+    margin: 0px;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(38, 50, 56);
+  }
+
+md-checkbox .md-icon {
+  transform: scale(.7);
+}
+
+md-checkbox {padding: 0px !important; margin: 0px !important;}
+  
+  .md-label {
+    margin-left: 5px !important;
+  }
+}
+
+md-checkbox.md-checked.red .md-icon {
+ background-color: rgb(0, 0, 0);
+ border-color: rgb(0, 0, 0);
+}
+
+
+
+md-checkbox.dotted .md-icon {
+ border-width: 1px;
+ border-style: solid;
+ border-color: lightgray;
+}
+
+.data-grid-selected-row {
+  background-color: rgb(255, 247, 196);
+}
+
+.fila_seleccionada:hover{background-color:rgb(255, 247, 196)!important}
+
+tbody td.col_border{
+
+  border: dotted 1px lightgray;
+  
+}
+
+tbody tr.row_css{
+  border-bottom: solid 1px lightgray;
+  height: 15px !important;
+  max-height: 15px !important;
+  min-height: 15px !important;
+  line-height: 15px !important;
+}
+
+md-checkbox.md-checked.red .md-icon {
+ background-color: rgb(0, 0, 0);
+ border-color: rgb(0, 0, 0);
+}
+
+md-checkbox .md-container:after {box-sizing: border-box;
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+md-chip{
+  font-size: 0.7em !important;
+  height: 20px !important;
+  width: auto !important;
+  line-height: 20px !important;
+  border: solid 0px red;
+  border-radius: 0px !important;
+  box-shadow: 0 0px !important;
+}
+
+.md-chip-ejecucion-rc{
+  background-color: #FF5722 !important;
+  color: white !important;
+}
+
+
+
+
+
+
+.md-chips { box-shadow: none !important; padding: 0 !important;}
+
+.md-card-interior {box-shadow: none !important; border: solid 1px lightgray;}
+
+.prueba_titulo{
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #37474F;
+}
+
+.md-button.md-small {
+    min-width: 1% !important;
+    font-size: 0.8em !important;
+    padding: 2px !important;
+    line-height: 0.8em !important;
+    height: 15px !important;
+  }
+
+
+.titulo_caso_prueba {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #37474F;
+}
+
+.titulo_caso_prueba:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.titulo_caso_prueba_grid {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: white;
+}
+
+.titulo_caso_prueba_grid:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.gridListdemoBasicUsage md-grid-list {
+  margin: 8px; }
+
+.gridListdemoBasicUsage .gray {
+  background: #f5f5f5; }
+
+.gridListdemoBasicUsage .green {
+  background: #b9f6ca; }
+
+.gridListdemoBasicUsage .yellow {
+  background: #ffff8d; }
+
+.gridListdemoBasicUsage .blue {
+  background: #84ffff; }
+
+.gridListdemoBasicUsage .purple {
+  background: #b388ff; }
+
+.gridListdemoBasicUsage .red {
+  background: #ff8a80; }
+
+md-grid-tile-footer figcaption  {
+  width:100% !important;
+}
+
+md-grid-tile-footer figcaption h3 {
+  margin: 0 !important;
+  font-weight: 500 !important;
+  width:100% !important;
+  text-align:center !important;
+  font-size: 1em;
+  line-height: 1em;
+  padding: 5px !important;
+  text-overflow: ellipsis;
+}
+
+md-grid-tile:hover {
+  border: solid 2px darkgray !important;
+  cursor: pointer;
+};
+
+
+</style>
+<!-- FIN CONFIG <TABLE></TABLE>EMPLATE -->
+
+<!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
+<md-content id="contenedor" layout-fill>
+
+<div layout="column" layout-fill>
+
+
+  <!-- escenarios en ejecucion -->
+
+<div>
+  <md-card>
+    <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Reporte Correo</span>
+          </md-card-title-text>
+        </md-card-title>
+  <md-card-content>
+    <div class="gridListdemoBasicUsage" style="padding-left: 0px;">
+
+
+<md-grid-list
+        md-cols="8" md-cols-xl="12"
+        md-row-height="2:1"
+        md-gutter="12px">
+
+
+        <md-grid-tile style="border: solid 1px lightgray;" class="gray otro"
+        md-rowspan="2" md-colspan="2" md-rowspan-xl="3" md-colspan-xl="3" layout="row" layout-align="center center"
+        ng-click="vm.abrirReporte('')">
+
+        <md-icon style="border: solid 0px blue; width:50%; height: 50%; text-align: center; margin-bottom: 56px;" class="material-icons md-64">assignment</md-icon>
+        
+      <md-grid-tile-footer style="background: rgba(0, 0, 0, 0.68);">
+        <h3 layout="row" layout-align="center" class="titulo_caso_prueba_grid" ng-click="vm.abrirReproduccion(3, $event)">
+          Seguimiento CECAITRA
+        </h3>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+
+     <md-grid-tile style="border: solid 1px lightgray;" class="gray otro"
+        md-rowspan="2" md-colspan="2" md-rowspan-xl="3" md-colspan-xl="3" layout="row" layout-align="center center"
+        ng-click="vm.abrirReporte('')">
+
+        <md-icon style="border: solid 0px blue; width:50%; height: 50%; text-align: center; margin-bottom: 56px;" class="material-icons md-64">assignment</md-icon>
+        
+      <md-grid-tile-footer style="background: rgba(0, 0, 0, 0.68);">
+        <h3 layout="row" layout-align="center" class="titulo_caso_prueba_grid" ng-click="vm.abrirReproduccion(3, $event)">
+          Seguimiento SIJAI
+        </h3>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+
+
+     <md-grid-tile style="border: solid 1px lightgray;" class="gray otro"
+        md-rowspan="2" md-colspan="2" md-rowspan-xl="3" md-colspan-xl="3" layout="row" layout-align="center center"
+        ng-click="vm.abrirReporte('rechazos_cecaitra')">
+
+        <md-icon style="border: solid 0px blue; width:50%; height: 50%; text-align: center; margin-bottom: 56px;" class="material-icons md-64">assignment_late</md-icon>
+        
+      <md-grid-tile-footer style="background: rgba(0, 0, 0, 0.68);">
+        <h3 layout="row" layout-align="center" class="titulo_caso_prueba_grid" ng-click="vm.abrirReporte('rechazos_cecaitra')">
+          RECHAZOS CECAITRA
+        </h3>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+
+
+ <md-grid-tile style="border: solid 1px lightgray;" class="gray otro"
+        md-rowspan="2" md-colspan="2" md-rowspan-xl="3" md-colspan-xl="3" layout="row" layout-align="center center"
+        ng-click="vm.abrirReporte('rechazos_sijai')">
+
+        <md-icon style="border: solid 0px blue; width:50%; height: 50%; text-align: center; margin-bottom: 56px;" class="material-icons md-64">assignment_late</md-icon>
+        
+      <md-grid-tile-footer style="background: rgba(0, 0, 0, 0.68);">
+        <h3 layout="row" layout-align="center" class="titulo_caso_prueba_grid" ng-click="vm.abrirReporte('rechazos_sijai')">
+          RECHAZOS SIJAI
+        </h3>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+
+
+
+  </md-grid-list>
+</div>
+  </md-card-content>
+</md-card>
+  
+</div>
+<!-- FIN escenarios en ejecucion -->
+
+
+
+
+<!-- escenarios en ejecucion -->
+<div>
+  <md-card>
+    <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Reporte estado lotes</span>
+          </md-card-title-text>
+        </md-card-title>
+  <md-card-content>
+    <div class="gridListdemoBasicUsage" style="padding-left: 0px;">
+
+
+<md-grid-list
+        md-cols="8" md-cols-xl="12"
+        md-row-height="2:1"
+        md-gutter="12px">
+
+
+        <md-grid-tile ng-click="vm.abrirReporte('estado_lotes')" style="border: solid 1px lightgray" class="gray"
+        md-rowspan="2" md-colspan="2" md-rowspan-xl="3" md-colspan-xl="3" layout="row" layout-align="center center">
+
+        <md-icon style="border: solid 0px blue; width:50%; height: 50%; text-align: center; margin-bottom: 56px;" class="material-icons md-64">widgets</md-icon>
+        
+      <md-grid-tile-footer style="background: rgba(0, 0, 0, 0.68);">
+        <h3 layout="row" layout-align="center" class="titulo_caso_prueba_grid" ng-click="vm.abrirReporte('estado_lotes')">
+          ESTADO LOTES
+        </h3>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+
+
+    <md-grid-tile ng-click="vm.abrirReporte('lotes_personales_pendientes')" style="border: solid 1px lightgray" class="gray"
+        md-rowspan="2" md-colspan="2" md-rowspan-xl="3" md-colspan-xl="3" layout="row" layout-align="center center">
+          <md-icon style="border: solid 0px blue; width:50%; height: 50%; text-align: center; margin-bottom: 56px;" class="material-icons md-64">playlist_add_check
+          </md-icon>
+          <md-grid-tile-footer style="background: rgba(0, 0, 0, 0.68);">
+            <h3 layout="row" layout-align="center" class="titulo_caso_prueba_grid" ng-click="vm.abrirReporte('lotes_personales_pendientes')">
+              LOTES PERSONALES PENDIENTES 
+            </h3>
+          </md-grid-tile-footer>
+        </md-grid-tile>
+
+    
+
+
+
+  </md-grid-list>
+</div>
+  </md-card-content>
+</md-card>
+  
+</div>
+<!-- FIN escenarios en ejecucion -->
+
+
+
+<!-- escenarios en ejecucion -->
+<div>
+  <md-card>
+    <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Otros reportes</span>
+          </md-card-title-text>
+        </md-card-title>
+  <md-card-content>
+    <div class="gridListdemoBasicUsage" style="padding-left: 0px;">
+
+
+<md-grid-list
+        md-cols="8" md-cols-xl="12"
+        md-row-height="2:1"
+        md-gutter="12px">
+
+
+
+        <md-grid-tile ng-click="vm.abrirReporte('detalle_causa')" style="border: solid 1px lightgray" class="gray"
+        md-rowspan="2" md-colspan="2" md-rowspan-xl="3" md-colspan-xl="3" layout="row" layout-align="center center">
+          <md-icon style="border: solid 0px blue; width:50%; height: 50%; text-align: center; margin-bottom: 56px;" class="material-icons md-64">list
+          </md-icon>
+          <md-grid-tile-footer style="background: rgba(0, 0, 0, 0.68);">
+            <h3 layout="row" layout-align="center" class="titulo_caso_prueba_grid" ng-click="vm.abrirReporte('detalle_causa')">
+              DETALLE CAUSA
+            </h3>
+          </md-grid-tile-footer>
+        </md-grid-tile>
+
+        <md-grid-tile ng-click="vm.abrirReporte('nro_doc_repetido')" style="border: solid 1px lightgray" class="gray"
+        md-rowspan="2" md-colspan="2" md-rowspan-xl="3" md-colspan-xl="3" layout="row" layout-align="center center">
+          <md-icon style="border: solid 0px blue; width:50%; height: 50%; text-align: center; margin-bottom: 56px;" class="material-icons md-64">supervised_user_circle
+          </md-icon>
+          <md-grid-tile-footer style="background: rgba(0, 0, 0, 0.68);">
+            <h3 layout="row" layout-align="center" class="titulo_caso_prueba_grid" ng-click="vm.abrirReporte('nro_doc_repetido')">
+              NRO_DOC REPETIDOS
+            </h3>
+          </md-grid-tile-footer>
+        </md-grid-tile>
+
+
+        <md-grid-tile ng-click="vm.abrirReporte('causas_sancion_localidad')" style="border: solid 1px lightgray" class="gray"
+        md-rowspan="2" md-colspan="2" md-rowspan-xl="3" md-colspan-xl="3" layout="row" layout-align="center center">
+          <md-icon style="border: solid 0px blue; width:50%; height: 50%; text-align: center; margin-bottom: 56px;" class="material-icons md-64">location_on
+          </md-icon>
+          <md-grid-tile-footer style="background: rgba(0, 0, 0, 0.68);">
+            <h3 layout="row" layout-align="center" class="titulo_caso_prueba_grid" ng-click="vm.abrirReporte('causas_sancion_localidad')">
+              CAUSAS c/SANCION x LOCALIDAD
+            </h3>
+          </md-grid-tile-footer>
+        </md-grid-tile>
+
+
+         <md-grid-tile ng-click="vm.abrirReporte('causas_multiples_resoluciones')" style="border: solid 1px lightgray" class="gray"
+        md-rowspan="2" md-colspan="2" md-rowspan-xl="3" md-colspan-xl="3" layout="row" layout-align="center center">
+          <md-icon style="border: solid 0px blue; width:50%; height: 50%; text-align: center; margin-bottom: 56px;" class="material-icons md-64">share
+          </md-icon>
+          <md-grid-tile-footer style="background: rgba(0, 0, 0, 0.68);">
+            <h3 layout="row" layout-align="center" class="titulo_caso_prueba_grid" ng-click="vm.abrirReporte('causas_multiples_resoluciones')">
+              CAUSAS C/MULTIPLES RESOLUCIONES ACTIVAS
+            </h3>
+          </md-grid-tile-footer>
+        </md-grid-tile>
+
+
+
+        
+
+
+    
+
+
+
+  </md-grid-list>
+</div>
+  </md-card-content>
+</md-card>
+  
+</div>
+<!-- FIN escenarios en ejecucion -->
+
+
+</div>
+  
+</md-content>

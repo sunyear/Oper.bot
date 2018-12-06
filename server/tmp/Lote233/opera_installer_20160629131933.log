@@ -1,0 +1,60 @@
+[0629/131933:INFO:installer_main.cc(294)] Opera installer starting - version 39.0.2256.15 beta
+[0629/131933:INFO:installer_main.cc(297)] Command line: "C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\installer.exe" --install --silent --autoupdate --installfolder="C:\Program Files (x86)\Opera beta" --launchopera=0
+[0629/131933:INFO:installer_main.cc(339)] Install folder from command line: C:\Program Files (x86)\Opera beta
+[0629/131933:INFO:installer_main.cc(359)] Uninstall:0
+[0629/131933:INFO:installer_main.cc(360)] Replace Presto installation:0
+[0629/131933:INFO:installer_main.cc(361)] Silent:1
+[0629/131933:INFO:installer_main.cc(362)] Run Immediately0
+[0629/131933:INFO:installer_main.cc(363)] Backend0
+[0629/131933:INFO:installer_main.cc(364)] Inside package1
+[0629/131933:INFO:installer_main.cc(365)] Autoupdate:1
+[0629/131933:INFO:rc_l10n_handler.cc(131)] Language not in the available languages list: 
+[0629/131933:INFO:rc_l10n_handler.cc(137)] Trying language from system preferred list: es-ES
+[0629/131933:INFO:rc_l10n_handler.cc(180)] Retrying after adjustments: es
+[0629/131933:INFO:settings.cc(469)] Retrieving default installation folder path - Using command line: 1 - Using the registry: 1
+[0629/131933:ERROR:utils.cc(425)] Couldn't find path to taskbar pins.
+[0629/131933:ERROR:utils.cc(425)] Couldn't find path to taskbar pins.
+[0629/131933:INFO:installer_main.cc(430)] Installer download folder: C:\Windows\TEMP\Opera Installer
+[0629/131933:INFO:settings.cc(809)] Install folder set: C:\Program Files (x86)\Opera beta
+[0629/131933:INFO:settings.cc(832)] Operation: 2
+[0629/131933:INFO:settings.cc(524)] Writing setting stats with prefix 
+[0629/131933:INFO:settings.cc(469)] Retrieving default installation folder path - Using command line: 0 - Using the registry: 0
+[0629/131933:INFO:pref_default_overrides_fetcher.cc(71)] Fetching default prefs overrides to C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\pref_default_overrides with tracking data NzhlY2E3NGYyNzQwZTQxN2UwNmE4MWUyZDgxOTk0YjFmODk5ZWNmYWJkMTJiZTA1YTI1NjQzZTViMmM0ODNkOTp7ImNvdW50cnkiOiJBUiIsInJlbW90ZV9hZGRyIjoiMTkwLjU3LjIzNS4yIiwicXVlcnkiOiIvb3BlcmEvYmV0YS93aW5kb3dzP2h0dHBfcmVmZXJyZXI9aHR0cDovL3d3dy5nb29nbGUuY29tLmFyL3VybF9zYV90X3JjdF9qX3FfX2VzcmNfc19zb3VyY2Vfd2ViX2NkXzFfdmVkXzBhaFVLRXdpVm40cnl6Y3JKQWhYQ0NwQUtIVjdqQU5FUUZnZ2FNQUFfdXJsX2h0dHAlM0ElMkYlMkZ3d3cub3BlcmEuY29tJTJGZXMtNDE5JTJGY29tcHV0ZXIlMkZiZXRhX3VzZ19BRlFqQ05FQzNkQW5hNTZQMjY0bWFrZmM3MmNDd2habXhRX2J2bV9idi4xMDg1Mzg5MTlfZC5ZMkkmdXRtX3NvdXJjZT1nb29nbGVfdmlhX29wZXJhX2NvbSZ1dG1fbWVkaXVtPW9zZSZ1dG1fY2FtcGFpZ249Z29vZ2xlX29zZV92aWFfb3BlcmFfY29tIiwidXNlcmFnZW50IjoiTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4zOyBXT1c2NDsgVHJpZGVudC83LjA7IHJ2OjExLjApIGxpa2UgR2Vja28iLCJ1dWlkIjoiMjNlM2E4ZGMtY2IxZC00MzU2LTk0NWMtOGMzYTdmNzI1NDhiIiwiaHR0cF9yZWZlcnJlciI6Imh0dHA6Ly93d3cub3BlcmEuY29tL2VzLTQxOS9jb21wdXRlci90aGFua3M/bmk9YmV0YSZvcz13aW5kb3dzIiwidGltZXN0YW1wIjoiMTQ0OTUyMDg0Mi4xNjI5IiwidXRtIjp7InNvdXJjZSI6Imdvb2dsZV92aWFfb3BlcmFfY29tIiwiY2FtcGFpZ24iOiJnb29nbGVfb3NlX3ZpYV9vcGVyYV9jb20iLCJtZWRpdW0iOiJvc2UifX0= 
+[0629/131933:INFO:wininet.cc(195)] Starting download from https://autoupdate.geo.opera.com/api/prefs/?product=Opera&version=39.0.2256.15
+[0629/131933:INFO:installer_runner.cc(57)] Beginning installation
+[0629/131933:INFO:installer_runner.cc(200)] launching installer backend: "C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\installer.exe" --backend --silent --install --autoupdate --import-browser-data=1 --enable-stats=1 --enable-installer-stats=1 --launchopera=0 --installfolder="C:\Program Files (x86)\Opera beta" --profile-folder --language=es --setdefaultbrowser=0 --startmenushortcut=1 --desktopshortcut=1 --quicklaunchshortcut=0 --pintotaskbar=0 --server-tracking-data=server_tracking_data --initial-pid=2704 --crash-reporter-pid=1128 --wait-for-package="C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing" --initial-proc-handle=E8030000
+[0629/131933:INFO:installer_main.cc(294)] Opera installer starting - version 39.0.2256.15 beta
+[0629/131933:INFO:installer_main.cc(297)] Command line: "C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\installer.exe" --backend --silent --install --autoupdate --import-browser-data=1 --enable-stats=1 --enable-installer-stats=1 --launchopera=0 --installfolder="C:\Program Files (x86)\Opera beta" --profile-folder --language=es --setdefaultbrowser=0 --startmenushortcut=1 --desktopshortcut=1 --quicklaunchshortcut=0 --pintotaskbar=0 --server-tracking-data=server_tracking_data --initial-pid=2704 --crash-reporter-pid=1128 --wait-for-package="C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing" --initial-proc-handle=E8030000
+[0629/131933:INFO:installer_main.cc(339)] Install folder from command line: C:\Program Files (x86)\Opera beta
+[0629/131933:INFO:installer_main.cc(359)] Uninstall:0
+[0629/131933:INFO:installer_main.cc(360)] Replace Presto installation:0
+[0629/131933:INFO:installer_main.cc(361)] Silent:1
+[0629/131933:INFO:installer_main.cc(362)] Run Immediately0
+[0629/131933:INFO:installer_main.cc(363)] Backend1
+[0629/131933:INFO:installer_main.cc(364)] Inside package1
+[0629/131933:INFO:installer_main.cc(365)] Autoupdate:1
+[0629/131933:INFO:rc_l10n_handler.cc(131)] Language not in the available languages list: 
+[0629/131933:INFO:rc_l10n_handler.cc(137)] Trying language from system preferred list: es-ES
+[0629/131933:INFO:rc_l10n_handler.cc(180)] Retrying after adjustments: es
+[0629/131933:INFO:settings.cc(469)] Retrieving default installation folder path - Using command line: 1 - Using the registry: 1
+[0629/131933:ERROR:utils.cc(425)] Couldn't find path to taskbar pins.
+[0629/131933:ERROR:utils.cc(425)] Couldn't find path to taskbar pins.
+[0629/131933:INFO:settings.cc(809)] Install folder set: C:\Program Files (x86)\Opera beta
+[0629/131933:INFO:settings.cc(832)] Operation: 2
+[0629/131933:INFO:installer.cc(189)] Beginning installation
+[0629/131933:INFO:installer.cc(410)] Write privileges for install folder: 1
+[0629/131933:INFO:installer.cc(203)] Need to wait for actual package
+[0629/131935:INFO:wininet.cc(380)] Initial request completion
+[0629/131935:INFO:wininet.cc(403)] Could not get Content-Length from response: Error (0x13D) while retrieving error. (0x2F76)
+[0629/131935:INFO:wininet.cc(67)] Waiting for WinINET to finish
+[0629/131935:INFO:wininet.cc(573)] Download completed
+[0629/131935:INFO:pref_default_overrides_fetcher.cc(105)] Default prefs overrides fetched successfully
+[0629/131935:INFO:installer_runner.cc(266)] Informing the installer backend that the package is ready
+[0629/131935:INFO:installer.cc(232)] Package is ready
+[0629/131935:INFO:installer.cc(251)] Running installer from the package with command line: "C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\installer.exe" --backend --silent --initial-pid=2704 --install --autoupdate --import-browser-data=1 --enable-stats=1 --enable-installer-stats=1 --launchopera=0 --installfolder="C:\Program Files (x86)\Opera beta" --profile-folder --language=es --setdefaultbrowser=0 --startmenushortcut=1 --desktopshortcut=1 --quicklaunchshortcut=0 --pintotaskbar=0 --server-tracking-data=server_tracking_data --crash-reporter-pid=1128
+[0629/131937:INFO:silent_installer_controller.cc(205)] Not sending stats
+[0629/131937:INFO:silent_installer_controller.cc(80)] Controller exiting
+[0629/131937:INFO:installer_runner.cc(235)] Stopping installer backend (if running)
+[0629/131937:INFO:installer.cc(2004)] Installation succeeded
+[0629/131937:INFO:installer_runner_backend.cc(92)] Installer backend exiting
+[0629/131937:ERROR:ipc_sender.cc(106)] Cannot write to mailslot: Se ha alcanzado el final del archivo. (0x26)

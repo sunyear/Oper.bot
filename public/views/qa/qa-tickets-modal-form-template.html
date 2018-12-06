@@ -1,0 +1,73 @@
+<style type="text/css">
+
+</style>
+
+
+
+
+  <md-dialog aria-label="Mango (Fruit)" flex="50">
+    
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>Cargar ticket</h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="cancel()">
+            <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+
+      <md-dialog-content flex>
+        <md-card flex>
+          
+          <div layout="column" flex>
+                <div flex="15">
+                  <md-input-container class="md-block" flex="30">
+                    <label>N° ticket</label>
+                    <input ng-model="items.selectedItem.lote"  style="font-weight: bolder">
+                  </md-input-container>
+                </div>
+                <div layout="row" flex>
+                  <div flex="15">
+                    <md-input-container class="md-block" flex-gt-sm>
+                      <label>Version</label>
+                      <input ng-model="items.selectedItem.id_remito"  style="font-weight: bolder">
+                    </md-input-container>
+                  </div>
+                  <div flex="15">
+                    <md-input-container class="md-block" flex-gt-sm>
+                      <label>Subversion</label>
+                      <input ng-model="items.selectedItem.id_remito"  style="font-weight: bolder">
+                    </md-input-container>
+                  </div>
+                </div>
+                <div flex>
+                  <div flex>
+                    <md-input-container class="md-block" flex-gt-sm>
+                      <label>Titulo</label>
+                      <input ng-model="items.selectedItem.numero_remito"  style="font-weight: bolder">
+                    </md-input-container>
+                  </div>
+                </div>
+                <div flex>
+                  <md-input-container class="md-block" flex>
+                    <label>Link</label>
+                    <input ng-model="items.selectedItem.lote"  style="font-weight: bolder">
+                  </md-input-container>
+                </div>
+                
+        </div>
+
+        </md-card>   
+            
+      </md-dialog-content>
+      
+      <md-dialog-actions layout="row">
+        <md-button ng-class="btn_modal.css_style" ng-click="cancel('not useful')">
+         {{btn_modal.txt_button}}
+        </md-button>
+      </md-dialog-actions>
+
+    </md-dialog>
+
+

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>AngularJS PDFJS Viewer</title>
+  <link rel="stylesheet" href="css/basscss.css">
+</head>
+<body ng-app="testApp">
+
+  <div class="container" ng-controller="AppCtrl">
+    <div class="clearfix">
+
+      <header class="p2 bright-blue bg-blue">
+        <div class="container sm-table">
+          <div class="sm-table-cell py4">
+            <h1 class="h0 mt0 mb0 white inline">AngularJS PDF Viewer</h1>
+            <a class="h0 button dark-gray" href="//github.com/winkerVSbecks/angular-pdf-viewer">github</a>
+          </div>
+        </div>
+      </header>
+
+      <pdf-viewer
+        delegate-handle="my-pdf-container"
+        url="pdfUrl"
+        scale="1"
+        show-toolbar="true"
+        headers="{'x-you-know-whats-awesome': 'EVERYTHING'}"></pdf-viewer>
+
+
+      <footer class="py4">
+        <div class="sm-table">
+          <div class="sm-table-cell full-width py2 xs-center">
+            <div class="h5 bold px1">
+              <a ng-click="loadNewFile('pdf/relativity.pdf')"
+                class="button button-narrow button-nav-light">
+                  Load the Relativity PDF
+              </a>
+              <a ng-click="loadNewFile('pdf/material-design.pdf')"
+                class="button button-narrow button-nav-light">
+                  Load the Material Design PDF
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="lib/pdfjs-dist/build/pdf.combined.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <!--<script src="/dist/angular-pdf-viewer.min.js"></script>-->
+  <script src="test-app.js"></script>
+
+   <script src="js/delegate-service.js"></script>
+  <script src="js/pdf-viewer-delegate.js"></script>
+  <script src="js/pdf-ctrl.js"></script>
+  <script src="js/pdf-viewer.js"></script>
+  <script src="js/pdf-viewer-toolbar.js"></script>
+  <script src="test-app.js"></script> 
+</body>
+</html>

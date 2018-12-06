@@ -1,0 +1,1353 @@
+[0126/112244:VERBOSE1:installer_main.cc(221)] Ensuring that TLS 1.0 is enabled
+[0126/112244:INFO:installer_main.cc(344)] Opera installer starting - version 35.0.2066.35 beta
+[0126/112244:INFO:installer_main.cc(347)] Command line: "C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\installer.exe" --install --silent --autoupdate --installfolder --installfolder="C:\Program Files (x86)\Opera beta" --launchopera=0
+[0126/112244:VERBOSE1:installer_main.cc(389)] Install folder from command line: C:\Program Files (x86)\Opera beta
+[0126/112244:INFO:installer_main.cc(409)] Uninstall:0
+[0126/112244:INFO:installer_main.cc(410)] Replace Presto installation:0
+[0126/112244:INFO:installer_main.cc(411)] Silent:1
+[0126/112244:INFO:installer_main.cc(412)] Run Immediately0
+[0126/112244:INFO:installer_main.cc(413)] Backend0
+[0126/112244:INFO:installer_main.cc(414)] Inside package1
+[0126/112244:INFO:installer_main.cc(415)] Autoupdate:1
+[0126/112244:VERBOSE1:settings.cc(361)] Install folder reg value: Last beta Install Path
+[0126/112244:VERBOSE1:settings.cc(384)] Install folder from reg value: 
+[0126/112244:VERBOSE1:rc_l10n_handler.cc(22)] Looking up LCID for es
+[0126/112244:VERBOSE1:settings.cc(152)] Settings from command line
+[0126/112244:VERBOSE1:settings.cc(847)] all_users_:1
+[0126/112244:VERBOSE1:settings.cc(848)] copy_only_:0
+[0126/112244:VERBOSE1:settings.cc(849)] launch_opera_:0
+[0126/112244:VERBOSE1:settings.cc(850)] default_browser_:0
+[0126/112244:VERBOSE1:settings.cc(851)] single_profile_:0
+[0126/112244:VERBOSE1:settings.cc(852)] desktop_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(853)] start_menu_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(854)] quick_launch_shortcut_:0
+[0126/112244:VERBOSE1:settings.cc(855)] pinned_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(856)] language:es
+[0126/112244:INFO:settings.cc(437)] Retrieving default installation folder pathUsing command line: 1Using the registry: 1
+[0126/112244:VERBOSE1:settings.cc(731)] Setting install folder to: C:\Program Files (x86)\Opera beta
+[0126/112244:VERBOSE1:status.cc(54)] Initializing status: C:\Program Files (x86)\Opera beta
+[0126/112244:VERBOSE1:status.cc(96)] Path is a folder
+[0126/112244:VERBOSE1:status.cc(117)] Path is a existing installation
+[0126/112244:VERBOSE1:status.cc(224)] Testing shortcuts
+[0126/112244:VERBOSE1:utils.cc(594)] Testing shortcutC:\Users\Public\Desktop\Opera beta.lnk
+[0126/112244:VERBOSE1:utils.cc(594)] Testing shortcutC:\ProgramData\Microsoft\Windows\Start Menu\Programs\Opera beta.lnk
+[0126/112244:VERBOSE1:utils.cc(594)] Testing shortcut
+[0126/112244:ERROR:utils.cc(407)] Couldn't find path to taskbar pins.
+[0126/112244:VERBOSE1:utils.cc(594)] Testing shortcut
+[0126/112244:ERROR:utils.cc(407)] Couldn't find path to taskbar pins.
+[0126/112244:INFO:installer_main.cc(468)] Installer download folder: C:\Windows\TEMP\Opera Installer
+[0126/112244:VERBOSE1:settings.cc(759)] Install folder set: C:\Program Files (x86)\Opera beta
+[0126/112244:VERBOSE1:settings.cc(152)] Settings from command line
+[0126/112244:VERBOSE1:settings.cc(847)] all_users_:1
+[0126/112244:VERBOSE1:settings.cc(848)] copy_only_:0
+[0126/112244:VERBOSE1:settings.cc(849)] launch_opera_:0
+[0126/112244:VERBOSE1:settings.cc(850)] default_browser_:0
+[0126/112244:VERBOSE1:settings.cc(851)] single_profile_:0
+[0126/112244:VERBOSE1:settings.cc(852)] desktop_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(853)] start_menu_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(854)] quick_launch_shortcut_:0
+[0126/112244:VERBOSE1:settings.cc(855)] pinned_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(856)] language:es
+[0126/112244:VERBOSE1:settings.cc(782)] Operation: 2
+[0126/112244:VERBOSE1:settings.cc(786)] Using settings from existing installation
+[0126/112244:VERBOSE1:settings.cc(847)] all_users_:1
+[0126/112244:VERBOSE1:settings.cc(848)] copy_only_:0
+[0126/112244:VERBOSE1:settings.cc(849)] launch_opera_:0
+[0126/112244:VERBOSE1:settings.cc(850)] default_browser_:0
+[0126/112244:VERBOSE1:settings.cc(851)] single_profile_:0
+[0126/112244:VERBOSE1:settings.cc(852)] desktop_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(853)] start_menu_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(854)] quick_launch_shortcut_:0
+[0126/112244:VERBOSE1:settings.cc(855)] pinned_shortcut_:0
+[0126/112244:VERBOSE1:settings.cc(856)] language:es
+[0126/112244:VERBOSE1:settings.cc(847)] all_users_:1
+[0126/112244:VERBOSE1:settings.cc(848)] copy_only_:0
+[0126/112244:VERBOSE1:settings.cc(849)] launch_opera_:0
+[0126/112244:VERBOSE1:settings.cc(850)] default_browser_:0
+[0126/112244:VERBOSE1:settings.cc(851)] single_profile_:0
+[0126/112244:VERBOSE1:settings.cc(852)] desktop_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(853)] start_menu_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(854)] quick_launch_shortcut_:0
+[0126/112244:VERBOSE1:settings.cc(855)] pinned_shortcut_:0
+[0126/112244:VERBOSE1:settings.cc(856)] language:es
+[0126/112244:INFO:settings.cc(437)] Retrieving default installation folder pathUsing command line: 0Using the registry: 0
+[0126/112244:VERBOSE1:settings.cc(474)] Default install folder: C:\Program Files (x86)\Opera beta
+[0126/112244:INFO:installer_runner.cc(57)] Beginning installation
+[0126/112244:VERBOSE1:installer_main.cc(221)] Ensuring that TLS 1.0 is enabled
+[0126/112244:INFO:installer_main.cc(344)] Opera installer starting - version 35.0.2066.35 beta
+[0126/112244:INFO:installer_main.cc(347)] Command line: "C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\installer.exe" --backend --silent --install --autoupdate --import-browser-data=1 --enable-stats=1 --enable-installer-stats=1 --launchopera=0 --installfolder="C:\Program Files (x86)\Opera beta" --profile-folder --language=es --setdefaultbrowser=0 --startmenushortcut=1 --desktopshortcut=1 --quicklaunchshortcut=0 --pintotaskbar=0 --server-tracking-data=server_tracking_data --initial-pid=2900 --crash-reporter-pid=5516 --initial-proc-handle=B0020000
+[0126/112244:VERBOSE1:installer_main.cc(389)] Install folder from command line: C:\Program Files (x86)\Opera beta
+[0126/112244:INFO:installer_main.cc(409)] Uninstall:0
+[0126/112244:INFO:installer_main.cc(410)] Replace Presto installation:0
+[0126/112244:INFO:installer_main.cc(411)] Silent:1
+[0126/112244:INFO:installer_main.cc(412)] Run Immediately0
+[0126/112244:INFO:installer_main.cc(413)] Backend1
+[0126/112244:INFO:installer_main.cc(414)] Inside package1
+[0126/112244:INFO:installer_main.cc(415)] Autoupdate:1
+[0126/112244:VERBOSE1:settings.cc(361)] Install folder reg value: Last beta Install Path
+[0126/112244:VERBOSE1:settings.cc(384)] Install folder from reg value: 
+[0126/112244:VERBOSE1:rc_l10n_handler.cc(22)] Looking up LCID for es
+[0126/112244:VERBOSE1:settings.cc(152)] Settings from command line
+[0126/112244:VERBOSE1:settings.cc(847)] all_users_:1
+[0126/112244:VERBOSE1:settings.cc(848)] copy_only_:0
+[0126/112244:VERBOSE1:settings.cc(849)] launch_opera_:0
+[0126/112244:VERBOSE1:settings.cc(850)] default_browser_:0
+[0126/112244:VERBOSE1:settings.cc(851)] single_profile_:0
+[0126/112244:VERBOSE1:settings.cc(852)] desktop_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(853)] start_menu_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(854)] quick_launch_shortcut_:0
+[0126/112244:VERBOSE1:settings.cc(855)] pinned_shortcut_:0
+[0126/112244:VERBOSE1:settings.cc(856)] language:es
+[0126/112244:INFO:settings.cc(437)] Retrieving default installation folder pathUsing command line: 1Using the registry: 1
+[0126/112244:VERBOSE1:settings.cc(731)] Setting install folder to: C:\Program Files (x86)\Opera beta
+[0126/112244:VERBOSE1:status.cc(54)] Initializing status: C:\Program Files (x86)\Opera beta
+[0126/112244:VERBOSE1:status.cc(96)] Path is a folder
+[0126/112244:VERBOSE1:status.cc(117)] Path is a existing installation
+[0126/112244:VERBOSE1:status.cc(224)] Testing shortcuts
+[0126/112244:VERBOSE1:utils.cc(594)] Testing shortcutC:\Users\Public\Desktop\Opera beta.lnk
+[0126/112244:VERBOSE1:utils.cc(594)] Testing shortcutC:\ProgramData\Microsoft\Windows\Start Menu\Programs\Opera beta.lnk
+[0126/112244:VERBOSE1:utils.cc(594)] Testing shortcut
+[0126/112244:ERROR:utils.cc(407)] Couldn't find path to taskbar pins.
+[0126/112244:VERBOSE1:utils.cc(594)] Testing shortcut
+[0126/112244:ERROR:utils.cc(407)] Couldn't find path to taskbar pins.
+[0126/112244:VERBOSE1:settings.cc(759)] Install folder set: C:\Program Files (x86)\Opera beta
+[0126/112244:VERBOSE1:settings.cc(152)] Settings from command line
+[0126/112244:VERBOSE1:settings.cc(847)] all_users_:1
+[0126/112244:VERBOSE1:settings.cc(848)] copy_only_:0
+[0126/112244:VERBOSE1:settings.cc(849)] launch_opera_:0
+[0126/112244:VERBOSE1:settings.cc(850)] default_browser_:0
+[0126/112244:VERBOSE1:settings.cc(851)] single_profile_:0
+[0126/112244:VERBOSE1:settings.cc(852)] desktop_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(853)] start_menu_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(854)] quick_launch_shortcut_:0
+[0126/112244:VERBOSE1:settings.cc(855)] pinned_shortcut_:0
+[0126/112244:VERBOSE1:settings.cc(856)] language:es
+[0126/112244:VERBOSE1:settings.cc(782)] Operation: 2
+[0126/112244:VERBOSE1:settings.cc(786)] Using settings from existing installation
+[0126/112244:VERBOSE1:settings.cc(847)] all_users_:1
+[0126/112244:VERBOSE1:settings.cc(848)] copy_only_:0
+[0126/112244:VERBOSE1:settings.cc(849)] launch_opera_:0
+[0126/112244:VERBOSE1:settings.cc(850)] default_browser_:0
+[0126/112244:VERBOSE1:settings.cc(851)] single_profile_:0
+[0126/112244:VERBOSE1:settings.cc(852)] desktop_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(853)] start_menu_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(854)] quick_launch_shortcut_:0
+[0126/112244:VERBOSE1:settings.cc(855)] pinned_shortcut_:0
+[0126/112244:VERBOSE1:settings.cc(856)] language:es
+[0126/112244:VERBOSE1:settings.cc(847)] all_users_:1
+[0126/112244:VERBOSE1:settings.cc(848)] copy_only_:0
+[0126/112244:VERBOSE1:settings.cc(849)] launch_opera_:0
+[0126/112244:VERBOSE1:settings.cc(850)] default_browser_:0
+[0126/112244:VERBOSE1:settings.cc(851)] single_profile_:0
+[0126/112244:VERBOSE1:settings.cc(852)] desktop_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(853)] start_menu_shortcut_:1
+[0126/112244:VERBOSE1:settings.cc(854)] quick_launch_shortcut_:0
+[0126/112244:VERBOSE1:settings.cc(855)] pinned_shortcut_:0
+[0126/112244:VERBOSE1:settings.cc(856)] language:es
+[0126/112244:INFO:installer.cc(189)] Beginning installation
+[0126/112244:VERBOSE1:installer.cc(393)] Write privileges for install folder: 1
+[0126/112244:VERBOSE1:create_folder_operation.cc(22)] Attempting to create folder C:\Program Files (x86)\Opera beta
+[0126/112244:VERBOSE1:create_folder_operation.cc(24)] Folder already exists
+[0126/112244:VERBOSE1:installer.cc(477)] Reading files list
+[0126/112244:VERBOSE1:installer.cc(513)] Installation subfolder35.0.2066.35
+[0126/112244:VERBOSE1:create_folder_operation.cc(22)] Attempting to create folder C:\Program Files (x86)\Opera beta\35.0.2066.35
+[0126/112244:VERBOSE1:create_folder_operation.cc(36)] Valid ancestor
+[0126/112244:VERBOSE1:create_folder_operation.cc(40)] Folder created successfully
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\clearkeycdm.dll for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\clearkeycdm.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\clearkeycdmadapter.dll for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\clearkeycdmadapter.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\d3dcompiler_47.dll for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\d3dcompiler_47.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\dbghelp.dll for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\dbghelp.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\icudtl.dat for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\icudtl.dat.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\installer.exe for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\installer.exe.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\libEGL.dll for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\libEGL.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\libGLESv2.dll for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\libGLESv2.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\af.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\af.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\az.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\az.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\be.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\be.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\bg.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\bg.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\bn.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\bn.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ca.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ca.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\cs.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\cs.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\da.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\da.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\de.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\de.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\el.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\el.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\en-GB.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\en-GB.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\en-US.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\en-US.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\es-419.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\es-419.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\es.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\es.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fi.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fi.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fil.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fil.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fr-CA.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fr-CA.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fr.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fr.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fy.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fy.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\gd.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\gd.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\he.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\he.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\hi.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\hi.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\hr.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\hr.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\hu.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\hu.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\id.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\id.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\it.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\it.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ja.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ja.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\kk.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\kk.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ko.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ko.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\lt.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\lt.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\lv.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\lv.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\me.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\me.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\mk.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\mk.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ms.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ms.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\nb.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\nb.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\nl.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\nl.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\nn.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\nn.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\pa.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\pa.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\pl.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\pl.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\pt-BR.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\pt-BR.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\pt-PT.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\pt-PT.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ro.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ro.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ru.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ru.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\sk.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\sk.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\sr.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\sr.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\sv.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\sv.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\sw.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\sw.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ta.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ta.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\te.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\te.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\th.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\th.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\tr.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\tr.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\uk.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\uk.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\uz.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\uz.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\vi.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\vi.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\zh-CN.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\zh-CN.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\zh-TW.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\zh-TW.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\zu.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\zu.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\message_center_win8.dll for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\message_center_win8.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\mojo_public_test_support.dll for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\mojo_public_test_support.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\msvcp100.dll for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\msvcp100.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\msvcr100.dll for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\msvcr100.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\natives_blob.bin for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\natives_blob.bin.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\opera.dll for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\opera.exe for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera.exe.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\opera.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_100_percent.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_100_percent.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_125_percent.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_125_percent.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_150_percent.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_150_percent.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_200_percent.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_200_percent.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_250_percent.pak for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_250_percent.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_autoupdate.exe for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_autoupdate.exe.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_autoupdate.licenses for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_autoupdate.licenses.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_autoupdate.version for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_autoupdate.version.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_crashreporter.exe for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_crashreporter.exe.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\osmesa.dll for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\osmesa.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\013E742B-287B-4228-A0B9-BD617E4E02A4.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\013E742B-287B-4228-A0B9-BD617E4E02A4.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\07593226-C5C5-438B-86BE-3F6361CD5B10.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\07593226-C5C5-438B-86BE-3F6361CD5B10.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\0CD5F3A0-8BF6-11E2-9E96-0800200C9A66.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\0CD5F3A0-8BF6-11E2-9E96-0800200C9A66.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\1AF2CDD0-8BF3-11E2-9E96-0800200C9A66.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\1AF2CDD0-8BF3-11E2-9E96-0800200C9A66.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\1CF37043-6733-479C-9086-7B21A2292DDA.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\1CF37043-6733-479C-9086-7B21A2292DDA.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\2A3F5C20-8BF5-11E2-9E96-0800200C9A66.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\2A3F5C20-8BF5-11E2-9E96-0800200C9A66.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\2F8F0E41-F521-45A4-9691-F664AFAFE67F.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\2F8F0E41-F521-45A4-9691-F664AFAFE67F.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\3B6191A0-8BF3-11E2-9E96-0800200C9A66.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\3B6191A0-8BF3-11E2-9E96-0800200C9A66.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\3BFDFA54-5DD6-4DFF-8B6C-C1715F306D6B.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\3BFDFA54-5DD6-4DFF-8B6C-C1715F306D6B.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\4C95ADC1-5FD9-449D-BC75-77CA217403AE.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\4C95ADC1-5FD9-449D-BC75-77CA217403AE.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\5BBBDD5B-EDC7-4168-9F5D-290AF826E716.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\5BBBDD5B-EDC7-4168-9F5D-290AF826E716.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\66DD4BB6-A3BA-4B11-AF7A-F4BF23E073B2.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\66DD4BB6-A3BA-4B11-AF7A-F4BF23E073B2.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\6D3582E1-6013-429F-BB34-C75B90CDD1F8.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\6D3582E1-6013-429F-BB34-C75B90CDD1F8.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\76C397A8-9E8E-4706-8203-BD2878E9C618.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\76C397A8-9E8E-4706-8203-BD2878E9C618.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\8D754F20-8BF5-11E2-9E96-0800200C9A66.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\8D754F20-8BF5-11E2-9E96-0800200C9A66.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\AD2FD2BD-0727-4AF7-8917-AAED8627ED47.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\AD2FD2BD-0727-4AF7-8917-AAED8627ED47.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\B478FE0C-0761-41C3-946F-CD1340356039.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\B478FE0C-0761-41C3-946F-CD1340356039.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\C665D993-1B49-4C2E-962C-BEB19993BB86.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\C665D993-1B49-4C2E-962C-BEB19993BB86.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\CCCED631-6DA2-4060-9824-95737E64350C.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\CCCED631-6DA2-4060-9824-95737E64350C.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\CFCE84E5-9A95-4B3F-B8E4-3E98CF7EE6C5.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\CFCE84E5-9A95-4B3F-B8E4-3E98CF7EE6C5.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\CFD4BE41-4C6D-496A-ADDB-4095DFA1DD0E.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\CFD4BE41-4C6D-496A-ADDB-4095DFA1DD0E.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\F3F34CBB-24FF-4830-9E87-1663E7A0A5EE.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\F3F34CBB-24FF-4830-9E87-1663E7A0A5EE.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\F98D4D4C-8AA7-4619-A1E7-AC89B24558DD.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\F98D4D4C-8AA7-4619-A1E7-AC89B24558DD.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\FDC2CCAB-E8F9-4620-91DD-B0B67285997C.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\FDC2CCAB-E8F9-4620-91DD-B0B67285997C.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\FF57F01A-0718-44B7-8A1F-8B15BC33A50B.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\FF57F01A-0718-44B7-8A1F-8B15BC33A50B.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\FFF3F819-B6CE-4DE6-B4E4-8E2618ABC0D9.ico for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\FFF3F819-B6CE-4DE6-B4E4-8E2618ABC0D9.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\ab_tests.json for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\ab_tests.json.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\default_localized_themes.json for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\default_localized_themes.json.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\default_partner_content.json for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\default_partner_content.json.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\dictionaries.xml for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\dictionaries.xml.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\license.txt for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\license.txt.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\darkbreeze.zip for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\darkbreeze.zip.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\default_theme.zip for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\default_theme.zip.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\grey.zip for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\grey.zip.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\landscape_photo.zip for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\landscape_photo.zip.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\reine.zip for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\reine.zip.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\snapshot_blob.bin for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\snapshot_blob.bin.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\widevinecdmadapter.dll for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\widevinecdmadapter.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\win8_importing.dll for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\win8_importing.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\35.0.2066.10\wow_helper.exe for removal
+[0126/112244:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\35.0.2066.10\wow_helper.exe.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\clearkeycdm.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\clearkeycdmadapter.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\d3dcompiler_47.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\dbghelp.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\icudtl.dat.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\installer.exe.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\libEGL.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\libGLESv2.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\af.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\az.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\be.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\bg.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\bn.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ca.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\cs.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\da.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\de.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\el.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\en-GB.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\en-US.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\es-419.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\es.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fi.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fil.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fr-CA.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fr.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\fy.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\gd.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\he.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\hi.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\hr.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\hu.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\id.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\it.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ja.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\kk.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ko.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\lt.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\lv.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\me.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\mk.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ms.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\nb.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\nl.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\nn.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\pa.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\pl.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\pt-BR.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\pt-PT.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ro.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ru.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\sk.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\sr.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\sv.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\sw.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\ta.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\te.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\th.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\tr.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\uk.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\uz.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\vi.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\zh-CN.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\zh-TW.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\localization\zu.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\message_center_win8.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\mojo_public_test_support.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\msvcp100.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\msvcr100.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\natives_blob.bin.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\opera.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\opera.exe.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\opera.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_100_percent.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_125_percent.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_150_percent.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_200_percent.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_250_percent.pak.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_autoupdate.exe.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_autoupdate.licenses.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_autoupdate.version.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\opera_crashreporter.exe.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\osmesa.dll.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\013E742B-287B-4228-A0B9-BD617E4E02A4.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\07593226-C5C5-438B-86BE-3F6361CD5B10.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\0CD5F3A0-8BF6-11E2-9E96-0800200C9A66.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\1AF2CDD0-8BF3-11E2-9E96-0800200C9A66.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\1CF37043-6733-479C-9086-7B21A2292DDA.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\2A3F5C20-8BF5-11E2-9E96-0800200C9A66.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\2F8F0E41-F521-45A4-9691-F664AFAFE67F.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\3B6191A0-8BF3-11E2-9E96-0800200C9A66.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\3BFDFA54-5DD6-4DFF-8B6C-C1715F306D6B.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\4C95ADC1-5FD9-449D-BC75-77CA217403AE.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\5BBBDD5B-EDC7-4168-9F5D-290AF826E716.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\66DD4BB6-A3BA-4B11-AF7A-F4BF23E073B2.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\6D3582E1-6013-429F-BB34-C75B90CDD1F8.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\76C397A8-9E8E-4706-8203-BD2878E9C618.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\8D754F20-8BF5-11E2-9E96-0800200C9A66.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\AD2FD2BD-0727-4AF7-8917-AAED8627ED47.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\B478FE0C-0761-41C3-946F-CD1340356039.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\C665D993-1B49-4C2E-962C-BEB19993BB86.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\CCCED631-6DA2-4060-9824-95737E64350C.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\CFCE84E5-9A95-4B3F-B8E4-3E98CF7EE6C5.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\CFD4BE41-4C6D-496A-ADDB-4095DFA1DD0E.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\F3F34CBB-24FF-4830-9E87-1663E7A0A5EE.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\F98D4D4C-8AA7-4619-A1E7-AC89B24558DD.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\FDC2CCAB-E8F9-4620-91DD-B0B67285997C.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\FF57F01A-0718-44B7-8A1F-8B15BC33A50B.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\FFF3F819-B6CE-4DE6-B4E4-8E2618ABC0D9.ico.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\ab_tests.json.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\default_localized_themes.json.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\default_partner_content.json.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\dictionaries.xml.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\license.txt.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\darkbreeze.zip.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\default_theme.zip.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\grey.zip.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\landscape_photo.zip.1453818164.old
+[0126/112244:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\resources\standard_themes\reine.zip.1453818164.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\snapshot_blob.bin.1453818164.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\widevinecdmadapter.dll.1453818164.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\win8_importing.dll.1453818164.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\35.0.2066.10\wow_helper.exe.1453818164.old
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file clearkeycdm.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\clearkeycdm.dll to C:\Program Files (x86)\Opera beta\35.0.2066.35\clearkeycdm.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file clearkeycdmadapter.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\clearkeycdmadapter.dll to C:\Program Files (x86)\Opera beta\35.0.2066.35\clearkeycdmadapter.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file d3dcompiler_47.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\d3dcompiler_47.dll to C:\Program Files (x86)\Opera beta\35.0.2066.35\d3dcompiler_47.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file dbghelp.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\dbghelp.dll to C:\Program Files (x86)\Opera beta\35.0.2066.35\dbghelp.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file icudtl.dat
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\icudtl.dat to C:\Program Files (x86)\Opera beta\35.0.2066.35\icudtl.dat
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file installer.exe
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\installer.exe to C:\Program Files (x86)\Opera beta\35.0.2066.35\installer.exe
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file libEGL.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\libEGL.dll to C:\Program Files (x86)\Opera beta\35.0.2066.35\libEGL.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file libGLESv2.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\libGLESv2.dll to C:\Program Files (x86)\Opera beta\35.0.2066.35\libGLESv2.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\af.pak
+[0126/112245:VERBOSE1:create_folder_operation.cc(22)] Attempting to create folder C:\Program Files (x86)\Opera beta\35.0.2066.35\localization
+[0126/112245:VERBOSE1:create_folder_operation.cc(36)] Valid ancestor
+[0126/112245:VERBOSE1:create_folder_operation.cc(40)] Folder created successfully
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\af.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\af.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\az.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\az.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\az.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\be.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\be.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\be.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\bg.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\bg.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\bg.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\bn.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\bn.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\bn.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\ca.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\ca.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\ca.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\cs.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\cs.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\cs.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\da.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\da.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\da.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\de.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\de.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\de.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\el.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\el.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\el.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\en-GB.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\en-GB.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\en-GB.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\en-US.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\en-US.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\en-US.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\es-419.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\es-419.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\es-419.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\es.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\es.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\es.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\fi.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\fi.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\fi.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\fil.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\fil.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\fil.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\fr-CA.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\fr-CA.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\fr-CA.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\fr.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\fr.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\fr.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\fy.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\fy.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\fy.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\gd.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\gd.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\gd.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\he.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\he.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\he.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\hi.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\hi.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\hi.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\hr.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\hr.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\hr.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\hu.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\hu.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\hu.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\id.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\id.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\id.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\it.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\it.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\it.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\ja.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\ja.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\ja.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\kk.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\kk.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\kk.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\ko.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\ko.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\ko.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\lt.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\lt.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\lt.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\lv.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\lv.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\lv.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\me.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\me.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\me.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\mk.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\mk.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\mk.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\ms.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\ms.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\ms.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\nb.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\nb.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\nb.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\nl.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\nl.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\nl.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\nn.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\nn.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\nn.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\pa.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\pa.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\pa.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\pl.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\pl.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\pl.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\pt-BR.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\pt-BR.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\pt-BR.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\pt-PT.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\pt-PT.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\pt-PT.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\ro.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\ro.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\ro.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\ru.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\ru.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\ru.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\sk.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\sk.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\sk.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\sr.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\sr.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\sr.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\sv.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\sv.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\sv.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\sw.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\sw.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\sw.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\ta.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\ta.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\ta.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\te.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\te.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\te.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\th.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\th.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\th.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\tr.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\tr.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\tr.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\uk.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\uk.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\uk.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\uz.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\uz.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\uz.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\vi.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\vi.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\vi.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\zh-CN.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\zh-CN.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\zh-CN.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\zh-TW.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\zh-TW.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\zh-TW.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file localization\zu.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\localization\zu.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\localization\zu.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file message_center_win8.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\message_center_win8.dll to C:\Program Files (x86)\Opera beta\35.0.2066.35\message_center_win8.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file mojo_public_test_support.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\mojo_public_test_support.dll to C:\Program Files (x86)\Opera beta\35.0.2066.35\mojo_public_test_support.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file msvcp100.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\msvcp100.dll to C:\Program Files (x86)\Opera beta\35.0.2066.35\msvcp100.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file msvcr100.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\msvcr100.dll to C:\Program Files (x86)\Opera beta\35.0.2066.35\msvcr100.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file natives_blob.bin
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\natives_blob.bin to C:\Program Files (x86)\Opera beta\35.0.2066.35\natives_blob.bin
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file opera.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera.dll to C:\Program Files (x86)\Opera beta\35.0.2066.35\opera.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file opera.exe
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera.exe to C:\Program Files (x86)\Opera beta\35.0.2066.35\opera.exe
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file opera.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\opera.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file opera_100_percent.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_100_percent.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\opera_100_percent.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file opera_125_percent.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_125_percent.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\opera_125_percent.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file opera_150_percent.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_150_percent.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\opera_150_percent.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file opera_200_percent.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_200_percent.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\opera_200_percent.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file opera_250_percent.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_250_percent.pak to C:\Program Files (x86)\Opera beta\35.0.2066.35\opera_250_percent.pak
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file opera_autoupdate.exe
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_autoupdate.exe to C:\Program Files (x86)\Opera beta\35.0.2066.35\opera_autoupdate.exe
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file opera_autoupdate.licenses
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_autoupdate.licenses to C:\Program Files (x86)\Opera beta\35.0.2066.35\opera_autoupdate.licenses
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file opera_autoupdate.version
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_autoupdate.version to C:\Program Files (x86)\Opera beta\35.0.2066.35\opera_autoupdate.version
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file opera_crashreporter.exe
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\opera_crashreporter.exe to C:\Program Files (x86)\Opera beta\35.0.2066.35\opera_crashreporter.exe
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file osmesa.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\osmesa.dll to C:\Program Files (x86)\Opera beta\35.0.2066.35\osmesa.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\013E742B-287B-4228-A0B9-BD617E4E02A4.ico
+[0126/112245:VERBOSE1:create_folder_operation.cc(22)] Attempting to create folder C:\Program Files (x86)\Opera beta\35.0.2066.35\resources
+[0126/112245:VERBOSE1:create_folder_operation.cc(36)] Valid ancestor
+[0126/112245:VERBOSE1:create_folder_operation.cc(40)] Folder created successfully
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\013E742B-287B-4228-A0B9-BD617E4E02A4.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\013E742B-287B-4228-A0B9-BD617E4E02A4.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\07593226-C5C5-438B-86BE-3F6361CD5B10.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\07593226-C5C5-438B-86BE-3F6361CD5B10.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\07593226-C5C5-438B-86BE-3F6361CD5B10.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\0CD5F3A0-8BF6-11E2-9E96-0800200C9A66.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\0CD5F3A0-8BF6-11E2-9E96-0800200C9A66.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\0CD5F3A0-8BF6-11E2-9E96-0800200C9A66.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\1AF2CDD0-8BF3-11E2-9E96-0800200C9A66.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\1AF2CDD0-8BF3-11E2-9E96-0800200C9A66.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\1AF2CDD0-8BF3-11E2-9E96-0800200C9A66.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\1CF37043-6733-479C-9086-7B21A2292DDA.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\1CF37043-6733-479C-9086-7B21A2292DDA.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\1CF37043-6733-479C-9086-7B21A2292DDA.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\2A3F5C20-8BF5-11E2-9E96-0800200C9A66.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\2A3F5C20-8BF5-11E2-9E96-0800200C9A66.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\2A3F5C20-8BF5-11E2-9E96-0800200C9A66.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\2F8F0E41-F521-45A4-9691-F664AFAFE67F.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\2F8F0E41-F521-45A4-9691-F664AFAFE67F.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\2F8F0E41-F521-45A4-9691-F664AFAFE67F.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\3B6191A0-8BF3-11E2-9E96-0800200C9A66.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\3B6191A0-8BF3-11E2-9E96-0800200C9A66.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\3B6191A0-8BF3-11E2-9E96-0800200C9A66.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\3BFDFA54-5DD6-4DFF-8B6C-C1715F306D6B.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\3BFDFA54-5DD6-4DFF-8B6C-C1715F306D6B.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\3BFDFA54-5DD6-4DFF-8B6C-C1715F306D6B.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\4C95ADC1-5FD9-449D-BC75-77CA217403AE.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\4C95ADC1-5FD9-449D-BC75-77CA217403AE.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\4C95ADC1-5FD9-449D-BC75-77CA217403AE.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\5BBBDD5B-EDC7-4168-9F5D-290AF826E716.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\5BBBDD5B-EDC7-4168-9F5D-290AF826E716.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\5BBBDD5B-EDC7-4168-9F5D-290AF826E716.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\66DD4BB6-A3BA-4B11-AF7A-F4BF23E073B2.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\66DD4BB6-A3BA-4B11-AF7A-F4BF23E073B2.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\66DD4BB6-A3BA-4B11-AF7A-F4BF23E073B2.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\6D3582E1-6013-429F-BB34-C75B90CDD1F8.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\6D3582E1-6013-429F-BB34-C75B90CDD1F8.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\6D3582E1-6013-429F-BB34-C75B90CDD1F8.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\76C397A8-9E8E-4706-8203-BD2878E9C618.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\76C397A8-9E8E-4706-8203-BD2878E9C618.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\76C397A8-9E8E-4706-8203-BD2878E9C618.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\8D754F20-8BF5-11E2-9E96-0800200C9A66.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\8D754F20-8BF5-11E2-9E96-0800200C9A66.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\8D754F20-8BF5-11E2-9E96-0800200C9A66.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\AD2FD2BD-0727-4AF7-8917-AAED8627ED47.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\AD2FD2BD-0727-4AF7-8917-AAED8627ED47.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\AD2FD2BD-0727-4AF7-8917-AAED8627ED47.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\B478FE0C-0761-41C3-946F-CD1340356039.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\B478FE0C-0761-41C3-946F-CD1340356039.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\B478FE0C-0761-41C3-946F-CD1340356039.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\C665D993-1B49-4C2E-962C-BEB19993BB86.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\C665D993-1B49-4C2E-962C-BEB19993BB86.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\C665D993-1B49-4C2E-962C-BEB19993BB86.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\CCCED631-6DA2-4060-9824-95737E64350C.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\CCCED631-6DA2-4060-9824-95737E64350C.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\CCCED631-6DA2-4060-9824-95737E64350C.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\CFCE84E5-9A95-4B3F-B8E4-3E98CF7EE6C5.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\CFCE84E5-9A95-4B3F-B8E4-3E98CF7EE6C5.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\CFCE84E5-9A95-4B3F-B8E4-3E98CF7EE6C5.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\CFD4BE41-4C6D-496A-ADDB-4095DFA1DD0E.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\CFD4BE41-4C6D-496A-ADDB-4095DFA1DD0E.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\CFD4BE41-4C6D-496A-ADDB-4095DFA1DD0E.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\F3F34CBB-24FF-4830-9E87-1663E7A0A5EE.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\F3F34CBB-24FF-4830-9E87-1663E7A0A5EE.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\F3F34CBB-24FF-4830-9E87-1663E7A0A5EE.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\F98D4D4C-8AA7-4619-A1E7-AC89B24558DD.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\F98D4D4C-8AA7-4619-A1E7-AC89B24558DD.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\F98D4D4C-8AA7-4619-A1E7-AC89B24558DD.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\FDC2CCAB-E8F9-4620-91DD-B0B67285997C.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\FDC2CCAB-E8F9-4620-91DD-B0B67285997C.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\FDC2CCAB-E8F9-4620-91DD-B0B67285997C.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\FF57F01A-0718-44B7-8A1F-8B15BC33A50B.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\FF57F01A-0718-44B7-8A1F-8B15BC33A50B.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\FF57F01A-0718-44B7-8A1F-8B15BC33A50B.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\FFF3F819-B6CE-4DE6-B4E4-8E2618ABC0D9.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\FFF3F819-B6CE-4DE6-B4E4-8E2618ABC0D9.ico to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\FFF3F819-B6CE-4DE6-B4E4-8E2618ABC0D9.ico
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\ab_tests.json
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\ab_tests.json to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\ab_tests.json
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\default_localized_themes.json
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\default_localized_themes.json to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\default_localized_themes.json
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\default_partner_content.json
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\default_partner_content.json to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\default_partner_content.json
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\dictionaries.xml
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\dictionaries.xml to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\dictionaries.xml
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\license.txt
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\license.txt to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\license.txt
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\standard_themes\darkbreeze.zip
+[0126/112245:VERBOSE1:create_folder_operation.cc(22)] Attempting to create folder C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\standard_themes
+[0126/112245:VERBOSE1:create_folder_operation.cc(36)] Valid ancestor
+[0126/112245:VERBOSE1:create_folder_operation.cc(40)] Folder created successfully
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\standard_themes\darkbreeze.zip to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\standard_themes\darkbreeze.zip
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\standard_themes\default_theme.zip
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\standard_themes\default_theme.zip to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\standard_themes\default_theme.zip
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\standard_themes\grey.zip
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\standard_themes\grey.zip to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\standard_themes\grey.zip
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\standard_themes\landscape_photo.zip
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\standard_themes\landscape_photo.zip to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\standard_themes\landscape_photo.zip
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file resources\standard_themes\reine.zip
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\resources\standard_themes\reine.zip to C:\Program Files (x86)\Opera beta\35.0.2066.35\resources\standard_themes\reine.zip
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file snapshot_blob.bin
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\snapshot_blob.bin to C:\Program Files (x86)\Opera beta\35.0.2066.35\snapshot_blob.bin
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file widevinecdmadapter.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\widevinecdmadapter.dll to C:\Program Files (x86)\Opera beta\35.0.2066.35\widevinecdmadapter.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file win8_importing.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\win8_importing.dll to C:\Program Files (x86)\Opera beta\35.0.2066.35\win8_importing.dll
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file wow_helper.exe
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\wow_helper.exe to C:\Program Files (x86)\Opera beta\35.0.2066.35\wow_helper.exe
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-100.png for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-100.png.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-100_contrast-white.png for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-100_contrast-white.png.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-140.png for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-140.png.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-140_contrast-white.png for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-140_contrast-white.png.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-180.png for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-180.png.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-180_contrast-white.png for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-180_contrast-white.png.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-80.png for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-80.png.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-80_contrast-white.png for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-80_contrast-white.png.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-100.png for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-100.png.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-100_contrast-white.png for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-100_contrast-white.png.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-140.png for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-140.png.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-140_contrast-white.png for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-140_contrast-white.png.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-180.png for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-180.png.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-180_contrast-white.png for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-180_contrast-white.png.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-80.png for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-80.png.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-80_contrast-white.png for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-80_contrast-white.png.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Assets\notification_default.png for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Assets\notification_default.png.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\Resources.pri for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\Resources.pri.1453818165.old
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\launcher.visualelementsmanifest.xml for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\launcher.visualelementsmanifest.xml.1453818165.old
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Assets\150x150Logo.scale-100.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\150x150Logo.scale-100.png to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-100.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Assets\150x150Logo.scale-100_contrast-white.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\150x150Logo.scale-100_contrast-white.png to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-100_contrast-white.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Assets\150x150Logo.scale-140.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\150x150Logo.scale-140.png to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-140.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Assets\150x150Logo.scale-140_contrast-white.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\150x150Logo.scale-140_contrast-white.png to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-140_contrast-white.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Assets\150x150Logo.scale-180.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\150x150Logo.scale-180.png to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-180.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Assets\150x150Logo.scale-180_contrast-white.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\150x150Logo.scale-180_contrast-white.png to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-180_contrast-white.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Assets\150x150Logo.scale-80.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\150x150Logo.scale-80.png to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-80.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Assets\150x150Logo.scale-80_contrast-white.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\150x150Logo.scale-80_contrast-white.png to C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-80_contrast-white.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Assets\70x70Logo.scale-100.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\70x70Logo.scale-100.png to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-100.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Assets\70x70Logo.scale-100_contrast-white.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\70x70Logo.scale-100_contrast-white.png to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-100_contrast-white.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Assets\70x70Logo.scale-140.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\70x70Logo.scale-140.png to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-140.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Assets\70x70Logo.scale-140_contrast-white.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\70x70Logo.scale-140_contrast-white.png to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-140_contrast-white.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Assets\70x70Logo.scale-180.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\70x70Logo.scale-180.png to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-180.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Assets\70x70Logo.scale-180_contrast-white.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\70x70Logo.scale-180_contrast-white.png to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-180_contrast-white.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Assets\70x70Logo.scale-80.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\70x70Logo.scale-80.png to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-80.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Assets\70x70Logo.scale-80_contrast-white.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\70x70Logo.scale-80_contrast-white.png to C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-80_contrast-white.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Assets\notification_default.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Assets\notification_default.png to C:\Program Files (x86)\Opera beta\Assets\notification_default.png
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file Resources.pri
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Resources.pri to C:\Program Files (x86)\Opera beta\Resources.pri
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(654)] Copying file launcher.visualelementsmanifest.xml
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\launcher.visualelementsmanifest.xml to C:\Program Files (x86)\Opera beta\launcher.visualelementsmanifest.xml
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(678)] Installing the launcher
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\Program Files (x86)\Opera beta\launcher.exe for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\Program Files (x86)\Opera beta\launcher.exe.1453818165.old
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\launcher.exe to C:\Program Files (x86)\Opera beta\launcher.exe
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Classes\Operabeta under 80000002
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Classes\Operabeta
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 2 values
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Classes\Operabeta\DefaultIcon
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 1 values
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Classes\Operabeta\shell
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 0 values
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Classes\Operabeta\shell\open
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 0 values
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Classes\Operabeta\shell\open\command
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 1 values
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Classes\Operabeta\DefaultIcon under 80000002
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Classes\Operabeta\shell\open under 80000002
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Classes\.oex under 80000002
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Classes\.oex
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 1 values
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Classes\.oex\OpenWithProgIDs
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 1 values
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Classes\.oex\OpenWithProgIDs under 80000002
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.opdownload\OpenWithProgIDs - Operabeta. New Type:4294967295
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.htm\OpenWithProgIDs - Operabeta. New Type:4294967295
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.html\OpenWithProgIDs - Operabeta. New Type:4294967295
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.pdf\OpenWithProgIDs - Operabeta. New Type:4294967295
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.shtml\OpenWithProgIDs - Operabeta. New Type:4294967295
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.xht\OpenWithProgIDs - Operabeta. New Type:4294967295
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.xhtml\OpenWithProgIDs - Operabeta. New Type:4294967295
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Compatibility Assistant\Persisted - C:\Program Files (x86)\Opera beta\Launcher.exe. New Type:4294967295
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\RegisteredApplications - Opera beta. New Type:4294967295
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(89)] Value read successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Clients\StartMenuInternet\Operabeta under 80000002
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 1 values
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\Capabilities
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 3 values
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 9 values
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\Capabilities\Startmenu
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 1 values
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\Capabilities\UrlAssociations
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 4 values
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\DefaultIcon
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 1 values
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\InstallInfo
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 4 values
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\shell
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 0 values
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\shell\open
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 0 values
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Clients\StartMenuInternet\Operabeta\shell\open\command
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 1 values
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Clients\StartMenuInternet\Operabeta\DefaultIcon under 80000002
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Clients\StartMenuInternet\Operabeta\InstallInfo under 80000002
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Clients\StartMenuInternet\Operabeta\shell\open under 80000002
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Clients\StartMenuInternet\Operabeta\Capabilities under 80000002
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations under 80000002
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Clients\StartMenuInternet\Operabeta\Capabilities\Startmenu under 80000002
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Clients\StartMenuInternet\Operabeta\Capabilities\UrlAssociations under 80000002
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.23 under 80000002
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(29)] DeleteAndSaveRecursive : Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.23
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(98)] 11 values
+[0126/112245:VERBOSE1:installer.cc(731)] Setting up the registry
+[0126/112245:VERBOSE1:installer.cc(750)] Uninstall key: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.35
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\Operabeta - FriendlyTypeName. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Classes\Operabeta under 80000002
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Classes
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\Operabeta - URL Protocol. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\Operabeta\DefaultIcon - . New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Classes\Operabeta\DefaultIcon under 80000002
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Classes\Operabeta
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\Operabeta\shell\open\command - . New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Classes\Operabeta\shell\open\command under 80000002
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Classes\Operabeta
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(165)] Attempting to delete registry key Software\Classes\{Product}{Stream}\shell\open\ddeexec under 80000002
+[0126/112245:VERBOSE1:delete_reg_key_operation.cc(174)] Key does not exist. Nothing to do.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.oex - . New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Classes\.oex under 80000002
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Classes
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.oex\OpenWithProgIDs - Operabeta. New Type:0
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Classes\.oex\OpenWithProgIDs under 80000002
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Classes\.oex
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.opdownload\OpenWithProgIDs - Operabeta. New Type:0
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.htm\OpenWithProgIDs - Operabeta. New Type:0
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.html\OpenWithProgIDs - Operabeta. New Type:0
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.pdf\OpenWithProgIDs - Operabeta. New Type:0
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.shtml\OpenWithProgIDs - Operabeta. New Type:0
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.xht\OpenWithProgIDs - Operabeta. New Type:0
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Classes\.xhtml\OpenWithProgIDs - Operabeta. New Type:0
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Compatibility Assistant\Persisted - C:\Program Files (x86)\Opera beta\Launcher.exe. New Type:4
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\RegisteredApplications - Opera beta. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta - . New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Clients\StartMenuInternet\Operabeta under 80000002
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Clients\StartMenuInternet
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\DefaultIcon - . New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Clients\StartMenuInternet\Operabeta\DefaultIcon under 80000002
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Clients\StartMenuInternet\Operabeta
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\InstallInfo - ShowIconsCommand. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Clients\StartMenuInternet\Operabeta\InstallInfo under 80000002
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Clients\StartMenuInternet\Operabeta
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\InstallInfo - HideIconsCommand. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\InstallInfo - ReinstallCommand. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\InstallInfo - IconsVisible. New Type:4
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\shell\open\command - . New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Clients\StartMenuInternet\Operabeta\shell\open\command under 80000002
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Clients\StartMenuInternet\Operabeta
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities - ApplicationDescription. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Clients\StartMenuInternet\Operabeta\Capabilities under 80000002
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Clients\StartMenuInternet\Operabeta
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities - ApplicationIcon. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities - ApplicationName. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .crx. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations under 80000002
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Clients\StartMenuInternet\Operabeta\Capabilities
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .htm. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .html. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .nex. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .opdownload. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .pdf. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .shtml. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .xht. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\FileAssociations - .xhtml. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\Startmenu - StartMenuInternet. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Clients\StartMenuInternet\Operabeta\Capabilities\Startmenu under 80000002
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Clients\StartMenuInternet\Operabeta\Capabilities
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\UrlAssociations - http. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Clients\StartMenuInternet\Operabeta\Capabilities\UrlAssociations under 80000002
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Clients\StartMenuInternet\Operabeta\Capabilities
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\UrlAssociations - https. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\UrlAssociations - ftp. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Clients\StartMenuInternet\Operabeta\Capabilities\UrlAssociations - mailto. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.35 - DisplayName. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(43)] Key does not exist,
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(48)] try to create it.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(30)] Attempting to create registry key Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.35 under 80000002
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(52)] Attempting to find the nearest existing ancestor.
+[0126/112245:VERBOSE1:create_reg_key_operation.cc(67)] Ancestor found: Software\Microsoft\Windows\CurrentVersion\Uninstall
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.35 - DisplayIcon. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.35 - DisplayVersion. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.35 - HelpLink. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.35 - InstallLocation. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.35 - NoModify. New Type:4
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.35 - NoRepair. New Type:4
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.35 - Publisher. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.35 - UninstallString. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.35 - URLInfoAbout. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(38)] Attempting to change registry value at 80000002: Software\Microsoft\Windows\CurrentVersion\Uninstall\Opera 35.0.2066.35 - URLUpdateInfo. New Type:1
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(91)] The value doesn't already exist.
+[0126/112245:VERBOSE1:change_reg_value_operation.cc(114)] Value changed successfully.
+[0126/112245:VERBOSE1:installer.cc(888)] Updating shortcuts
+[0126/112245:VERBOSE1:installer.cc(914)] Not using shortcut names with version number
+[0126/112245:VERBOSE1:installer.cc(920)] Handling desktop shortcut:
+[0126/112245:VERBOSE1:installer.cc(955)] Handling start menu shortcut:
+[0126/112245:VERBOSE1:installer.cc(971)] Recreating shortcut
+[0126/112245:VERBOSE1:delete_file_operation.cc(44)] Preparing file C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Opera beta.lnk for removal
+[0126/112245:VERBOSE1:delete_file_operation.cc(73)] File moved successfully to C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Opera beta.lnk.1453818165.old
+[0126/112245:VERBOSE1:installer.cc(990)] Handling quick launch shortcut:
+[0126/112245:VERBOSE1:installer.cc(1911)] Creating master shortcut
+[0126/112245:VERBOSE1:copy_file_operation.cc(37)] Copying C:\Windows\TEMP\opera autoupdate\CProgram Files (x86)Opera beta\installing\Opera beta.lnk to C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Opera beta.lnk
+[0126/112245:VERBOSE1:copy_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(1154)] Preserving previous installer status
+[0126/112245:VERBOSE1:create_folder_operation.cc(22)] Attempting to create folder C:\Program Files (x86)\Opera beta\old_status
+[0126/112245:VERBOSE1:create_folder_operation.cc(36)] Valid ancestor
+[0126/112245:VERBOSE1:create_folder_operation.cc(40)] Folder created successfully
+[0126/112245:VERBOSE1:move_file_operation.cc(37)] Moving C:\Program Files (x86)\Opera beta\installation_status.xmltoC:\Program Files (x86)\Opera beta\old_status\installation_status.xml.1453818165
+[0126/112245:VERBOSE1:move_file_operation.cc(55)] File copied successfully
+[0126/112245:VERBOSE1:installer.cc(1256)] Finalizing the installation
+[0126/112245:INFO:installer.cc(1288)] Creating scheduled task
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-100.png.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-100_contrast-white.png.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-140.png.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-140_contrast-white.png.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-180.png.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-180_contrast-white.png.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-80.png.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\150x150Logo.scale-80_contrast-white.png.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-100.png.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-100_contrast-white.png.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-140.png.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-140_contrast-white.png.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-180.png.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-180_contrast-white.png.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-80.png.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\70x70Logo.scale-80_contrast-white.png.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Assets\notification_default.png.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\Resources.pri.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\launcher.visualelementsmanifest.xml.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\Program Files (x86)\Opera beta\launcher.exe.1453818165.old
+[0126/112247:VERBOSE1:delete_file_operation.cc(33)] Actual removal of C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Opera beta.lnk.1453818165.old

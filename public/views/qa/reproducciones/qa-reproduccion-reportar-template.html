@@ -1,0 +1,486 @@
+<style>
+
+  .material-icons.md-12 { font-size: 12px; }
+  .material-icons.md-18 { font-size: 18px; }
+  .material-icons.md-24 { font-size: 24px; }
+  .material-icons.md-36 { font-size: 36px; }
+  .material-icons.md-48 { font-size: 48px; }
+  
+  .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+  .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+  .material-icons.orange600 { color: #FB8C00; }
+  .material-icons.black { color: #000000; }
+  .material-icons.red {color: rgb(249, 44, 44);}
+  .material-icons.green_big {color: rgb(36, 191, 1);}
+  .material-icons.yellow {color: rgb(247, 123, 14)}
+  .material-icons.gray { color: rgb(178, 176, 176); }
+
+  .md-16 { font-size: 16px; }
+  .md-16.red {color: rgb(249, 44, 44);}
+  .md-16.green_big {color: rgb(36, 191, 1);}
+  .md-16.orange600 { color: #FB8C00; }
+  .md-16.yellow {color: rgb(247, 123, 14)}
+  
+  .full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+  }
+
+  .partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+  }
+
+  .marco {
+    /*position: relative;*/
+    padding: 45px 15px 15px;
+    margin: 0 -15px 15px;
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0;
+    -webkit-box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+    box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+  }
+
+  .item-menu-activo {
+    background-color: rgb(3, 155, 229);  
+  }
+  .item-menu-activo md-icon   {
+    
+    color: #FFF !important;
+  }
+  .item-menu-activo > div h3 {
+    color: #FFF !important;
+    font-weight: bold !important;
+  }
+
+  #item-menu {
+    color: #FFF !important;
+  }
+
+  .md-sidenav-head {
+    background-color: #263238;
+    color: rgb(108, 112, 120);
+    font-size: 12px !important;
+  }
+
+
+  md-list-item {
+  height: 2em;
+  min-height: initial;   
+  }
+
+  md-list-item + md-divider{
+    border-top-color: rgb(100, 100, 100) !important;
+  }
+  
+
+  md-sidenav, md-sidenav.md-locked-open, md-sidenav.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 50vw !important;
+  max-width: 200px !important;
+  }
+
+
+  #style-3::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar-thumb
+{
+  background-color: #000000;
+}
+
+.header-toolbar {
+    margin: 0px;
+    font-weight: bolder;
+    font-size: 16px;
+    color: rgb(38, 50, 56);
+  }
+
+  .header-toolbar-subtitle {
+    margin: 0px;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgb(38, 50, 56);
+  }
+
+
+md-checkbox .md-icon {
+  transform: scale(.7);
+}
+
+md-checkbox {padding: 0px !important; margin: 0px !important;}
+  
+  .md-label {
+    margin-left: 5px !important;
+  }
+}
+
+md-checkbox.md-checked.red .md-icon {
+ background-color: rgb(0, 0, 0);
+ border-color: rgb(0, 0, 0);
+}
+
+
+
+md-checkbox.dotted .md-icon {
+ border-width: 1px;
+ border-style: solid;
+ border-color: lightgray;
+}
+
+
+  md-checkbox.md-checked.red .md-icon {
+ background-color: rgb(0, 0, 0);
+ border-color: rgb(0, 0, 0);
+}
+
+md-checkbox .md-container:after {box-sizing: border-box;
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+.highlight {
+  
+  font-weight: 600;
+  color: #000 !important;
+}
+
+.widget-info {
+    background-color: rgba(38, 50, 56, .8);
+    width: 98% !important;
+  }
+
+.widget-info-text-head, .widget-info-text-subhead {
+    color: rgba(255, 255, 255, .6);
+  }
+
+  .widget-info-text-head {
+    font-weight: 600;
+    margin-bottom: 0px;
+    color: rgba(255, 255, 255, .8);
+    font-size: 16px;
+  }
+
+  .widget-info-text-subhead {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+   .version {
+     color: rgba(255, 255, 255, .5);
+  }
+
+  .estado_exito   {
+     color: rgba(0, 255, 0, .7);
+  }
+
+  .estado_error {
+     color: rgba(255, 255, 255, .7);
+     font-weight: 600;
+      font-size: 1.2em !important;
+  }
+
+  .estado_pendiente  {
+     color: rgba(255, 255, 255, .7);
+     font-size: 1.2em !important;
+  }
+
+  .f_actualizacion {
+    color: rgba(200, 200, 200, .8);
+    font-style: normal;
+    font-size: 0.8em !important;
+  }
+
+  .estado_version {
+    color: yellow;
+    font-style: normal;
+    font-size: 0.8em !important;
+  }
+
+  
+  .estado_cp_fondo_error{
+    background: linear-gradient(to right, rgba(255,255,255,0.5),rgba(255,255,255,0.5), rgba(200,0,0,0.5)) !important;
+   
+  }
+
+  .estado-cp-fondo-exito{
+    background: linear-gradient(to right, rgba(255,255,255,0.5),rgba(255,255,255,0.5), rgba(0,200,0,0.5)) !important;
+  }
+
+  .estado_cp_fondo_pendiente{
+    background: linear-gradient(to right, rgba(255,255,255,0.1),rgba(255,255,255,0.1), rgba(200,200,200,0.5)) !important;
+  }
+
+  .estado_cp_string_error {
+    color: rgba(190, 20, 20, 0.6) !important;
+    font-weight: 600;
+    font-size: 1.1em !important;
+  }
+
+  .estado-cp-string-exito {
+    color: rgba(10, 170, 10, 1) !important;
+    font-weight: 600;
+    font-size: 1.1em !important;
+  }
+
+  .estado_cp_string_pendiente {
+    color: rgba(130, 130, 130, 1) !important;
+    font-weight: 600;
+    font-size: 1.1em !important;
+  }
+
+  md-menu-item {
+    font-size: 0.1em !important;
+  }
+
+
+  .md-button.md-small {
+    min-width: 1% !important;
+    font-size: 0.8em !important;
+  }
+
+
+  md-chip {
+  font-size: 0.7em !important;
+  height: 20px !important;
+  width: auto !important;
+  line-height: 20px !important;
+  border: solid 0px red;
+  border-radius: 0px !important;
+  box-shadow: 0 0px !important;
+}
+
+md-chip.md-chip-ejecucion-rc {
+  background-color: #FF5722 !important;
+  color: white !important;
+}
+
+.md-chips { box-shadow: none !important; padding: 0 !important;}
+
+
+.md-chips md-chip .md-chip-remove {
+      width: 20px !important;
+      height: 20px !important;
+     }
+      .md-chips md-chip .md-chip-remove md-icon {
+        height: 15px !important;
+        width: 15px !important;}
+
+md-autocomplete {
+  /*min-width : 400px !important;*/
+  width: 100% !important;
+}
+
+
+.table > thead > tr > th {
+  vertical-align: middle; }
+
+.margin-bottom-basic {
+  margin-bottom: 15px; }
+
+.pagination {
+  margin: 0; }
+
+.items-per-page {
+  margin-left: 15px; }
+
+.sortable:after {
+  font: 14px/1 FontAwesome;
+  content: "\f0dc"; }
+
+.sortable.sort-ascent:after {
+  content: '\f0de';
+  vertical-align: bottom; }
+
+.sortable.sort-descent:after {
+  content: "\f0dd";
+  vertical-align: top; }
+
+
+.cp-descr-not-null {
+  font-style: italic; 
+  font-weight: 500; 
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.6rem;
+}
+
+.cp-descr-null {
+  font-style: normal; 
+  font-weight: 400; 
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 1.6rem;
+  text-align: center !important;
+  align-content: center !important;
+}
+
+.cd-descr-editando {
+  color: rgba(0, 0, 0, 0.3);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+
+md-input-container.lll .md-input{
+  border: 0px !important;
+}
+
+
+.md-toolbar {
+  display: block !important;
+  /*height: 25px !important;*/
+  line-height: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  background-color: #D84315 !important; 
+  padding-left: 10px !important;
+}
+
+.md-toolbar .md-toolbar-title{
+  font-size: 16px;
+  font-color: #101;
+}
+
+
+
+
+</style>
+
+
+
+<!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
+    <md-dialog aria-label="Mango (Fruit)" flex="60">
+        
+      
+        <md-toolbar class="md-toolbar" md-whiteframe="2">
+          <div layout="row" flex>
+            <div class="md-toolbar-title" flex>
+              Reporte de incidencias (nuevo)
+            </div>
+            <div ng-if="vm.reproduccion_datos.edit_state" layout="row" layout-align="end center" flex="20">
+              <md-button class="md-icon-button" ng-click="vm.cancelarDialogo()">
+                <md-icon class="material-icons md-24">close</md-icon>
+              </md-button>
+            </div>
+            <div ng-if="!vm.reproduccion_datos.edit_state" layout="row" layout-align="end center" flex>
+              <md-button class="button-balanced md-raised" ng-click="vm.guardarReporte( )">
+                guardar
+              </md-button>
+              <md-button class="button-balanced md-hue-2 md-raised" style="color: red;" ng-click="vm.edit()">
+                cancelar
+              </md-button>
+              <md-button class="md-icon-button" ng-click="vm.cancelarDialogo()">
+                <md-icon class="material-icons md-24">close</md-icon>
+              </md-button>
+            </div>
+          </div>
+        </md-toolbar>
+      <md-dialog-content style="background-color: rgba(38, 50, 56, .1);" layout-padding>
+  
+            <md-card >
+
+              <md-card-content style="height: 360px; overflow-y: auto">
+
+                <div flex>
+                  <md-input-container class="md-block" flex-gt-sm>
+                    <label style="font-size: 16px !important; color: gray; font-weight: 600;">Titulo</label>
+                    <input ng-model="vm.reporte.titulo"  style="font-weight: bolder">
+                  </md-input-container>
+                </div>
+
+                <div layout="column" flex style="border: solid 1px lightgray;padding: 0px !important">
+                  <div  layout="row" class="layout-padding layaout-fill layout-margin" flex style="padding: 0px !important; border: solid 0px red">
+                    <md-input-container flex class="lll" style="padding: 0px !important; overflow-y: auto !important; height: 100px">
+                      <form name="userForm">
+                        <textarea style="padding: 0px !important; margin: 0px !important" ng-model="vm.reporte.descripcion" rows="2" aria-label="descripcion" ng-trim="false" focus-on="focusMe"></textarea>
+                      </form>
+                    </md-input-container>
+                  </div>
+                </div>
+                <div layout="row" flex="100" class="cd-descr-editando">
+                  <div layout="row" layout-align="end start">{{vm.componentes.descripcion.left_chars}}</div>
+                </div>
+                <div>
+
+                  <div style="margin-top: 10px !important; padding-left: 5px; border: solid 1px rgba(38, 50, 56, .1); line-height: 20px !important; min-height: 20px ">
+                    <md-chips
+                        ng-model="vm.tags.casos_uso"
+                        readonly="false"
+                        md-removable="true"
+                        placeholder="Casos de uso"
+                        delete-button-label="Remove Tag"
+                        delete-hint="Press delete to remove tag"
+                        secondary-placeholder="+ casos uso">                      
+                    </md-chips>        
+                  </div>
+
+                  <div style="margin-top: 10px !important; padding-left: 5px; border: solid 1px rgba(38, 50, 56, .1); line-height: 20px !important; min-height: 20px ">
+                    <md-chips
+                        ng-model="vm.tags.palabras_clave"
+                        readonly="false"
+                        md-removable="true"
+                        placeholder="Palabras clave"
+                        delete-button-label="Remove Tag"
+                        delete-hint="Press delete to remove tag"
+                        secondary-placeholder="+ palabras clave">
+                    </md-chips>
+                  </div>
+                  <div style="margin-top: 15px;">
+                    <md-list class="md-dense" style="">
+                      <md-list-item class="" ng-repeat="archivo in vm.archivos_adjuntos track by $index" style="background-color: rgba(218, 218, 218, 0.5); padding: 0px !important; margin: 5px !important; min-height: 18px !important; line-height: 18px !important">
+                       <md-icon style="margin: 2px 0 2px 4px !important; padding: 0px !important; line-height: 20px !important;min-height: 20px !important" class="material-icons md-16 toolbar-gray">insert_drive_file</md-icon>
+                        <p style="margin: 0px !important;font-size: 12px !important; font-weight: 600; color: #15c"> {{ archivo.nombre }} </p>
+                      </md-list-item>
+                    </md-list>
+                  </div>
+
+                </div>
+
+              </md-card-content>
+              
+            </md-card>
+
+
+            <div layout="row" style="padding: 3px !important;">
+            <div layout="row" layout-align="start center" flex="50">
+                 <input class="ng-hide" id="input-file-id" multiple type="file" on-read-file="vm.leerArchivo( contents )"/>
+                  <label for="input-file-id" class="md-button md-fab md-raised md-mini" style="font-size: 12px !important"><md-icon  class="material-icons md-24 toolbar-gray">attach_file</md-icon></label>
+
+                    <md-button for="input-file-id" class="md-fab md-raised md-mini" style="margin-left: 10px;"><md-icon  class="material-icons md-18 toolbar-gray">edit</md-icon></md-button>
+               
+              </div>
+
+              <div layout="row" layout-align="end center" flex="50">
+                    <md-button for="input-file-id" class="md-fab md-mini md-raised"><md-icon  class="material-icons md-24 red">delete_forever</md-icon></md-button>
+              </div>
+            </div>
+            
+          
+      
+
+      </md-dialog-content>
+
+    </md-dialog>
+
+

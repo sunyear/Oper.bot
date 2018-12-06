@@ -1,0 +1,441 @@
+<style>
+
+  .material-icons.md-12 { font-size: 12px; }
+  .material-icons.md-18 { font-size: 18px; }
+  .material-icons.md-24 { font-size: 24px; }
+  .material-icons.md-28 { font-size: 28px; }
+  .material-icons.md-32 { font-size: 32px; }
+  .material-icons.md-36 { font-size: 36px; }
+  .material-icons.md-48 { font-size: 48px; }
+  .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+  .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+  .material-icons.orange600 { color: #FB8C00; }
+  .material-icons.black { color: #000000; }
+  .material-icons.red {color: rgb(249, 44, 44);}
+  .material-icons.green_big {color: rgb(36, 191, 1);}
+  .material-icons.yellow {color: rgb(247, 123, 14)}
+  .material-icons.gray { color: rgb(178, 176, 176); }
+  .material-icons.gray2 { color: rgb(128, 126, 126); }
+  .material-icons.v-toolbar {color: #263238;}
+
+  .md-16 { font-size: 16px; }
+  .md-16.red {color: rgb(249, 44, 44);}
+  .md-16.green_big {color: rgb(36, 191, 1);}
+  .md-16.orange600 { color: #FB8C00; }
+  .md-16.yellow {color: rgb(247, 123, 14)}
+  
+  .full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+  }
+
+  .partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+  }
+
+  .marco {
+    /*position: relative;*/
+    padding: 45px 15px 15px;
+    margin: 0 -15px 15px;
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0;
+    -webkit-box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+    box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+  }
+
+  .item-menu-activo {
+    background-color: rgb(3, 155, 229);  
+  }
+  .item-menu-activo md-icon   {
+    
+    color: #FFF !important;
+  }
+  .item-menu-activo > div h3 {
+    color: #FFF !important;
+    font-weight: bold !important;
+  }
+
+  #item-menu {
+    color: #FFF !important;
+  }
+
+  .md-sidenav-head {
+    background-color: #263238;
+    color: rgb(108, 112, 120);
+    font-size: 12px !important;
+  }
+
+
+  md-list-item {
+  height: 2em;
+  min-height: initial;   
+  }
+
+  md-list-item + md-divider{
+    border-top-color: rgb(100, 100, 100) !important;
+  }
+  
+
+  md-sidenav, md-sidenav.md-locked-open, md-sidenav.md-closed.md-locked-open-add-active {
+  min-width: 250px !important;
+  width: 50vw !important;
+  max-width: 250px !important;
+  }
+
+
+  #style-3::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar-thumb
+{
+  background-color: #000000;
+}
+
+.header-toolbar {
+    margin: 0px;
+    font-weight: bolder;
+    font-size: 16px;
+    color: rgb(38, 50, 56);
+  }
+
+  .header-toolbar-subtitle {
+    margin: 0px;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgb(38, 50, 56);
+  }
+
+  .mat-tab-label{
+line-height: 28px !important;
+height: 28px !important;
+
+}
+ .mat-tab-header {
+background-color: #0288D1;
+color: white;
+border-radius: 5px 5px 0px 0px;
+}
+.mat-ink-bar {
+background-color: #d14b02 !important;
+min-width: 120px;
+}
+
+.md-toolbar {
+  display: block !important;
+  /*height: 25px !important;*/
+  line-height: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  background-color: #263238 !important; 
+  padding-left: 10px !important;
+}
+
+.md-toolbar .md-toolbar-title{
+  font-size: 16px;
+  font-color: #101;
+}
+
+</style>
+
+<md-dialog aria-label="Mango (Fruit)" flex="70" style="background-color: #f3f3f3!important">
+    
+	<div layout="column">
+          <md-toolbar class="md-toolbar" md-whiteframe="2">
+            <div layout="row" flex="100">
+              <div flex="50">
+                asdasdsad
+              </div>
+              <div layout="row" layout-align="end center" flex="50">
+                <md-button class="md-icon-button" ng-click="cancel()">
+                  <md-icon class="material-icons md-24">close</md-icon>
+                </md-button>
+              </div>
+            </div>
+            Reproduccion...
+          </md-toolbar>
+        </div>  
+
+  <md-dialog-content style="background-color: #F3F3F3">
+
+
+    <div layout="row" layout-fill flex"> 
+    <div layout="column" layout-fill style="width: 250px !important;">
+
+               
+        <md-sidenav
+            
+            class="md-sidenav-left"
+            md-component-id="left"
+            md-is-locked-open="true"
+            md-whiteframe="5"
+            md-disable-backdrop="true"
+            style="background-color: #FFF;"
+            flex layout="column">
+
+              
+              
+            
+            <div layout="column" layout-fill flex="100">
+                
+                 <div layout="row">
+                       <div layout="column" layout-align="center center" style="border: 0px solid lightgray; padding: 5px; background-color: #FFF;" flex="100">
+                          <div layout="column"  layout-align="center center" style="border: 0px solid red; width: 100%; padding-right: 20px;" >
+                              <md-icon ng-click="vm.openMenu($mdMenu, $event)" class="md-menu-origin material-icons toolbar-gray md-48" style="height: auto !important">{{vm.widgets.reproduccion_estado[vm.widgets.reproduccion_estado.reproduccion_estado_sel].icon_estado}}</md-icon>
+                          </div>
+                          <div class="" layout="column" layout-align="center center">{{vm.widgets.reproduccion_estado[vm.widgets.reproduccion_estado.reproduccion_estado_sel].txt_estado}}</div>
+                        </div>
+                    </div>
+
+
+                <md-list class="md-dense" flex>
+
+                 
+                    
+                  
+                
+                
+
+                 <md-list-item class="md-2-line">
+                  <md-icon class="material-icons md-18 v-toolbar" style="margin-left:0px">apps</md-icon> 
+                  <div class="md-list-item-text">
+                    <h3> 14/09/2017 14:00:42 </h3>
+                    <p>fecha/hora reproduccion</p>
+                  </div>
+                  
+                </md-list-item>
+
+
+                 <md-list-item class="md-2-line">
+                  <md-icon class="material-icons md-18 v-toolbar" style="margin-left:0px">apps</md-icon> 
+                  <div class="md-list-item-text">
+                    <h3> asdqwkejkasd.csv </h3>
+                    <p> archivo entrada </p>
+                  </div>
+                  
+                </md-list-item>
+
+
+                 <md-list-item class="md-2-line">
+                  <md-icon class="material-icons md-18 v-toolbar" style="margin-left:0px">apps</md-icon> 
+                  <div class="md-list-item-text">
+                    <h3> asdqwkejkasd.csv </h3>
+                    <p> archivo salida </p>
+                  </div>
+                  
+                </md-list-item>
+
+<!--
+                <md-list-item class="" ng-click="null"  ui-sref=".vision_general"  ui-sref-active="item-menu-activo">
+                 <md-icon class="material-icons md-18 v-toolbar" style="margin-left:0px">apps</md-icon>           
+                    <span style="color: #263238 margin-left: -30px">Datos</span>
+                </md-list-item>
+                <md-list-item class="" ng-click="null" ui-sref=".validaciones_tablero"  ui-sref-active="item-menu-activo">
+                 <md-icon class="material-icons md-18 v-toolbar" style="margin-left:0px">dashboard</md-icon>           
+                    <span style="color: #263238 margin-left: -30px">Resultados</span>
+                </md-list-item>
+                <md-list-item class="" ng-click="null" ui-sref="lotes.validar_actas"  ui-sref-active="item-menu-activo">
+                  <md-icon class="material-icons md-18 v-toolbar" style="margin-left:0px">security</md-icon>           
+                  <span style="color: #263238 margin-left: -30px">adjuntos</span>
+                </md-list-item>
+
+              -->
+
+              </md-list>
+            </div>
+        </md-sidenav>
+    </div>
+    
+    <!-- LAS OPCIONES DEL MENU DEL SIDENAVBAR CARGAR SUS TEMPLATES EN ESTA VISTA -->
+    <md-content layout="column" flex layout-fill>
+      <div layout="column" flex="100" ng-cloak layout-padding>
+
+
+        
+
+
+     <md-card flex="100">
+
+                      <md-toolbar style="min-height: 36px;">
+
+                        <div class="md-toolbar-tools md-toolbar-tools-card" layout="row" layout-fill>
+                                      
+                            <div layout="row" flex="grow" class="card-header-toolbar">
+                                <span md-truncate flex>Datos entrada/salida</span>  
+                            </div>
+                            <div layout="row" class="md-toolbar-tools-card" flex="nogrow" ng-if="!componentes.pasos.editar">
+                              <md-button class="md-icon-button md-mini toolbar-gray">
+                                <md-icon class="material-icons md-16 toolbar-gray" ng-click="crearItem('pasos')">add</md-icon>
+                              </md-button>
+                            </div>
+
+                            <div layout="row" class="md-toolbar-tools-card" flex="nogrow" ng-if="componentes.pasos.editar">
+                                <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
+                                  <md-icon class="material-icons md-24 green_big" ng-click="actualizarItem('pasos')">check_circle</md-icon>
+                                </md-button>
+                                <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
+                                  <md-icon class="material-icons md-24 red" ng-click="cancelarEdicionItem('pasos', true)">cancel</md-icon>
+                                </md-button>
+                            </div>
+                        </div>
+
+                      </md-toolbar>                    
+                        
+                        <div layout="column">
+                          <div layout="column" layout-fill flex>
+                          
+                              <div style="min-height: 36px;">
+
+                                <div class="md-toolbar-tools md-toolbar-tools-card" layout="row" layout-fill>
+                                              
+                                    <div layout="row" flex="grow" class="card-header-toolbar">
+                                        <span md-truncate flex>Entrada</span>  
+                                    </div>
+                                </div>
+
+                              </div>
+
+                              <md-toolbar style="min-height: 36px;">
+
+                                <div class="md-toolbar-tools md-toolbar-tools-card" layout="row" layout-fill>
+                                              
+                                    <div layout="row" flex="grow" class="card-header-toolbar">
+                                        <span md-truncate flex>salida</span>  
+                                    </div>
+                                </div>
+
+                              </md-toolbar>
+
+                          </div>
+
+                          <div layout="row">
+                          
+                            <md-input-container class="md-block">
+                                  <label>Entrada</label>
+                                  <textarea ng-model="user.biography" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+                                </md-input-container>
+
+
+                          </div>
+                        </div>
+                        
+
+
+                    </md-card>
+
+
+
+
+        
+                    <md-card flex="100">
+
+                      <md-toolbar style="min-height: 36px;">
+
+                        <div class="md-toolbar-tools md-toolbar-tools-card" layout="row" layout-fill>
+                                      
+                            <div layout="row" flex="grow" class="card-header-toolbar">
+                                <span md-truncate flex>Resultados obtenidos</span>  
+                            </div>
+                            <div layout="row" class="md-toolbar-tools-card" flex="nogrow" ng-if="!componentes.pasos.editar">
+                              <md-button class="md-icon-button md-mini toolbar-gray">
+                                <md-icon class="material-icons md-16 toolbar-gray" ng-click="crearItem('pasos')">add</md-icon>
+                              </md-button>
+                            </div>
+
+                            <div layout="row" class="md-toolbar-tools-card" flex="nogrow" ng-if="componentes.pasos.editar">
+                                <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
+                                  <md-icon class="material-icons md-24 green_big" ng-click="actualizarItem('pasos')">check_circle</md-icon>
+                                </md-button>
+                                <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
+                                  <md-icon class="material-icons md-24 red" ng-click="cancelarEdicionItem('pasos', true)">cancel</md-icon>
+                                </md-button>
+                            </div>
+                        </div>
+
+                      </md-toolbar>                    
+                        
+                        
+                        <md-list class="md-dense">
+                          
+                          <md-list-item  class="dense-item-list">
+                              <md-icon class="material-icons md-18 toolbar-gray" style="margin-right:5px">subdirectory_arrow_right</md-icon>
+                              <md-truncate class="md-ellipsis" flex>
+                                <span style="font-size:12px">Registros que entraron en la muestra y quedaron pendientes se informan sin codigo</span>
+                              </md-truncate>
+                              <md-button class="md-icon-button md-secondary">
+                                <md-icon class="material-icons md-16 green_big" ng-click="editarItem('pasos', $index, false)">done</md-icon>
+                            </md-button>
+                            
+                          </md-list-item>
+                          <md-list-item  class="dense-item-list">
+                              <md-icon class="material-icons md-18 toolbar-gray" style="margin-right:5px">subdirectory_arrow_right</md-icon>
+                              <md-truncate class="md-ellipsis" flex>
+                                <span style="font-size:12px">Registros que entraron en la muestra y quedaron pendientes se informan sin codigo</span>
+                              </md-truncate>
+                              <md-button class="md-icon-button md-secondary">
+                                <md-icon class="material-icons md-16 green_big" ng-click="editarItem('pasos', $index, false)">done</md-icon>
+                            </md-button>
+                            
+                          </md-list-item>
+                          <md-list-item  class="dense-item-list">
+                              <md-icon class="material-icons md-18 toolbar-gray" style="margin-right:5px">subdirectory_arrow_right</md-icon>
+                              <md-truncate class="md-ellipsis" flex>
+                                <span style="font-size:12px; color: rgb(249, 44, 44);">Registros que entraron en la muestra</span>
+                              </md-truncate>
+                              <md-button class="md-icon-button md-secondary">
+                                <md-icon class="material-icons md-16 red" ng-click="editarItem('pasos', $index, false)">bug_report</md-icon>
+                            </md-button>
+                            
+                          </md-list-item>
+                          <md-list-item  class="dense-item-list">
+                              <md-icon class="material-icons md-18 toolbar-gray" style="margin-right:5px">subdirectory_arrow_right</md-icon>
+                              <md-truncate class="md-ellipsis" flex>
+                                <span style="font-size:12px">Registros que entraron en la muestra y quedaron pendientes se informan sin codigo</span>
+                              </md-truncate>
+                              <md-button class="md-icon-button md-secondary">
+                                <md-icon class="material-icons md-16 green_big" ng-click="editarItem('pasos', $index, false)">done</md-icon>
+                            </md-button>
+                            
+                          </md-list-item>
+                          
+                        </md-list>
+                    </md-card>
+
+
+            
+
+
+      </div>
+    </md-content>
+  
+</div>
+
+
+	</md-content>
+  
+  <!--
+  <div class="md-actions" layout="row" style="border: 1px solid red">
+    <div flex layout="row" layout-align="end center">
+      <md-button ng-class="btn_modal.aceptar.css_style" ng-disabled="true" ng-click="vm.procesarForm()">
+       guardar
+      </md-button>
+      <md-button ng-class="btn_modal.cancelar.css_style" ng-click="vm.cancel()">
+       cancelar
+      </md-button>
+    </div>
+  </div>  
+-->
+	
+</md-dialog>

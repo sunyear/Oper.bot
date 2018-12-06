@@ -1,0 +1,526 @@
+<!-- 
+	componente: actas validadas en PROCESOS -> Validar Actas
+ 	controlador: validaciones-tablero-controller.js: ValidacionesTableroController()
+	servicio: remitos-actas-service.js: remitosActasService() 
+-->
+
+<!-- CONFIG DEL TEMPLATE -->
+<style type="text/css">
+
+.material-icons {
+  cursor: pointer;
+}
+
+.material-icons.md-12 { font-size: 12px; }
+	.material-icons.md-18 { font-size: 18px; }
+	.material-icons.md-24 { font-size: 24px; }
+  .material-icons.md-28 { font-size: 28px; }
+	.material-icons.md-36 { font-size: 36px; }
+	.material-icons.md-48 { font-size: 48px; }
+	.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+	.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+	.material-icons.orange600 { color: #FB8C00; }
+	.material-icons.black { color: #000000; }
+  .material-icons.white { color: #FFFFFF; }
+	.material-icons.red {color: rgb(255, 51, 51);}
+	.material-icons.green_big {color: rgb(36, 191, 1);}
+
+
+	#md-sidenav-val, #md-sidenav-val.md-locked-open, #md-sidenav-val.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 50vw !important;
+  max-width: 200px !important;
+  }
+md-list-item + md-divider{
+    border-top-color: rgb(100, 100, 100) !important;
+  }
+.header-toolbar {
+  	margin: 0px;
+  	font-weight: bolder;
+  	font-size: 16px;
+  	color: rgb(38, 50, 56);
+  }
+
+  .header-toolbar-subtitle {
+  	margin: 0px;
+  	font-weight: 400;
+  	font-size: 12px;
+  	color: rgb(38, 50, 56);
+  }
+
+  .item-datagrid {
+    cursor: pointer;
+  }
+
+
+  md-chip{
+  font-size: 0.7em !important;
+  height: 20px !important;
+  width: auto !important;
+  line-height: 20px !important;
+  border: solid 0px red;
+  border-radius: 0px !important;
+  box-shadow: 0 0px !important; 
+  margin: 0px !important;
+}
+
+#ll md-chip {
+  margin-right: 2px !important;
+  flex-direction: column;
+}
+
+.md-chip-ejecucion-rc{
+  background-color: #FF5722 !important;
+  color: white !important;
+}
+
+.md-chips { box-shadow: none !important; padding: 0 !important}
+
+.groupX {
+    font-size: 16px;
+    margin: 20px 0;
+    padding: 3px 15px 3px 15px;
+    color: rgb(49, 46, 46);
+    background-color: rgba(224, 224, 224, 0.96);
+    text-transform: none;
+    font-weight: 400;
+    min-width:100px;
+}
+
+.md-button.left {
+    border-radius: 10px 0 0 10px;
+}
+
+.md-button.middle {
+    border-radius: 0;
+    border-left: 1px solid rgba(230, 230, 230, 0.96);
+    border-right: 1px solid rgba(230, 230, 230, 0.96);
+}
+
+.md-button.right {
+    border-radius: 0 10px 10px 0;
+}
+
+.md-button.right:not([disabled]):hover {
+    background-color: rgba(193, 193, 193, 0.96);
+    color: rgba(44, 65, 164, 0.96);
+    transition: 0.3s;
+}
+
+
+.md-button.md-icon-button.icon-click {
+    margin: 0 !important;
+    height: 24px !important;
+    line-height: 0;
+    min-width: 0;
+    min-height: 0;
+    /*line-height: 24px;*/
+    padding: 0px !important;
+    width: 24px;
+    border-radius: 0%;
+  }
+
+  .md-button.md-small {
+    min-width: 1% !important;
+    font-size: 0.8em !important;
+  }
+
+  .titulo_caso_prueba {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #37474F;
+}
+
+.titulo_caso_prueba:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+ 
+</style>
+<!-- FIN CONFIG TEMPLATE -->
+
+
+<!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
+
+<md-content id="contenedor">
+
+<section ng-if="false" layout="row" layout-align="center center">
+  <md-button class="groupX left">Apple</md-button>
+  <md-button class="groupX middle">Samsung</md-button>
+  <md-button class="groupX middle">Sony</md-button>
+  <md-button class="groupX right">B&amp;O</md-button>
+</section>
+
+<div flex="100" layout="row" layout-align="center stretch" style="margin-top: 10px;">
+  <md-card flex="95" style="padding: 0; border: solid 1px #4CAF50 !important; margin: 0;">
+    <md-card-title style="padding: 0;border: solid 0px red">
+          <md-toolbar style="min-height: 30px; height: 30px !important; background-color: #4CAF50">
+            <div class="md-toolbar-tools">
+              <h2 flex style="font-size: 16px !important">Escenarios en ejecucion</h2>
+              <md-button class="md-icon-button" ng-click="vm.expandirPanel( 0 )">
+                <md-icon class="material-icons md-24 toolbar-gray">{{(vm.paneles[0]===true)?'keyboard_arrow_up':'keyboard_arrow_down' }}</md-icon>
+              </md-button>
+            </div>
+          </md-toolbar>
+    </md-card-title>
+  <md-card-content ng-if="vm.paneles[0]" style="padding: 0 !important">
+
+    <div class="gridListdemoBasicUsage" style="padding-left: 0px;">
+      <div grid-data id='test' grid-options="vm.gridOptions" grid-actions="vm.gridActions" style="border: solid 0px red">
+        
+        <div>
+            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--1dp" style="border: none !important">
+                <thead>
+                <tr>
+                    <th sortable="placed" class="mdl-data-table__cell--non-numeric" >
+                        <span></span>
+                    </th>
+                    <th sortable="code" class="sortable mdl-data-table__cell--non-numeric">
+                        <span>Nombre</span>
+                    </th>
+                    <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>f_ejecucion</span>
+                    </th>
+                    <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>version</span>
+                    </th>
+                    <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>etiquetas</span>
+                    </th>
+                    <th sortable="placed" class="mdl-data-table__cell--non-numeric" >
+                        <span></span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr grid-item style="max-height: 20px !important; min-height: 20px !important; line-height: 20px !important; height: 20px !important;" ng-mouseover="componentes.precondiciones.item_visible = $index" ng-mouseleave="componentes.precondiciones.item_visible = null">
+
+                  <td class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 20px !important; min-height: 20px !important; line-height: 20px !important; height: 20px !important; width: 30px" flex>
+
+                        <md-button class="md-button md-icon-button icon-click">
+                         <md-tooltip md-direction="bottom">finalizar reproduccion</md-tooltip>
+                         <md-icon style="" class="material-icons md-24 red" ng-show="componentes.precondiciones.item_visible == $index" ng-click="vm.finalizarReproduccion({id_reproduccion: item.id_reproduccion}, $event)">power_settings_new</md-icon>
+
+                      </md-button>
+                      
+                    </td>
+
+                    <td class="mdl-data-table__cell--non-numeric" style="padding: 10px !important; max-height: 20px !important; min-height: 20px !important; line-height: 20px !important; height: 20px !important;">
+                        <span ng-bind="item.titulo_reproduccion" style="font-weight: 500" class="titulo_caso_prueba" ng-click="vm.abrirReproduccion(item.id_reproduccion, $event)"></span>
+                    </td>
+                    <td ng-bind="item.f_ejecucion" class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 20px !important; min-height: 20px !important; line-height: 20px !important; height: 20px !important;"></td>
+                    
+                    <td class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 20px !important; min-height: 20px !important; line-height: 20px !important; height: 20px !important;">
+                      <md-chips readonly="true" class="custom-chips">
+                          <md-chip class="md-chip-ejecucion-rc">{{item.version_sijai}}</md-chip>
+                      </md-chips>
+                    </td>
+
+                    <td class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 20px !important; min-height: 20px !important; line-height: 20px !important; height: 20px !important; text-align: center">
+                      
+
+
+                      <md-menu md-position-mode="target-right target">
+                      <md-button ng-click="vm.openMenu($mdMenu, $event)" class="md-button md-icon-button icon-click">
+                         <md-icon class="material-icons md-24 toolbar-gray">arrow_drop_down</md-icon>
+                      </md-button>
+                      <md-menu-content width="3">
+                        
+                        <md-menu-item style="padding: 0; height: 25px !important; min-height: 25px" ng-repeat="etiqueta in item.etiquetas track by $index">
+                          
+                          <md-chips>
+                            <md-chip>{{etiqueta.titulo}}</md-chip>
+                          </md-chips>
+
+                          <md-chips ng-if="false" layout="column" style="display: flex; flex-direction: column;" id="ll" ng-model="item.etiquetas" readonly="true" class="custom-chips">
+                            <md-chip-template>{{$chip.titulo}}</md-chip-template>
+                          </md-chips>
+
+                        </md-menu-item>
+                      </md-menu-content>
+                    </md-menu>
+
+
+
+                       
+                     
+                    </td>
+
+                    <td class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 20px !important; min-height: 20px !important; line-height: 20px !important; height: 20px !important;">
+                      
+
+
+                      <md-menu md-position-mode="target-right target">
+                      <md-button ng-click="vm.openMenu($mdMenu, $event)" class="md-button md-icon-button icon-click">
+                         <md-icon class="material-icons md-24 toolbar-gray" ng-show="componentes.precondiciones.item_visible == $index">more_vertical</md-icon>
+                      </md-button>
+                      <md-menu-content width="4">
+                        
+                        <md-menu-item>
+                          <md-button ng-click="vm.ejecutarReproduccion({id_reproduccion: item.id_reproduccion}, $event)">
+                            Reproducir escenario
+                          </md-button>
+                        </md-menu-item>
+
+                        <md-menu-item>
+                          <md-button ng-click="vm.abrirReproduccion(item.id_reproduccion, $event)">
+                            Ver escenario
+                          </md-button>
+                        </md-menu-item>
+
+                        <md-divider></md-divider>
+
+                        <md-menu-item>
+                          <md-button ng-click="vm.eliminarEscenario($event)">
+                            Eliminar escenario
+                          </md-button>
+                        </md-menu-item>
+                      </md-menu-content>
+                    </md-menu>
+
+
+
+                       
+                     
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div layout-xs="column" layout="row" layout-align-xs="end end" layout-align="end center">
+            <grid-pagination max-size="5"
+                             boundary-links="true"
+                             class="pagination"
+                             ng-if="paginationOptions.totalItems  > paginationOptions.itemsPerPage"
+                             total-items="paginationOptions.totalItems"
+                             ng-model="paginationOptions.currentPage"
+                             ng-change="reloadGrid()"
+                             items-per-page="paginationOptions.itemsPerPage"></grid-pagination>
+            <md-input-container flex-offset-gt-xs="5" class="items-per-page">
+                <md-select ng-init="paginationOptions.itemsPerPage = '10'" ng-model="paginationOptions.itemsPerPage" ng-change="reloadGrid()">
+                    <md-option>10</md-option>
+                    <md-option>25</md-option>
+                    <md-option>50</md-option>
+                    <md-option>75</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+    </div>
+    </div>
+  </md-card-content>
+</md-card>
+  
+</div>
+
+
+<div flex="100" layout="row" layout-align="center stretch" style="margin-bottom: 0;">
+  <md-card flex="95" style="padding: 0; margin-top: 15px;;border: solid 1px #3F51B5 !important">
+   <md-card-title style="padding: 0;border: solid 0px red">
+          <md-toolbar style="min-height: 30px; height: 30px !important;">
+            <div class="md-toolbar-tools">
+              <h2 flex style="font-size: 16px !important">Escenarios disponibles</h2>
+              <md-button class="md-icon-button" ng-click="vm.expandirPanel( 1 )">
+                 <md-icon class="material-icons md-24 toolbar-gray">{{(vm.paneles[1]===true)?'keyboard_arrow_up':'keyboard_arrow_down' }}</md-icon>
+              </md-button>
+            </div>
+          </md-toolbar>
+    </md-card-title>
+  <md-card-content ng-if="vm.paneles[1]" style="padding: 0 !important">
+    <div class="gridListdemoBasicUsage" style="padding-left: 0px;">
+      <div layout="row" layout-align="end center">
+        
+        <md-button ng-if="false" class="md-raised md-small md-accent" md-colors="{background: 'blue-grey'}" ng-click="vm.crearReproduccion($event)">nuevo escenario</md-button>
+
+
+        <md-button ng-click="vm.crearReproduccion($event)" class="md-fab md-mini md-primary" style="background-color: #455A64; margin: 24px 24px 0 0;">
+          <md-icon class="material-icons md-24">add</md-icon>
+        </md-button>
+
+      </div>
+      <div grid-data id='grid2' grid-options="vm.gridOptions2" grid-actions="vm.gridActions2" style="border: solid 0px red">
+        
+        <div>
+            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--1dp" style="border: none">
+                <thead>
+                <tr>
+                    <th sortable="placed" class="mdl-data-table__cell--non-numeric" >
+                        <span></span>
+                    </th>
+                    <th sortable="code" class="sortable mdl-data-table__cell--non-numeric" flex>
+                        <span>Nombre</span>
+                    </th>
+                    <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>etiquetas</span>
+                    </th>
+                    <th sortable="placed" class="mdl-data-table__cell--non-numeric" >
+                        <span></span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr grid-item  style="max-height: 20px !important; min-height: 20px !important; line-height: 20px !important; height: 20px !important;" ng-mouseover="componentes.precondiciones.item_visible = $index" ng-mouseleave="componentes.precondiciones.item_visible = null">
+
+                  <td class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 20px !important; min-height: 20px !important; line-height: 20px !important; height: 20px !important; width: 30px" flex>
+
+                        <md-button class="md-button md-icon-button icon-click">
+                         <md-tooltip md-direction="bottom">reproducir</md-tooltip>
+                         <md-icon class="material-icons md-24 green_big" ng-show="componentes.precondiciones.item_visible == $index" ng-click="vm.ejecutarReproduccion({id_reproduccion: item.id_reproduccion}, $event)">play_circle_filled</md-icon>
+
+                      </md-button>
+                      
+                    </td>
+                    <td flex class="mdl-data-table__cell--non-numeric" style="padding: 10px !important; max-height: 20px !important; min-height: 20px !important; line-height: 20px !important; height: 20px !important;">
+                        <span ng-bind="item.titulo_reproduccion" class="titulo_caso_prueba" ng-click="vm.abrirReproduccion(item.id_reproduccion, $event)"></span>
+                    </td>
+                    <td  class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 20px !important; min-height: 20px !important; line-height: 20px !important; height: 20px !important;">
+                      <md-chips id="ll" ng-model="item.etiquetas" readonly="true" class="custom-chips">
+                        <md-chip-template>{{$chip.titulo}}</md-chip-template>
+                      </md-chips>
+                    </td>
+
+                    <td class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 20px !important; min-height: 20px !important; line-height: 20px !important; height: 20px !important;">
+                      
+
+
+                      <md-menu md-position-mode="target-right target">
+                      <md-button ng-click="vm.openMenu($mdMenu, $event)" class="md-button md-icon-button icon-click">
+                         <md-icon class="material-icons md-24 toolbar-gray" ng-show="componentes.precondiciones.item_visible == $index">more_vertical</md-icon>
+                      </md-button>
+                      <md-menu-content width="4">
+                        
+                        <md-menu-item>
+                          <md-button ng-click="vm.ejecutarReproduccion({id_reproduccion: item.id_reproduccion}, $event)">
+                            Reproducir escenario
+                          </md-button>
+                        </md-menu-item>
+
+                        <md-menu-item>
+                          <md-button ng-click="vm.abrirReproduccion(item.id_reproduccion, $event)">
+                            Ver escenario
+                          </md-button>
+                        </md-menu-item>
+
+                        <md-divider></md-divider>
+
+                        <md-menu-item>
+                          <md-button ng-click="vm.eliminarEscenario($event)">
+                            Eliminar escenario
+                          </md-button>
+                        </md-menu-item>
+                      </md-menu-content>
+                    </md-menu>
+
+
+
+                       
+                     
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div layout-xs="column" layout="row" layout-align-xs="end end" layout-align="end center">
+            <grid-pagination max-size="5"
+                             boundary-links="true"
+                             class="pagination"
+                             ng-if="paginationOptions.totalItems  > paginationOptions.itemsPerPage"
+                             total-items="paginationOptions.totalItems"
+                             ng-model="paginationOptions.currentPage"
+                             ng-change="reloadGrid()"
+                             items-per-page="paginationOptions.itemsPerPage"></grid-pagination>
+            <md-input-container flex-offset-gt-xs="5" class="items-per-page">
+                <md-select ng-init="paginationOptions.itemsPerPage = '10'" ng-model="paginationOptions.itemsPerPage" ng-change="reloadGrid()">
+                    <md-option>10</md-option>
+                    <md-option>25</md-option>
+                    <md-option>50</md-option>
+                    <md-option>75</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+    </div>
+    </div>
+  </md-card-content>
+</md-card>
+  
+</div>
+
+
+<div>
+  <md-card style="padding: 0; margin-top: 30px;border: solid 1px #9E9E9E !important">
+    <md-card-title style="padding: 0;border: solid 0px red">
+          <md-toolbar style="min-height: 30px; height: 30px !important; background-color: #9E9E9E">
+            <div class="md-toolbar-tools">
+              <h2 flex style="font-size: 16px !important">Historico</h2>
+              <md-button class="md-icon-button" ng-click="vm.expandirPanel( 2 )">
+                 <md-icon class="material-icons md-24 toolbar-gray">{{(vm.paneles[2]===true)?'keyboard_arrow_up':'keyboard_arrow_down' }}</md-icon>
+              </md-button>
+            </div>
+          </md-toolbar>
+    </md-card-title>
+  <md-card-content layout-padding ng-if="vm.paneles[2]">
+    <div class="gridListdemoBasicUsage" style="padding-left: 0px;">
+      <div grid-data id='grid3' grid-options="gridOptions3" grid-actions="gridActions3" style="border: solid 0px red">
+        
+        <div>
+            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--1dp">
+                <thead>
+                <tr>
+                    <th sortable="code" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>Nombre</span>
+                    </th>
+                    <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>f_ejecucion</span>
+                    </th>
+                    <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>version</span>
+                    </th>
+                     <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>etiquetas</span>
+                    </th>
+                    <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>errores</span>
+                    </th>
+                    <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>estado</span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr grid-item style="max-height: 12px !important; min-height: 12px !important; line-height: 12px !important; height: 12px !important;">
+                    <td class="mdl-data-table__cell--non-numeric" style="padding: 10px !important; max-height: 12px !important; min-height: 12px !important; line-height: 12px !important; height: 12px !important;">
+                        <span ng-bind="item.ID"></span>
+                    </td>
+                    <td ng-bind="item.nombre" class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 12px !important; min-height: 12px !important; line-height: 12px !important; height: 12px !important;"></td>
+                    
+                    <td ng-bind="item.estado" class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 12px !important; min-height: 12px !important; line-height: 12px !important; height: 12px !important;"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div layout-xs="column" layout="row" layout-align-xs="end end" layout-align="end center">
+            <grid-pagination max-size="5"
+                             boundary-links="true"
+                             class="pagination"
+                             ng-if="paginationOptions.totalItems  > paginationOptions.itemsPerPage"
+                             total-items="paginationOptions.totalItems"
+                             ng-model="paginationOptions.currentPage"
+                             ng-change="reloadGrid()"
+                             items-per-page="paginationOptions.itemsPerPage"></grid-pagination>
+            <md-input-container flex-offset-gt-xs="5" class="items-per-page">
+                <md-select ng-init="paginationOptions.itemsPerPage = '10'" ng-model="paginationOptions.itemsPerPage" ng-change="reloadGrid()">
+                    <md-option>10</md-option>
+                    <md-option>25</md-option>
+                    <md-option>50</md-option>
+                    <md-option>75</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+    </div>
+    </div>
+  </md-card-content>
+</md-card>
+  
+</div>
+
+</md-content>

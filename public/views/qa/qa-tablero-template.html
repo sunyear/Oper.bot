@@ -1,0 +1,346 @@
+<style type="text/css">
+	
+
+  .material-icons.md-12 { font-size: 12px; }
+  .material-icons.md-18 { font-size: 18px; }
+  .material-icons.md-24 { font-size: 24px; }
+  .material-icons.md-36 { font-size: 36px; }
+  .material-icons.md-48 { font-size: 48px; }
+  .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+  .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+  .material-icons.orange600 { color: #FB8C00; }
+  .material-icons.black { color: #000000; }
+  .material-icons.red {color: rgb(249, 44, 44);}
+  .material-icons.green_big {color: rgb(36, 191, 1);}
+  .material-icons.yellow {color: rgb(247, 123, 14)}
+  .material-icons.md-gray { color: rgba(255, 255, 255, 0.5)}
+  .material-icons.md-lightgray { color: rgba(255, 255, 255, .2)}
+
+  .md-16 { font-size: 16px; }
+  .md-16.red {color: rgb(249, 44, 44);}
+  .md-16.green_big {color: rgb(36, 191, 1);}
+  .md-16.orange600 { color: #FB8C00; }
+  .md-16.yellow {color: rgb(247, 123, 14)}
+
+  .widget-info {
+  	background-color: rgb(38, 50, 56);
+  	width: 200px !important;
+  }
+
+  .widget-info-text-head, .widget-info-text-subhead {
+    color: rgba(255, 255, 255, .6);
+  }
+
+  .widget-info-text-head {
+    font-weight: lighter;
+    margin-top: 15px; 
+    margin-bottom: 0px;
+    color: rgba(255, 255, 255, .8);
+  }
+
+  .widget-info-text-subhead {
+  	margin-top: 0;
+  	margin-bottom: 0;
+  }
+
+  .header-toolbar {
+  	margin: 0px;
+  	font-weight: bolder;
+  	font-size: 16px;
+  	color: rgb(38, 50, 56);
+  }
+
+  .header-toolbar-subtitle {
+  	margin: 0px;
+  	font-weight: 400;
+  	font-size: 12px;
+  	color: rgb(38, 50, 56);
+  }
+  
+  .widget-info-text-head-small{
+  	font-size: 16px;
+  }
+  
+  .widget-info-text-subhead-small {
+  	font-size: 12px;
+  }
+
+
+</style>
+
+<div layout="column" flex>
+	<div layout="row">
+		<md-card class="widget-info">
+				<md-card-content layout="column">
+						<div flex style="margin-bottom: 5px" layout="row">
+							<div>
+								<md-icon class="material-icons md-48 md-gray">play_arrow</md-icon>
+							</div>
+							<div flex layout="row" layout-align="end center" style="padding-bottom: 0px; padding-top:0px">
+								<h1 class="md-headline widget-info-text-head version">2.9.4 RC5</h1>
+							</div>
+						</div>
+						
+						<div flex layout="row" layout-align="end center" style="margin-bottom: 0px; padding:0px">
+							<h1 class="md-body-2 widget-info-text-subhead">version en QA</h1>
+						</div>				
+				</md-card-content>
+			</md-card>
+
+			<md-card class="widget-info">
+				<md-card-content layout="column">
+						<div flex style="margin-bottom: 5px" layout="row">
+							<div>
+								<md-icon class="material-icons md-48 md-gray">bug_report</md-icon>
+							</div>
+							<div flex layout="row" layout-align="end center" style="padding-bottom: 0px; padding-top:0px">
+								<h1 class="md-headline widget-info-text-head version">4</h1>
+							</div>
+						</div>
+						<div flex layout="row" layout-align="end center" style="margin-bottom: 0px; padding:0px">
+							<h1 class="md-body-2 widget-info-text-subhead">casos de prueba actuales</h1>
+						</div>
+				</md-card-content>
+			</md-card>
+
+			<md-card class="widget-info">
+				<md-card-content layout="column">
+						<div flex style="margin-bottom: 5px" layout="row">
+							<div>
+								<md-icon class="material-icons md-48 md-gray">receipt</md-icon>
+							</div>
+							<div flex layout="row" layout-align="end center" style="padding-bottom: 0px; padding-top:0px">
+								<h1 class="md-headline widget-info-text-head version">7</h1>
+							</div>
+						</div>
+						<div flex layout="row" layout-align="end center" style="margin-bottom: 0px; padding:0px">
+							<h1 class="md-body-2 widget-info-text-subhead" style="">tickets Mantis</h1>
+						</div>
+				</md-card-content>
+			</md-card>
+	</div>
+	<div layout="column">
+		<md-card>
+			<md-card-header style="padding:0 !important;height:30px !important">
+				<md-toolbar style="min-height: 30px; height: 30px !important;">
+				    <h2 class="md-toolbar-tools" style="font-size: 16px !important">Listado casos de prueba</h2>
+				</md-toolbar>
+			</md-card-header>
+			<md-card-content>
+				<div grid-data id='test' grid-options="gridOptions" grid-actions="gridActions">
+	                <div>
+	                    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+	                        <thead>
+	                        <tr>
+	                            <th sortable="code" class="sortable mdl-data-table__cell--non-numeric">
+	                                <span>N°</span>
+	                            </th>
+	                            <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric"">
+	                                <span>Nombre</span>
+	                            </th>
+	                            <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric"">
+	                                <span>Estado</span>
+	                            </th>
+	                            <th>
+	                                <span></span>
+	                            </th>
+	                        </tr>
+	                        </thead>
+	                        <tbody>
+	                        <tr grid-item>
+	                            <td class="mdl-data-table__cell--non-numeric">
+	                                <span ng-bind="item.ID"></span>
+	                            </td>
+	                            <td ng-bind="item.nombre" class="mdl-data-table__cell--non-numeric"></td>
+	                            
+	                            <td ng-bind="item.estado" class="mdl-data-table__cell--non-numeric"></td>
+	                            <td class="item-datagrid ">
+	                              <md-icon class="material-icons md-24 gray" ng-click="verDetalles(this.item)">search</md-icon>
+	                            </td>
+	                        </tr>
+	                        </tbody>
+	                    </table>
+	                </div>
+	                <div layout-xs="column" layout="row" layout-align-xs="end end" layout-align="end center">
+	                    <grid-pagination max-size="5"
+	                                     boundary-links="true"
+	                                     class="pagination"
+	                                     ng-if="paginationOptions.totalItems  > paginationOptions.itemsPerPage"
+	                                     total-items="paginationOptions.totalItems"
+	                                     ng-model="paginationOptions.currentPage"
+	                                     ng-change="reloadGrid()"
+	                                     items-per-page="paginationOptions.itemsPerPage">
+	                    </grid-pagination>
+	                    <md-input-container flex-offset-gt-xs="5" class="items-per-page">
+	                        <md-select ng-init="paginationOptions.itemsPerPage = '10'" ng-model="paginationOptions.itemsPerPage" ng-change="reloadGrid()">
+	                            <md-option>10</md-option>
+	                            <md-option>25</md-option>
+	                            <md-option>50</md-option>
+	                            <md-option>75</md-option>
+	                        </md-select>
+	                    </md-input-container>
+	                </div>
+	            </div>
+			</md-card-content>
+		</md-card>
+	</div>
+</div>	
+
+	
+		<div ng-hide="true" layout="row" layout-align="center start"> <!-- layout-align="start strech"> -->	
+
+			<md-card class="widget-info">
+				<md-card-content layout="column">
+						<div flex style="margin-bottom: 5px" layout="row">
+							<div>
+								<md-icon class="material-icons md-48 md-gray">play_arrow</md-icon>
+							</div>
+							<div flex layout="row" layout-align="end center" style="padding-bottom: 0px; padding-top:0px">
+								<h1 class="md-headline widget-info-text-head version">2.9.4 RC5</h1>
+							</div>
+						</div>
+						
+						<div flex layout="row" layout-align="end center" style="margin-bottom: 0px; padding:0px">
+							<h1 class="md-body-2 widget-info-text-subhead">version en QA</h1>
+						</div>				
+				</md-card-content>
+			</md-card>
+
+			<md-card class="widget-info">
+				<md-card-content layout="column">
+						<div flex style="margin-bottom: 5px" layout="row">
+							<div>
+								<md-icon class="material-icons md-48 md-gray">bug_report</md-icon>
+							</div>
+							<div flex layout="row" layout-align="end center" style="padding-bottom: 0px; padding-top:0px">
+								<h1 class="md-headline widget-info-text-head version">4</h1>
+							</div>
+						</div>
+						<div flex layout="row" layout-align="end center" style="margin-bottom: 0px; padding:0px">
+							<h1 class="md-body-2 widget-info-text-subhead">casos de prueba actuales</h1>
+						</div>
+				</md-card-content>
+			</md-card>
+
+			<md-card class="widget-info" ng-hide="true">
+				<md-card-content layout="column">
+						<div flex style="margin-bottom: 5px">
+							<md-icon class="material-icons md-48 md-gray">remove_red_eye</md-icon>
+						</div>
+
+						<div flex layout="row" layout-align="end center" style="padding-bottom: 0px; padding-top: 0px">
+							<h1 class="md-headline widget-info-text-head">9</h1>
+						</div>
+						<div flex layout="row" layout-align="end center" style="margin-bottom: 0px; padding:0px">
+							<h1 class="md-body-2 widget-info-text-subhead">errores de front-end</h1>
+						</div>
+				</md-card-content>
+			</md-card>
+
+			<md-card class="widget-info" ng-hide="true">
+				<md-card-content layout="column">
+						<div flex style="margin-bottom: 5px">
+							<md-icon class="material-icons md-48 md-gray">dns</md-icon>
+						</div>
+
+						<div flex layout="row" layout-align="end center" style="padding-bottom: 0px; padding-top: 0px">
+							<h1 class="md-headline widget-info-text-head">2</h1>
+						</div>
+						<div flex layout="row" layout-align="end center" style="margin-bottom: 0px; padding:0px">
+							<h1 class="md-body-2 widget-info-text-subhead">errores de DB</h1>
+						</div>
+				</md-card-content>
+			</md-card>
+
+			<md-card class="widget-info">
+				<md-card-content layout="column">
+						<div flex style="margin-bottom: 5px" layout="row">
+							<div>
+								<md-icon class="material-icons md-48 md-gray">receipt</md-icon>
+							</div>
+							<div flex layout="row" layout-align="end center" style="padding-bottom: 0px; padding-top:0px">
+								<h1 class="md-headline widget-info-text-head version">7</h1>
+							</div>
+						</div>
+						<div flex layout="row" layout-align="end center" style="margin-bottom: 0px; padding:0px">
+							<h1 class="md-body-2 widget-info-text-subhead" style="">tickets Mantis</h1>
+						</div>
+				</md-card-content>
+			</md-card>
+
+	</div>
+</div>
+
+	<div ng-hide="true" layout="column" flex="100" style="border: solid 1px red">
+  	
+		<md-card>
+			<md-card-header style="padding:0 !important;height:30px !important">
+				<md-toolbar style="min-height: 30px; height: 30px !important;">
+				    <h2 class="md-toolbar-tools" style="font-size: 16px !important">Listado casos de prueba</h2>
+				</md-toolbar>
+			</md-card-header>
+			<md-card-content>
+				<div grid-data id='test' grid-options="gridOptions" grid-actions="gridActions">
+	                <div>
+	                    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+	                        <thead>
+	                        <tr>
+	                            <th sortable="code" class="sortable mdl-data-table__cell--non-numeric">
+	                                <span>N°</span>
+	                            </th>
+	                            <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric"">
+	                                <span>Nombre</span>
+	                            </th>
+	                            <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric"">
+	                                <span>Estado</span>
+	                            </th>
+	                            <th>
+	                                <span></span>
+	                            </th>
+	                        </tr>
+	                        </thead>
+	                        <tbody>
+	                        <tr grid-item>
+	                            <td class="mdl-data-table__cell--non-numeric">
+	                                <span ng-bind="item.ID"></span>
+	                            </td>
+	                            <td ng-bind="item.nombre" class="mdl-data-table__cell--non-numeric"></td>
+	                            
+	                            <td ng-bind="item.estado" class="mdl-data-table__cell--non-numeric"></td>
+	                            <td class="item-datagrid ">
+	                              <md-icon class="material-icons md-24 gray" ng-click="verDetalles(this.item)">search</md-icon>
+	                            </td>
+	                        </tr>
+	                        </tbody>
+	                    </table>
+	                </div>
+	                <div layout-xs="column" layout="row" layout-align-xs="end end" layout-align="end center">
+	                    <grid-pagination max-size="5"
+	                                     boundary-links="true"
+	                                     class="pagination"
+	                                     ng-if="paginationOptions.totalItems  > paginationOptions.itemsPerPage"
+	                                     total-items="paginationOptions.totalItems"
+	                                     ng-model="paginationOptions.currentPage"
+	                                     ng-change="reloadGrid()"
+	                                     items-per-page="paginationOptions.itemsPerPage">
+	                    </grid-pagination>
+	                    <md-input-container flex-offset-gt-xs="5" class="items-per-page">
+	                        <md-select ng-init="paginationOptions.itemsPerPage = '10'" ng-model="paginationOptions.itemsPerPage" ng-change="reloadGrid()">
+	                            <md-option>10</md-option>
+	                            <md-option>25</md-option>
+	                            <md-option>50</md-option>
+	                            <md-option>75</md-option>
+	                        </md-select>
+	                    </md-input-container>
+	                </div>
+	            </div>
+			</md-card-content>
+		</md-card>
+	</div>
+
+			
+
+
+
+
+

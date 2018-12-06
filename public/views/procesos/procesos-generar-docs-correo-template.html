@@ -1,0 +1,356 @@
+<style type="text/css">
+	
+
+  .material-icons.md-12 { font-size: 12px; }
+  .material-icons.md-18 { font-size: 18px; }
+  .material-icons.md-24 { font-size: 24px; }
+  .material-icons.md-36 { font-size: 36px; }
+  .material-icons.md-48 { font-size: 48px; }
+  .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+  .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+  .material-icons.orange600 { color: #FB8C00; }
+  .material-icons.black { color: #000000; }
+  .material-icons.red {color: rgb(249, 44, 44);}
+  .material-icons.green_big {color: rgb(36, 191, 1);}
+  .material-icons.yellow {color: rgb(247, 123, 14)}
+  .material-icons.md-gray { color: rgba(255, 255, 255, 0.5)}
+  .material-icons.md-lightgray { color: rgba(255, 255, 255, .2)}
+
+  .md-16 { font-size: 16px; }
+  .md-16.red {color: rgb(249, 44, 44);}
+  .md-16.green_big {color: rgb(36, 191, 1);}
+  .md-16.orange600 { color: #FB8C00; }
+  .md-16.yellow {color: rgb(247, 123, 14)}
+
+  .widget-info {
+  	background-color: rgb(38, 50, 56);
+  }
+
+  .widget-info-text-head, .widget-info-text-subhead {
+    color: rgba(255, 255, 255, .6);
+  }
+
+  .widget-info-text-head {
+    font-weight: lighter;
+    margin-top: 15px; 
+    margin-bottom: 0px;
+    color: rgba(255, 255, 255, .8);
+  }
+
+  .widget-info-text-subhead {
+  	margin-top: 0px;
+  	margin-bottom: 0px;
+  }
+
+  .header-toolbar {
+  	margin: 0px;
+  	font-weight: bolder;
+  	font-size: 16px;
+  	color: rgb(38, 50, 56);
+  }
+
+  .header-toolbar-subtitle {
+  	margin: 0px;
+  	font-weight: 400;
+  	font-size: 12px;
+  	color: rgb(38, 50, 56);
+  }
+  
+  .widget-info-text-head-small{
+  	font-size: 16px;
+  }
+  
+  .widget-info-text-subhead-small {
+  	font-size: 12px;
+  }
+
+  .item-list-archivos {
+  	font-size: 12px;
+  	color: rgba(255, 255, 255, .8);
+  }
+
+  .item-head-list-archivos {
+  	color: rgb(108, 112, 120);
+  	background-color: transparent;
+  }
+
+</style>
+
+	<div layout="column" flex="100">		
+		<div layout="row" flex="100">
+				
+			<md-card flex>
+				<md-card-header style="padding:0 !important;height:30px !important">
+					<md-toolbar style="min-height: 30px; height: 30px !important;">
+					    <h2 class="md-toolbar-tools" style="font-size: 16px !important">Generador de archivos</h2>
+					</md-toolbar>
+				</md-card-header>
+				<md-card-content>
+					
+					<div flex="100" layout="row">
+						<div flex layout="column" layout-align="left center">
+
+							
+							<md-radio-group ng-model="data.modo_carga">
+								<div layout="row">
+									<div flex style="border:solid 0px red">
+										<md-radio-button value="csv" class="md-primary">Imposiciones</md-radio-button>
+									</div>
+						      		<div layout="row" flex="40" style="border:solid 0px red"></div>
+						      		<div flex>
+						      			<md-radio-button value="form" class="md-primary">Novedades</md-radio-button>
+						      		</div>
+						      	</div>
+						    </md-radio-group>
+						    
+						    <!-- CARGAR DATOS DESDE EL FORMULARIO -->
+							<md-card layout-align="center center" ng-if="data.modo_carga == 'form'" flex>
+								<md-card-header style="width:100%; padding:0 !important;height:30px !important">
+									<md-toolbar style="min-height: 30px; height: 30px !important;">
+									    <h2 class="md-toolbar-tools" style="font-size: 16px !important">Datos elementales</h2>
+									</md-toolbar>
+								</md-card-header>
+
+							   	<md-card-content>
+								   	<div layout="row">
+								   		
+							   			<md-input-container>
+											<label>Tipo Acta</label>
+											<md-select ng-model="items.selectedItem" md-selected-text="selTiposActas()">
+												<md-optgroup label="Tipos Actas">
+											    <md-option ng-value="tipo_acta" ng-repeat="tipo_acta in tipos_actas track by $index">{{tipo_acta.tipo_acta}}</md-option>
+											    <!--
+											    <md-option ng-value="3">Personal NO-notificada</md-option>
+											    <md-option ng-value="2">Personal Notificada</md-option>
+											    -->
+												</md-optgroup>
+											</md-select>
+										</md-input-container>
+							   		</div>
+									<div layout="row">
+											<div flex="33">
+											<md-input-container class="md-block" flex-gt-sm>
+												<label>Lote</label>
+												<input ng-model="items.selectedItem.lote" disabled style="font-weight: bolder">
+											</md-input-container>
+										</div>
+										<div flex="33">
+											<md-input-container class="md-block" flex-gt-sm>
+												<label>ID remito</label>
+												<input ng-model="items.selectedItem.id_remito" disabled style="font-weight: bolder">
+											</md-input-container>
+										</div>
+										<div flex="33">
+											<md-input-container class="md-block" flex-gt-sm>
+												<label>Nro remito</label>
+												<input ng-model="items.selectedItem.numero_remito" disabled style="font-weight: bolder">
+											</md-input-container>
+										</div>
+									</div>
+									<div class="flex flex-col" layout="row" layout-align="center center">
+										<div flex="50">
+											<md-input-container class="md-block" flex-gt-sm style=" margin-bottom:0">
+												<label>Min numero acta: {{items.selectedItem.id_remito}} - {{f_actas.r_acta_desde}}</label>
+												<input ng-model="f_actas.r_acta_desde" style="font-weight: bolder; color: brown">
+											</md-input-container>
+										</div>
+
+										<div flex="50">
+											<md-input-container class="md-block" flex-gt-sm style="margin-bottom:0">
+												<label>numero hasta: {{items.selectedItem.id_remito}} - {{f_actas.r_acta_hasta}}</label>
+												<input ng-model="f_actas.r_acta_hasta" style="font-weight: bolder; color: brown">
+											</md-input-container>
+										</div>
+									</div>
+									<div class="flex flex-col" layout="row" layout-align="center center">
+										<div flex="50">
+											<md-input-container class="md-block" flex-gt-sm style=" margin-bottom:0">
+												<label>cod fiscalizacion:</label>
+												<input ng-model="items.selectedItem.cod_fiscalizacion" style="font-weight: bolder; color: brown">
+											</md-input-container>
+										</div>
+									</div>
+							  	</md-card-content>
+
+							</md-card>
+
+							<!-- CARGAR IMPOSICIONES DESDE ARCHIVO CSV -->
+			    			<md-card layout-align="center center" ng-if="data.modo_carga == 'csv'">
+								<md-card-header style="width:100%; padding:0 !important;height:30px !important">
+									<md-toolbar style="min-height: 30px; height: 30px !important;">
+									    <h2 class="md-toolbar-tools" style="font-size: 16px !important">Datos de imposicion</h2>
+									</md-toolbar>
+								</md-card-header>
+
+							   	<md-card-content>
+							   		<div layout="column" layout-aling="center center">
+							   			<div layout="row">
+								   			<div flex="100" layout="row" layout-align="center center" style="margin-bottom: 10px">
+												
+												<input class="ng-hide" id="input-file-id" multiple type="file" on-read-file="leerCSV(contents)"/>
+												<label for="input-file-id" class="md-button md-raised md-primary">Cargar CSV</label>
+												
+											</div>
+
+							   			</div>
+								   		<div layout="row">
+									   		<div flex="100" layout="row" layout-aling="center center" style="margin-bottom: 10px">
+												<md-checkbox class="md-primary md-hue-1" ng-model="datos_csv.es_archivo_respuesta" aria-label="archivo.nombre">archivo respuesta</md-checkbox>
+											</div>
+										</div>
+							   		</div>
+							   		
+
+									<div layout="row">
+											
+											<md-input-container class="md-block" flex-gt-sm>
+												<label>Lote</label>
+												<input ng-model="datos_csv.numero_lote" disabled style="font-weight: bolder">
+											</md-input-container>
+											
+											<md-input-container class="md-block" flex-gt-sm>
+												<label>Cantidad registros</label>
+												<input ng-model="datos_csv.cant_registros" disabled style="font-weight: bolder">
+											</md-input-container>
+										
+									</div>
+									<div class="flex flex-col" layout="row" layout-align="center center">
+										<div flex="50">
+											<md-input-container class="md-block" flex-gt-sm style=" margin-bottom:0">
+												<label>N° PIEZA desde:</label>
+												<input ng-model="datos_csv.numero_acta_min" disabled style="font-weight: bolder; color: brown">
+											</md-input-container>
+										</div>
+
+										<div flex="50">
+											<md-input-container class="md-block" flex-gt-sm style="margin-bottom:0">
+												<label>N° PIEZA hasta:</label>
+												<input ng-model="datos_csv.numero_acta_max" disabled style="font-weight: bolder; color: brown">
+											</md-input-container>
+										</div>
+									</div>
+									<div layout="row">
+											<md-input-container class="md-block" flex-gt-sm>
+												<label>TRACK_AND_TRACE modelo</label>
+												<input ng-model="datos_csv.track_trace_modelo" style="font-weight: bolder">
+											</md-input-container>
+										
+									</div>
+									
+							  	</md-card-content>
+							</md-card>
+				   		</div>
+				   	</div>
+				   	<div layout="row" flex ng-if="data.modo_carga" layout-align="center center">
+				   		<md-button class="md-raised md-primary" ng-click="generarDocsCorreo($event)">GENERAR ARCHIVO</md-button>
+				   	</div>
+				</md-card-content>
+  			</md-card>  
+				  
+			
+				
+			<div flex="33" layout="row">
+				<div layout="column" flex layout-align="start strech">	
+
+				<md-card class="widget-info">
+					
+					<md-card-content layout="column">
+						<md-list class="md-dense">
+							<md-subheader class="item-head-list-archivos">
+						    	Archivos
+							</md-subheader>
+							<md-list-item>
+								<span class="item-list-archivos">IMPOSICIONES</span>
+								<md-checkbox class="md-secondary md-primary md-hue-1" ng-model="docs_correo.imposicion" aria-label="archivo.nombre"></md-checkbox>
+							</md-list-item>
+							<md-list-item>
+								<span class="item-list-archivos">NOVEDADES</span>
+								<md-checkbox class="md-secondary md-primary md-hue-1" ng-model="docs_correo.novedad" aria-label="archivo.nombre"></md-checkbox>
+							</md-list-item>
+						</md-list>	
+						<md-divider style="border-color: rgba(255, 255, 255, .2);"></md-divider>				
+						
+						<md-list class="md-dense">
+							<md-subheader class="item-head-list-archivos">
+							    Directorio salida
+							</md-subheader>
+							<md-list-item>
+								<md-truncate class="item-list-archivos">{{params.archivos_generados_directorio}}</md-truncate>
+								 <md-tooltip md-direction="right">{{params.archivos_generados_directorio}}</md-tooltip>
+							</md-list-item>							
+						</md-list>
+						
+					</md-card-content>
+				</md-card>
+			</div>
+
+		</div>
+
+	</div>
+	<md-card>
+		<md-card-header style="padding:0 !important;height:30px !important">
+			<md-toolbar style="min-height: 30px; height: 30px !important;">
+			    <h2 class="md-toolbar-tools" style="font-size: 16px !important">Registros generados</h2>
+			</md-toolbar>
+		</md-card-header>
+		<md-card-content>
+			<div grid-data id='test' grid-options="gridOptions" grid-actions="gridActions">
+                <div>
+                    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                        <thead>
+                        <tr>
+                            <th sortable="code" class="sortable mdl-data-table__cell--non-numeric">
+                                <span></span>
+                            </th>
+                            <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric"">
+                                <span>Nombre</span>
+                            </th>
+                            <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric"">
+                                <span>Estado</span>
+                            </th>
+                            <th>
+                                <span></span>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr grid-item>
+                            <td class="mdl-data-table__cell--non-numeric">
+                                <span ng-bind="item.ID"></span>
+                            </td>
+                            <td ng-bind="item.nombre" class="mdl-data-table__cell--non-numeric"></td>
+                            
+                            <td ng-bind="item.estado" class="mdl-data-table__cell--non-numeric"></td>
+                            <td class="item-datagrid ">
+                              <md-icon class="material-icons md-24 gray" ng-click="verDetalles(this.item)">search</md-icon>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div layout-xs="column" layout="row" layout-align-xs="end end" layout-align="end center">
+                    <grid-pagination max-size="5"
+                                     boundary-links="true"
+                                     class="pagination"
+                                     ng-if="paginationOptions.totalItems  > paginationOptions.itemsPerPage"
+                                     total-items="paginationOptions.totalItems"
+                                     ng-model="paginationOptions.currentPage"
+                                     ng-change="reloadGrid()"
+                                     items-per-page="paginationOptions.itemsPerPage"></grid-pagination>
+                    <md-input-container flex-offset-gt-xs="5" class="items-per-page">
+                        <md-select ng-init="paginationOptions.itemsPerPage = '10'" ng-model="paginationOptions.itemsPerPage" ng-change="reloadGrid()">
+                            <md-option>10</md-option>
+                            <md-option>25</md-option>
+                            <md-option>50</md-option>
+                            <md-option>75</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+            </div>
+		</md-card-content>
+		</md-card>
+	
+
+
+
+

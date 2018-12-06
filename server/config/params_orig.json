@@ -1,0 +1,88 @@
+{
+    "params": {
+            "tipos_actas": {
+                    "0": {
+                        "id_remito": 809,
+                        "numero_remito": 1703101001,
+                        "notificar": 1,
+                        "tipo_acta": "Personal Notificada",
+                        "id_tipo_sijai": 2,
+                        "lote": 233
+                    },
+                    "1": {
+                        "id_remito": 808,
+                        "numero_remito": 1703081001,
+                        "notificar": 0,
+                        "tipo_acta": "Personal No Notificada",
+                        "id_tipo_sijai": 3,
+                        "lote": 233
+                    }
+            },
+            "datos_cod_bar": {
+                    "codigo_53": {
+                        "codigo_municipio": "000",
+                        "tipo_acta": "2",
+                        "codigo_grupo": "905",
+                        "codigo_fiscal": "03",
+                        "numero_acta": "", 
+                        "numero_ponderador": "01030507",
+                        "relleno": "0000000000000000000000000000"
+                    },
+                    "codigo_55": {
+                        "numero_contrato": "00000671",
+                        "numero_entidad": "330",
+                        "numero_acta": "", 
+                        "fecha_vencimiento": "20170523",
+                        "importe": "", 
+                        "ent_fisc": "003",
+                        "cod_fisc": 1,
+                        "cod_aut": "000",
+                        "cod_infraccion": "2110",
+                        "dv_interno": 5,
+                        "fecha_labrado": "" 
+                    }
+            },
+            "archivos_path": "E:/LOTES/PROCESADOS/",
+            "archivos_dir": "Lote233/",
+            "archivos_validar_automaticas": "E:/LOTES/PROCESADOS/",
+            "archivos_salida": {
+                "0": {
+                    "nombre": "ACTAS_PAPEL_PDF",
+                    "imprime": true,
+                    "clonar": "base.pdf",
+                    "single": false,
+                    "tipo_archivo": ".pdf"
+                },
+                "1": {
+                    "nombre": "ACTAS_PAPEL_JPG",
+                    "imprime": true,
+                    "clonar": "base.jpg",
+                    "single": false,
+                    "tipo_archivo": ".jpg"
+                },
+                "2": {
+                    "nombre": "CODIGOS_DE_BARRAS_JPG",
+                    "imprime": true,
+                    "clonar": false,
+                    "single": false,
+                    "tipo_archivo": "txt"
+                },
+                "3": {
+                    "nombre": "CODIGOS_DE_BARRAS",
+                    "imprime": true,
+                    "clonar": "false",
+                    "base": false,
+                    "tipo_archivo": "txt"
+                },
+                "4": {
+                    "nombre": "SCRIPT_SQL_REMITOS",
+                    "imprime": true,
+                    "clonar": false,
+                    "single": false,
+                    "tipo_archivo": "sql"
+                }
+            }
+    }
+}
+
+

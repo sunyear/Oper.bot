@@ -1,0 +1,216 @@
+<!-- 
+  componente: actas validadas en PROCESOS -> Validar Actas
+  controlador: validaciones-tablero-controller.js: ValidacionesTableroController()
+  servicio: remitos-actas-service.js: remitosActasService() 
+-->
+
+<!-- CONFIG DEL TEMPLATE -->
+<style type="text/css">
+.material-icons.md-12 { font-size: 12px; }
+  .material-icons.md-18 { font-size: 18px; }
+  .material-icons.md-24 { font-size: 24px; }
+  .material-icons.md-36 { font-size: 36px; }
+  .material-icons.md-48 { font-size: 48px; }
+  .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+  .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+  .material-icons.orange600 { color: #FB8C00; }
+  .material-icons.black { color: #000000; }
+  .material-icons.red {color: rgb(255, 51, 51);}
+  .material-icons.green_big {color: rgb(36, 191, 1);}
+
+
+  #md-sidenav-val, #md-sidenav-val.md-locked-open, #md-sidenav-val.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 50vw !important;
+  max-width: 200px !important;
+  }
+md-list-item + md-divider{
+    border-top-color: rgb(100, 100, 100) !important;
+  }
+.header-toolbar {
+    margin: 0px;
+    font-weight: bolder;
+    font-size: 16px;
+    color: rgb(38, 50, 56);
+  }
+
+  .header-toolbar-subtitle {
+    margin: 0px;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgb(38, 50, 56);
+  }
+
+  .item-datagrid {
+    cursor: pointer;
+  }
+
+.data-grid-selected-row {
+  background-color: rgb(255, 247, 196) !important;
+}
+
+.fila_seleccionada:hover{background-color:rgb(255, 247, 196)!important}
+
+
+  md-checkbox .md-icon {
+    transform: scale(.7);
+  }
+
+md-checkbox {padding: 0px !important; margin: 0px !important;}
+  
+  .md-label {
+    margin-left: 5px !important;
+  }
+}
+
+md-checkbox.md-checked.red .md-icon {
+ background-color: rgb(0, 0, 0);
+ border-color: rgb(0, 0, 0);
+}
+
+
+
+md-checkbox.dotted .md-icon {
+ border-width: 1px;
+ border-style: solid;
+ border-color: lightgray;
+}
+
+
+md-checkbox.md-checked.red .md-icon {
+ background-color: rgb(0, 0, 0);
+ border-color: rgb(0, 0, 0);
+}
+
+md-checkbox .md-container:after {box-sizing: border-box;
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;}
+
+</style>
+<!-- FIN CONFIG TEMPLATE -->
+
+
+<!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
+
+<md-content id="contenedor">
+  <div layout="row">
+     <div flex="100">
+        <md-toolbar style="min-height: 30px; height: 30px !important;">
+              <h2 class="md-toolbar-tools" style="font-size: 16px !important">Listado</h2>
+          </md-toolbar>
+      </div>
+    </div>
+      
+      <div grid-data id='test' grid-options="vm.gridOptions" grid-actions="vm.gridActions">
+        <div layout="row" flex="100" layour-align="start center">
+        
+        <div layout="row" flex="50">
+          
+        </div>
+
+
+        
+        <div layout="row" flex="50" layout-align="end center">
+
+           <md-button class="md-primary md-raised md-small" ng-click="vm.crearProcesoMasivo({}, $event)">nuevo</md-button>
+
+          <md-button ng-hide="true" aria-label="Open phone interactions menu" class="md-icon-button" ng-click="vm.crearProcesoMasivo({}, $event)">
+                <md-icon class="material-icons md-24 toolbar-gray">add_box</md-icon>
+              </md-button>
+        </div>
+
+      </div>
+        <div>
+            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--1dp">
+                <thead>
+                  <tr class="md-padding">
+                    <th colspan="5">
+                      <div layout="row" layout-fill flex="100" style="width: 100% !important; padding: 15px 5px 5px 5px;" >
+                            <div layout="row" layout-fill flex="100" style="padding:0px; width: 100%; border: solid 1px #eee;">
+                              <input type="text" style="width: 95%; height: 25px; border: solid 0px red; padding-left:5px;">
+                              <md-icon class="material-icons md-24 toolbar-gray">search</md-icon>
+                            </div>
+                      </div>
+                    </th>
+                  </tr>
+                <tr>
+                     <th  class="mdl-data-table__cell--non-numeric" style="width: 25px !important; margin-top: 0px !important;">
+                       <md-checkbox class="red md-checkbox-small dotted" ng-click="vm.seleccionarTodo(this, $event)" ng-checked="vm.todosSeleccionados()" md-indeterminate="vm.isIndeterminate()"></md-checkbox>
+                    </th>
+                    <th sortable="code" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>Fecha</span>
+                    </th>
+                    <th sortable="code" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>Tipo</span>
+                    </th>
+                    <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>Lotes Norte</span>
+                    </th>
+                    <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>Lotes Sur</span>
+                    </th>
+                    <th sortable="placed" class="sortable mdl-data-table__cell--non-numeric" >
+                        <span>Actas</span>
+                    </th>
+                    <th sortable="placed" class="mdl-data-table__cell--non-numeric" >
+                        <span></span>
+                    </th>
+                    
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr grid-item ng-click="vm.verDetalles(this.item)" ng-class="{'data-grid-selected-row': vm.esFilaSeleccionada(this), 'fila_seleccionada': vm.esFilaSeleccionada(this)}" style="max-height: 12px !important; min-height: 12px !important; line-height: 12px !important; height: 12px !important;">
+                    
+
+                    <td ng-show="false" class="mdl-data-table__cell--non-numeric" style="padding: 10px !important; max-height: 12px !important; min-height: 12px !important; line-height: 12px !important; height: 12px !important;">
+                        <span ng-bind="item.id_proceso_masivo"></span>
+                    </td>
+
+                    <td class="mdl-data-table__cell--non-numeric col_border" style="height: 16px !important; line-height: 16px !important; min-height: 16px; padding-top:3px !important">
+                      <md-checkbox md-no-ink class="red md-checkbox-small dotted" ng-click="vm.seleccionarReproduccion(this, $event)" ng-checked="vm.esFilaSeleccionada(this)"></md-checkbox>
+                    </td>
+
+                     
+                    <td ng-bind="item.fecha_proceso | date:'dd-MM-yyyy HH:mm:ss'" class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 12px !important; min-height: 12px !important; line-height: 12px !important; height: 12px !important;"></td>
+
+                    <td ng-bind="item.tipo_proceso " class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 12px !important; min-height: 12px !important; line-height: 12px !important; height: 12px !important;"></td>
+
+
+                    <td ng-bind="item.lotes_norte" class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 12px !important; min-height: 12px !important; line-height: 12px !important; height: 12px !important;"></td>
+
+                    <td ng-bind="item.lotes_sur" class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 12px !important; min-height: 12px !important; line-height: 12px !important; height: 12px !important;"></td>
+
+                    <td ng-bind="item.total_actas" class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 12px !important; min-height: 12px !important; line-height: 12px !important; height: 12px !important;"></td>
+
+                    <td class="mdl-data-table__cell--non-numeric" style="padding: 10px !important;max-height: 12px !important; min-height: 12px !important; line-height: 12px !important; height: 12px !important;"></td>
+                    
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div layout-xs="column" layout="row" layout-align-xs="end end" layout-align="end center">
+            <grid-pagination max-size="5"
+                             boundary-links="true"
+                             class="pagination"
+                             ng-if="paginationOptions.totalItems  > paginationOptions.itemsPerPage"
+                             total-items="paginationOptions.totalItems"
+                             ng-model="paginationOptions.currentPage"
+                             ng-change="reloadGrid()"
+                             items-per-page="paginationOptions.itemsPerPage"></grid-pagination>
+            <md-input-container flex-offset-gt-xs="5" class="items-per-page">
+                <md-select ng-init="paginationOptions.itemsPerPage = '10'" ng-model="paginationOptions.itemsPerPage" ng-change="reloadGrid()">
+                    <md-option>10</md-option>
+                    <md-option>25</md-option>
+                    <md-option>50</md-option>
+                    <md-option>75</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+    </div>
+  
+</md-content>
