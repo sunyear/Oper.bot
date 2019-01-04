@@ -890,7 +890,8 @@
               }
             }else{
               c_aceptar_sur++;
-              if(this.obj_vista_modelo.detalle[i].colr_proc !== 0){
+              //console.log('aceptar_norte:',this.obj_vista_modelo.detalle[i].colr_proc)
+              if(this.obj_vista_modelo.detalle[i].colr_proc || this.obj_vista_modelo.detalle[i].colr_rech){
                 c_aceptada_sur++;
               }
             }     

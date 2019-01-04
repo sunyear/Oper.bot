@@ -166,7 +166,7 @@
 
 
                 //CAMPOS DEL CSV Y SUS POSICIONES
-                var POS_FEC_CONST = 27, // FECHA CONSTATACION
+                var POS_FEC_CONST = 27, // FECHA CONSTATACION (fecha infraccion)
                     POS_FEC_VENC = 6,   //FECHA VENCIMIENTO
                     POS_VEL_BASE = 29,  //VELOCIDAD BASE
                     POS_VEL_REG = 30,   //VELOCIDAD REGISTRADA
