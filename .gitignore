@@ -2687,3 +2687,4 @@ node_modules/is-number/benchmark/fixtures/string.js
 node_modules/is-number/benchmark/index.js
 node_modules/is-number/benchmark/last.txt
 node_modules/is-number/benchmark/support.js
+*.pdf

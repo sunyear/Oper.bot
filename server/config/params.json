@@ -91,10 +91,10 @@
                     "ruta": "E:/VALOR/Valor-material/public/assets/"
                 }
             },
-            "archivos_base_directorio": "E:/LOTES/GENERAR/",
-            "archivos_generados_directorio": "E:/LOTES/GENERAR/archivos_generados/",
-            "archivos_validar_automaticas": "E:/LOTES/LOTES_AUTOMATICAS/",
-            "directorio_assets": "E:/VALOR/Valor-material/public/assets/",
+            "archivos_base_directorio": "D:/LOTES/GENERAR/",
+            "archivos_generados_directorio": "D:/LOTES/GENERAR/archivos_generados/",
+            "archivos_validar_automaticas": "D:/LOTES/AUTOMATICAS/",
+            "directorio_assets": "D:/DESARROLLO/Oper.bot/public/assets/",
             "muestreo_automaticas": "3",
             "archivos_salida": {
                 "0": {

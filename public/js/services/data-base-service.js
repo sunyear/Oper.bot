@@ -270,12 +270,13 @@
                             .get(url_consulta)
                             .success(
                                 function(data) {
-                                    //console.log(data)
+                                    
                                     deferred.resolve(data);
                                 }
                             )
                             .error(
                                 function(reason) {
+                                    console.log(reason)
                                     deferred.reject(reason);
                                 }
                             );

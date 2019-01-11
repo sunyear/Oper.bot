@@ -217,20 +217,47 @@
     };
 
 
-    eliminarProcesoMasivo( id_proceso_masivo, indice_dataset ){
+    eliminarProcesoMasivo( id_proceso_masivo, indice_dataset, ev ){
 
-      const ProcesoCargaMasiva = this;
-        let carga_masiva_db = this._procesosMasivosService.eliminarProcesoMasivo( id_proceso_masivo )
-        //console.log(carga_masiva_db)
-        carga_masiva_db.then(
-            (eliminado) => {
-              console.log(eliminado)
-                //this.obj_vista_modelo.detalle.splice(0,0,item_data); 
-                this.dataset.splice(indice_dataset,1);
-                this._cargarProcesosMasivos()
-              },
-            (err) => console.log(err)
-        );
+
+
+      //.then(_eliminarProcesoMasivo(this))
+      const controlador = this;
+      this._$mdDialog.show(
+
+        this._$mdDialog.confirm()
+          .title('¿Eliminar el proceso masivo?')
+          .textContent('Todos los datos relacionados al proceso masivo seran eliminados')
+          .targetEvent(ev)
+          .ok('Eliminar datos')
+          .cancel('Cancelar')
+        )
+      .then(
+        function (){
+          //const ProcesoCargaMasiva = this;
+        
+          let carga_masiva_db = controlador._procesosMasivosService.eliminarProcesoMasivo( id_proceso_masivo )
+          //console.log(carga_masiva_db)
+          carga_masiva_db.then(
+              (eliminado) => {
+                console.log(eliminado)
+                  //this.obj_vista_modelo.detalle.splice(0,0,item_data); 
+                  controlador.dataset.splice(indice_dataset,1);
+                  controlador._cargarProcesosMasivos()
+                },
+              (err) => console.log(err)
+          );
+        },
+        function (){
+          console.log('no borro')
+        }
+      );
+
+
+      function _eliminarProcesoMasivo( CLASE ){
+        
+      
+      }
 
     };
 

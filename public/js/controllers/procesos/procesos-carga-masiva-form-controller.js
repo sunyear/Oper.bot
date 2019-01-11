@@ -521,8 +521,8 @@
             //this.lotes_remitos[0].items[this.lotes_remitos[0].editar_index] = this.remito_loteDataPack[this.lotes_remitos[0].editar_index];
         }
 
-
-        
+         //if(this.obj_vista_modelo.detalle[index].nota.texto !== '')this.obj_vista_modelo.detalle[index].uid = 'U';
+        //this.obj_vista_modelo.detalle[this.lotes_remitos[0].editar_index].nota.editar = false;
         this.lotes_remitos[0].editar_item_nuevo = false;
         this.lotes_remitos[0].editar_index = null;
         this.lotes_remitos[0].editar = false;
@@ -727,6 +727,11 @@
 
     editarNota( index ){
       //console.log(this.lotes_remitos[0].items[index])
+
+      //this.lotes_remitos[0].editar = true;
+      //this.lotes_remitos[0].editar_index = index;
+
+      //this.setearCssFila( index )
 
       if(this.obj_vista_modelo.detalle[index].nota.texto !== '')this.obj_vista_modelo.detalle[index].uid = 'U';
       this.obj_vista_modelo.detalle[index].nota.editar = !this.obj_vista_modelo.detalle[index].nota.editar;
