@@ -159,7 +159,9 @@ md-grid-tile:hover {
 <!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
 
 
-<md-content id="contenedor" style="height: 600px !important;">
+<md-content id="contenedor" style="height: 250px !important;">
+
+  <div flex>
     
       <div layout="row" flex="100" layout-align="end center">  
         <md-button class="md-primary md-raised md-small" ng-click="vm.crearProcesoMasivo({}, $event)">nuevo</md-button>
@@ -169,7 +171,7 @@ md-grid-tile:hover {
           <input type="text" ng-model="vm.dataset.texto_buscado" style="width: 95%; height: 25px !important; border: solid 0px red; padding-left:5px;">
           <md-icon class="material-icons md-24 toolbar-gray" ng-click="vm.buscarProcesoMasivo()">search</md-icon>
         </div> 
-  
+  </div>
 </md-content>
 
 <md-content>
