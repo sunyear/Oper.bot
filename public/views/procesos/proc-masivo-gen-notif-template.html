@@ -1,0 +1,43 @@
+<div layout="column" flex="100" layout-align="center center">
+  <md-dialog aria-label="Mango (Fruit)">
+    
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2></h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="cancel()">
+            <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+
+      <md-dialog-content>
+        <md-card>
+
+          <p>
+            Se encuentran cargados, y validados en SIJAI, los  siguientes lotes de actas personales correspondientes a la ZONA NORTE.
+          </p>
+
+
+
+          <p style="line-height: 18px; font-size: 13px" ng-repeat="proceso_masivo in dataset track by $index">
+            <span style="font-weight: bold">Lote {{proceso_masivo.lote}}</span></br>
+            <span>remito: <span style="font-weight: bold">{{proceso_masivo.remito}}</span></span></br>
+            <span>Cantidad total del lote procesado: <span style="font-weight: bold">{{proceso_masivo.cantidad}}</span></span>
+          </p>
+          
+        </md-card>   
+        
+        <md-divider></md-divider>
+            
+      </md-dialog-content>
+      
+      <md-dialog-actions layout="row">
+        <md-button class="md-primary md-raised" ng-click="respuestaValidacion(true)">
+         Salir
+        </md-button>
+      </md-dialog-actions>
+
+    </md-dialog>
+
+</div>

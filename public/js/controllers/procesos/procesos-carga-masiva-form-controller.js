@@ -788,6 +788,36 @@
     };
 
 
+    generarNotificacion (tipo_notificacion, ev) {
+        this._$mdDialog.show({
+            controller: 'CargaMasivaGenNotif',
+            templateUrl: './views/procesos/proc-masivo-gen-notif-template.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose:false,
+            fullscreen: false, // Only for -xs, -sm breakpoints.
+            locals: {
+                acta_pdf: {}
+            }
+        })
+        .then(
+            function(respuesta_validacion) {
+                //console.log($scope.muestra_actas_pdf[index_acta_pdf])
+                if(respuesta_validacion === true){
+                    //console.log(index_acta_pdf)
+                    //$scope.actas_pdf.actas_pdf[index_acta_pdf].estado_validacion = 'aceptada';
+                }else{
+                    //$scope.actas_pdf.actas_pdf[index_acta_pdf].estado_validacion = 'rechazada';
+                }
+                //console.log($scope.muestra_actas_pdf);
+                //$scope.status = 'You said the information was "' + answer + '".';
+            }, function() {
+                //$scope.status = 'You cancelled the dialog.';
+            }
+        );
+    };
+
+
     //--
     // METODOS PRIVADOS
     //--
