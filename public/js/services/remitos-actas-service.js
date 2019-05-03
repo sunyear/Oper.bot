@@ -339,6 +339,7 @@
                                         tmp_lotes_validados.push(
                                             {
                                                 'metalote': lotes_validados[i].metalote,
+                                                'nombre_archivo_csv': lotes_validados[i].nombre_archivo_csv,
                                                 'estado_lote': lotes_validados[i].estado_lote,
                                                 'fecha_validado': lotes_validados[i].fecha_validado
                                             }

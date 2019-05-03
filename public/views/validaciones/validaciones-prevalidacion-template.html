@@ -357,9 +357,10 @@
 			<md-list style="border: solid 0px green; overflow: auto">
 				
 				
-					<md-list-item class="md-2-line" style="border: solid 0px red;" ng-repeat="lote_validado in lotes_validados">
+					<md-list-item class="md-3-line" style="border: solid 0px red;" ng-repeat="lote_validado in lotes_validados">
 		            	<div class="itemlist md-list-item-text">
 		            		<p>{{lote_validado.metalote}}</p>
+		            		<p style="font-size: 12px">{{lote_validado.nombre_archivo_csv}}</p>
 		            		<p>aceptado ({{lote_validado.fecha_validado | date:'dd-MM-yyyy HH:mm:ss'}})</p>
 		            	</div>
 		            	<md-icon style="margin-right: 5px !important" class="material-icons md-24 green_big">verified_user</md-icon>

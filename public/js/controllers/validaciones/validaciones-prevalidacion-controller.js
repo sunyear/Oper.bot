@@ -27,6 +27,7 @@
 
                 var obj_lote_validado = {
                     metalote: null,
+                    nombre_archivo_csv: null,
                     estado_lote: null,
                     fecha_validado: null
                 };

@@ -828,7 +828,7 @@ md-input-container.lll .md-input{
 
               </md-card-content>
               <div layout="row" style="padding: 3px !important; font-size: 11px;border: solid 0px red">
-                <div layout="column" flex style="">
+                <div layout="column" flex style="border: solid 0px red" flex="65">
                    
                   <div layout="row" layout-align="start center" flex="65">
                    NORTE: {{vm.estadisticas.zona_norte.total}} { no-notif: {{vm.estadisticas.zona_norte.no_notificadas}} | aceptar: {{vm.estadisticas.zona_norte.aceptado}}/{{vm.estadisticas.zona_norte.aceptar}} | calidad: {{vm.estadisticas.zona_norte.en_calidad}}/{{vm.estadisticas.zona_norte.calidad}} | email: {{vm.estadisticas.zona_norte.email}}/{{vm.estadisticas.zona_norte.total}} } 
@@ -837,7 +837,29 @@ md-input-container.lll .md-input{
                   <div layout="row" layout-align="start center" flex>
                    SUR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{vm.estadisticas.zona_sur.total}} { no-notif: {{vm.estadisticas.zona_sur.no_notificadas}} | aceptar: {{vm.estadisticas.zona_sur.aceptado}}/{{vm.estadisticas.zona_sur.aceptar}} | calidad: {{vm.estadisticas.zona_sur.en_calidad}}/{{vm.estadisticas.zona_sur.calidad}} | email: {{vm.estadisticas.zona_sur.email}}/{{vm.estadisticas.zona_sur.total}} }
                   </div>
-                 
+                  
+                  
+
+                </div>
+                <div layout="row" layout-align="end enter" flex>
+                  <md-menu md-position-mode="target-right target">
+                    <md-button  class="md-icon-button toolbar-gray">
+                      <md-icon class="material-icons md-16 toolbar-gray" ng-click="vm.openMenu($mdMenu, $event)">mail</md-icon>
+                    </md-button>
+                    <md-menu-content width="4">
+                      <md-menu-item>
+                        <md-button ng-click="vm.generarNotificacion(1)">
+                          Notificacion calidad
+                        </md-button>
+                      </md-menu-item>
+                      <md-menu-divider></md-menu-divider>
+                      <md-menu-item>
+                        <md-button ng-click="vm.generarNotificacion(2)">
+                          Notificacion aceptadas/rechazadas
+                        </md-button>
+                      </md-menu-item>
+                    </md-menu-content>
+                  </md-menu>
                 </div>
               </div>
             </md-card>

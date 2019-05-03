@@ -105,6 +105,17 @@ md-checkbox .md-container:after {box-sizing: border-box;
   cursor: pointer;
 }
 
+.msj_no_encontrado {
+  font-size: 0.7em;
+  font-weight: bold;
+  color: blue;
+}
+
+.msj_no_encontrado:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 
 .gridListdemoBasicUsage md-grid-list {
   margin: 8px; }
@@ -167,8 +178,8 @@ md-grid-tile:hover {
       </div>
      
         <div layout="row" flex="100" style="padding:5px; width: 100%; border: solid 1px #eee;">
-          <input type="text" ng-model="vm.dataset.texto_buscado" style="width: 95%; height: 25px !important; border: solid 0px red; padding-left:5px;">
-          <md-icon class="material-icons md-24 toolbar-gray" ng-click="vm.buscarProcesoMasivo()">search</md-icon>
+          <input type="text" ng-model="vm.dataset.texto_buscado" style="width: 95%; height: 25px !important; border: solid 0px red; padding-left:5px;" ng-model-options="{updateOn : 'change blur'}" ng-change="vm.buscarProcesoMasivo()">
+          <md-icon class="material-icons md-24 toolbar-gray" ng-click="vm.buscarProcesoMasivo()" >search</md-icon>
         </div> 
   </div>
 </md-content>
@@ -176,9 +187,7 @@ md-grid-tile:hover {
 <md-content>
       <!-- INICIO GRID -->
 
-       <div ng-if="vm.dataset.length == 0" style="padding: 5px;">
-          <span>No se encontraron resultados.</span>
-        </div>
+       
 
   <div>
 
@@ -240,4 +249,9 @@ md-grid-tile:hover {
       </md-grid-list>
     </div>
   </div> <!-- FIN GRID -->
+  <div ng-if="vm.dataset.length == 0" style="padding: 5px;">
+          <p style="font-style: italic;">No se encontraron resultados</p>
+          <span class="msj_no_encontrado" ng-click="vm.buscarProcesoMasivo()">Volver al listado</span>
+          
+        </div>
 </md-content>
