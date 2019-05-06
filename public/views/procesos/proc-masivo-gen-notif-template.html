@@ -12,21 +12,68 @@
       </md-toolbar>
 
       <md-dialog-content>
-        <md-card>
-
+        <md-card ng-if="dataset_norte.length > 0 && tipo_notificacion == 2">
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline" style="font-weight: bold; font-size: 14px !important">ZONA NORTE</span>
+              <span class="md-subhead" style="font-size: 12px !important">aliciarubenmigliori@gmail.com;ivanamarcos78@hotmail.com;marceloafarias@yahoo.com.ar;cmmarcos@hotmail.com.ar</span>
+              <span class="md-subhead" style="font-size: 12px !important">Lotes ZONA NORTE cargados y validados en SIJAI</span>
+            </md-card-title-text>
+          </md-card-title>
           <p>
             Se encuentran cargados, y validados en SIJAI, los  siguientes lotes de actas personales correspondientes a la ZONA NORTE.
           </p>
-
-
-
-          <p style="line-height: 18px; font-size: 13px" ng-repeat="proceso_masivo in dataset track by $index">
+          <p style="line-height: 18px; font-size: 13px" ng-repeat="proceso_masivo in dataset_norte track by $index">
             <span style="font-weight: bold">Lote {{proceso_masivo.lote}}</span></br>
             <span>remito: <span style="font-weight: bold">{{proceso_masivo.remito}}</span></span></br>
-            <span>Cantidad total del lote procesado: <span style="font-weight: bold">{{proceso_masivo.cantidad}}</span></span>
+            <span>Cantidad total del lote procesado: <span style="font-weight: bold">{{proceso_masivo.actas}}</span></span>
+            <md-divider></md-divider>
           </p>
-          
-        </md-card>   
+
+        </md-card>
+
+        <md-card ng-if="dataset_sur.length > 0 && tipo_notificacion == 2">
+         <md-card-title>
+            <md-card-title-text>
+             <span class="md-headline" style="font-weight: bold; font-size: 14px !important">ZONA SUR</span>
+             <span class="md-subhead" style="font-size: 12px !important">ceciliamiranda183.cm@gmail.com; vaninapasquinelli@hotmail.com; vgritti@santafe.gov.ar</span>
+              <span class="md-subhead" style="font-size: 12px !important">Lotes ZONA SUR cargados y validados en SIJAI</span>
+            </md-card-title-text>
+          </md-card-title>
+          <p>
+            Se encuentran cargados, y validados en SIJAI, los  siguientes lotes de actas personales correspondientes a la ZONA SUR.
+          </p>
+          <p style="line-height: 18px; font-size: 13px" ng-repeat="proceso_masivo in dataset_sur track by $index">
+            <span style="font-weight: bold">Lote {{proceso_masivo.lote}}</span></br>
+            <span>remito: <span style="font-weight: bold">{{proceso_masivo.remito}}</span></span></br>
+            <span>Cantidad total del lote procesado: <span style="font-weight: bold">{{proceso_masivo.actas}}</span></span>
+
+          </p>       
+          <md-divider></md-divider>
+        </md-card> 
+
+        <md-card ng-if="dataset_aceptadas.length > 0">
+           <md-card-title>
+            <md-card-title-text>
+             <span class="md-subhead" style="font-size: 12px !important">'ceciliamiranda183.cm@gmail.com'; 'vaninapasquinelli@hotmail.com'; 'vgritti@santafe.gov.ar'</span>
+              <span class="md-subhead" style="font-size: 12px !important">Lotes ZONA NORTE/SUR cargados y validados en SIJAI</span>
+            </md-card-title-text>
+          </md-card-title>
+          <p>
+            Hola Ivana!</br></br>
+
+            Te envío el listado de lotes para que le informen el estado a CECAITRA de la misma manera que lo hacen siempre uno por uno por email, teniendo en cuenta de informar correctamente el estado (rechazo total, rechazo parcial -si está aceptado pero tiene al menos un registro rechazado- o aceptado totalmente), copiar la pantalla y adjuntar el archivo de respuesta para cada caso.
+
+          </p>
+          <p style="line-height: 18px; font-size: 13px" ng-repeat="proceso_masivo in dataset_aceptadas track by $index">
+            <span>Lote <span style="font-weight: bold">{{proceso_masivo.lote}}</span> CARGADO Y VALIDADO</span></br>
+            <span ng-if="proceso_masivo.colr_rech == false">ESTADO: <span style="font-weight: bold; color: green">ACEPTADO</span></br></span>
+            <span ng-if="proceso_masivo.colr_rech == true">ESTADO: <span style="font-weight: bold; color: red">RECHAZADO</span></br></span>
+            <span>registro procesados: <span style="font-weight: bold">{{proceso_masivo.actas}}</span></span></br>
+            <span>registro aceptados: <span style="font-weight: bold">0</span></span></br>
+            <span>registro rechazados: <span style="font-weight: bold; color: red">0</span></span>
+          </p>          
+        </md-card> 
         
         <md-divider></md-divider>
             

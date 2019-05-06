@@ -195,6 +195,8 @@ md-grid-tile:hover {
 
       <md-grid-list md-cols="4" md-cols-xl="12" md-row-height="6:1" md-gutter="12px" >
 
+        <!-- <md-virtual-repeat-container id="vertical-container">-->
+          <!-- ng-repeat="proceso_masivo in vm.dataset track by $index"-->
         <md-grid-tile style="border: solid 1px lightgray; border-radius: 5px;" class="gray otro"
         md-rowspan="3" md-colspan="1" md-rowspan-xl="3" md-colspan-xl="3" layout="row" layout-align="center center"
         ng-click="vm.abrirReporte('')" ng-repeat="proceso_masivo in vm.dataset track by $index" ng-mouseover="vm.menu_visible = $index" ng-mouseleave="vm.menu_visible = -1">
@@ -245,7 +247,7 @@ md-grid-tile:hover {
             </h3>
           </md-grid-tile-footer>
         </md-grid-tile>
-       
+      <!-- </md-virtual-repeat-container>-->
       </md-grid-list>
     </div>
   </div> <!-- FIN GRID -->

@@ -789,6 +789,16 @@
 
 
     generarNotificacion (tipo_notificacion, ev) {
+
+        let envio_actas = {};
+        switch (tipo_notificacion){
+          case 1: envio_actas = this._$filter('filter')(this.dataset.detalle, {id_tipo_envio: '1'}) //<-- ACEPTADAS
+            break;
+          case 2: envio_actas = this._$filter('filter')(this.dataset.detalle, {id_tipo_envio: '2'}) //<-- CALIDAD
+            break;
+        }
+        
+
         this._$mdDialog.show({
             controller: 'CargaMasivaGenNotif',
             templateUrl: './views/procesos/proc-masivo-gen-notif-template.html',
@@ -797,7 +807,7 @@
             clickOutsideToClose:false,
             fullscreen: false, // Only for -xs, -sm breakpoints.
             locals: {
-                acta_pdf: {}
+                actas_notif: {'tipo_notificacion': tipo_notificacion, 'actas': envio_actas}
             }
         })
         .then(
