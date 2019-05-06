@@ -99,6 +99,8 @@
                                     break;
                                 case 'r': consulta = 'procesos_masivos/vista/remito/' + arr_busq[1];
                                     break;
+                                case 't': consulta = 'procesos_masivos/vista/tipo/' + arr_busq[1];
+                                    break;
                             };
 
                         }

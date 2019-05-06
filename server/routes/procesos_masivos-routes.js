@@ -54,6 +54,10 @@ module.exports = {
 				text: "select pm.* From procesos_masivos_v pm join procesos_masivos_detalles pmd on pmd.id_proceso_masivo = pm.id_proceso_masivo where pmd.numero_remito = $1",
 				values: [req.params.remito]
 			},
+			tipo: {
+				text: "select pm.* From procesos_masivos_v pm where pm.tipo_proceso = $1 ORDER BY fecha_proceso DESC",
+				values: [req.params.tipo]
+			},
 			default: {
 				text: "SELECT * FROM procesos_masivos_v ORDER BY fecha_proceso DESC",
 				values: []
@@ -64,6 +68,8 @@ module.exports = {
 			query = query_template.lote;
 		}else if(req.params.hasOwnProperty('remito')){
 			query = query_template.remito;
+		}else if(req.params.hasOwnProperty('tipo')){
+			query = query_template.tipo;
 		}else{
 			query = query_template.default;
 		}
