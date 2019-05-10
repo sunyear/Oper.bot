@@ -11,6 +11,8 @@
         this._$filter = $filter;
         this._$toast = $mdToast;
         this._$document = $document;
+        $scope.files = [];
+        this._$scope = $scope;
 
 
         this.obj_vista_modelo = {
@@ -24,6 +26,7 @@
         }
 
         this.dataset = data;
+        //this.files = [];
 
         //this.id_carga_masiva_actual = this.dataset.idProcesoMasivo;
 
@@ -450,7 +453,7 @@
       if(es_carga_manual){
         this.editarItem(index, true)
       }else{
-        this.actualizarItem( es_carga_manual );
+        this.actualizarItem( es_carga_manual, index );
       }
     }
 
@@ -485,7 +488,7 @@
         */
     }
 
-    actualizarItem( es_carga_manual ){
+    actualizarItem( es_carga_manual, index ){
       //console.log(this.obj_vista_modelo.detalle)
       
       if(es_carga_manual){
@@ -505,7 +508,8 @@
         
         //casoPruebaDataPack[componente] = angular.copy($scope.componentes[componente].items);
         //this.remito_loteDataPack[this.lotes_remitos[0].editar_index] = obj;
-        this.obj_vista_modelo.detalle[this.lotes_remitos[0].editar_index].uid = 'U';
+        //this.obj_vista_modelo.detalle[this.lotes_remitos[0].editar_index].uid = 'U';
+        this.obj_vista_modelo.detalle[index].uid = 'U';
         this.lotes_remitos[0].editar_item_nuevo = false;
         this.cancelarEdicionItem(false)
     }
@@ -541,7 +545,8 @@
 
     leerCSV( contents ){
 
-        //console.log(contents)
+        console.log(this._$scope.files)
+        console.log(this._$scope)
 
         const es_carga_manual = false;
         const tolerancia_notificada = 80;
@@ -881,7 +886,7 @@
       }
 
       //$filter('filter')($scope.results.subjects, {grade: 'C'})[0];
-      console.log(this._$filter('filter')(this.dataset.detalle, {zona: 'NORTE'}));
+      //console.log(this._$filter('filter')(this.dataset.detalle, {zona: 'NORTE'}));
 
     };
 
