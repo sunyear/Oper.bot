@@ -22,7 +22,13 @@
             tipo_proceso: '',
             fecha_proceso: ''
           },
-          detalle: []
+          detalle: [],
+          registro_edit: {
+            remito_orig: null,
+            lote_orig: null,
+            notificada_orig: null,
+            zona_orig: null
+          }
         }
 
         this.dataset = data;
@@ -201,7 +207,7 @@
         this.obj_vista_modelo.cabecera.fecha_proceso = this._$filter('date')(this.obj_vista_modelo.cabecera.fecha_proceso, 'yyyy/MM/dd')+ ' ' + this._$filter('date')(( new Date() ).getTime(), 'HH:mm:ss')
         //this.obj_vista_modelo.cabecera.fecha_proceso = this._$filter('date')(this.obj_vista_modelo.cabecera.fecha_proceso, 'yyyy/MM/dd')
        
-        console.log(this.obj_vista_modelo.detalle)
+        //console.log(this.obj_vista_modelo.detalle)
 
         const rta = this._procesosMasivosService.guardarProcesoMasivo( this.obj_vista_modelo )
 
@@ -446,6 +452,8 @@
 
         }
 
+        console.log(this.obj_vista_modelo.detalle)
+
       /*
         es_carga_manual TRUE/FALSE
         se utiliza para determinar si la fila se carga leyendo el CSV (FALSE) o completando manualmente los campos (TRUE)        
@@ -472,7 +480,15 @@
         }else{
             this.lotes_remitos[0].editar_item_nuevo = false;
         }
+          
+        this.obj_vista_modelo.registro_edit.remito_orig = this.obj_vista_modelo.detalle[index].remito;
+        this.obj_vista_modelo.registro_edit.lote_orig = this.obj_vista_modelo.detalle[index].lote;
+        this.obj_vista_modelo.registro_edit.actas_orig = this.obj_vista_modelo.detalle[index].actas;
+        this.obj_vista_modelo.registro_edit.notificada_orig = this.obj_vista_modelo.detalle[index].notificada;
+        this.obj_vista_modelo.registro_edit.zona_orig = this.obj_vista_modelo.detalle[index].zona;
 
+          
+          
         //this.lotes_remitos[0].items[index].nota.editar = !this.lotes_remitos[0].items[index].nota.editar;
         
         //coreService.focus('focusPrecondicion');
@@ -488,9 +504,20 @@
         */
     }
 
+
+    /*
+    Invocacion: 
+              > desde la vista
+              > desde el metodo crearLote() de este controlador.
+    Input: 
+          > es_carga_manual@boolean:  falso = se carga desde forumulario; verdadero = se carga desde archivo csv
+          > index@numeric: es el indice correspondiente a la lista de lotes del proceso masivo (para saber que item del listado estoy modificando)
+                           -1: cuando se invoca desdde la vista
+                           mayor -1: cuando se invoca desde el metodo crearLote()
+    */
     actualizarItem( es_carga_manual, index ){
       //console.log(this.obj_vista_modelo.detalle)
-      
+      let index_real = null;
       if(es_carga_manual){
 
         let obj = {
@@ -503,38 +530,71 @@
         }      
 
       }
+
+      if(index > -1){
+        this.obj_vista_modelo.detalle[index].uid = 'I';
+      }else{
+        this.obj_vista_modelo.detalle[this.lotes_remitos[0].editar_index].uid = 'U';
+      };
+
+      this.lotes_remitos[0].editar_item_nuevo = false;
+      this.cancelarEdicionItem(true, false)
+
         //console.log($scope.caso_prueba.precondiciones[$scope.componentes[componente].editar_index])
         //$scope.caso_prueba.precondiciones[$scope.componentes[componente].editar_index] = $scope.componentes[componente].items[$scope.componentes[componente].editar_index];
         
         //casoPruebaDataPack[componente] = angular.copy($scope.componentes[componente].items);
         //this.remito_loteDataPack[this.lotes_remitos[0].editar_index] = obj;
         //this.obj_vista_modelo.detalle[this.lotes_remitos[0].editar_index].uid = 'U';
-        this.obj_vista_modelo.detalle[index].uid = 'U';
-        this.lotes_remitos[0].editar_item_nuevo = false;
-        this.cancelarEdicionItem(false)
+        //this.obj_vista_modelo.detalle[index].uid = 'U';
+        //console.log(this.lotes_remitos[0].editar_index, index)
+        //const index_real = (typeof(index)!== 'undefined')?index:this.lotes_remitos[0].editar_index;
+        //this.obj_vista_modelo.detalle[index].uid = 'U';
+        
     }
 
-    cancelarEdicionItem( borrar_item ){
-
-        //$scope.componentes[componente].items[$scope.componentes[componente].editar_index] = casoPruebaDataPack.precondiciones[$scope.componentes[componente].editar_index];
-        
-
+     /*
+    Invocacion: 
+              > desde la vista
+              > desde el metodo actualizarItem() de este controlador.
+              > desde el metodo borrarItem() de este controlador
+    Input: 
+          > desde_actualizar@boolean:  true = quiere decir que es invocado desde actualizarItem; false = es invocado desde la vista o desde borrarItem()
+          > borrar_item@boolean:
+    */
+    cancelarEdicionItem( desde_actualizar, borrar_item ){
+    
         if(this.lotes_remitos[0].editar_item_nuevo){
             this.borrarItem( this.lotes_remitos[0].editar_index, true );
         }else if(borrar_item){
             //this.lotes_remitos[0].items[this.lotes_remitos[0].editar_index] = this.remito_loteDataPack[this.lotes_remitos[0].editar_index];
         }
 
-         //if(this.obj_vista_modelo.detalle[index].nota.texto !== '')this.obj_vista_modelo.detalle[index].uid = 'U';
-        //this.obj_vista_modelo.detalle[this.lotes_remitos[0].editar_index].nota.editar = false;
+        //Se restaura el registro original cuando se cancela la edicion desde la vista
+        if(!desde_actualizar){
+          this.obj_vista_modelo.detalle[this.lotes_remitos[0].editar_index].remito = this.obj_vista_modelo.registro_edit.remito_orig;
+          this.obj_vista_modelo.detalle[this.lotes_remitos[0].editar_index].lote  = this.obj_vista_modelo.registro_edit.lote_orig;
+          this.obj_vista_modelo.detalle[this.lotes_remitos[0].editar_index].actas  = this.obj_vista_modelo.registro_edit.actas_orig;
+          this.obj_vista_modelo.detalle[this.lotes_remitos[0].editar_index].notificada  = this.obj_vista_modelo.registro_edit.notificada_orig;
+          this.obj_vista_modelo.detalle[this.lotes_remitos[0].editar_index].zona  = this.obj_vista_modelo.registro_edit.zona_orig;
+        }
+
+        this.obj_vista_modelo.registro_edit.remito_orig = null;
+        this.obj_vista_modelo.registro_edit.lote_orig = null;
+        this.obj_vista_modelo.registro_edit.actas_orig = null;
+        this.obj_vista_modelo.registro_edit.notificada_orig = null;
+        this.obj_vista_modelo.registro_edit.zona_orig = null;
+
         this.lotes_remitos[0].editar_item_nuevo = false;
         this.lotes_remitos[0].editar_index = null;
         this.lotes_remitos[0].editar = false;
-        
-        //this.setearCssFila()
         this._actualizarEstadisticas();
-        
-    }
+
+        //if(this.obj_vista_modelo.detalle[index].nota.texto !== '')this.obj_vista_modelo.detalle[index].uid = 'U';
+        //this.obj_vista_modelo.detalle[this.lotes_remitos[0].editar_index].nota.editar = false;
+        //this.setearCssFila()
+        //$scope.componentes[componente].items[$scope.componentes[componente].editar_index] = casoPruebaDataPack.precondiciones[$scope.componentes[componente].editar_index];
+    };
 
 
     openMenu($mdMenu, ev) {
@@ -768,7 +828,7 @@
 
       this.obj_vista_modelo.detalle[index].uid = 'D'
     
-      if(!nuevo) this.cancelarEdicionItem( false );
+      if(!nuevo) this.cancelarEdicionItem(false, false );
 
     }
 

@@ -294,7 +294,7 @@ module.exports = {
 			if( id_proceso_masivo > 0){
 				let query_res = {};
 				
-				
+				//console.log(obj_detalle.length)
 				for(var i=0; i<obj_detalle.length; i++){
 
 					//const id_proceso_masivo = res.id_proceso_masivo;
@@ -340,7 +340,7 @@ module.exports = {
 							  	values: [id_proceso_masivo, obj_detalle[i].id_proceso_masivo_detalle],	
 							}
 						};
-
+						console.log(obj_detalle[i].uid)
 						let query = '';
 
 						switch (obj_detalle[i].uid){

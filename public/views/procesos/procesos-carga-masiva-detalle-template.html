@@ -631,10 +631,10 @@ md-input-container.lll .md-input{
 
                             <div layout="row" class="md-toolbar-tools-card" flex="nogrow" ng-if="vm.lotes_remitos[0].editar">
                                 <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
-                                  <md-icon class="material-icons md-24 green_big" ng-click="vm.actualizarItem()">check_circle</md-icon>
+                                  <md-icon class="material-icons md-24 green_big" ng-click="vm.actualizarItem(falso, -1)">check_circle</md-icon>
                                 </md-button>
                                 <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
-                                  <md-icon class="material-icons md-24 red" ng-click="vm.cancelarEdicionItem(false)">cancel</md-icon>
+                                  <md-icon class="material-icons md-24 red" ng-click="vm.cancelarEdicionItem(false, false)">cancel</md-icon>
                                 </md-button>
                             </div>
                         </div>
