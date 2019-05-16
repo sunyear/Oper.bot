@@ -855,18 +855,29 @@
 
     generarNotificacion (tipo_notificacion, ev) {
 
-        let envio_actas = {};
+        let envio_actas = {}, templateUrl = '';
+
+        //console.log(this.dataset.cabecera)
+
+
+        switch (this.dataset.cabecera.tipo_proceso){
+          case 'REPROCESO': templateUrl = './views/procesos/proc-masivo-gen-notif-reproc-template.html';
+            break;
+          case 'CARGA MASIVA': templateUrl = './views/procesos/proc-masivo-gen-notif-template.html';
+            break;
+        };
+
         switch (tipo_notificacion){
           case 1: envio_actas = this._$filter('filter')(this.dataset.detalle, {id_tipo_envio: '1'}) //<-- ACEPTADAS
             break;
           case 2: envio_actas = this._$filter('filter')(this.dataset.detalle, {id_tipo_envio: '2'}) //<-- CALIDAD
             break;
-        }
+        };
         
 
         this._$mdDialog.show({
             controller: 'CargaMasivaGenNotif',
-            templateUrl: './views/procesos/proc-masivo-gen-notif-template.html',
+            templateUrl: templateUrl,
             parent: angular.element(document.body),
             targetEvent: ev,
             clickOutsideToClose:false,
