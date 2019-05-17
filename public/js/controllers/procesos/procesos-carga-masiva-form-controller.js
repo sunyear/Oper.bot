@@ -872,6 +872,8 @@
             break;
           case 2: envio_actas = this._$filter('filter')(this.dataset.detalle, {id_tipo_envio: '2'}) //<-- CALIDAD
             break;
+          case 3: envio_actas = this._$filter('filter')(this.dataset.detalle, {id_tipo_envio: '3'}) //<-- NO_NOTIFICADAS
+            break;
         };
         
 

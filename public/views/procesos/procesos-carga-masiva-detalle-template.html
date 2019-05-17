@@ -850,15 +850,21 @@ md-input-container.lll .md-input{
                       <md-icon class="material-icons md-16 toolbar-gray" ng-click="vm.openMenu($mdMenu, $event)">mail</md-icon>
                     </md-button>
                     <md-menu-content width="4">
-                      <md-menu-item>
+                      <md-menu-item ng-if="(vm.estadisticas.zona_sur.calidad + vm.estadisticas.zona_norte.calidad) > 0">
                         <md-button ng-click="vm.generarNotificacion(2)">
                           Notificacion calidad
                         </md-button>
                       </md-menu-item>
                       <md-menu-divider></md-menu-divider>
-                      <md-menu-item>
+                      <md-menu-item ng-if="(vm.estadisticas.zona_sur.aceptar + vm.estadisticas.zona_norte.aceptar) > 0">
                         <md-button ng-click="vm.generarNotificacion(1)">
                           Notificacion aceptadas/rechazadas
+                        </md-button>
+                      </md-menu-item>
+                      <md-menu-divider></md-menu-divider>
+                      <md-menu-item ng-if="(vm.estadisticas.zona_sur.no_notificadas + vm.estadisticas.zona_norte.no_notificadas) > 0">
+                        <md-button ng-click="vm.generarNotificacion(3)">
+                          Notificacion no-notificadas
                         </md-button>
                       </md-menu-item>
                     </md-menu-content>

@@ -17,40 +17,15 @@
                 if($scope.tipo_notificacion == 2){
                     $scope.dataset_norte = $filter('filter')(actas_notif.actas, { zona: 'NORTE'});
                     $scope.dataset_sur = $filter('filter')(actas_notif.actas, {zona: 'SUR'})
+                    //$scope.dataset_sur = $filter('filter')(actas_notif.actas, {zona: 'SUR'})
                 }else if($scope.tipo_notificacion == 1){
                     $scope.dataset_aceptadas = actas_notif.actas
+                }else{
+                    $scope.dataset_no_notificadas = actas_notif.actas;
                 }
 
                 
 
-                //console.log($scope.tipo_notificacion)
-
-                //this._$filter('filter')(this.dataset.detalle, {zona: 'NORTE'})
-
-                /*
-                $scope.dataset = [
-                    {
-                        lote: '2086',
-                        remito: '12121212112',
-                        cantidad: '23'
-                    },
-                    {
-                        lote: '2086',
-                        remito: '12121212112',
-                        cantidad: '23'
-                    },
-                    {
-                        lote: '2086',
-                        remito: '12121212112',
-                        cantidad: '23'
-                    },
-                    {
-                        lote: '2086',
-                        remito: '12121212112',
-                        cantidad: '23'
-                    }
-                ]
-                */
                 $scope.respuestaValidacion = function(respuesta) {
                   $mdDialog.hide(respuesta);
                 };
