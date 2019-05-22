@@ -31,6 +31,7 @@
           }
         }
 
+
         this.dataset = data;
         //this.files = [];
 
@@ -916,6 +917,7 @@
 
       //this.nueva_reproduccion = (typeof(this.reproduccion_data)==='undefined');
 
+      
       this._cargarDatosVista( false );
 
     }

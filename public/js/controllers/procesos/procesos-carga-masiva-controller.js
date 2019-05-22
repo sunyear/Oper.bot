@@ -18,6 +18,8 @@
         this.menu_visible = -1;
 
 
+
+
         
         this.fila_seleccionada = null;
 
@@ -35,7 +37,7 @@
             actas: null,
             zona: null
           }
-        ];//casos_uso;
+        ];
 
         this.originatorEv = null;
 
@@ -71,6 +73,12 @@
               urlSync: true
           };
 
+          this.filtros_procesos_masivos = {
+            fecha_proceso: {
+              anio: new Date().getFullYear(),
+              mes: (new Date().getMonth() + parseInt(1))
+            }
+          }
 
           this._activate();
 
@@ -281,10 +289,19 @@
 
     };
 
+    filtrarProcesosMasivos(  ){
+
+      console.log(this.filtros_procesos_masivos)
+
+      //this._cargarProcesosMasivos(  )
+    };
+
 
     //METODOS PRIVADOS
 
     _activate(  ){
+
+      //console.log(this.filtros_procesos_masivos)
 
       //this._cargarProcesosMasivos();
 

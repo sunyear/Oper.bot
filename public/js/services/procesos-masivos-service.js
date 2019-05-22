@@ -85,8 +85,15 @@
 
                 function obtenerProcesosMasivos( str_busqueda = '' ){
 
+
+                    let filtro_fecha_proceso = {
+                            anio: new Date().getFullYear(),
+                            mes: (new Date().getMonth() + parseInt(1))
+                        }
+
                     var json_return_data = JSON.parse('{}');
-                    var consulta = 'procesos_masivos/vista';
+                    //var consulta = 'procesos_masivos/vista';
+                    var consulta = 'procesos_masivos/vista/' + filtro_fecha_proceso.anio + '/' + filtro_fecha_proceso.mes
                     //console.log(str_busqueda)
 
                    if(typeof(str_busqueda) !== 'undefined'){

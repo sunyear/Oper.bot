@@ -76,7 +76,8 @@ module.exports = function(app) {
 	//--
 
 	//OPERACIONES SELECT
-	app.get('/api/procesos_masivos/vista', procesos_masivos_Routes.procesos_masivos_v);
+	//app.get('/api/procesos_masivos/vista', procesos_masivos_Routes.procesos_masivos_v);
+	app.get('/api/procesos_masivos/vista/:anio/:mes', procesos_masivos_Routes.procesos_masivos_v);
 	app.get('/api/procesos_masivos/:id_proceso_masivo', procesos_masivos_Routes.procesos_masivos_lotes_v);
 	app.get('/api/procesos_masivos/vista/lote/:lote', procesos_masivos_Routes.procesos_masivos_v);
 	app.get('/api/procesos_masivos/vista/remito/:remito', procesos_masivos_Routes.procesos_masivos_v);

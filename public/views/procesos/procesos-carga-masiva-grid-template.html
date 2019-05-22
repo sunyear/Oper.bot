@@ -173,15 +173,84 @@ md-grid-tile:hover {
 <md-content style="min-height: 90px;">
 
 <div flex>
-      <div layout="row" layout-align="end center" flex="100">  
-        <md-button class="md-primary md-raised md-small" ng-click="vm.crearProcesoMasivo({}, $event)">nuevo</md-button>
-      </div>
-     
-        <div layout="row" flex="100" style="padding:5px; width: 100%; border: solid 1px #eee;">
-          <input type="text" ng-model="vm.dataset.texto_buscado" style="width: 95%; height: 25px !important; border: solid 0px red; padding-left:5px;" ng-model-options="{updateOn : 'change blur'}" ng-change="vm.buscarProcesoMasivo()">
-          <md-icon class="material-icons md-24 toolbar-gray" ng-click="vm.buscarProcesoMasivo()" >search</md-icon>
-        </div> 
+  <div layout="row" layout-align="end center" flex="100">  
+    <md-button class="md-primary md-raised md-small" ng-click="vm.crearProcesoMasivo({}, $event)">nuevo</md-button>
   </div>
+  <div layout="row" flex="100">
+    <div layout="row" flex="20" style="padding:5px; border: solid 0px #eee; height: 25px !important;">
+      <md-input-container class="md-block" flex-gt-sm style="">
+       
+        <md-select ng-model="vm.filtros_procesos_masivos.fecha_proceso.anio">
+          <md-option value="2019">
+            2019
+          </md-option>
+          <md-option value="2018">
+            2018
+          </md-option>
+          <md-option value="-1">
+            Todos
+          </md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+    <div layout="row" flex="20" style="padding:5px; border: solid 0px #eee; height: 25px !important;">
+      <md-input-container class="md-block" flex-gt-sm style="">
+       
+        <md-select ng-model="vm.filtros_procesos_masivos.fecha_proceso.mes" ng-model-options="{updateOn : 'change'}" ng-change="vm.filtrarProcesosMasivos()">
+          <md-option value="1">
+            Enero
+          </md-option>
+          <md-option value="2">
+            Febrero
+          </md-option>
+          <md-option value="3">
+            Marzo
+          </md-option>
+          <md-option value="4">
+            Abril
+          </md-option>
+          <md-option value="5">
+            Mayo
+          </md-option>
+          <md-option value="-1">
+            Todos
+          </md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+    <!--
+    <div layout="row" flex style="padding:5px; border: solid 1px #eee;">
+      <md-input-container class="md-block" flex-gt-sm style="">
+        <label style="font-size: 16px !important; color: gray; font-weight: 600;"></label>
+        <md-select ng-model="vm.obj_vista_modelo.cabecera.tipo_proceso">
+          <md-option value="CARGA MASIVA">
+            Todos
+          </md-option>
+          <md-option value="todos">
+            Enero
+          </md-option>
+          <md-option value="REPROCESO">
+            Febrero
+          </md-option>
+          <md-option value="REPROCESO">
+            Marzo
+          </md-option>
+          <md-option value="REPROCESO">
+            Abril
+          </md-option>
+          <md-option value="REPROCESO">
+            Mayo
+          </md-option>
+        </md-select>
+      </md-input-container>
+    </div> 
+  -->
+    <div layout="row" flex style="padding:5px; width: 100%; border: solid 1px #eee;">
+      <input type="text" ng-model="vm.dataset.texto_buscado" style="width: 95%; height: 25px !important; border: solid 0px red; padding-left:5px;" ng-model-options="{updateOn : 'change blur'}" ng-change="vm.buscarProcesoMasivo()">
+      <md-icon class="material-icons md-24 toolbar-gray" ng-click="vm.buscarProcesoMasivo()" >search</md-icon>
+    </div> 
+  </div>
+</div>
 </md-content>
 
 <md-content>

@@ -42,25 +42,29 @@ module.exports = {
 	=================================================================*/
 	procesos_masivos_v : function(req, res) {
 
+		//console.log(req.params)
+
 		results = [];
 		let query = {};
 
 		let query_template = {
 			lote: {
-				text: "select pm.* From procesos_masivos_v pm join procesos_masivos_detalles pmd on pmd.id_proceso_masivo = pm.id_proceso_masivo where pmd.numero_lote = $1",
-				values: [req.params.lote]
+				text: "select pm.* From procesos_masivos($2,$3) pm join procesos_masivos_detalles pmd on pmd.id_proceso_masivo = pm.id_proceso_masivo where pmd.numero_lote = $1",
+				values: [req.params.lote, req.params.anio, req.params.mes]
 			},
 			remito: {
-				text: "select pm.* From procesos_masivos_v pm join procesos_masivos_detalles pmd on pmd.id_proceso_masivo = pm.id_proceso_masivo where pmd.numero_remito = $1",
+				text: "select pm.* From procesos_masivos(2019,5) pm join procesos_masivos_detalles pmd on pmd.id_proceso_masivo = pm.id_proceso_masivo where pmd.numero_remito = $1",
 				values: [req.params.remito]
 			},
 			tipo: {
-				text: "select pm.* From procesos_masivos_v pm where pm.tipo_proceso = $1 ORDER BY fecha_proceso DESC",
+				text: "select pm.* From procesos_masivos(2019,5) pm where pm.tipo_proceso = $1 ORDER BY fecha_proceso DESC",
 				values: [req.params.tipo]
 			},
 			default: {
-				text: "SELECT * FROM procesos_masivos_v ORDER BY fecha_proceso DESC",
-				values: []
+				//text: "SELECT * FROM procesos_masivos_v",
+				//values: []
+				text: "SELECT * FROM procesos_masivos($1,$2) order by fecha_proceso desc",
+				values: [req.params.anio, req.params.mes]
 			}
 		}
   			
