@@ -85,35 +85,48 @@
 
                 function obtenerProcesosMasivos( str_busqueda = '' ){
 
+                    console.log(str_busqueda)
+
+                    let consulta = 'procesos_masivos/vista';
 
                     let filtro_fecha_proceso = {
-                            anio: new Date().getFullYear(),
-                            mes: (new Date().getMonth() + parseInt(1))
+                            anio: null,//new Date().getFullYear(),
+                            mes: null//new Date().getMonth() + parseInt(1))
                         }
+                    
 
+                    //console.log(filtro_fecha_proceso)
                     var json_return_data = JSON.parse('{}');
                     //var consulta = 'procesos_masivos/vista';
-                    var consulta = 'procesos_masivos/vista/' + filtro_fecha_proceso.anio + '/' + filtro_fecha_proceso.mes
+                    //var consulta = 'procesos_masivos/vista/' + filtro_fecha_proceso.anio + '/' + filtro_fecha_proceso.mes
                     //console.log(str_busqueda)
 
-                   if(typeof(str_busqueda) !== 'undefined'){
+                   if(typeof(str_busqueda) === 'string' && (str_busqueda.indexOf(':',0) > -1)){
                         let arr_busq = str_busqueda.split(':');
 
                         if(arr_busq.length > 1){
                             
                             switch( arr_busq[0] ){
-                                case 'l': consulta = 'procesos_masivos/vista/lote/' + arr_busq[1];
+                                case 'l': consulta += '/lote/' + arr_busq[1]; //busca por nro_lote
                                     break;
-                                case 'r': consulta = 'procesos_masivos/vista/remito/' + arr_busq[1];
+                                case 'r': consulta += '/remito/' + arr_busq[1]; //busca por nro_remito
                                     break;
-                                case 't': consulta = 'procesos_masivos/vista/tipo/' + arr_busq[1];
+                                case 't': consulta += '/tipo/' + arr_busq[1];//busca por tipo_proceso (REPROCESO, CARGA MASIVA)
                                     break;
                             };
 
                         }
+                    }else{
+
+                        filtro_fecha_proceso.anio = (str_busqueda.hasOwnProperty('anio'))?str_busqueda.anio: new Date().getFullYear()
+                        filtro_fecha_proceso.mes = (str_busqueda.hasOwnProperty('mes'))?str_busqueda.mes: (new Date().getMonth() + parseInt(1))
+                        consulta += '/fecha_proceso/' + filtro_fecha_proceso.anio + '/' + filtro_fecha_proceso.mes
+
                     }
                     
-                    var return_data = basedatosservice.crudRead( consulta );
+                    console.log(consulta)
+
+                   var return_data = basedatosservice.crudRead( consulta );
                     return  $q.when ( return_data )
                             .then(
                                 function ProcesosMasivos( procesos_masivos ){

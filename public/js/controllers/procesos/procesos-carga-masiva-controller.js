@@ -293,7 +293,8 @@
 
       console.log(this.filtros_procesos_masivos)
 
-      //this._cargarProcesosMasivos(  )
+      this._cargarProcesosMasivos( this.filtros_procesos_masivos.fecha_proceso )
+
     };
 
 
@@ -313,7 +314,7 @@
       let controlador = this;
       
         //if(typeof(this.dataset) === 'undefined'){
-          //console.log('asd')
+          console.log(busq)
 
           this._procesosMasivosService.obtenerProcesosMasivos( busq )
             .then(

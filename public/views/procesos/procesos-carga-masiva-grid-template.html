@@ -180,7 +180,7 @@ md-grid-tile:hover {
     <div layout="row" flex="20" style="padding:5px; border: solid 0px #eee; height: 25px !important;">
       <md-input-container class="md-block" flex-gt-sm style="">
        
-        <md-select ng-model="vm.filtros_procesos_masivos.fecha_proceso.anio">
+        <md-select ng-model="vm.filtros_procesos_masivos.fecha_proceso.anio" ng-change="vm.filtrarProcesosMasivos()">
           <md-option value="2019">
             2019
           </md-option>
@@ -196,7 +196,7 @@ md-grid-tile:hover {
     <div layout="row" flex="20" style="padding:5px; border: solid 0px #eee; height: 25px !important;">
       <md-input-container class="md-block" flex-gt-sm style="">
        
-        <md-select ng-model="vm.filtros_procesos_masivos.fecha_proceso.mes" ng-model-options="{updateOn : 'change'}" ng-change="vm.filtrarProcesosMasivos()">
+        <md-select ng-model="vm.filtros_procesos_masivos.fecha_proceso.mes" ng-change="vm.filtrarProcesosMasivos()">
           <md-option value="1">
             Enero
           </md-option>
@@ -211,6 +211,27 @@ md-grid-tile:hover {
           </md-option>
           <md-option value="5">
             Mayo
+          </md-option>
+           <md-option value="6">
+            Junio
+          </md-option>
+           <md-option value="7">
+            Julio
+          </md-option>
+           <md-option value="8">
+            Agosto
+          </md-option>
+           <md-option value="9">
+            Septiembre
+          </md-option>
+           <md-option value="10">
+            Octubre
+          </md-option>
+           <md-option value="11">
+            Noviembre
+          </md-option>
+           <md-option value="12">
+            Diciembre
           </md-option>
           <md-option value="-1">
             Todos

@@ -42,22 +42,26 @@ module.exports = {
 	=================================================================*/
 	procesos_masivos_v : function(req, res) {
 
-		//console.log(req.params)
+		console.log(req.params)
+
+		let values = [];
+
+		//let tabla_consulta = (req.params.hasOwnProperty('anio') && req.params.hasOwnProperty('mes'))?'procesos_masivos($1,$2)':'procesos_masivos_v';
 
 		results = [];
 		let query = {};
 
 		let query_template = {
 			lote: {
-				text: "select pm.* From procesos_masivos($2,$3) pm join procesos_masivos_detalles pmd on pmd.id_proceso_masivo = pm.id_proceso_masivo where pmd.numero_lote = $1",
-				values: [req.params.lote, req.params.anio, req.params.mes]
+				text: "select pm.* From procesos_masivos_v pm join procesos_masivos_detalles pmd on pmd.id_proceso_masivo = pm.id_proceso_masivo where pmd.numero_lote = $1",
+				values: [req.params.lote]
 			},
 			remito: {
-				text: "select pm.* From procesos_masivos(2019,5) pm join procesos_masivos_detalles pmd on pmd.id_proceso_masivo = pm.id_proceso_masivo where pmd.numero_remito = $1",
+				text: "select pm.* From procesos_masivos_v pm join procesos_masivos_detalles pmd on pmd.id_proceso_masivo = pm.id_proceso_masivo where pmd.numero_remito = $1",
 				values: [req.params.remito]
 			},
 			tipo: {
-				text: "select pm.* From procesos_masivos(2019,5) pm where pm.tipo_proceso = $1 ORDER BY fecha_proceso DESC",
+				text: "select pm.* From procesos_masivos_v pm where pm.tipo_proceso = $1 ORDER BY fecha_proceso DESC",
 				values: [req.params.tipo]
 			},
 			default: {
@@ -67,7 +71,10 @@ module.exports = {
 				values: [req.params.anio, req.params.mes]
 			}
 		}
-  			
+
+		//console.log(query_template)
+
+		
 		if(req.params.hasOwnProperty('lote')){
 			query = query_template.lote;
 		}else if(req.params.hasOwnProperty('remito')){
