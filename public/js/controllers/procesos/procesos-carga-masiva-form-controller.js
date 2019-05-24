@@ -170,7 +170,8 @@
             });
           }
 
-          CLASE.id_carga_masiva_actual = id_proceso_masivo; 
+          CLASE.id_carga_masiva_actual = id_proceso_masivo;
+          CLASE.obj_vista_modelo.cabecera.id_proceso_masivo = id_proceso_masivo;
           const carga_desde_db = true;
           CLASE._cargarDatosVista( carga_desde_db );
 
@@ -637,10 +638,24 @@
 
       let id_carga_masiva;
       let carga_masiva_db = [];
+      let CLASE = this;
 
       if(desde_db){
 
-        this._$state.go(this._$state.current, {idProcesoMasivo: this.obj_vista_modelo.cabecera.id_proceso_masivo }, {reload: true});
+        console.log(this.obj_vista_modelo.cabecera.id_proceso_masivo)
+
+        let proceso_masivo_lotes_promise = this._procesosMasivosService.obtenerProcesosMasivosLotes(  this.obj_vista_modelo.cabecera.id_proceso_masivo )
+
+        //console.log(rta)
+
+        proceso_masivo_lotes_promise.then(
+          (proceso_masivo_lotes) => _actualizarVista( proceso_masivo_lotes,  CLASE ),
+          (err) => console.log(err)
+        );
+
+        //this._$state.go(this._$state.current, {idProcesoMasivo: this.obj_vista_modelo.cabecera.id_proceso_masivo }, {reload: true});
+        //_actualizarVista(this._procesosMasivosService.obtenerProcesosMasivosLotes(  this.obj_vista_modelo.cabecera.id_proceso_masivo ), this)
+        //return ( procesosMasivosService.obtenerProcesosMasivosLotes( $stateParams.idProcesoMasivo ) )
 
       }else if(this.dataset.cabecera.id_proceso_masivo > 0){
         _actualizarVista(this.dataset, this)
@@ -649,7 +664,7 @@
        //funcion interna 
       function _actualizarVista( carga_masiva_lotes, ProcesoCargaMasiva ){
 
-        //console.log(carga_masiva_lotes.detalle)
+        console.log(carga_masiva_lotes)
         //levanto la informacion en la cabecera
         ProcesoCargaMasiva.obj_vista_modelo.cabecera = carga_masiva_lotes.cabecera;
         //levanto la informacion en el detalle
