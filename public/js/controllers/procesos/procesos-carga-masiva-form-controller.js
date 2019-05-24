@@ -11,7 +11,6 @@
         this._$filter = $filter;
         this._$toast = $mdToast;
         this._$document = $document;
-        $scope.files = [];
         this._$scope = $scope;
 
 
@@ -31,80 +30,21 @@
           }
         }
 
-
         this.dataset = data;
-        //this.files = [];
-
-        //this.id_carga_masiva_actual = this.dataset.idProcesoMasivo;
-
-
-       // console.log(data)
-        
-
 
         this.fila_seleccionada = null;
 
         this.filas_seleccionadas = [];
-        this.titulo_ventana = 'Cargar reproduccion';
-
-        
-
-        this.statuses = ['On Vacation','Terminated','Employed'];
-
-        this.reproduccion = {
-          id_reproduccion: 0,
-          titulo_reproduccion: '',
-          id_p_estado_reproduccion: 0,
-          version_sijai:'',
-          casos_prueba: []
-        };
-
-
-        this.ocultar_chip_tmpl = true;
-        this.tags = [];
-
-
-        
-          
-        //this.caso_reproducciones = caso_reproducciones;
-         this.gridOptions1 = {
-            data: this.generateJSON(100)
-        };
-
         
         this.gridOptions = {
-          data: [
-            /*
-            {
-              id_caso_prueba: "ADASD",
-              id_caso_prueba_estado: 1,
-              id_reproduccion: 1,
-              id_reproduccion_caso_prueba: 1,
-              nombre_caso_prueba: 'adsasdsd',
-            }*/
-          ],
+          data: [],
           urlSync: true
         };
         
-
         this.gridActions1 = {};
         this.gridActions = {};
 
-        this.nueva_reproduccion = {
-          titulo_reproduccion: '',
-          etiquetas: []
-        };
-
-        //console.log(this.gridOptions)
-
-        //this._obtenerCasosPruebasService();
-
-        //console.log(this.gridOptions1)
         this.nuevo_proceso_masivo;
-
-
-        
-
 
         this.remito_loteDataPack = [];
 
@@ -191,13 +131,12 @@
     //--
     // METODOS PUBLICOS
     //--
-    // COMPONENTE: CASOS_REPRODUCCIONES
+    // COMPONENTE: PROCESOS_MASIVOS_DETALLE
     //--
 
 
     guardar(  ){
       
-
       if(this.obj_vista_modelo.cabecera.fecha_proceso !== '' && this.obj_vista_modelo.cabecera.id_tipo_proceso !== ''){
 
         this.obj_vista_modelo.cabecera.uid = (this.obj_vista_modelo.cabecera.id_proceso_masivo === 0)?'I': 'U';
@@ -220,11 +159,8 @@
         );
 
         function __actualizarVista( CLASE, id_proceso_masivo ){
-
-          //console.log(id_proceso_masivo.id_proceso_masivo)
-
+          
           if(id_proceso_masivo > 0){
-
             CLASE._$toast.show({
               hideDelay   : 2000,
               position    : 'bottom right',
@@ -232,87 +168,17 @@
               //controller  : 'ToastCtrl',
               templateUrl : './views/procesos/datos_guardados_template.html'
             });
-
           }
 
-
           CLASE.id_carga_masiva_actual = id_proceso_masivo; 
-
           const carga_desde_db = true;
-
           CLASE._cargarDatosVista( carga_desde_db );
 
         };
 
-      }
-
-      //this.reproduccion.etiquetas = this.generarEtiquetas( );
-      //this.reproduccion.casos_prueba = angular.copy(this.gridOptions.data);
-      //this.reproduccion.id_p_estado_reproduccion = (iniciar_ejecucion)?1:0;
-
-      //console.log(this.reproduccion)
-      //let save = this._qaService.guardarProcesoMasivo( this.reproduccion )
-      //console.log(casos_prueba)
-      /*
-      save.then(
-          (reproduccion) => null,//console.log(reproduccion),
-          (err) => console.log(err)
-      );*/
-
-      //this._$mdDialog.hide(this.reproduccion);
-
-      
+      }//FIN IF
 
     };
-
-
-    cancelarReproduccion(){
-
-      let cancelar_repro_proc = this._qaService.cancelarReproduccion( this.reproduccion.id_reproduccion );
-      cancelar_repro_proc.then(
-          (reproduccion) => console.log(reproduccion),
-          (err) => console.log(err)
-      );
-
-    };
-
-
-    generarEtiquetas(){
-
-      var etiquetas = [],
-          i,
-          etiqueta;
-
-      for(i = 0; i < this.tags.length; i++){
-        etiqueta = {};
-        etiqueta.id = i;
-        etiqueta.titulo = this.tags[i];
-        etiquetas.push( etiqueta );
-      }
-
-      return etiquetas;
-    };
-
-
-    generateJSON(length) {
-            var jsonObj = [],
-                i,
-                max,
-                names = ['Ann', 'Ben', 'Patrick', 'Steve', 'Fillip', 'Bob'],
-                item;
-            for (i = 0, max = length; i < max; i++) {
-
-                item = {};
-                item.id = i;
-                item.name = names[Math.round(Math.random() * (names.length - 1))];
-                item.phone = '+375-29-' + Math.round(Math.random() * 1000000);
-                item.date = Math.round(Math.random() * 1000000000000);
-                item.status = this.statuses[Math.round(Math.random() * (this.statuses.length - 1))];
-                jsonObj.push(item);
-
-            }
-            return jsonObj;
-        }
 
 
     esFilaSeleccionada( list_item ){
@@ -325,38 +191,13 @@
     };
 
 
-
     cancelarDialogo(){
       //this._$mdDialog.hide( null );
       this._$state.go('procesos.carga-masiva', {})
     };
 
 
-
-    _obtenerCasosPruebasService( ){
-
-      let casos_prueba = this._qaService.obtenerCasosPruebaAutocompletar( )
-      //console.log(casos_prueba)
-      casos_prueba.then(
-          (casos_prueba) => this._actualizarGrid(casos_prueba),
-          (err) => console.log(err)
-      );
-
-      
-    };
-
-
-
-
-    _actualizarGrid( data ){
-
-      //this.gridOptions.data = angular.extend(this.gridOptions.data, this.reproduccion.casos_prueba);
-      return 1;
-    };
-
-
     querySearch (query) {
-
 
        return this._qaService.obtenerCasosPrueba( 'qq' )
         .then(
@@ -373,7 +214,7 @@
             return (state.value.indexOf(lowercaseQuery) === 0);
           };
         }
-      }
+      };
 
 
     selectedItemChange( item ){
@@ -388,18 +229,12 @@
                 "nombre_caso_prueba": display,
                 "id_caso_prueba_estado": 2
             }
-        //this.selectedItem = null;
+       
         this.gridOptions.data.push(obj);
-        //this._actualizarGrid();
-
       }
 
-      //console.log(this.gridOptions)
-
       return 1;
-      //this.searchText = null;
-      //console.log(item)
-    }
+    };
 
 
     /*
@@ -408,70 +243,53 @@
     */
     crearLote( item, es_carga_manual ){
 
-        //console.log(this.lotes_remitos)
+      var txt_nuevo = '';
 
-        var txt_nuevo = '';
+      let item_data = {
+        remito: null,
+        lote: null,
+        actas: null,
+        notificada: null,
+        zona: null,
+        id_tipo_envio: null,
+        id_estado_proceso: 0, //0 es pendiente
+        id_estado_email: 0, //0 es pendiente
+        nota: {
+          texto: '',
+          editar: false
+        },
+        colr_rech: false,
+        colr_proc: false, 
+        colr_email: false,
+        indice_no_notificada: 0,
+      }
+      
+      this.obj_vista_modelo.detalle.splice(0,0,item_data); //SE INSERTA EL REGISTRO AL INICIO DE LA COLECCION
+      var index =  this.obj_vista_modelo.detalle.length-1; // SE USA CON PUSH
 
-        let item_data = {
-          remito: null,
-          lote: null,
-          actas: null,
-          notificada: null,
-          zona: null,
-          id_tipo_envio: null,
-          id_estado_proceso: 0, //0 es pendiente
-          id_estado_email: 0, //0 es pendiente
-          nota: {
-            texto: '',
-            editar: false
-          },
-          colr_rech: false,
-          colr_proc: false, 
-          colr_email: false,
-          indice_no_notificada: 0,
-        }
-        //console.log(item.indice_no_notificada)
-        //$scope.componentes[componente].items.push(txt_nuevo);
-        //this.obj_vista_modelo.detalle.push(item_data); //SE INSERTA EL REGISTRO AL FINAL DE LA COLECCION
-        this.obj_vista_modelo.detalle.splice(0,0,item_data); //SE INSERTA EL REGISTRO AL INICIO DE LA COLECCION
-
-        var index =  this.obj_vista_modelo.detalle.length-1; // SE USA CON PUSH
-
-        if( typeof(item) === 'object'){
-
-
-          this.obj_vista_modelo.detalle[0].uid = 'I';
-          this.obj_vista_modelo.detalle[0].id_proceso_masivo_detalle = 0;
-          this.obj_vista_modelo.detalle[0].remito = item.remito;
-          this.obj_vista_modelo.detalle[0].lote = item.lote;
-          this.obj_vista_modelo.detalle[0].actas = item.actas;
-          this.obj_vista_modelo.detalle[0].notificada = item.notificada;
-          this.obj_vista_modelo.detalle[0].zona = item.zona;
-          this.obj_vista_modelo.detalle[0].id_tipo_envio = item.id_tipo_envio;
-          this.obj_vista_modelo.detalle[0].indice_no_notificada = Math.round(item.indice_no_notificada);
-
-
-        }
-
-        console.log(this.obj_vista_modelo.detalle)
-
-      /*
-        es_carga_manual TRUE/FALSE
-        se utiliza para determinar si la fila se carga leyendo el CSV (FALSE) o completando manualmente los campos (TRUE)        
-      */
+      if( typeof(item) === 'object'){
+        this.obj_vista_modelo.detalle[0].uid = 'I';
+        this.obj_vista_modelo.detalle[0].id_proceso_masivo_detalle = 0;
+        this.obj_vista_modelo.detalle[0].remito = item.remito;
+        this.obj_vista_modelo.detalle[0].lote = item.lote;
+        this.obj_vista_modelo.detalle[0].actas = item.actas;
+        this.obj_vista_modelo.detalle[0].notificada = item.notificada;
+        this.obj_vista_modelo.detalle[0].zona = item.zona;
+        this.obj_vista_modelo.detalle[0].id_tipo_envio = item.id_tipo_envio;
+        this.obj_vista_modelo.detalle[0].indice_no_notificada = Math.round(item.indice_no_notificada);
+      }
+      
+      //es_carga_manual@boolean
+      //se utiliza para determinar si la fila se carga leyendo el CSV (FALSE) o completando manualmente los campos (TRUE)        
       if(es_carga_manual){
         this.editarItem(index, true)
       }else{
         this.actualizarItem( es_carga_manual, index );
       }
-    }
+    };
+
 
     editarItem( index, nuevo ){
-        //console.log($scope.componentes[componente])
-        
-        //$scope.componentes[componente].items[item]["editar"] = true;
-
-        //this.obj_vista_modelo.detalle[index].
 
         this.lotes_remitos[0].editar = true;
         this.lotes_remitos[0].editar_index = index;
@@ -488,22 +306,7 @@
         this.obj_vista_modelo.registro_edit.notificada_orig = this.obj_vista_modelo.detalle[index].notificada;
         this.obj_vista_modelo.registro_edit.zona_orig = this.obj_vista_modelo.detalle[index].zona;
 
-          
-          
-        //this.lotes_remitos[0].items[index].nota.editar = !this.lotes_remitos[0].items[index].nota.editar;
-        
-        //coreService.focus('focusPrecondicion');
-        //console.log(this.lotes_remitos[0])
-
-        /*
-        $scope.listas[tabla].item[id_registro]["editar"] = true;
-        if(nuevo){
-            $scope.listas[tabla]["editar_item_nuevo"] = true;
-        }else{
-            $scope.listas[tabla]["editar_item_nuevo"] = false;
-        }
-        */
-    }
+    };
 
 
     /*
@@ -541,18 +344,7 @@
       this.lotes_remitos[0].editar_item_nuevo = false;
       this.cancelarEdicionItem(true, false)
 
-        //console.log($scope.caso_prueba.precondiciones[$scope.componentes[componente].editar_index])
-        //$scope.caso_prueba.precondiciones[$scope.componentes[componente].editar_index] = $scope.componentes[componente].items[$scope.componentes[componente].editar_index];
-        
-        //casoPruebaDataPack[componente] = angular.copy($scope.componentes[componente].items);
-        //this.remito_loteDataPack[this.lotes_remitos[0].editar_index] = obj;
-        //this.obj_vista_modelo.detalle[this.lotes_remitos[0].editar_index].uid = 'U';
-        //this.obj_vista_modelo.detalle[index].uid = 'U';
-        //console.log(this.lotes_remitos[0].editar_index, index)
-        //const index_real = (typeof(index)!== 'undefined')?index:this.lotes_remitos[0].editar_index;
-        //this.obj_vista_modelo.detalle[index].uid = 'U';
-        
-    }
+    };
 
      /*
     Invocacion: 
@@ -591,10 +383,6 @@
         this.lotes_remitos[0].editar = false;
         this._actualizarEstadisticas();
 
-        //if(this.obj_vista_modelo.detalle[index].nota.texto !== '')this.obj_vista_modelo.detalle[index].uid = 'U';
-        //this.obj_vista_modelo.detalle[this.lotes_remitos[0].editar_index].nota.editar = false;
-        //this.setearCssFila()
-        //$scope.componentes[componente].items[$scope.componentes[componente].editar_index] = casoPruebaDataPack.precondiciones[$scope.componentes[componente].editar_index];
     };
 
 
@@ -606,81 +394,70 @@
 
     leerCSV( contents ){
 
-        console.log(this._$scope.files)
-        console.log(this._$scope)
+      const es_carga_manual = false;
+      const tolerancia_notificada = 80;
 
-        const es_carga_manual = false;
-        const tolerancia_notificada = 80;
+      let csv = {
+        nombre: contents[0],
+        contenido: contents[1].split('\n'),
+        actas: 0,
+        lote: null,
+        remito: null,
+        notificada: null,
+        zona: null,
+        id_tipo_envio: null,
+        indice_no_notificada: 0,
 
-        let csv = {
-          nombre: contents[0],
-          contenido: contents[1].split('\n'),
-          actas: 0,
-          lote: null,
-          remito: null,
-          notificada: null,
-          zona: null,
-          id_tipo_envio: null,
-          indice_no_notificada: 0,
+      }
 
-        }
+      let notificadas_no_notificadas = [];
 
-        let notificadas_no_notificadas = [];
+      csv.actas = (csv.contenido.length)-1;
+      csv.lote = csv.contenido[0].split(';')[3];
+      csv.remito = csv.contenido[0].split(';')[25];
 
-        csv.actas = (csv.contenido.length)-1;
-        csv.lote = csv.contenido[0].split(';')[3];
-        csv.remito = csv.contenido[0].split(';')[25];
+      for(var i=0; i < csv.contenido.length -1; i++){
+        //console.log(csv.contenido[i])
 
-        for(var i=0; i < csv.contenido.length -1; i++){
-          //console.log(csv.contenido[i])
-
-          if(csv.contenido[i] !== ''){
+        if(csv.contenido[i] !== ''){
           csv.nro_doc_cond = csv.contenido[i].split(';')[83];
           csv.nombre_cond = csv.contenido[i].split(';')[81];
           csv.nombre_tit = csv.contenido[i].split(';')[74];
           csv.nro_doc_tit = csv.contenido[i].split(';')[76];
 
           let notificada = ( (csv.nro_doc_tit + csv.nro_doc_cond + csv.nombre_tit + csv.nombre_cond) !== '')?true:false;
-
           notificadas_no_notificadas.push(notificada);
-
-
-          }
-
         }
 
-        //console.log(notificadas_no_notificadas)       
-        var c = 0;
-        for(var i = 0; i<notificadas_no_notificadas.length; i++){
-          
+      }
 
-          if(notificadas_no_notificadas[i] === false){
-            c++;
-          }
-
+      //console.log(notificadas_no_notificadas)       
+      var c = 0;
+      for(var i = 0; i<notificadas_no_notificadas.length; i++){
+        if(notificadas_no_notificadas[i] === false){
+          c++;
         }
+      }
 
-        //console.log(((c * 100) / notificadas_no_notificadas.length))
+      csv.indice_no_notificada = ((c * 100) / notificadas_no_notificadas.length);
 
-        csv.indice_no_notificada = ((c * 100) / notificadas_no_notificadas.length);
+      if(  csv.indice_no_notificada >= tolerancia_notificada  ){
+         csv.notificada = 'NO'
+         csv.id_tipo_envio = 3;
+      }else{
+        csv.notificada = 'SI'
+        csv.id_tipo_envio = 0;
+      }
 
-        if(  csv.indice_no_notificada >= tolerancia_notificada  ){
-           csv.notificada = 'NO'
-           csv.id_tipo_envio = 3;
-        }else{
-          csv.notificada = 'SI'
-          csv.id_tipo_envio = 0;
-        }
+      if( csv.remito.length === 10){
+        csv.zona = (csv.remito.charAt(6) === '2')?'NORTE': 'SUR';
+      }else{
+        csv.zona = (csv.remito.charAt(0) === '2')?'NORTE': 'SUR';
+      }
 
-        if( csv.remito.length === 10){
-          csv.zona = (csv.remito.charAt(6) === '2')?'NORTE': 'SUR';
-        }else{
-          csv.zona = (csv.remito.charAt(0) === '2')?'NORTE': 'SUR';
-        }
+      //console.log(csv)
 
-        //console.log(csv)
-
-        this.crearLote( csv, es_carga_manual );
+      this.crearLote( csv, es_carga_manual );
 
       return;
     };
@@ -691,10 +468,8 @@
     */
     cambiarTipoEnvio(event, index, id_tipo_envio){
 
-      
       this.obj_vista_modelo.detalle[index].uid = 'U';
       this.obj_vista_modelo.detalle[index].id_tipo_envio = id_tipo_envio;
-
       this._actualizarEstadisticas();
 
     };
@@ -705,17 +480,8 @@
       this.obj_vista_modelo.detalle[index].uid = 'U';
       this.obj_vista_modelo.detalle[index].colr_email = !this.obj_vista_modelo.detalle[index].colr_email;
       this._actualizarEstadisticas();
-      /*
-      if(  this.obj_vista_modelo.detalle[index].colr_email === 'norte' ){
 
-        this.estadisticas.zona_norte.email = this.estadisticas.zona_norte.email + 1;
-
-      }else{
-        this.estadisticas.zona_sur.email = this.estadisticas.zona_sur.email + 1;
-      }
-      */
-
-    }
+    };
 
 
     remitoProcesado( index ){
@@ -724,81 +490,23 @@
       this.obj_vista_modelo.detalle[index].colr_rech = false;
       this.obj_vista_modelo.detalle[index].colr_proc = !this.obj_vista_modelo.detalle[index].colr_proc;
       this._actualizarEstadisticas();
-      /*
-      //computar estadisticas
-      if(  this.obj_vista_modelo.detalle[index].zona === 'norte' ){
 
-        if(this.lotes_remitos[0].items[index].id_tipo_proceso === 1){
-          //this.estadisticas.zona_norte.aceptado = this.estadisticas.zona_norte.aceptado + 1;      
-
-          this.estadisticas.zona_norte.aceptado = (this.lotes_remitos[0].items[index].colr_proc)?this.estadisticas.zona_norte.aceptado +1:this.estadisticas.zona_norte.aceptado -1;
-
-        }else if(this.lotes_remitos[0].items[index].id_tipo_proceso === 2){
-          //this.estadisticas.zona_norte.en_calidad = this.estadisticas.zona_norte.en_calidad + 1;          
-
-          this.estadisticas.zona_norte.en_calidad = (this.lotes_remitos[0].items[index].colr_proc)?this.estadisticas.zona_norte.en_calidad +1:this.estadisticas.zona_norte.en_calidad -1;
-        }
-
-      }else{
-        
-        if(this.lotes_remitos[0].items[index].id_tipo_proceso === 1){
-          //this.estadisticas.zona_sur.aceptado = this.estadisticas.zona_sur.aceptado + 1; 
-
-
-          this.estadisticas.zona_sur.aceptado = (this.lotes_remitos[0].items[index].colr_proc)?this.estadisticas.zona_sur.aceptado +1: this.estadisticas.zona_sur.aceptado -1;         
-        }else if(this.lotes_remitos[0].items[index].id_tipo_proceso === 2){
-          //this.estadisticas.zona_sur.en_calidad = this.estadisticas.zona_sur.en_calidad + 1;          
-          this.estadisticas.zona_sur.en_calidad = (this.lotes_remitos[0].items[index].colr_proc)?this.estadisticas.zona_sur.en_calidad +1: this.estadisticas.zona_sur.en_calidad -1;         
-        }
-
-      }*/
     };
 
 
 
     rechazoProcesado( index ){
 
-
-       this.obj_vista_modelo.detalle[index].colr_proc = false;
-       this.obj_vista_modelo.detalle[index].uid = 'U';
-       this.obj_vista_modelo.detalle[index].colr_rech = !this.obj_vista_modelo.detalle[index].colr_rech;
-       this._actualizarEstadisticas();
-       /*
-      //computar estadisticas
-      if( this.lotes_remitos[0].items[index].zona === 'norte' ){
-
-        if(this.lotes_remitos[0].items[index].id_tipo_proceso === 1){
-          //this.estadisticas.zona_norte.aceptado = this.estadisticas.zona_norte.aceptado + 1;          
-
-            this.estadisticas.zona_norte.aceptado = (this.lotes_remitos[0].items[index].colr_proc)?this.estadisticas.zona_norte.aceptado +1: this.estadisticas.zona_norte.aceptado -1;
-
-        }else if(this.lotes_remitos[0].items[index].id_tipo_proceso === 2){
-          this.estadisticas.zona_norte.en_calidad = this.estadisticas.zona_norte.en_calidad + 1;          
-        }
-
-      }else{
-        
-        if(this.lotes_remitos[0].items[index].id_tipo_proceso === 1){
-          //this.estadisticas.zona_sur.aceptado = this.estadisticas.zona_sur.aceptado + 1;          
-
-          this.estadisticas.zona_sur.aceptado = (this.lotes_remitos[0].items[index].colr_proc)? +1: -1;
-
-        }else if(this.lotes_remitos[0].items[index].id_tipo_proceso === 2){
-          this.estadisticas.zona_sur.en_calidad = this.estadisticas.zona_sur.en_calidad + 1;          
-        }
-
-      }*/
+      this.obj_vista_modelo.detalle[index].colr_proc = false;
+      this.obj_vista_modelo.detalle[index].uid = 'U';
+      this.obj_vista_modelo.detalle[index].colr_rech = !this.obj_vista_modelo.detalle[index].colr_rech;
+      this._actualizarEstadisticas();
+       
     };
 
 
     editarNota( index ){
-      //console.log(this.lotes_remitos[0].items[index])
-
-      //this.lotes_remitos[0].editar = true;
-      //this.lotes_remitos[0].editar_index = index;
-
-      //this.setearCssFila( index )
-
+     
       if(this.obj_vista_modelo.detalle[index].nota.texto !== '')this.obj_vista_modelo.detalle[index].uid = 'U';
       this.obj_vista_modelo.detalle[index].nota.editar = !this.obj_vista_modelo.detalle[index].nota.editar;
 
@@ -823,15 +531,12 @@
 
     borrarItem( index, nuevo ){
 
-      //console.log(this.lotes_remitos[0].editar_index)
-
-      //this.obj_vista_modelo.detalle.splice(index, 1);
-
       this.obj_vista_modelo.detalle[index].uid = 'D'
     
       if(!nuevo) this.cancelarEdicionItem(false, false );
 
-    }
+    };
+
 
     filtrarDetalle( tipo_filtro ){
 
@@ -858,9 +563,6 @@
 
         let envio_actas = {}, templateUrl = '';
 
-        //console.log(this.dataset.cabecera)
-
-
         switch (this.dataset.cabecera.tipo_proceso){
           case 'REPROCESO': templateUrl = './views/procesos/proc-masivo-gen-notif-reproc-template.html';
             break;
@@ -876,7 +578,6 @@
           case 3: envio_actas = this._$filter('filter')(this.dataset.detalle, {id_tipo_envio: '3'}) //<-- NO_NOTIFICADAS
             break;
         };
-        
 
         this._$mdDialog.show({
             controller: 'CargaMasivaGenNotif',
@@ -906,6 +607,15 @@
         );
     };
 
+    recargarVista(){
+
+     this._cargarDatosVista( true );
+
+    };
+
+    //FIN METODOS PUBLICOS
+
+
 
     //--
     // METODOS PRIVADOS
@@ -915,33 +625,22 @@
 
     activate( ){
 
-      //this.nueva_reproduccion = (typeof(this.reproduccion_data)==='undefined');
-
-      
       this._cargarDatosVista( false );
 
-    }
+    };
 
 
+    //desde_db@boolean
+    //TRUE (cuando ya se esta en la vista y se requiere recargarla): se recarga la pagina que vuelve a instanciar el objeto this.dataset (este objeto se instancia desde las rutas (lotes.js) que invoca a un metodo de procesos-masivos-services.js que invoca a la DB)
+    //FALSE (cuando se selecciona un proceso masivo desde procesos-carga-masiva-grid-template.html):solo lo usa el metodo activate(), ya que usa los datos que invoco el metodo [lotes.js]procesosMasivosService.obtenerProcesosMasivosLotes( $stateParams.idProcesoMasivo )
     _cargarDatosVista( desde_db ){
 
       let id_carga_masiva;
       let carga_masiva_db = [];
-      
-      //if( this.id_carga_masiva_actual !== 0) {
+
       if(desde_db){
 
-        /*
-        const ProcesoCargaMasiva = this;
-        let carga_masiva_db = this._procesosMasivosService.obtenerProcesosMasivosLotes( this.dataset.cabecera.id_proceso_masivo )
-        //console.log(carga_masiva_db)
-        carga_masiva_db.then(
-            (carga_masiva_lotes) => _actualizarVista(carga_masiva_lotes, ProcesoCargaMasiva),
-            (err) => console.log(err)
-        );
-        */
-
-        this._$state.go(this._$state.current, {idProcesoMasivo: this.id_carga_masiva_actual }, {reload: true});
+        this._$state.go(this._$state.current, {idProcesoMasivo: this.obj_vista_modelo.cabecera.id_proceso_masivo }, {reload: true});
 
       }else if(this.dataset.cabecera.id_proceso_masivo > 0){
         _actualizarVista(this.dataset, this)
@@ -959,9 +658,6 @@
         ProcesoCargaMasiva._actualizarEstadisticas();
         //console.log(ProcesoCargaMasiva.estadisticas)
       }
-
-      //$filter('filter')($scope.results.subjects, {grade: 'C'})[0];
-      //console.log(this._$filter('filter')(this.dataset.detalle, {zona: 'NORTE'}));
 
     };
 
@@ -1036,26 +732,25 @@
             break;
         }
 
-      };//FIN FOR
+      }//FIN FOR
 
       this.estadisticas.zona_norte.total = c_zona_norte;
-      this.estadisticas.zona_sur.total = c_zona_sur;
-      this.estadisticas.zona_norte.no_notificadas = c_no_notificadas_norte;
-      this.estadisticas.zona_sur.no_notificadas = c_no_notificadas_sur;
       this.estadisticas.zona_norte.aceptar = c_aceptar_norte;
-      this.estadisticas.zona_sur.aceptar = c_aceptar_sur;
       this.estadisticas.zona_norte.calidad = c_calidad_norte;
-      this.estadisticas.zona_sur.calidad = c_calidad_sur;
-      this.estadisticas.zona_norte.email = c_email_norte;
-      this.estadisticas.zona_sur.email = c_email_sur;
+      this.estadisticas.zona_norte.no_notificadas = c_no_notificadas_norte;
       this.estadisticas.zona_norte.aceptado = c_aceptada_norte;
-      this.estadisticas.zona_sur.aceptado = c_aceptada_sur;
       this.estadisticas.zona_norte.en_calidad = c_en_calidad_norte;
+      this.estadisticas.zona_norte.email = c_email_norte;
+
+      this.estadisticas.zona_sur.total = c_zona_sur;
+      this.estadisticas.zona_sur.aceptar = c_aceptar_sur;
+      this.estadisticas.zona_sur.calidad = c_calidad_sur;
+      this.estadisticas.zona_sur.no_notificadas = c_no_notificadas_sur;
+      this.estadisticas.zona_sur.aceptado = c_aceptada_sur;
       this.estadisticas.zona_sur.en_calidad = c_en_calidad_sur;
+      this.estadisticas.zona_sur.email = c_email_sur;
       
-    }
-
-
+    };
     
   }; //FIN CLASE
 

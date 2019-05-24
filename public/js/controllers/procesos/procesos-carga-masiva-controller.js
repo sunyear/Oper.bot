@@ -85,23 +85,21 @@
     }; //FIN CONSTRUCTOR
 
 
+    recargarVista(){
+
+      this._cargarProcesosMasivos();
+
+    };
+
 
     verDetalles( fila_proceso_masivo, e ){
       
-
-      //console.log(fila_proceso_masivo)
-
       
       const form_data = {idProcesoMasivo: fila_proceso_masivo.id_proceso_masivo};
 
             const plantilla_url = './views/procesos/procesos-carga-masiva-modal-template.html',
             controlador_plantilla = 'ProcesosCargaMasivaControllerForm as vm';
 
-      //this._abrirDialogo( plantilla_url,controlador_plantilla,form_data, this );
-
-        //reproduccion_obj.id_caso_reproduccion = (typeof(reproduccion.item) !== 'undefined')?reproduccion.item.id_caso_reproduccion:1523027100087;
-
-        //this._abrirDialogo( e,controlador_plantilla,form_data, this );
         this._$state.go('procesos.carga-masiva-lotes', form_data)
 
     };
@@ -291,7 +289,7 @@
 
     filtrarProcesosMasivos(  ){
 
-      console.log(this.filtros_procesos_masivos)
+      //console.log(this.filtros_procesos_masivos)
 
       this._cargarProcesosMasivos( this.filtros_procesos_masivos.fecha_proceso )
 

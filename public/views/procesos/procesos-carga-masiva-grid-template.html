@@ -170,17 +170,16 @@ md-grid-tile:hover {
 <!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
 
 
-<md-content style="min-height: 90px;">
+<md-content style="min-height: 120px;">
 
 <div flex>
   <div layout="row" layout-align="end center" flex="100">  
     <md-button class="md-primary md-raised md-small" ng-click="vm.crearProcesoMasivo({}, $event)">nuevo</md-button>
   </div>
-  <div layout="row" flex="100">
-    <div layout="row" flex="20" style="padding:5px; border: solid 0px #eee; height: 25px !important;">
-      <md-input-container class="md-block" flex-gt-sm style="">
-       
-        <md-select ng-model="vm.filtros_procesos_masivos.fecha_proceso.anio" ng-change="vm.filtrarProcesosMasivos()">
+  <div layout="row" flex="100" style="height: 40px; min-height: 40px; border: solid 0px blue">
+   
+      <md-input-container flex flex style="margin: 0 !important; border: solid 0px red;">
+        <md-select ng-model="vm.filtros_procesos_masivos.fecha_proceso.anio" ng-change="vm.filtrarProcesosMasivos()"  style="min-height: 25px !important; padding:0 !important; margin: 0 !important; border: solid 1px lightgray">
           <md-option value="2019">
             2019
           </md-option>
@@ -192,11 +191,11 @@ md-grid-tile:hover {
           </md-option>
         </md-select>
       </md-input-container>
-    </div>
-    <div layout="row" flex="20" style="padding:5px; border: solid 0px #eee; height: 25px !important;">
-      <md-input-container class="md-block" flex-gt-sm style="">
+    
+    
+      <md-input-container  flex style="margin: 0 !important; border: solid 0px red;">
        
-        <md-select ng-model="vm.filtros_procesos_masivos.fecha_proceso.mes" ng-change="vm.filtrarProcesosMasivos()">
+        <md-select ng-model="vm.filtros_procesos_masivos.fecha_proceso.mes" ng-change="vm.filtrarProcesosMasivos()" style="min-height: 25px !important; padding:0 !important; margin: 0 !important; border: solid 1px lightgray">
           <md-option value="1">
             Enero
           </md-option>
@@ -238,36 +237,9 @@ md-grid-tile:hover {
           </md-option>
         </md-select>
       </md-input-container>
-    </div>
-    <!--
-    <div layout="row" flex style="padding:5px; border: solid 1px #eee;">
-      <md-input-container class="md-block" flex-gt-sm style="">
-        <label style="font-size: 16px !important; color: gray; font-weight: 600;"></label>
-        <md-select ng-model="vm.obj_vista_modelo.cabecera.tipo_proceso">
-          <md-option value="CARGA MASIVA">
-            Todos
-          </md-option>
-          <md-option value="todos">
-            Enero
-          </md-option>
-          <md-option value="REPROCESO">
-            Febrero
-          </md-option>
-          <md-option value="REPROCESO">
-            Marzo
-          </md-option>
-          <md-option value="REPROCESO">
-            Abril
-          </md-option>
-          <md-option value="REPROCESO">
-            Mayo
-          </md-option>
-        </md-select>
-      </md-input-container>
-    </div> 
-  -->
-    <div layout="row" flex style="padding:5px; width: 100%; border: solid 1px #eee;">
-      <input type="text" ng-model="vm.dataset.texto_buscado" style="width: 95%; height: 25px !important; border: solid 0px red; padding-left:5px;" ng-model-options="{updateOn : 'change blur'}" ng-change="vm.buscarProcesoMasivo()">
+    <div flex="30"></div>
+    <div layout="row" flex="30" style="padding:5px; width: auto !important; border: solid 1px #eee;">
+      <input type="text" ng-model="vm.dataset.texto_buscado" style="width: 95%; height: 25px !important; border: solid 0px red; padding-left:5px;" ng-model-options="{updateOn : 'change blur'}" ng-change="vm.buscarProcesoMasivo()" placeholder="[l: lote] [r: remito] [t: tipo]">
       <md-icon class="material-icons md-24 toolbar-gray" ng-click="vm.buscarProcesoMasivo()" >search</md-icon>
     </div> 
   </div>

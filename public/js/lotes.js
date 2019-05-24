@@ -17,7 +17,7 @@
             $urlRouterProvider.when("", "/oper-bot/main/vista_global");
             $urlRouterProvider.when("/", "/oper-bot/main/vista_global");
             // $urlRouterProvider.when("/", "/tab/menu");
-            $urlRouterProvider
+            //$urlRouterProvider
                 //.when('/a?idAutor', '/autores/:idAutor')
                 //.when('/autor/:idAutor', '/autores/:idAutor')
                // .when('/l?idLibro', '/libros/:idLibro')
@@ -25,7 +25,7 @@
                 // If the url is ever invalid, e.g. '/asdf', then redirect to '/' aka the home state
                 //.otherwise('/biblioteca/libros/listado/todos');
                 //.otherwise('/biblioteca/libros/panel-central');
-                .otherwise('/oper-bot/main/vision-general');
+                //.otherwise('/oper-bot/main/vision-general');
 
             $stateProvider  
                 .state('app', {

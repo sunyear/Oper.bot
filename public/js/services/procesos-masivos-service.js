@@ -167,6 +167,8 @@
                     //console.log(id_proceso_masivo)
                     var return_data = basedatosservice.crudRead( consulta );
 
+                    console.log(consulta)
+
                     return  $q.when ( return_data )
                             .then(
                                 function ProcesosMasivosLotes( proceso_masivo_lotes ){
