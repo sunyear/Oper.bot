@@ -1,7 +1,8 @@
 <style>
 
   .material-icons.md-12 { font-size: 12px; }
-  .material-icons.md-12 { font-size: 14px; }
+  .material-icons.md-14 { font-size: 14px; }
+  .material-icons.md-16 { font-size: 16px; }
   .material-icons.md-18 { font-size: 18px; }
   .material-icons.md-20 { font-size: 20px; }
   .material-icons.md-24 { font-size: 24px; }
@@ -22,7 +23,7 @@
     .material-icons.toolbar-checkActivado {color: rgba(27, 150, 33, 1);}
     .material-icons.toolbar-iconoDesactivado {color: rgba(0, 0, 0, 0.2);}
 
-  .md-16 { font-size: 16px; }
+  
   .md-16.red {color: rgb(249, 44, 44);}
   .md-16.green_big {color: rgb(36, 191, 1);}
   .md-16.orange600 { color: #FB8C00; }
@@ -379,6 +380,7 @@ md-input-container.lll .md-input{
   color: rgba(0, 0, 0, 0.4);
   font-weight: 600;
   font-size: 12px;
+  line-height: 25px;
 }
 
 .dense-item-list {
@@ -452,13 +454,11 @@ md-input-container.lll .md-input{
 
   }
 
-</style>
-
+</style>         
 
 
 <!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
     <md-content id="contenedor">
-        
           
   
             <md-card flex>
@@ -469,6 +469,7 @@ md-input-container.lll .md-input{
               <md-card-content style="padding: 0 !important">
                 <div layout="row" flex style="">
                     <md-button class="md-icon-button" ng-click="vm.cancelarDialogo()">
+                      
                       <md-icon class="material-icons md-24 red">arrow_back</md-icon>
                     </md-button>
 
@@ -518,12 +519,11 @@ md-input-container.lll .md-input{
                         <div  class="md-toolbar-tools md-toolbar-tools-card" layout="row" layout-fill>
                                       
                             <div layout="row" flex="grow" class="card-header-toolbar" style="border: 0px solid red">
-
                                 <div layout="row" flex="grow" class="card-header-toolbar">
                                   <span md-truncate flex>Remito</span>  
                                 </div>
                                 <div layout="row" flex="grow" class="card-header-toolbar">
-                                  <span md-truncate flex>Lote</span>  
+                                  <span md-truncate flex>Lote</span>
                                 </div>
                                 <div layout="row" flex="grow" class="card-header-toolbar">
                                   <span md-truncate flex>Actas</span>  
@@ -548,21 +548,32 @@ md-input-container.lll .md-input{
 
                               <md-menu ng-if="!vm.lotes_remitos[0].editar" md-position-mode="target-right target">
                                 <md-button  class="md-icon-button toolbar-gray">
+                                  <md-tooltip md-direction="top" md-visible="vm.esVisible()">
+                                    <div layout="row" flex="100" layout-aling="center center" layout-fill>
+                                      <div flex style="background-color: none">
+                                        Filtro: {{vm.obj_vista_modelo.filtro_aplicado}}
+                                      </div>
+                                      <div flex="20" style="background-color: none">
+                                        <md-icon style="line-height: 16px !important; min-height: 16px !important; min-width: 16px !important; width: 16px !important; height: 16px !important; margin-left: 5px" class="material-icons md-16 md-light" ng-click="">cancel</md-icon>
+                                      </div>
+                                    </div>
+                                      </md-tooltip>
                                   <md-icon class="material-icons md-16 toolbar-gray" ng-click="vm.openMenu($mdMenu, $event)">filter_list</md-icon>
+
                                 </md-button>
                                 <md-menu-content width="4">
                                   <md-menu-item>
-                                    <md-button ng-click="vm.filtrarDetalle(1)">
+                                    <md-button ng-click="vm.filtrarDetalle(vm.filtros.no_notificada, $event)">
                                       Filtrar no-notificadas
                                     </md-button>
                                   </md-menu-item>
                                   <md-menu-item>
-                                    <md-button ng-click="vm.filtrarDetalle(2)">
+                                    <md-button ng-click="vm.filtrarDetalle(vm.filtros.calidad, $event)">
                                       Filtrar calidad
                                     </md-button>
                                   </md-menu-item>
                                   <md-menu-item>
-                                    <md-button ng-click="vm.filtrarDetalle(3)">
+                                    <md-button ng-click="vm.filtrarDetalle(vm.filtros.aceptar, $event)">
                                       Filtrar aceptar
                                     </md-button>
                                   </md-menu-item>

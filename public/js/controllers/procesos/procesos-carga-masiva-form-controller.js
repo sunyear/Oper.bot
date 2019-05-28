@@ -3,7 +3,7 @@
 
   class ProcesosCargaMasivaControllerForm {
 
-    constructor($state, procesosMasivosService, $mdToast, $mdMenu, $mdDialog, $filter, $scope, $document, data) {
+    constructor( $state, procesosMasivosService, $mdToast, $mdMenu, $mdDialog, $filter, $scope, $document, data) {
 
         this._procesosMasivosService = procesosMasivosService;
         this._$mdDialog = $mdDialog;
@@ -12,6 +12,7 @@
         this._$toast = $mdToast;
         this._$document = $document;
         this._$scope = $scope;
+       
 
 
         this.obj_vista_modelo = {
@@ -27,10 +28,11 @@
             lote_orig: null,
             notificada_orig: null,
             zona_orig: null
-          }
+          },
+          filtro_aplicado: '',
         }
 
-        this.dataset = data;
+        this.dataset = data; //"data" se instancia en el enrutador (lote.js) que resuelve la promesa (prommise)
 
         this.fila_seleccionada = null;
 
@@ -119,7 +121,26 @@
 
           this.colr_rech = false; 
           this.colr_proc = false; 
-          this.colr_email = false
+          this.colr_email = false;
+
+          this.mostrar = false;
+
+          this.filtros = {
+            'no_notificada': {
+              texto: 'No-notificadas',
+              expresion: {notificada: 'NO'} 
+            },
+            'calidad': {
+              texto: 'Calidad',
+              expresion: {id_tipo_envio: 2}
+            },
+            'aceptar': {
+              texto: 'Aceptar',
+              expresion: {id_tipo_envio: 1}
+            }
+          };
+                          
+                        //console.log(this.filtros.no_notificada)
 
         this.activate(  );
                         
@@ -541,21 +562,37 @@
 
     filtrarDetalle( tipo_filtro ){
 
-      this.obj_vista_modelo.detalle = angular.copy(this.dataset.detalle)
+      console.log(tipo_filtro.expresion)
+     this.obj_vista_modelo.detalle = angular.copy(this.dataset.detalle)
+     this.obj_vista_modelo.detalle = this._$filter('filter')(this.dataset.detalle,  tipo_filtro.expresion)
+     this.obj_vista_modelo.filtro_aplicado =  tipo_filtro.texto;
 
-      switch ( tipo_filtro ){
+     //console.log(this.dataset.detalle)
+     /*
+      switch ( tipo_filtro.texto ){
         case 1: //NORTE
-            
             this.obj_vista_modelo.detalle = this._$filter('filter')(this.obj_vista_modelo.detalle, {zona: 'NORTE'})
           break;
         case 2: //SUR
             this.obj_vista_modelo.detalle = this._$filter('filter')(this.obj_vista_modelo.detalle, {zona: 'SUR'})
           break;
         case 3: //TODOS
-            this.obj_vista_modelo.detalle = this.dataset.detalle
+            this.obj_vista_modelo.detalle = this._cargarDatosVista( true );
+          break;
+        case 4: //NO-NOTIFICADAS
+            this.obj_vista_modelo.detalle = this._$filter('filter')(this.dataset.detalle,  tipo_filtro.expresion)
+          break;
+        case 5: //CALIDAD
+            this.obj_vista_modelo.detalle = this._$filter('filter')(this.dataset.detalle, {id_tipo_envio: 2})
+          break;
+        case 6: //ACEPTAR
+            this.obj_vista_modelo.detalle = this._$filter('filter')(this.dataset.detalle, {id_tipo_envio: 1})
           break;
 
       };
+      */
+
+      //this.obj_vista_modelo.detalle = angular.copy(this.dataset.detalle)
 
     };
 
@@ -614,6 +651,10 @@
 
     };
 
+    esVisible(){
+      return (this.obj_vista_modelo.filtro_aplicado !== '')
+    }
+
     //FIN METODOS PUBLICOS
 
 
@@ -652,10 +693,6 @@
           (proceso_masivo_lotes) => _actualizarVista( proceso_masivo_lotes,  CLASE ),
           (err) => console.log(err)
         );
-
-        //this._$state.go(this._$state.current, {idProcesoMasivo: this.obj_vista_modelo.cabecera.id_proceso_masivo }, {reload: true});
-        //_actualizarVista(this._procesosMasivosService.obtenerProcesosMasivosLotes(  this.obj_vista_modelo.cabecera.id_proceso_masivo ), this)
-        //return ( procesosMasivosService.obtenerProcesosMasivosLotes( $stateParams.idProcesoMasivo ) )
 
       }else if(this.dataset.cabecera.id_proceso_masivo > 0){
         _actualizarVista(this.dataset, this)

@@ -94,7 +94,7 @@ $layout-breakpoint-lg:     1920px !default;
 // Typography
 // ------------------------------
 
-//-- Must be defined before $font-size.
+//-- Must be defined after $font-size and before variables that depend on the function.
 @function rem($multiplier) {
   @return $multiplier * $font-size;
 }
@@ -479,7 +479,6 @@ $layout-breakpoint-lg:     1920px !default;
 }
 
 /*
-*
 *  Responsive attributes
 *
 *  References:
@@ -488,7 +487,6 @@ $layout-breakpoint-lg:     1920px !default;
 *  3) https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 *  4) https://github.com/philipwalton/flexbugs#3-min-height-on-a-flex-container-wont-apply-to-its-flex-items
 *  5) http://godban.com.ua/projects/flexgrid
-*
 */
 
 // Layout

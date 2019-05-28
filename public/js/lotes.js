@@ -10,10 +10,14 @@
         )
         .config(config);
         
-        config.$inject = ['$stateProvider','$urlRouterProvider','$sceDelegateProvider', '$mdIconProvider', '$mdDateLocaleProvider', '$mdAriaProvider'];
-        function config($stateProvider, $urlRouterProvider,$sceDelegateProvider, $mdIconProvider, $mdDateLocaleProvider,$mdAriaProvider){
+        config.$inject = ['$stateProvider','$urlRouterProvider','$sceDelegateProvider', '$mdIconProvider', '$mdDateLocaleProvider', '$mdAriaProvider', '$provide'];
+        function config($stateProvider, $urlRouterProvider,$sceDelegateProvider, $mdIconProvider, $mdDateLocaleProvider,$mdAriaProvider, $provide){
 
             $mdAriaProvider.disableWarnings();
+            $provide.decorator('mdTooltipDirective', ['$delegate', function($delegate) {
+                $delegate[0].scope.visible = '<?mdVisible';
+                return $delegate;
+              }]);
             $urlRouterProvider.when("", "/oper-bot/main/vista_global");
             $urlRouterProvider.when("/", "/oper-bot/main/vista_global");
             // $urlRouterProvider.when("/", "/tab/menu");

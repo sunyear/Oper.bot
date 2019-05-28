@@ -16,7 +16,7 @@ function run {
 
   echo "-- Cloning bower-material..."
   rm -rf bower-material
-  git clone https://angular:$GH_TOKEN@github.com/angular/bower-material \
+  git clone https://github.com/angular/bower-material \
     bower-material --depth=2
 
   echo "-- Copying in build files..."
@@ -26,9 +26,18 @@ function run {
   rm -rf bower-material/modules/scss
   rm -rf bower-material/layouts
 
+  # From the project root
   cp -Rf dist/* bower-material/
+  commitAuthorName=$(git --no-pager show -s --format='%an' HEAD)
+  commitAuthorEmail=$(git --no-pager show -s --format='%ae' HEAD)
 
-  cd bower-material
+  cd bower-material/
+
+  git config user.name "${commitAuthorName}"
+  git config user.email "${commitAuthorEmail}"
+  # GitHub personal access token with push permission specified as environment variable
+  git config credential.helper "store --file=.git/credentials"
+  echo "https://${ANGULARJS_MATERIAL_BOWER_TOKEN}:@github.com" > .git/credentials
 
   # Remove stale files from older builds
   rm -f ./angular-material.layouts.css
@@ -62,9 +71,12 @@ function run {
   git push -q origin master
   git push -q origin v$VERSION
 
-  echo "-- Version $VERSION pushed successfully to angular/bower-material!"
-
   cd ../
+
+  echo "-- Cleanup..."
+  rm -rf bower-material/
+
+  echo "-- Version $VERSION pushed successfully to angular/bower-material!"
 }
 
 source $(dirname $0)/utils.inc

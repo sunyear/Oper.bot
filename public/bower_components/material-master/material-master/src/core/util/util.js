@@ -13,8 +13,8 @@ var nextUniqueId = 0;
  * Util
  */
 angular
-  .module('material.core')
-  .factory('$mdUtil', UtilFactory);
+.module('material.core')
+.factory('$mdUtil', UtilFactory);
 
 /**
  * @ngInject
@@ -35,7 +35,7 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
   var hasComputedStyle = function (target, key, expectedVal) {
     var hasValue = false;
 
-    if ( target && target.length  ) {
+    if (target && target.length) {
       var computedStyles = $window.getComputedStyle(target[0]);
       hasValue = angular.isDefined(computedStyles[key]) && (expectedVal ? computedStyles[key] == expectedVal : true);
     }
@@ -80,7 +80,7 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
 
       // The newer versions of AngularJS introduced a `getOption function and made the option values no longer
       // visible on the $options object.
-      return $options.getOption ? $options.getOption(optionName) : $options[optionName]
+      return $options.getOption ? $options.getOption(optionName) : $options[optionName];
     },
 
     /**
@@ -91,16 +91,16 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
       var ltr = !($document[0].dir == 'rtl' || $document[0].body.dir == 'rtl');
 
       // If accessor
-      if ( arguments.length == 0 ) return ltr ? 'ltr' : 'rtl';
+      if (arguments.length == 0) return ltr ? 'ltr' : 'rtl';
 
       // If mutator
       var elem = angular.element(element);
 
-      if ( ltr && angular.isDefined(lValue)) {
+      if (ltr && angular.isDefined(lValue)) {
         elem.css(property, validateCssValue(lValue));
       }
-      else if ( !ltr && angular.isDefined(rValue)) {
-        elem.css(property, validateCssValue(rValue) );
+      else if (!ltr && angular.isDefined(rValue)) {
+        elem.css(property, validateCssValue(rValue));
       }
     },
 
@@ -109,12 +109,12 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
 
       var elem = angular.element(element);
 
-      if ( ltr && angular.isDefined(lProperty)) {
+      if (ltr && angular.isDefined(lProperty)) {
         elem.css(lProperty, validateCssValue(value));
         elem.css(rProperty, '');
       }
-      else if ( !ltr && angular.isDefined(rProperty)) {
-        elem.css(rProperty, validateCssValue(value) );
+      else if (!ltr && angular.isDefined(rProperty)) {
+        elem.css(rProperty, validateCssValue(value));
         elem.css(lProperty, '');
       }
     },
@@ -128,7 +128,7 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
       // or a clientRect: a rect relative to the page
       var offsetRect = isOffsetRect ?
         offsetParent.getBoundingClientRect() :
-      {left: 0, top: 0, width: 0, height: 0};
+        {left: 0, top: 0, width: 0, height: 0};
       return {
         left: nodeRect.left - offsetRect.left,
         top: nodeRect.top - offsetRect.top,
@@ -157,7 +157,13 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
      * @returns {number}
      */
     getViewportTop: function() {
-      return window.scrollY || window.pageYOffset || 0;
+      // If body scrolling is disabled, then use the cached viewport top value, otherwise get it
+      // fresh from the $window.
+      if ($mdUtil.disableScrollAround._count && $mdUtil.disableScrollAround._viewPortTop) {
+        return $mdUtil.disableScrollAround._viewPortTop;
+      } else {
+        return $window.scrollY || $window.pageYOffset || 0;
+      }
     },
 
     /**
@@ -173,11 +179,11 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
 
       elToFocus = scanForFocusable(containerEl, attributeVal || AUTO_FOCUS);
 
-      if ( !elToFocus && attributeVal != AUTO_FOCUS) {
+      if (!elToFocus && attributeVal != AUTO_FOCUS) {
         // Scan for deprecated attribute
         elToFocus = scanForFocusable(containerEl, this.prefixer('md-auto-focus', true));
 
-        if ( !elToFocus ) {
+        if (!elToFocus) {
           // Scan for fallback to 'universal' API
           elToFocus = scanForFocusable(containerEl, AUTO_FOCUS);
         }
@@ -193,7 +199,7 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
         var elFound, items = target[0].querySelectorAll(selector);
 
         // Find the last child element with the focus attribute
-        if ( items && items.length ){
+        if (items && items.length){
           items.length && angular.forEach(items, function(it) {
             it = angular.element(it);
 
@@ -232,6 +238,7 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
 
       return $mdUtil.disableScrollAround._restoreScroll = function() {
         if (--$mdUtil.disableScrollAround._count <= 0) {
+          delete $mdUtil.disableScrollAround._viewPortTop;
           restoreBody();
           restoreElement();
           delete $mdUtil.disableScrollAround._restoreScroll;
@@ -264,7 +271,7 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
           scrollMask.off('wheel');
           scrollMask.off('touchmove');
 
-          if (!options.disableScrollMask) {
+          if (!options.disableScrollMask && scrollMask[0].parentNode) {
             scrollMask[0].parentNode.removeChild(scrollMask[0]);
           }
         };
@@ -282,8 +289,14 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
         var prevBodyStyle = body.style.cssText || '';
 
         var viewportTop = $mdUtil.getViewportTop();
+        $mdUtil.disableScrollAround._viewPortTop = viewportTop;
         var clientWidth = body.clientWidth;
         var hasVerticalScrollbar = body.scrollHeight > body.clientHeight + 1;
+
+        // Scroll may be set on <html> element (for example by overflow-y: scroll)
+        // but Chrome is reporting the scrollTop position always on <body>.
+        // scrollElement will allow to restore the scrollTop position to proper target.
+        var scrollElement = documentElement.scrollTop > 0 ? documentElement : body;
 
         if (hasVerticalScrollbar) {
           angular.element(body).css({
@@ -297,20 +310,13 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
           body.style.overflow = 'hidden';
         }
 
-        // This should be applied after the manipulation to the body, because
-        // adding a scrollbar can potentially resize it, causing the measurement
-        // to change.
-        if (hasVerticalScrollbar) {
-          documentElement.style.overflowY = 'scroll';
-        }
-
         return function restoreScroll() {
           // Reset the inline style CSS to the previous.
           body.style.cssText = prevBodyStyle;
           documentElement.style.cssText = prevDocumentStyle;
 
-          // The body loses its scroll position while being fixed.
-          body.scrollTop = viewportTop;
+          // The scroll position while being fixed
+          scrollElement.scrollTop = viewportTop;
         };
       }
 
@@ -375,13 +381,13 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
      * be property names, property chains, or array indices.
      */
     supplant: function(template, values, pattern) {
-      pattern = pattern || /\{([^\{\}]*)\}/g;
+      pattern = pattern || /\{([^{}]*)\}/g;
       return template.replace(pattern, function(a, b) {
         var p = b.split('.'),
           r = values;
         try {
           for (var s in p) {
-            if (p.hasOwnProperty(s) ) {
+            if (p.hasOwnProperty(s)) {
               r = r[p[s]];
             }
           }
@@ -468,7 +474,7 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
      */
     valueOnUse : function (scope, key, getter) {
       var value = null, args = Array.prototype.slice.call(arguments);
-      var params = (args.length > 3) ? args.slice(3) : [ ];
+      var params = (args.length > 3) ? args.slice(3) : [];
 
       Object.defineProperty(scope, key, {
         get: function () {
@@ -531,17 +537,19 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
       }
     },
 
-    /*
-     * getClosest replicates jQuery.closest() to walk up the DOM tree until it finds a matching nodeName
+    /**
+     * getClosest replicates jQuery.closest() to walk up the DOM tree until it finds a matching
+     * nodeName.
      *
-     * @param el Element to start walking the DOM from
-     * @param check Either a string or a function. If a string is passed, it will be evaluated against
-     * each of the parent nodes' tag name. If a function is passed, the loop will call it with each of
-     * the parents and will use the return value to determine whether the node is a match.
-     * @param onlyParent Only start checking from the parent element, not `el`.
+     * @param {Node} el Element to start walking the DOM from
+     * @param {string|function} validateWith If a string is passed, it will be evaluated against
+     * each of the parent nodes' tag name. If a function is passed, the loop will call it with each
+     * of the parents and will use the return value to determine whether the node is a match.
+     * @param {boolean=} onlyParent Only start checking from the parent element, not `el`.
+     * @returns {Node|null} closest matching parent Node or null if not found
      */
     getClosest: function getClosest(el, validateWith, onlyParent) {
-      if ( angular.isString(validateWith) ) {
+      if (angular.isString(validateWith)) {
         var tagName = validateWith.toUpperCase();
         validateWith = function(el) {
           return el.nodeName.toUpperCase() === tagName;
@@ -563,12 +571,15 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
 
     /**
      * Build polyfill for the Node.contains feature (if needed)
+     * @param {Node} node
+     * @param {Node} child
+     * @returns {Node}
      */
     elementContains: function(node, child) {
       var hasContains = (window.Node && window.Node.prototype && Node.prototype.contains);
       var findFn = hasContains ? angular.bind(node, node.contains) : angular.bind(node, function(arg) {
         // compares the positions of two nodes and returns a bitmask
-        return (node === child) || !!(this.compareDocumentPosition(arg) & 16)
+        return (node === child) || !!(this.compareDocumentPosition(arg) & 16);
       });
 
       return findFn(child);
@@ -578,15 +589,15 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
      * Functional equivalent for $element.filter(‘md-bottom-sheet’)
      * useful with interimElements where the element and its container are important...
      *
-     * @param {[]} elements to scan
-     * @param {string} name of node to find (e.g. 'md-dialog')
-     * @param {boolean=} optional flag to allow deep scans; defaults to 'false'.
-     * @param {boolean=} optional flag to enable log warnings; defaults to false
+     * @param {angular.JQLite} element to scan
+     * @param {string} nodeName of node to find (e.g. 'md-dialog')
+     * @param {boolean=} scanDeep optional flag to allow deep scans; defaults to 'false'.
+     * @param {boolean=} warnNotFound optional flag to enable log warnings; defaults to false
      */
     extractElementByName: function(element, nodeName, scanDeep, warnNotFound) {
       var found = scanTree(element);
       if (!found && !!warnNotFound) {
-        $log.warn( $mdUtil.supplant("Unable to find node '{0}' in element '{1}'.",[nodeName, element[0].outerHTML]) );
+        $log.warn($mdUtil.supplant("Unable to find node '{0}' in element '{1}'.",[nodeName, element[0].outerHTML]));
       }
 
       return angular.element(found || element);
@@ -595,14 +606,14 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
        * Breadth-First tree scan for element with matching `nodeName`
        */
       function scanTree(element) {
-        return scanLevel(element) || (!!scanDeep ? scanChildren(element) : null);
+        return scanLevel(element) || (scanDeep ? scanChildren(element) : null);
       }
 
       /**
        * Case-insensitive scan of current elements only (do not descend).
        */
       function scanLevel(element) {
-        if ( element ) {
+        if (element) {
           for (var i = 0, len = element.length; i < len; i++) {
             if (element[i].nodeName.toLowerCase() === nodeName) {
               return element[i];
@@ -617,10 +628,10 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
        */
       function scanChildren(element) {
         var found;
-        if ( element ) {
+        if (element) {
           for (var i = 0, len = element.length; i < len; i++) {
             var target = element[i];
-            if ( !found ) {
+            if (!found) {
               for (var j = 0, numChild = target.childNodes.length; j < numChild; j++) {
                 found = found || scanTree([target.childNodes[j]]);
               }
@@ -650,27 +661,29 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
      * nextTick() coalesces all calls within a single frame
      * to minimize $digest thrashing
      *
-     * @param callback
-     * @param digest
+     * @param {Function} callback function to be called after the tick
+     * @param {boolean} digest true to call $rootScope.$digest() after callback
+     * @param scope scope associated with callback. If the scope is destroyed, the callback will
+     *  be skipped.
      * @returns {*}
      */
     nextTick: function(callback, digest, scope) {
-      //-- grab function reference for storing state details
+      // grab function reference for storing state details
       var nextTick = $mdUtil.nextTick;
       var timeout = nextTick.timeout;
       var queue = nextTick.queue || [];
 
-      //-- add callback to the queue
+      // add callback to the queue
       queue.push({scope: scope, callback: callback});
 
-      //-- set default value for digest
+      // set default value for digest
       if (digest == null) digest = true;
 
-      //-- store updated digest/queue values
+      // store updated digest/queue values
       nextTick.digest = nextTick.digest || digest;
       nextTick.queue = queue;
 
-      //-- either return existing timeout or create a new one
+      // either return existing timeout or create a new one
       return timeout || (nextTick.timeout = $timeout(processQueue, 0, false));
 
       /**
@@ -700,7 +713,7 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
 
     /**
      * Processes a template and replaces the start/end symbols if the application has
-     * overriden them.
+     * overridden them.
      *
      * @param template The template to process whose start/end tags may be replaced.
      * @returns {*}
@@ -797,7 +810,7 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
     /**
      * Animate the requested element's scrollTop to the requested scrollPosition with basic easing.
      *
-     * @param {!HTMLElement} element The element to scroll.
+     * @param {!Element} element The element to scroll.
      * @param {number} scrollEnd The new/final scroll position.
      * @param {number=} duration Duration of the scroll. Default is 1000ms.
      */
@@ -857,11 +870,48 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
       return array.filter(function(value, index, self) {
         return self.indexOf(value) === index;
       });
-    }
+    },
+
+    /**
+     * Gets the inner HTML content of the given HTMLElement.
+     * Only intended for use with SVG or Symbol elements in IE11.
+     * @param {Element} element
+     * @returns {string} the inner HTML of the element passed in
+     */
+    getInnerHTML: function(element) {
+      // For SVG or Symbol elements, innerHTML returns `undefined` in IE.
+      // Reference: https://stackoverflow.com/q/28129956/633107
+      // The XMLSerializer API is supported on IE11 and is the recommended workaround.
+      var serializer = new XMLSerializer();
+
+      return Array.prototype.map.call(element.childNodes, function (child) {
+        return serializer.serializeToString(child);
+      }).join('');
+    },
+
+    /**
+     * Gets the outer HTML content of the given HTMLElement.
+     * Only intended for use with SVG or Symbol elements in IE11.
+     * @param {Element} element
+     * @returns {string} the outer HTML of the element passed in
+     */
+    getOuterHTML: function(element) {
+      // For SVG or Symbol elements, outerHTML returns `undefined` in IE.
+      // Reference: https://stackoverflow.com/q/29888050/633107
+      // The XMLSerializer API is supported on IE11 and is the recommended workaround.
+      var serializer = new XMLSerializer();
+      return serializer.serializeToString(element);
+    },
+
+    /**
+     * Support: IE 9-11 only
+     * documentMode is an IE-only property
+     * http://msdn.microsoft.com/en-us/library/ie/cc196988(v=vs.85).aspx
+     */
+    msie: window.document.documentMode
   };
 
-
-// Instantiate other namespace utility methods
+  // Instantiate other namespace utility methods
 
   $mdUtil.dom.animator = $$mdAnimate($mdUtil);
 
@@ -870,7 +920,6 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
   function getNode(el) {
     return el[0] || el;
   }
-
 }
 
 /*
@@ -879,14 +928,14 @@ function UtilFactory($document, $timeout, $compile, $rootScope, $$mdAnimate, $in
  */
 
 angular.element.prototype.focus = angular.element.prototype.focus || function() {
-    if (this.length) {
-      this[0].focus();
-    }
-    return this;
-  };
+  if (this.length) {
+    this[0].focus();
+  }
+  return this;
+};
 angular.element.prototype.blur = angular.element.prototype.blur || function() {
-    if (this.length) {
-      this[0].blur();
-    }
-    return this;
-  };
+  if (this.length) {
+    this[0].blur();
+  }
+  return this;
+};
