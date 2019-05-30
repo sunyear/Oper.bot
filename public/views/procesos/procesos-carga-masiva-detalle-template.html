@@ -510,9 +510,23 @@ md-input-container.lll .md-input{
                   
                 </div>
 
+                
+
                 <!-- COMPONENTE REMITOS/LOTES -->
                 <div layout="column" flex>
                     <md-card flex="100" >
+                      <div ng-if="vm.tooltip_filtrar_visible" style="" layout="row" flex="100" layout-aling="center center">
+                                      
+                    <div flex style="background-color: none; font-size: 12px;">
+                      Filtros aplicados: {{vm.obj_vista_modelo.filtro_aplicado.texto}}
+                      <span style="text-decoration: underline; color: blue; font-size: 12px; cursor: pointer" ng-click="vm.eliminarFiltro()">quitar filtro</span>
+                    </div>
+                    <div style="background-color: none">
+                      
+                      <md-icon ng-if="false" style="line-height: 16px !important; min-height: 16px !important; min-width: 16px !important; width: 16px !important; height: 16px !important; margin-left: 5px" class="material-icons md-16 md-light" ng-click="vm.eliminarFiltro()">cancel</md-icon>
+                    </div>
+                  
+                </div>
 
                       <md-toolbar style="min-height: 36px;">
 
@@ -548,66 +562,93 @@ md-input-container.lll .md-input{
 
                               <md-menu ng-if="!vm.lotes_remitos[0].editar" md-position-mode="target-right target">
                                 <md-button  class="md-icon-button toolbar-gray">
-                                  <md-tooltip md-direction="top" md-visible="vm.esVisible()">
-                                    <div layout="row" flex="100" layout-aling="center center" layout-fill>
-                                      <div flex style="background-color: none">
-                                        Filtro: {{vm.obj_vista_modelo.filtro_aplicado}}
-                                      </div>
-                                      <div flex="20" style="background-color: none">
-                                        <md-icon style="line-height: 16px !important; min-height: 16px !important; min-width: 16px !important; width: 16px !important; height: 16px !important; margin-left: 5px" class="material-icons md-16 md-light" ng-click="">cancel</md-icon>
-                                      </div>
-                                    </div>
-                                      </md-tooltip>
-                                  <md-icon class="material-icons md-16 toolbar-gray" ng-click="vm.openMenu($mdMenu, $event)">filter_list</md-icon>
+                                  
+                                  <!--<md-tooltip md-direction="top" md-visible="true">-->
+                                    
+                                  <!--</md-tooltip>-->
+                               
+                                  <md-icon class="material-icons md-16" ng-class="{'toolbar-gray': !vm.esVisible(), orange600: vm.esVisible()}" ng-click="vm.openMenu($mdMenu, $event)">filter_list</md-icon>
 
                                 </md-button>
+
                                 <md-menu-content width="4">
                                   <md-menu-item>
-                                    <md-button ng-click="vm.filtrarDetalle(vm.filtros.no_notificada, $event)">
-                                      Filtrar no-notificadas
-                                    </md-button>
-                                  </md-menu-item>
-                                  <md-menu-item>
-                                    <md-button ng-click="vm.filtrarDetalle(vm.filtros.calidad, $event)">
-                                      Filtrar calidad
-                                    </md-button>
-                                  </md-menu-item>
-                                  <md-menu-item>
-                                    <md-button ng-click="vm.filtrarDetalle(vm.filtros.aceptar, $event)">
-                                      Filtrar aceptar
-                                    </md-button>
-                                  </md-menu-item>
-                                  <md-menu-item>
-                              <md-menu style="padding: 0 !important">
-                                  <md-menu-item style="">
-                                 <md-button ng-click="ctrl.announceClick($index)">
-                  <div layout="row">
-                    <p flex>Zona</p>
-                    <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">keyboard_arrow_right</md-icon>
-                  </div>
-              </md-button>
-                      </md-menu-item>
-                      <md-menu-content>
-                        <md-menu-item>
-                          <md-button ng-click="vm.filtrarDetalle(3, $event)">
-                            <md-icon class="material-icons md-18">{{menu_item.icon}}</md-icon>Todos
-                          </md-button>
-                        </md-menu-item>
-                        <md-menu-item>
-                          <md-button ng-click="vm.filtrarDetalle(1, $event)">
-                            <md-icon class="material-icons md-18">{{menu_item.icon}}</md-icon>Norte
-                          </md-button>
-                        </md-menu-item>
 
-                        <md-menu-item>
-                          <md-button ng-click="vm.filtrarDetalle(2, $event)">
-                            <md-icon class="material-icons md-18">{{menu_item.icon}}</md-icon>Sur
-                          </md-button>
-                        </md-menu-item>
-                      </md-menu-content>
-                     
-                              </md-menu>
-                            </md-menu-item>
+                                    <md-menu style="padding: 0 !important">
+                                      <md-menu-item style="">
+                                        <md-button ng-click="ctrl.announceClick($index)">
+                                          <div layout="row">
+                                            <p flex>Envios</p>
+                                            <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">keyboard_arrow_right</md-icon>
+                                          </div>
+                                        </md-button>
+                                      </md-menu-item>
+                                      <md-menu-content>
+                                        <md-menu-item>
+                                          <md-button ng-click="vm.filtrarDetalle(vm.filtros.calidad, $event)">
+                                            Filtrar calidad
+                                          </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                          <md-button ng-click="vm.filtrarDetalle(vm.filtros.aceptar, $event)">
+                                            Filtrar aceptar
+                                          </md-button>
+                                        </md-menu-item>
+                                      </md-menu-content>
+                                    </md-menu>
+                                  </md-menu-item>
+                                  <md-menu-item>
+
+                                    <md-menu style="padding: 0 !important">
+                                      <md-menu-item style="">
+                                        <md-button ng-click="ctrl.announceClick($index)">
+                                          <div layout="row">
+                                            <p flex>Tipo lote</p>
+                                            <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">keyboard_arrow_right</md-icon>
+                                          </div>
+                                        </md-button>
+                                      </md-menu-item>
+                                      <md-menu-content>
+                                        <md-menu-item>
+                                          <md-button ng-click="vm.filtrarDetalle(vm.filtros.notificada, $event)">
+                                            Notificadas
+                                          </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                          <md-button ng-click="vm.filtrarDetalle(vm.filtros.no_notificada, $event)">
+                                            No-notificadas
+                                          </md-button>
+                                        </md-menu-item>
+                                      </md-menu-content>
+                                    </md-menu>
+                                  </md-menu-item>
+
+                                  
+                                  <md-menu-item>
+                                    <md-menu style="padding: 0 !important">
+                                      <md-menu-item style="">
+                                        <md-button ng-click="ctrl.announceClick($index)">
+                                          <div layout="row">
+                                            <p flex>Zona</p>
+                                            <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">keyboard_arrow_right</md-icon>
+                                          </div>
+                                        </md-button>
+                                      </md-menu-item>
+                                      <md-menu-content>
+                                        <md-menu-item>
+                                          <md-button ng-click="vm.filtrarDetalle(vm.filtros.norte, $event)">
+                                            Norte
+                                          </md-button>
+                                        </md-menu-item>
+
+                                        <md-menu-item>
+                                          <md-button ng-click="vm.filtrarDetalle(vm.filtros.sur, $event)">
+                                            Sur
+                                          </md-button>
+                                        </md-menu-item>
+                                      </md-menu-content>
+                                    </md-menu>
+                                  </md-menu-item>
                                 </md-menu-content>
                               </md-menu>
 

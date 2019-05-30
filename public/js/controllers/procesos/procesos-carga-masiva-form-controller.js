@@ -29,7 +29,7 @@
             notificada_orig: null,
             zona_orig: null
           },
-          filtro_aplicado: '',
+          filtro_aplicado: {},
         }
 
         this.dataset = data; //"data" se instancia en el enrutador (lote.js) que resuelve la promesa (prommise)
@@ -128,17 +128,37 @@
           this.filtros = {
             'no_notificada': {
               texto: 'No-notificadas',
-              expresion: {notificada: 'NO'} 
+              expresion: {notificada: 'NO'},
+              activo: false, 
+            },
+            'notificada': {
+              texto: 'notificadas',
+              expresion: {notificada: 'SI'},
+              activo: false, 
             },
             'calidad': {
               texto: 'Calidad',
-              expresion: {id_tipo_envio: 2}
+              expresion: {id_tipo_envio: 2},
+              activo: false,
             },
             'aceptar': {
               texto: 'Aceptar',
-              expresion: {id_tipo_envio: 1}
+              expresion: {id_tipo_envio: 1},
+              activo: false,
+            },
+            'norte': {
+              texto: 'zona norte',
+              expresion: {zona: 'NORTE'},
+              activo: false,
+            },
+            'sur': {
+              texto: 'zona sur',
+              expresion: {zona: 'SUR'},
+              activo: false,
             }
           };
+
+          this.tooltip_filtrar_visible = false;
                           
                         //console.log(this.filtros.no_notificada)
 
@@ -562,10 +582,14 @@
 
     filtrarDetalle( tipo_filtro ){
 
-      console.log(tipo_filtro.expresion)
-     this.obj_vista_modelo.detalle = angular.copy(this.dataset.detalle)
-     this.obj_vista_modelo.detalle = this._$filter('filter')(this.dataset.detalle,  tipo_filtro.expresion)
-     this.obj_vista_modelo.filtro_aplicado =  tipo_filtro.texto;
+      //this.filtros[tipo_filtro.activo = true;
+      //tipo_filtro.activo = true;
+      this.obj_vista_modelo.detalle = angular.copy(this.dataset.detalle)
+      this.obj_vista_modelo.detalle = this._$filter('filter')(this.dataset.detalle,  tipo_filtro.expresion)
+      this.obj_vista_modelo.filtro_aplicado =  tipo_filtro;
+      this.tooltip_filtrar_visible = true;
+
+      //this.tooltip_filtrar_visible = true;
 
      //console.log(this.dataset.detalle)
      /*
@@ -652,8 +676,22 @@
     };
 
     esVisible(){
-      return (this.obj_vista_modelo.filtro_aplicado !== '')
+      return this.tooltip_filtrar_visible;
     }
+
+    eliminarFiltro(){
+
+      console.log(angular.equals({},this.obj_vista_modelo.filtro_aplicado))
+
+      //let filtro_actual = this.obj_vista_modelo.filtro_aplicado
+
+      this.obj_vista_modelo.filtro_aplicado = {};
+      this.tooltip_filtrar_visible = false;
+      this._cargarDatosVista( false );
+
+      //this.esVisible();
+
+    };
 
     //FIN METODOS PUBLICOS
 
