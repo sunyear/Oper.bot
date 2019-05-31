@@ -116,7 +116,7 @@
 
 </style>
 
-  <div layout="row" layout-fill flex > 
+  <div layout="row" layout-fill flex> 
 
     <div layout="column" layout-fill style="width: 200px !important;">
         <div ui-view="menulateral" layout="column" flex="100" ng-cloak></div>
@@ -135,7 +135,7 @@
       </div>
   </md-toolbar>
       <!-- LAS OPCIONES DEL MENU DEL SIDENAVBAR CARGAR SUS TEMPLATES EN ESTA VISTA -->
-      <div ui-view layout="column" flex="100" ng-cloak></div>
+      <div ui-view layout="column" flex="100" ng-cloak style="overflow-y: hidden !important"></div>
     </md-content>
   
 </div>

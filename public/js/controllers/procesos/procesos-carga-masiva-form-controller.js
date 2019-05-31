@@ -182,15 +182,15 @@
 
         this.obj_vista_modelo.cabecera.uid = (this.obj_vista_modelo.cabecera.id_proceso_masivo === 0)?'I': 'U';
 
-        //console.log(this._$filter('date')(( new Date() ).getTime(), 'HH:mm:ss'))  
-
-        //console.log( this._$filter('date')(this.obj_vista_modelo.cabecera.fecha_proceso, 'yyyy/MM/dd')+ ' ' + this._$filter('date')(( new Date() ).getTime(), 'HH:mm:ss'))
-        this.obj_vista_modelo.cabecera.fecha_proceso = this._$filter('date')(this.obj_vista_modelo.cabecera.fecha_proceso, 'yyyy/MM/dd')+ ' ' + this._$filter('date')(( new Date() ).getTime(), 'HH:mm:ss')
+        console.log(this.obj_vista_modelo.cabecera.id_proceso_masivo)
+        if(this.obj_vista_modelo.cabecera.id_proceso_masivo === 0){
+          this.obj_vista_modelo.cabecera.fecha_proceso = this._$filter('date')(this.obj_vista_modelo.cabecera.fecha_proceso, 'yyyy/MM/dd')+ ' ' + this._$filter('date')(( new Date() ).getTime(), 'HH:mm:ss')
+        }
         //this.obj_vista_modelo.cabecera.fecha_proceso = this._$filter('date')(this.obj_vista_modelo.cabecera.fecha_proceso, 'yyyy/MM/dd')
        
-        //console.log(this.obj_vista_modelo.detalle)
+        console.log(this.obj_vista_modelo.cabecera.fecha_proceso)
 
-        const rta = this._procesosMasivosService.guardarProcesoMasivo( this.obj_vista_modelo )
+        let rta = this._procesosMasivosService.guardarProcesoMasivo( this.obj_vista_modelo )
 
         //console.log(rta)
 
@@ -209,12 +209,30 @@
               //controller  : 'ToastCtrl',
               templateUrl : './views/procesos/datos_guardados_template.html'
             });
+
+            
+             CLASE._$state.go('procesos.carga-masiva-lotes',{idProcesoMasivo: id_proceso_masivo, filtro: ''},{
+                // prevent the events onStart and onSuccess from firing
+                notify:false,
+                // prevent reload of the current state
+                reload:false, 
+                // replace the last record when changing the params so you don't hit the back button and get old params
+                location:'replace', 
+                // inherit the current params on the url
+                inherit:true
+            });
+
+            CLASE.obj_vista_modelo.cabecera.id_proceso_masivo = id_proceso_masivo;
+            CLASE._cargarDatosVista( true );
           }
 
-          CLASE.id_carga_masiva_actual = id_proceso_masivo;
-          CLASE.obj_vista_modelo.cabecera.id_proceso_masivo = id_proceso_masivo;
-          const carga_desde_db = true;
-          CLASE._cargarDatosVista( carga_desde_db );
+          //CLASE.id_carga_masiva_actual = id_proceso_masivo;
+         // CLASE.obj_vista_modelo.cabecera.id_proceso_masivo = id_proceso_masivo;
+          //const carga_desde_db = true;
+          //CLASE.eliminarFiltro(false);
+          //CLASE._cargarDatosVista( carga_desde_db );
+
+         
 
         };
 
@@ -347,6 +365,15 @@
         this.obj_vista_modelo.registro_edit.actas_orig = this.obj_vista_modelo.detalle[index].actas;
         this.obj_vista_modelo.registro_edit.notificada_orig = this.obj_vista_modelo.detalle[index].notificada;
         this.obj_vista_modelo.registro_edit.zona_orig = this.obj_vista_modelo.detalle[index].zona;
+
+    };
+
+
+    borrarItem( index, nuevo ){
+
+      this.obj_vista_modelo.detalle[index].uid = 'D'
+    
+      //if(!nuevo) this.cancelarEdicionItem(false, false );
 
     };
 
@@ -571,23 +598,19 @@
     };
 
 
-    borrarItem( index, nuevo ){
-
-      this.obj_vista_modelo.detalle[index].uid = 'D'
-    
-      if(!nuevo) this.cancelarEdicionItem(false, false );
-
-    };
-
-
     filtrarDetalle( tipo_filtro ){
 
       //this.filtros[tipo_filtro.activo = true;
       //tipo_filtro.activo = true;
-      this.obj_vista_modelo.detalle = angular.copy(this.dataset.detalle)
-      this.obj_vista_modelo.detalle = this._$filter('filter')(this.dataset.detalle,  tipo_filtro.expresion)
+      //console.log(this.dataset.detalle, tipo_filtro.expresion)
+      //this.obj_vista_modelo.detalle = angular.copy(this.dataset.detalle)
+      
+      //this.obj_vista_modelo.detalle = this._$filter('filter')(this.dataset.detalle,  tipo_filtro.expresion)
+      this.obj_vista_modelo.detalle = this._$filter('filter')(this.obj_vista_modelo.detalle,  tipo_filtro.expresion)
       this.obj_vista_modelo.filtro_aplicado =  tipo_filtro;
       this.tooltip_filtrar_visible = true;
+
+      console.log(this._$filter('filter'))
 
       //this.tooltip_filtrar_visible = true;
 
@@ -679,15 +702,16 @@
       return this.tooltip_filtrar_visible;
     }
 
-    eliminarFiltro(){
-
-      console.log(angular.equals({},this.obj_vista_modelo.filtro_aplicado))
+    
+    //desde_frontend@boolean > TRUE: cuando el filtro se elimina desde el frontend con el boton "quitar filtro"
+    //                       > FALSE: cuando se llama desde el propio controlador (al guardar datos, al recargar la vista, etc)
+    eliminarFiltro( desde_frontend = false){
 
       //let filtro_actual = this.obj_vista_modelo.filtro_aplicado
 
       this.obj_vista_modelo.filtro_aplicado = {};
       this.tooltip_filtrar_visible = false;
-      this._cargarDatosVista( false );
+      if(desde_frontend){ this._cargarDatosVista( true )}
 
       //this.esVisible();
 
@@ -719,19 +743,14 @@
       let carga_masiva_db = [];
       let CLASE = this;
 
+      this.eliminarFiltro();
+      
       if(desde_db){
-
-        console.log(this.obj_vista_modelo.cabecera.id_proceso_masivo)
-
         let proceso_masivo_lotes_promise = this._procesosMasivosService.obtenerProcesosMasivosLotes(  this.obj_vista_modelo.cabecera.id_proceso_masivo )
-
-        //console.log(rta)
-
         proceso_masivo_lotes_promise.then(
           (proceso_masivo_lotes) => _actualizarVista( proceso_masivo_lotes,  CLASE ),
           (err) => console.log(err)
         );
-
       }else if(this.dataset.cabecera.id_proceso_masivo > 0){
         _actualizarVista(this.dataset, this)
       }
@@ -743,7 +762,7 @@
         //levanto la informacion en la cabecera
         ProcesoCargaMasiva.obj_vista_modelo.cabecera = carga_masiva_lotes.cabecera;
         //levanto la informacion en el detalle
-        ProcesoCargaMasiva.obj_vista_modelo.detalle = carga_masiva_lotes.detalle;
+        ProcesoCargaMasiva.obj_vista_modelo.detalle = angular.copy(carga_masiva_lotes.detalle)//angular.copy(carga_masiva_lotes.detalle)
         //actualizo los calculos de la estadistica
         ProcesoCargaMasiva._actualizarEstadisticas();
         //console.log(ProcesoCargaMasiva.estadisticas)

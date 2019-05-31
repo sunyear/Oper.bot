@@ -170,15 +170,15 @@ md-grid-tile:hover {
 <!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
 
 
-<md-content style="min-height: 120px;">
+<md-content layout-padding style="overflow-y: hidden !important; min-height: 90px;">
 
-<div flex>
+<div flex style="overflow-y: hidden !important" >
 
   
 
 
   <div layout="row" layout-align="end center" flex="100">  
-    <md-button class="md-primary md-raised md-small" ng-click="vm.crearProcesoMasivo({}, $event)">nuevo</md-button>
+    <md-button class="md-primary md-raised md-small" ng-click="vm.crearProcesoMasivo({}, $event)">crear</md-button>
   </div>
   <div layout="row" flex="100" style="height: 40px; min-height: 40px; border: solid 0px blue">
    
@@ -243,11 +243,12 @@ md-grid-tile:hover {
       </md-input-container>
     <div flex="30"></div>
     <div layout="row" flex="30" style="padding:5px; width: auto !important; border: solid 1px #eee;">
-      <input type="text" ng-model="vm.dataset.texto_buscado" style="width: 95%; height: 25px !important; border: solid 0px red; padding-left:5px;" ng-model-options="{updateOn : 'change blur'}" ng-change="vm.buscarProcesoMasivo()" placeholder="[l: lote] [r: remito] [t: tipo]">
+      <input type="text" ng-model="vm.texto_buscado" style="width: 95%; height: 25px !important; border: solid 0px red; padding-left:5px;" ng-model-options="{updateOn : 'change blur'}" ng-change="vm.buscarProcesoMasivo()" placeholder="[l: lote] [r: remito] [t: tipo]">
       <md-icon class="material-icons md-24 toolbar-gray" ng-click="vm.buscarProcesoMasivo()" >search</md-icon>
     </div> 
   </div>
 </div>
+
 </md-content>
 
 <md-content>
@@ -319,7 +320,7 @@ md-grid-tile:hover {
   </div> <!-- FIN GRID -->
   <div ng-if="vm.dataset.length == 0" style="padding: 5px;">
           <p style="font-style: italic;">No se encontraron resultados</p>
-          <span class="msj_no_encontrado" ng-click="vm.buscarProcesoMasivo()">Volver al listado</span>
+          <span ng-show="vm.texto_buscado !== ''" class="msj_no_encontrado" ng-click="vm.buscarProcesoMasivo( true )">Volver al listado</span>
           
         </div>
 </md-content>

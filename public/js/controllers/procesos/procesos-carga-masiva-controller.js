@@ -13,7 +13,7 @@
 
         this.dataset = data;
 
-        this.dataset.texto_buscado = '';
+        this.texto_buscado = '';
 
         this.menu_visible = -1;
 
@@ -77,7 +77,8 @@
             fecha_proceso: {
               anio: new Date().getFullYear(),
               mes: (new Date().getMonth() + parseInt(1))
-            }
+            },
+            busq: {}
           }
 
           this._activate();
@@ -95,7 +96,7 @@
     verDetalles( fila_proceso_masivo, e ){
       
       
-      const form_data = {idProcesoMasivo: fila_proceso_masivo.id_proceso_masivo};
+      const form_data = {idProcesoMasivo: fila_proceso_masivo.id_proceso_masivo, filtro: ''};
 
             const plantilla_url = './views/procesos/procesos-carga-masiva-modal-template.html',
             controlador_plantilla = 'ProcesosCargaMasivaControllerForm as vm';
@@ -275,16 +276,15 @@
     };
 
 
-    buscarProcesoMasivo(){
-    
-
-    if(typeof(this.dataset.texto_buscado) !== 'undefined' && this.dataset.texto_buscado.length > 0){
-      this._cargarProcesosMasivos( this.dataset.texto_buscado )
-    }else{
-      this._cargarProcesosMasivos(  )
-    }
-  
-
+    //recargar_vista@boolean > FALSE: cuando se llama desde la vista (btn "volver al listado")
+    //                       > TRUE: cuando  se llama desde el buscador
+    buscarProcesoMasivo( recargar_vista = false ){
+      if(recargar_vista){
+        this.texto_buscado = '';
+        this._cargarProcesosMasivos( this.filtros_procesos_masivos.fecha_proceso )
+      }else{
+        this._cargarProcesosMasivos( this.texto_buscado )
+      }
     };
 
     filtrarProcesosMasivos(  ){
@@ -313,6 +313,10 @@
       
         //if(typeof(this.dataset) === 'undefined'){
           console.log(busq)
+
+          if(busq === ''){
+            this.filtros_procesos_masivos.busq = busq;
+          }
 
           this._procesosMasivosService.obtenerProcesosMasivos( busq )
             .then(

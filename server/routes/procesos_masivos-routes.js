@@ -163,7 +163,7 @@ module.exports = {
 
 		var exito = false;
 		results = [];
-		//console.log(req.body.cabecera)
+		
 		//var id_proceso_masivo = req.body.cabecera.id_proceso_masivo;
 
 		const obj_cabecera = req.body.cabecera;
@@ -189,6 +189,8 @@ module.exports = {
 		//console.log(obj_detalle)
 
 		//var las = 
+
+		console.log(data_cab.fecha_proceso, obj_cabecera.fecha_proceso)
 
 		return (guardarDatos( res, data_cab ));
 
