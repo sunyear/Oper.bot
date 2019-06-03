@@ -304,6 +304,10 @@
 
       //this._cargarProcesosMasivos();
 
+      var obj_fecha_hora = new Date( );
+      var fecha_actual = obj_fecha_hora.toLocaleDateString() + ' ' + obj_fecha_hora.toLocaleTimeString();
+      console.log(obj_fecha_hora)
+
     }
 
 

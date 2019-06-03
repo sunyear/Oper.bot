@@ -3,7 +3,7 @@
 
   class ProcesosCargaMasivaControllerForm {
 
-    constructor( $state, procesosMasivosService, $mdToast, $mdMenu, $mdDialog, $filter, $scope, $document, data) {
+    constructor( $state, procesosMasivosService, $mdToast, $mdMenu, $mdDialog, $filter, $scope, $document, moment, data) {
 
         this._procesosMasivosService = procesosMasivosService;
         this._$mdDialog = $mdDialog;
@@ -12,6 +12,7 @@
         this._$toast = $mdToast;
         this._$document = $document;
         this._$scope = $scope;
+        this.moment = moment;
        
 
 
@@ -182,17 +183,14 @@
 
         this.obj_vista_modelo.cabecera.uid = (this.obj_vista_modelo.cabecera.id_proceso_masivo === 0)?'I': 'U';
 
-        console.log(this.obj_vista_modelo.cabecera.id_proceso_masivo)
+        
         if(this.obj_vista_modelo.cabecera.id_proceso_masivo === 0){
-          this.obj_vista_modelo.cabecera.fecha_proceso = this._$filter('date')(this.obj_vista_modelo.cabecera.fecha_proceso, 'yyyy/MM/dd')+ ' ' + this._$filter('date')(( new Date() ).getTime(), 'HH:mm:ss')
+          //this.obj_vista_modelo.cabecera.fecha_proceso = this._$filter('date')(this.obj_vista_modelo.cabecera.fecha_proceso, 'yyyy/MM/dd')+ ' ' + this._$filter('date')(( new Date() ).getTime(), 'HH:mm:ss')
         }
-        //this.obj_vista_modelo.cabecera.fecha_proceso = this._$filter('date')(this.obj_vista_modelo.cabecera.fecha_proceso, 'yyyy/MM/dd')
+        
+        this.obj_vista_modelo.cabecera.fecha_proceso = moment(moment(this.obj_vista_modelo.cabecera.fecha_proceso).toDate()).format('YYYY-MM-DD'); 
        
-        console.log(this.obj_vista_modelo.cabecera.fecha_proceso)
-
         let rta = this._procesosMasivosService.guardarProcesoMasivo( this.obj_vista_modelo )
-
-        //console.log(rta)
 
         rta.then(
           (proceso_masivo) => __actualizarVista( this, proceso_masivo.id_proceso_masivo ),
@@ -231,9 +229,6 @@
           //const carga_desde_db = true;
           //CLASE.eliminarFiltro(false);
           //CLASE._cargarDatosVista( carga_desde_db );
-
-         
-
         };
 
       }//FIN IF
@@ -729,6 +724,8 @@
 
     activate( ){
 
+
+
       this._cargarDatosVista( false );
 
     };
@@ -863,7 +860,7 @@
     
   }; //FIN CLASE
 
-  ProcesosCargaMasivaControllerForm.$inject = ['$state', 'procesosMasivosService', '$mdToast', '$mdMenu', '$mdDialog', '$filter', '$scope', '$document', 'data'];
+  ProcesosCargaMasivaControllerForm.$inject = ['$state', 'procesosMasivosService', '$mdToast', '$mdMenu', '$mdDialog', '$filter', '$scope', '$document', 'moment', 'data'];
   angular
     .module('lotes.lote')
     .controller('ProcesosCargaMasivaControllerForm', ProcesosCargaMasivaControllerForm);

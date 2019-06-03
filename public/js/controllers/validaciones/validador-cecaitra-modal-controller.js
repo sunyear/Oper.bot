@@ -14,7 +14,7 @@
                 $scope.resultados = resultados
 
                 $scope.btn_modal = {
-                    txt_button: ($scope.resultados.flg_rechazo)?'RECHAZAR LOTE':'ACEPTARR',
+                    txt_button: ($scope.resultados.flg_rechazo)?'RECHAZAR LOTE':'ACEPTAR',
                     css_style: ($scope.resultados.flg_rechazo)?'md-warn md-raised':'md-primary md-raised'
                 };
 
