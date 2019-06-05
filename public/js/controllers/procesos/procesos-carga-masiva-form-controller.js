@@ -190,6 +190,8 @@
         
         this.obj_vista_modelo.cabecera.fecha_proceso = moment(moment(this.obj_vista_modelo.cabecera.fecha_proceso).toDate()).format('YYYY-MM-DD'); 
        
+        
+        //console.log(this.obj_vista_modelo.detalle)
         let rta = this._procesosMasivosService.guardarProcesoMasivo( this.obj_vista_modelo )
 
         rta.then(
@@ -296,7 +298,7 @@
       Funcion que se utiliza para cargar una fila de detalle a)leyendo un CSV / b)completando manualmente los campos
       Los datos que se recuperan desde el backend no pasan por esta funcion. En cambio, mirar el metodo privado _cargarDatosVista
     */
-    crearLote( item, es_carga_manual ){
+    _crearLote( item, es_carga_manual ){
 
       var txt_nuevo = '';
 
@@ -323,6 +325,7 @@
       var index =  this.obj_vista_modelo.detalle.length-1; // SE USA CON PUSH
 
       if( typeof(item) === 'object'){
+        console.log(this.obj_vista_modelo.detalle)
         this.obj_vista_modelo.detalle[0].uid = 'I';
         this.obj_vista_modelo.detalle[0].id_proceso_masivo_detalle = 0;
         this.obj_vista_modelo.detalle[0].remito = item.remito;
@@ -339,8 +342,49 @@
       if(es_carga_manual){
         this.editarItem(index, true)
       }else{
-        this.actualizarItem( es_carga_manual, index );
+        console.log(this.obj_vista_modelo.detalle)
+        //this.actualizarItem( es_carga_manual, index );
       }
+    };
+
+
+     crearLote( item, es_carga_manual ){
+
+      if( typeof(item) === 'object'){
+
+        let item_data = {
+          uid: 'I',
+          id_proceso_masivo_detalle: 0,
+          remito: item.remito,
+          lote: item.lote,
+          actas: item.actas,
+          notificada: item.notificada,
+          zona: item.zona,
+          id_tipo_envio: item.id_tipo_envio,
+          id_estado_proceso: 0, //0 es pendiente
+          id_estado_email: 0, //0 es pendiente
+          nota: {
+            texto: '',
+            editar: false
+          },
+          colr_rech: false,
+          colr_proc: false, 
+          colr_email: false,
+          indice_no_notificada: Math.round(item.indice_no_notificada),
+        }
+        
+        this.obj_vista_modelo.detalle.splice(0,0,item_data); //SE INSERTA EL REGISTRO AL INICIO DE LA COLECCION
+
+        //es_carga_manual@boolean
+        //se utiliza para determinar si la fila se carga leyendo el CSV (FALSE) o completando manualmente los campos (TRUE)        
+        if(es_carga_manual){
+          var index =  this.obj_vista_modelo.detalle.length-1;
+          this.editarItem(index, true)
+        }
+
+        this._actualizarEstadisticas();
+      }
+
     };
 
 
@@ -380,8 +424,8 @@
     Input: 
           > es_carga_manual@boolean:  falso = se carga desde forumulario; verdadero = se carga desde archivo csv
           > index@numeric: es el indice correspondiente a la lista de lotes del proceso masivo (para saber que item del listado estoy modificando)
-                           -1: cuando se invoca desdde la vista
-                           mayor -1: cuando se invoca desde el metodo crearLote()
+                           index = -1: cuando se invoca desdde la vista
+                           index > -1: cuando se invoca desde el metodo crearLote()
     */
     actualizarItem( es_carga_manual, index ){
       //console.log(this.obj_vista_modelo.detalle)

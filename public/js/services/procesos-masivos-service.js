@@ -184,7 +184,7 @@
                                             tipo_proceso: null
                                         },
 
-                                        obj_det = {
+                                        obj_det = {                                            
                                             id_proceso_masivo_detalle: null,
                                             actas: null,
                                             lote: null,
