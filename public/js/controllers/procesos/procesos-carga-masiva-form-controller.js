@@ -347,7 +347,10 @@
       }
     };
 
-
+    /*
+      Funcion que se utiliza para cargar una fila de detalle a)leyendo un CSV / b)completando manualmente los campos
+      Los datos que se recuperan desde el backend no pasan por esta funcion. En cambio, mirar el metodo privado _cargarDatosVista
+    */
      crearLote( item, es_carga_manual ){
 
       if( typeof(item) === 'object'){
@@ -639,46 +642,9 @@
 
     filtrarDetalle( tipo_filtro ){
 
-      //this.filtros[tipo_filtro.activo = true;
-      //tipo_filtro.activo = true;
-      //console.log(this.dataset.detalle, tipo_filtro.expresion)
-      //this.obj_vista_modelo.detalle = angular.copy(this.dataset.detalle)
-      
-      //this.obj_vista_modelo.detalle = this._$filter('filter')(this.dataset.detalle,  tipo_filtro.expresion)
       this.obj_vista_modelo.detalle = this._$filter('filter')(this.obj_vista_modelo.detalle,  tipo_filtro.expresion)
       this.obj_vista_modelo.filtro_aplicado =  tipo_filtro;
       this.tooltip_filtrar_visible = true;
-
-      console.log(this._$filter('filter'))
-
-      //this.tooltip_filtrar_visible = true;
-
-     //console.log(this.dataset.detalle)
-     /*
-      switch ( tipo_filtro.texto ){
-        case 1: //NORTE
-            this.obj_vista_modelo.detalle = this._$filter('filter')(this.obj_vista_modelo.detalle, {zona: 'NORTE'})
-          break;
-        case 2: //SUR
-            this.obj_vista_modelo.detalle = this._$filter('filter')(this.obj_vista_modelo.detalle, {zona: 'SUR'})
-          break;
-        case 3: //TODOS
-            this.obj_vista_modelo.detalle = this._cargarDatosVista( true );
-          break;
-        case 4: //NO-NOTIFICADAS
-            this.obj_vista_modelo.detalle = this._$filter('filter')(this.dataset.detalle,  tipo_filtro.expresion)
-          break;
-        case 5: //CALIDAD
-            this.obj_vista_modelo.detalle = this._$filter('filter')(this.dataset.detalle, {id_tipo_envio: 2})
-          break;
-        case 6: //ACEPTAR
-            this.obj_vista_modelo.detalle = this._$filter('filter')(this.dataset.detalle, {id_tipo_envio: 1})
-          break;
-
-      };
-      */
-
-      //this.obj_vista_modelo.detalle = angular.copy(this.dataset.detalle)
 
     };
 
