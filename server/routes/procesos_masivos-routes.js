@@ -17,6 +17,7 @@ VISTAS:
 =================================================================*/
 
 var pg = require('pg');
+const sql = require('sql');
 
 var database = require('../config/database.js');
 var conString = database.conString;
@@ -194,17 +195,6 @@ module.exports = {
 
 		return (guardarDatos( res, data_cab ));
 
-		/*
-		return new Promise(
-			function(resolve, reject){
-		   		return resolve(insertarCabecera( res, data_cab ))
-			}
-		);
-		*/
-
-		
-
-
 		//OPERACIONES CABECERA INSERT/UPDATE/DELETE
 		function guardarDatos( res, data_cab ){
 
@@ -303,8 +293,109 @@ module.exports = {
 
 		//OPERACIONES DETALLE INSERT/UPDATE/DELETE
 		function guardarDatosDetalles( id_proceso_masivo ){
-			
-			if( id_proceso_masivo > 0){
+			let data_det = {};
+			let tblProcesosDetalles = sql.define({
+			  name: 'procesos_masivos_detalles',
+			  columns: [
+			    'numero_remito',
+			    'numero_lote',
+			    'cantidad_actas',
+			    'notificada',
+			    'zona',
+			    'id_tipo_envio',
+			    'id_estado_envio',
+			    'email_enviado',
+			    'id_proceso_masivo',
+			    'nota',
+			    'id_proceso_masivo_detalle'
+			  ]
+			});
+
+			let arr_obj_insert = [];
+			let arr_obj_update = [];
+			let arr_obj_delete = [];
+			let query = {};
+			let query_res;
+
+			for(var i=0; i<obj_detalle.length; i++){
+
+					//const id_proceso_masivo = res.id_proceso_masivo;
+
+					if(obj_detalle[i].hasOwnProperty('uid')){
+
+						let nota_texto = (obj_detalle[i].nota.texto == "''")?'':obj_detalle[i].nota.texto;
+
+						let colr_proc = false;
+
+						if(obj_detalle[i].colr_rech){
+							colr_proc = -1;
+						}else if(obj_detalle[i].colr_proc){
+							colr_proc = 1;
+						}else{
+							colr_proc = 0;
+						}
+
+						data_det = {
+								'id_proceso_masivo': id_proceso_masivo,
+								//'id_proceso_masivo_detalle': obj_detalle[i].id_proceso_masivo_detalle,
+								'numero_remito': obj_detalle[i].remito,
+							    'numero_lote': obj_detalle[i].lote,
+							    'cantidad_actas': obj_detalle[i].actas,
+							    'notificada': obj_detalle[i].notificada,
+							    'zona': obj_detalle[i].zona,
+							    'id_tipo_envio': obj_detalle[i].id_tipo_envio,
+							    'id_estado_envio': colr_proc,
+							    'email_enviado': (obj_detalle[i].colr_email)?1:0,
+							    'nota': obj_detalle[i].nota.texto
+							};
+
+						switch (obj_detalle[i].uid){
+
+							case 'I': //INSERT
+								arr_obj_insert.push(data_det);
+							break;
+							case 'U': //UPDATE
+									data_det.id_proceso_masivo_detalle = obj_detalle[i].id_proceso_masivo_detalle;
+									arr_obj_update.push(data_det);
+							break;
+							case 'D': //DELETE
+									//query = query_template.delete;
+							break;
+
+						}
+
+						
+					}
+				} // FIN FOR
+
+				pg.connect(conString, function(err, client, done) {
+					
+					if( arr_obj_insert.length > 0){
+						console.log(arr_obj_insert)
+	   					query = tblProcesosDetalles.insert(arr_obj_insert).returning(tblProcesosDetalles.id_proceso_masivo).toQuery();
+	   					query_res = client.query(query);
+		   				query_res.on('row', function(row) {
+				      		results.push(row);
+						});
+	   				}else if(arr_obj_update.length > 0){
+
+	   					for(var index=0; index<arr_obj_update.length; index++){
+							query = tblProcesosDetalles.update(arr_obj_update[index]).where(tblProcesosDetalles.id_proceso_masivo.equals(arr_obj_update[index].id_proceso_masivo), tblProcesosDetalles.id_proceso_masivo_detalle.equals(arr_obj_update[index].id_proceso_masivo_detalle)).toQuery();
+		   					query_res = client.query(query);
+			   				query_res.on('row', function(row) {
+					      		results.push(row);
+							});
+		   				}
+
+	   				}
+	   								
+					query_res.on('end', function( result_query) {	 	
+				 		client.end();								 	
+				 		//return res.json(results)
+					});
+	   			});
+				
+			if( id_proceso_masivo > 999999999){
 				let query_res = {};
 				
 				//console.log(obj_detalle.length)
