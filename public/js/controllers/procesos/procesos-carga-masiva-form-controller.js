@@ -202,13 +202,7 @@
         function __actualizarVista( CLASE, id_proceso_masivo ){
           
           if(id_proceso_masivo > 0){
-            CLASE._$toast.show({
-              hideDelay   : 2000,
-              position    : 'bottom right',
-              parent: CLASE._$document[0].querySelector('#toastContainer'),
-              //controller  : 'ToastCtrl',
-              templateUrl : './views/procesos/datos_guardados_template.html'
-            });
+            
 
             
              CLASE._$state.go('procesos.carga-masiva-lotes',{idProcesoMasivo: id_proceso_masivo, filtro: ''},{
@@ -221,16 +215,16 @@
                 // inherit the current params on the url
                 inherit:true
             });
-
             CLASE.obj_vista_modelo.cabecera.id_proceso_masivo = id_proceso_masivo;
+            CLASE._$toast.show({
+              hideDelay   : 2000,
+              position    : 'bottom right',
+              parent: CLASE._$document[0].querySelector('#toastContainer'),
+              //controller  : 'ToastCtrl',
+              templateUrl : './views/procesos/datos_guardados_template.html'
+            });
             CLASE._cargarDatosVista( true );
           }
-
-          //CLASE.id_carga_masiva_actual = id_proceso_masivo;
-         // CLASE.obj_vista_modelo.cabecera.id_proceso_masivo = id_proceso_masivo;
-          //const carga_desde_db = true;
-          //CLASE.eliminarFiltro(false);
-          //CLASE._cargarDatosVista( carga_desde_db );
         };
 
       }//FIN IF

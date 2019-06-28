@@ -359,7 +359,7 @@ module.exports = {
 									arr_obj_update.push(data_det);
 							break;
 							case 'D': //DELETE
-									//query = query_template.delete;
+									arr_obj_delete.push({'id_proceso_masivo':id_proceso_masivo, 'id_proceso_masivo_detalle': obj_detalle[i].id_proceso_masivo_detalle});
 							break;
 
 						}
@@ -371,22 +371,37 @@ module.exports = {
 				pg.connect(conString, function(err, client, done) {
 					
 					if( arr_obj_insert.length > 0){
-						console.log(arr_obj_insert)
+						//console.log(arr_obj_insert)
 	   					query = tblProcesosDetalles.insert(arr_obj_insert).returning(tblProcesosDetalles.id_proceso_masivo).toQuery();
 	   					query_res = client.query(query);
 		   				query_res.on('row', function(row) {
 				      		results.push(row);
 						});
-	   				}else if(arr_obj_update.length > 0){
+					}
 
-	   					for(var index=0; index<arr_obj_update.length; index++){
-							query = tblProcesosDetalles.update(arr_obj_update[index]).where(tblProcesosDetalles.id_proceso_masivo.equals(arr_obj_update[index].id_proceso_masivo), tblProcesosDetalles.id_proceso_masivo_detalle.equals(arr_obj_update[index].id_proceso_masivo_detalle)).toQuery();
+	   				if(arr_obj_update.length > 0){
+
+	   					for(var index_u=0; index_u<arr_obj_update.length; index_u++){
+							query = tblProcesosDetalles.update(arr_obj_update[index_u]).where(tblProcesosDetalles.id_proceso_masivo.equals(arr_obj_update[index_u].id_proceso_masivo), tblProcesosDetalles.id_proceso_masivo_detalle.equals(arr_obj_update[index_u].id_proceso_masivo_detalle)).toQuery();
 		   					query_res = client.query(query);
 			   				query_res.on('row', function(row) {
 					      		results.push(row);
 							});
 		   				}
 
+	   				}
+
+	   				if(arr_obj_delete.length > 0){
+	   					//console.log(arr_obj_delete)
+	   					for(var index_d=0; index_d<arr_obj_delete.length; index_d++){
+	   						
+		   					query = tblProcesosDetalles.delete(arr_obj_delete[index_u]).where(tblProcesosDetalles.id_proceso_masivo.equals(arr_obj_delete[index_d].id_proceso_masivo), tblProcesosDetalles.id_proceso_masivo_detalle.equals(arr_obj_delete[index_d].id_proceso_masivo_detalle)).toQuery()
+		   					console.log('ASD',query)
+		   					query_res = client.query(query);
+			   				query_res.on('row', function(row) {
+					      		results.push(row);
+							});
+		   				}
 	   				}
 	   								
 					query_res.on('end', function( result_query) {	 	
