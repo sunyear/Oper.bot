@@ -15,7 +15,6 @@
         this.moment = moment;
        
 
-
         this.obj_vista_modelo = {
           cabecera: {
             uid: '',
@@ -223,6 +222,7 @@
               //controller  : 'ToastCtrl',
               templateUrl : './views/procesos/datos_guardados_template.html'
             });
+
             CLASE._cargarDatosVista( true );
           }
         };
@@ -407,9 +407,15 @@
 
     borrarItem( index, nuevo ){
 
-      this.obj_vista_modelo.detalle[index].uid = 'D'
-    
-      //if(!nuevo) this.cancelarEdicionItem(false, false );
+      if(index > -1){
+        this.obj_vista_modelo.detalle[index].uid = 'D'
+      }else{
+        this.filas_seleccionadas.forEach(
+          function (fila_seleccionada){
+           this.obj_vista_modelo.detalle[fila_seleccionada].uid = 'D'
+          }
+        ,this);
+      };    
 
     };
 
@@ -573,10 +579,22 @@
     */
     cambiarTipoEnvio(event, index, id_tipo_envio){
 
-      this.obj_vista_modelo.detalle[index].uid = 'U';
-      this.obj_vista_modelo.detalle[index].id_tipo_envio = id_tipo_envio;
-      this._actualizarEstadisticas();
+      if(index > -1){
+        this.obj_vista_modelo.detalle[index].uid = 'U';
+        this.obj_vista_modelo.detalle[index].id_tipo_envio = id_tipo_envio;
+      }else{
+        this.filas_seleccionadas.forEach(
+          function (fila_seleccionada){
 
+          this.obj_vista_modelo.detalle[fila_seleccionada].uid = 'U';
+          this.obj_vista_modelo.detalle[fila_seleccionada].id_tipo_envio = id_tipo_envio;
+          //console.log(this)
+          
+          }
+        ,this);
+      };
+      
+      this._actualizarEstadisticas();
     };
 
 
@@ -716,6 +734,91 @@
 
     };
 
+
+    hayFilaSeleccionada( deep ){
+
+      let hay_fila_seleccionada = false
+
+      if(deep){
+        hay_fila_seleccionada = (this.filas_seleccionadas.length === 1)?false:true;
+      }else{
+        hay_fila_seleccionada = (this.filas_seleccionadas.length > 0)?true:false;        
+      }
+
+      return ( hay_fila_seleccionada );
+    };
+
+
+    todosSeleccionados(){
+
+      //console.log(this.caso_reproducciones.length)
+
+      let b = false;
+
+      if(this.filas_seleccionadas.length === 0){
+        return b;
+      }else{
+
+        if(this.filas_seleccionadas.length === this.obj_vista_modelo.detalle.length){
+          b = true;
+        }
+      }
+
+      return b;
+    };
+
+
+    isIndeterminate(){
+
+      return ( (this.filas_seleccionadas.length > 0 && !this.todosSeleccionados()) )
+
+    };
+
+
+    seleccionarTodo(){
+
+      let filas_tmp = [];
+      
+      if(this.filas_seleccionadas.length === 0 || this.isIndeterminate()){
+
+        angular.forEach(this.obj_vista_modelo.detalle, function(value, index){
+          filas_tmp.push(index)
+        })
+        this.filas_seleccionadas = angular.extend(filas_tmp);
+
+      }else{
+        this.filas_seleccionadas = [];
+      }
+
+      //console.log(ll)
+
+    };
+
+
+    seleccionarLote( list_item, event ){
+
+      let list_item_index = list_item.$index;
+     
+      let index_find = this.filas_seleccionadas.indexOf(list_item_index);
+      if(index_find === -1){
+        this.filas_seleccionadas.push(list_item_index);  
+      }else{
+        this.filas_seleccionadas.splice(index_find, 1);
+      }
+
+      event.stopPropagation();
+
+    };
+
+    esFilaSeleccionada( list_item ){
+
+      let list_item_index = list_item.$index;
+      let index_find = this.filas_seleccionadas.indexOf(list_item_index);
+
+      return ( (index_find > -1)?true:false )
+
+    };
+
     //FIN METODOS PUBLICOS
 
 
@@ -744,6 +847,7 @@
       let carga_masiva_db = [];
       let CLASE = this;
 
+      this.filas_seleccionadas = []; //quito la seleccion de todas las filas.
       this.eliminarFiltro();
       
       if(desde_db){

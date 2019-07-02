@@ -454,489 +454,500 @@ md-input-container.lll .md-input{
 
   }
 
+
+  md-checkbox .md-icon {
+  transform: scale(.7);
+}
+
+md-checkbox {padding: 0px !important; margin: 0px !important;}
+  
+<<<<<<< HEAD
+  .md-label {
+    margin-left: 5px !important;
+  }
+}
+=======
+            <md-card flex="100">
+>>>>>>> 9b62fb1d547d16565bb174e121f5f39caafaa9fa
+
+md-checkbox.md-checked.red .md-icon {
+ background-color: rgb(0, 0, 0);
+ border-color: rgb(0, 0, 0);
+}
+
+
+
+md-checkbox.dotted .md-icon {
+ border-width: 1px;
+ border-style: solid;
+ border-color: lightgray;
+}
+
+md-checkbox .md-container:after {box-sizing: border-box;
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
 </style>         
 
 
 <!-- CONTENIDO DEL TEMPLATE ////////////////////////////////// -->
-    <md-content id="contenedor">
-          
-  
-            <md-card flex>
+    <md-content id="contenedor" style="height: 100% !important; ">
 
-              
+      <div layout="column">
 
+        <div flex="100" layout="row"> <!-- barra de herramientas superior-->
+          <div layout="row" flex="50">
+            <md-button class="md-icon-button" ng-click="vm.cancelarDialogo()">
+              <md-icon class="material-icons md-24 red">arrow_back</md-icon>
+            </md-button>
 
-              <md-card-content style="padding: 0 !important">
-                <div layout="row" flex style="">
-                    <md-button class="md-icon-button" ng-click="vm.cancelarDialogo()">
-                      
-                      <md-icon class="material-icons md-24 red">arrow_back</md-icon>
-                    </md-button>
+            <md-button class="md-icon-button" ng-click="vm.recargarVista()">
+              <md-icon class="material-icons md-24 gray">refresh</md-icon>
+            </md-button>
+          </div>
+          <div layout="row" layout-align="end center" flex="50">
+            <md-button class="md-icon-button" ng-click="vm.guardar( )">
+              <md-icon class="material-icons md-24" style="color: #303F9F">save</md-icon>
+            </md-button>
+          </div>
+        </div>
 
-                    <md-button class="md-icon-button" ng-click="vm.recargarVista()">
-                      <md-icon class="material-icons md-24 gray">refresh</md-icon>
-                    </md-button>
-            
-           
-                    <div layout="row" layout-align="end center" flex>
-             
-                      <md-button class="md-icon-button" ng-click="vm.guardar( )">
-                        <md-icon class="material-icons md-24" style="color: #303F9F">save</md-icon>
+        <div flex="100" layout="row"> <!-- combos fecha y tipo -->
+          <md-card flex="100"> 
+            <md-card-content style="padding: 0 !important" flex="nogrow">
+              <div flex="100" layout="row" style="padding: 0 10px 0 10px;border: solid 0px red"  layout-align="center center"> 
+                <div layout="row" flex="50" style="border: solid 0px blue">
+                  <md-input-container class="md-block" flex-gt-sm style="">
+                    <label style="font-size: 16px !important; color: gray; font-weight: 600;">Fecha</label>
+                    <md-datepicker ng-model="vm.obj_vista_modelo.cabecera.fecha_proceso"></md-datepicker>
+                  </md-input-container>
+                </div>
+                <div layout="row" flex="50" style="border: solid 0px red">
+                  <md-input-container class="md-block" flex-gt-sm style="">
+                    <label style="font-size: 16px !important; color: gray; font-weight: 600;">Tipo</label>
+                    <md-select ng-model="vm.obj_vista_modelo.cabecera.tipo_proceso">
+                      <md-option value="CARGA MASIVA">
+                        Carga masiva
+                      </md-option>
+                      <md-option value="REPROCESO">
+                        Reproceso
+                      </md-option>
+                    </md-select>
+                  </md-input-container>
+                </div>
+              </div>
+            </md-card-content>
+          </md-card> 
+        </div>
+
+        <div flex="100" layout="column"> <!-- LISTADO-->
+          <md-card flex="100" style="border: red solid 0px; height: 100% !important"> <!-- LISTADO -->
+            <md-card-content style="padding: 0 !important; height: 100% !important" flex="100">
+              <div ng-if="vm.tooltip_filtrar_visible" style="" layout="row" flex="100" layout-aling="center center">                      
+                <div flex style="background-color: none; font-size: 12px;">
+                  Filtros aplicados: {{vm.obj_vista_modelo.filtro_aplicado.texto}}
+                  <span style="text-decoration: underline; color: blue; font-size: 12px; cursor: pointer" ng-click="vm.eliminarFiltro( true )">quitar filtro</span>
+                </div>
+                <div style="background-color: none">
+                  <md-icon ng-if="false" style="line-height: 16px !important; min-height: 16px !important; min-width: 16px !important; width: 16px !important; height: 16px !important; margin-left: 5px" class="material-icons md-16 md-light" ng-click="vm.eliminarFiltro()">cancel</md-icon>
+                </div>
+              </div>
+
+              <md-toolbar style="min-height: 36px;">
+                <div  class="md-toolbar-tools md-toolbar-tools-card" layout="row" layout-fill>
+                  <div layout="row" flex="grow" class="card-header-toolbar" style="border: 0px solid red">
+                    <div layout="row" flex="grow" class="card-header-toolbar">
+                      <md-checkbox class="red md-checkbox-small dotted" ng-click="vm.seleccionarTodo(this, $event)" ng-checked="vm.todosSeleccionados()" md-indeterminate="vm.isIndeterminate()"></md-checkbox>
+                      <span md-truncate flex>Remito</span>  
+                    </div>
+                    <div layout="row" flex="grow" class="card-header-toolbar">
+                      <span md-truncate flex>Lote</span>
+                    </div>
+                    <div layout="row" flex="grow" class="card-header-toolbar">
+                      <span md-truncate flex>Actas</span>  
+                    </div>
+                    <div layout="row" flex="grow" class="card-header-toolbar">
+                      <span md-truncate flex>Notif</span>  
+                    </div>
+                    <div layout="row" flex="grow" class="card-header-toolbar">
+                      <span md-truncate flex>Zona</span>  
+                    </div>
+                  </div>
+                  <div class="menu-demo-container" layout="row">
+                    <md-menu ng-if="!vm.lotes_remitos[0].editar" md-position-mode="target-right target">
+                      <md-button  class="md-icon-button toolbar-gray">
+                        <md-icon class="material-icons md-16" ng-class="{'toolbar-gray': !vm.esVisible(), orange600: vm.esVisible()}" ng-click="vm.openMenu($mdMenu, $event)">filter_list</md-icon>
                       </md-button>
-              
-                    </div>
-                  </div>
-                  <div flex="100" layout="row" style="padding: 0 10px 0 10px;border: solid 0px red"  layout-align="center center">
-
-                    <div layout="row" flex="50" style="border: solid 0px blue">
-                    <md-input-container class="md-block" flex-gt-sm style="">
-                      <label style="font-size: 16px !important; color: gray; font-weight: 600;">Fecha</label>
-                      <md-datepicker ng-model="vm.obj_vista_modelo.cabecera.fecha_proceso"></md-datepicker>
-                    </md-input-container>
-                  </div>
-                    <div layout="row" flex="50" style="border: solid 0px red">
-                      <md-input-container class="md-block" flex-gt-sm style="">
-                        <label style="font-size: 16px !important; color: gray; font-weight: 600;">Tipo</label>
-                        <md-select ng-model="vm.obj_vista_modelo.cabecera.tipo_proceso">
-                          <md-option value="CARGA MASIVA">
-                            Carga masiva
-                          </md-option>
-                          <md-option value="REPROCESO">
-                            Reproceso
-                          </md-option>
-                        </md-select>
-                      </md-input-container>
-                  </div>
-                  
-                </div>
-
-                
-
-                <!-- COMPONENTE REMITOS/LOTES -->
-                <div layout="column" flex>
-                    <md-card flex="100" >
-                      <div ng-if="vm.tooltip_filtrar_visible" style="" layout="row" flex="100" layout-aling="center center">
-                                      
-                    <div flex style="background-color: none; font-size: 12px;">
-                      Filtros aplicados: {{vm.obj_vista_modelo.filtro_aplicado.texto}}
-                      <span style="text-decoration: underline; color: blue; font-size: 12px; cursor: pointer" ng-click="vm.eliminarFiltro( true )">quitar filtro</span>
-                    </div>
-                    <div style="background-color: none">
-                      
-                      <md-icon ng-if="false" style="line-height: 16px !important; min-height: 16px !important; min-width: 16px !important; width: 16px !important; height: 16px !important; margin-left: 5px" class="material-icons md-16 md-light" ng-click="vm.eliminarFiltro()">cancel</md-icon>
-                    </div>
-                  
-                </div>
-
-                      <md-toolbar style="min-height: 36px;">
-
-                        <div  class="md-toolbar-tools md-toolbar-tools-card" layout="row" layout-fill>
-                                      
-                            <div layout="row" flex="grow" class="card-header-toolbar" style="border: 0px solid red">
-                                <div layout="row" flex="grow" class="card-header-toolbar">
-                                  <span md-truncate flex>Remito</span>  
+                      <md-menu-content width="4">
+                        <md-menu-item>
+                          <md-menu style="padding: 0 !important">
+                            <md-menu-item style="">
+                              <md-button ng-click="ctrl.announceClick($index)">
+                                <div layout="row">
+                                  <p flex>Envios</p>
+                                  <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">keyboard_arrow_right</md-icon>
                                 </div>
-                                <div layout="row" flex="grow" class="card-header-toolbar">
-                                  <span md-truncate flex>Lote</span>
-                                </div>
-                                <div layout="row" flex="grow" class="card-header-toolbar">
-                                  <span md-truncate flex>Actas</span>  
-                                </div>
-                                <div layout="row" flex="grow" class="card-header-toolbar">
-                                  <span md-truncate flex>Notif</span>  
-                                </div>
-                                <div layout="row" flex="grow" class="card-header-toolbar">
-                                  <span md-truncate flex>Zona</span>  
-                                </div>
-                            </div>
-
-                            <!--
-                            <div layout="row" class="md-toolbar-tools-card" flex="nogrow" ng-if="!vm.lotes_remitos[0].editar">
-                              <md-button class="md-icon-button md-mini toolbar-gray">
-                                <md-icon class="material-icons md-16 toolbar-gray" ng-click="vm.crearLote()">add</md-icon>
                               </md-button>
-                            </div>
-                            -->
-
-                            <div class="menu-demo-container" layout="row">
-
-                              <md-menu ng-if="!vm.lotes_remitos[0].editar" md-position-mode="target-right target">
-                                <md-button  class="md-icon-button toolbar-gray">
-                                  
-                                  <!--<md-tooltip md-direction="top" md-visible="true">-->
-                                    
-                                  <!--</md-tooltip>-->
-                               
-                                  <md-icon class="material-icons md-16" ng-class="{'toolbar-gray': !vm.esVisible(), orange600: vm.esVisible()}" ng-click="vm.openMenu($mdMenu, $event)">filter_list</md-icon>
-
-                                </md-button>
-
-                                <md-menu-content width="4">
-                                  <md-menu-item>
-
-                                    <md-menu style="padding: 0 !important">
-                                      <md-menu-item style="">
-                                        <md-button ng-click="ctrl.announceClick($index)">
-                                          <div layout="row">
-                                            <p flex>Envios</p>
-                                            <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">keyboard_arrow_right</md-icon>
-                                          </div>
-                                        </md-button>
-                                      </md-menu-item>
-                                      <md-menu-content>
-                                        <md-menu-item>
-                                          <md-button ng-click="vm.filtrarDetalle(vm.filtros.calidad, $event)">
-                                            Filtrar calidad
-                                          </md-button>
-                                        </md-menu-item>
-                                        <md-menu-item>
-                                          <md-button ng-click="vm.filtrarDetalle(vm.filtros.aceptar, $event)">
-                                            Filtrar aceptar
-                                          </md-button>
-                                        </md-menu-item>
-                                      </md-menu-content>
-                                    </md-menu>
-                                  </md-menu-item>
-                                  <md-menu-item>
-
-                                    <md-menu style="padding: 0 !important">
-                                      <md-menu-item style="">
-                                        <md-button ng-click="ctrl.announceClick($index)">
-                                          <div layout="row">
-                                            <p flex>Tipo lote</p>
-                                            <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">keyboard_arrow_right</md-icon>
-                                          </div>
-                                        </md-button>
-                                      </md-menu-item>
-                                      <md-menu-content>
-                                        <md-menu-item>
-                                          <md-button ng-click="vm.filtrarDetalle(vm.filtros.notificada, $event)">
-                                            Notificadas
-                                          </md-button>
-                                        </md-menu-item>
-                                        <md-menu-item>
-                                          <md-button ng-click="vm.filtrarDetalle(vm.filtros.no_notificada, $event)">
-                                            No-notificadas
-                                          </md-button>
-                                        </md-menu-item>
-                                      </md-menu-content>
-                                    </md-menu>
-                                  </md-menu-item>
-
-                                  
-                                  <md-menu-item>
-                                    <md-menu style="padding: 0 !important">
-                                      <md-menu-item style="">
-                                        <md-button ng-click="ctrl.announceClick($index)">
-                                          <div layout="row">
-                                            <p flex>Zona</p>
-                                            <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">keyboard_arrow_right</md-icon>
-                                          </div>
-                                        </md-button>
-                                      </md-menu-item>
-                                      <md-menu-content>
-                                        <md-menu-item>
-                                          <md-button ng-click="vm.filtrarDetalle(vm.filtros.norte, $event)">
-                                            Norte
-                                          </md-button>
-                                        </md-menu-item>
-
-                                        <md-menu-item>
-                                          <md-button ng-click="vm.filtrarDetalle(vm.filtros.sur, $event)">
-                                            Sur
-                                          </md-button>
-                                        </md-menu-item>
-                                      </md-menu-content>
-                                    </md-menu>
-                                  </md-menu-item>
-                                </md-menu-content>
-                              </md-menu>
-
-                                <md-button  class="md-icon-button toolbar-gray">
-                                  <input class="ng-hide" id="input-file-id" name="files[]" multiple type="file" on-read-file="vm.leerCSV( contents )"/>
-                                  
-                                  <!--<input class="ng-hide" type="file" files="files" ng-file-model="files" multiple on-read-file="vm.leerCSV( contents )">-->
-
-                                  <label for="input-file-id" class="material-icons md-16 green_big">playlist_add</label>
-                                </md-button>
-
-                              <md-menu ng-if="!vm.lotes_remitos[0].editar" md-position-mode="target-right target">
-                                <md-button  class="md-icon-button toolbar-gray">
-                                  <md-icon class="material-icons md-16 toolbar-gray" ng-click="vm.openMenu($mdMenu, $event)">add</md-icon>
-                                </md-button>
-                                <md-menu-content width="4">
-                                  <md-menu-item>
-                                    <md-button>
-                                    <input class="ng-hide" id="input-file-id" name="files[]" multiple type="file" on-read-file="vm.leerCSV( contents )"/>
-                                     <label for="input-file-id" class="" style="font-size: 12px !important">Desde CSV</label>
-                                    </md-button>
-                                  </md-menu-item>
-                                  <md-menu-divider></md-menu-divider>
-                                  <md-menu-item>
-                                    <md-button ng-click="vm.crearLote(null, true)">
-                                      Carga manual
-                                    </md-button>
-                                  </md-menu-item>
-                                </md-menu-content>
-                              </md-menu>
-
-
-
-                          </div>
-
-
-                            <div layout="row" class="md-toolbar-tools-card" flex="nogrow" ng-if="vm.lotes_remitos[0].editar">
-                                <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
-                                  <md-icon class="material-icons md-24 green_big" ng-click="vm.actualizarItem(falso, -1)">check_circle</md-icon>
-                                </md-button>
-                                <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
-                                  <md-icon class="material-icons md-24 red" ng-click="vm.cancelarEdicionItem(false, false)">cancel</md-icon>
-                                </md-button>
-                            </div>
-                        </div>
-
-                      </md-toolbar>                    
-                        
-                        <div >
-                        <md-list class="md-dense" style="height: 320px; overflow-y: auto;min-width: 100% !important">
-                          
-                          
-                          <md-list-item  ng-repeat="paso in vm.obj_vista_modelo.detalle track by $index" class="dense-item-list" ng-class="vm.setearCssFila( $index )" ng-if="paso.uid !== 'D'" flex="100">
-
-                          <div  layout="column" flex style="height: auto !important; border-bottom: 0px solid lightgray">
-                            
-                            <div layout="row">
-                             <!-- CAMPOS VISTA -->
-
-
-                              <div ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" style="margin-right:5px" >{{($index + 1) + ' -'}}</div>
-                              <md-icon ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="material-icons md-18 toolbar-gray" style="margin-right:5px" ng-click="vm.borrarItem($index, false)">delete</md-icon>
-                              <md-checkbox style="margin-right:0; margin-left: 0" ng-if="" class="md-primary"></md-checkbox>
-                              
-                              <div ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" style="font-weight: bolder; margin-right: 5px" flex>
-                                <span style="font-size:13px;">{{paso.remito}}</span>
-                              </div>
-
-                              <md-truncate ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" flex>
-                                <span style="font-size:12px">{{paso.lote}}</span>
-                              </md-truncate>
-
-
-                              <md-truncate ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" flex>
-                                <span style="font-size:12px">{{paso.actas}}</span><span ng-show="paso.indice_no_notificada > 0" style="font-size:12px"> ({{paso.indice_no_notificada}}%)</span>
-                              </md-truncate>
-
-
-                              <md-truncate ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" flex>
-                                <span style="font-size:12px">{{paso.notificada}}</span>
-                              </md-truncate>
-
-
-                              <md-truncate ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" flex>
-                                <span style="font-size:12px">{{paso.zona}}</span>
-                              </md-truncate>
-
-
-                              <!-- CAMPOS EDITABLES -->
-
-                              <md-input-container ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="md-block" flex>
-                                 <label ng-if="false" style="font-size: 16px !important; color: gray; font-weight: 600;">Remito</label>
-                                <input md-truncate ng-model="vm.obj_vista_modelo.detalle[$index].remito">
-                              </md-input-container>
-
-                              <md-input-container ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="md-block" flex>
-                                 <label ng-if="false" style="font-size: 16px !important; color: gray; font-weight: 600;">Lote</label>
-                                <input md-truncate ng-model="vm.obj_vista_modelo.detalle[$index].lote">
-                              </md-input-container>
-
-                              <md-input-container ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="md-block" flex>
-                                 <label ng-if="false" style="font-size: 16px !important; color: gray; font-weight: 600;">actas</label>
-                                <input md-truncate ng-model="vm.obj_vista_modelo.detalle[$index].actas">
-                              </md-input-container>
-
-                              <md-input-container ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="md-block" flex>
-                                 <label ng-if="false" style="font-size: 16px !important; color: gray; font-weight: 600;">Notificada</label>
-                                <md-select ng-model="vm.lotes_remitos[0].items[$index].notificada">
-                                  <md-option value="no">
-                                    NO
-                                  </md-option>
-                                  <md-option value="si">
-                                    SI
-                                  </md-option>
-                                </md-select>
-                              </md-input-container>
-
-                              <md-input-container ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="md-block" flex>
-                                 <label ng-if="false" style="font-size: 16px !important; color: gray; font-weight: 600;">Zona</label>
-                                <md-select ng-model="vm.lotes_remitos[0].items[$index].zona">
-                                  <md-option value="norte">
-                                    Norte
-                                  </md-option>
-                                  <md-option value="sur">
-                                    Sur
-                                  </md-option>
-                                </md-select>
-                              </md-input-container>
-                              <!-- FIN CAMPOS EDITABLES -->                
-
-                              <!--
-                              <md-button ng-show="vm.lotes_remitos[0].item_visible == $index && !vm.lotes_remitos[0].editar" class="md-icon-button md-secondary">
-                                <md-icon class="material-icons md-16 toolbar-gray" ng-click="vm.editarItem($index, false)">edit</md-icon>
-                            </md-button>
-
-                          -->
-
-
-                              <!--<div ng-init="colr_rech = false; colr_proc = false; colr_email = false"></div>-->
-
-                              <div ng-if="vm.obj_vista_modelo.detalle[$index].notificada == 'SI'">
-                                <md-icon style="cursor: pointer;" ng-if="!vm.lotes_remitos[0].editar || ($index !== vm.lotes_remitos[0].editar_index)" class="md-menu-origin material-icons md-20" ng-class="{'toolbar-grayActivado': paso.colr_rech, 'toolbar-iconoDesactivado': !paso.colr_rech}" ng-click="vm.rechazoProcesado($index)">cancel</md-icon>
-
-                                <md-icon style="cursor: pointer;" ng-if="!vm.lotes_remitos[0].editar || ($index !== vm.lotes_remitos[0].editar_index)" class="md-menu-origin material-icons md-20" ng-class="{'toolbar-checkActivado': paso.colr_proc, 'toolbar-iconoDesactivado': !paso.colr_proc}" ng-click=" vm.remitoProcesado($index)">check_circle</md-icon>
-                              </div>
-
-                              <div ng-if="vm.obj_vista_modelo.detalle[$index].notificada == 'NO'" style="width: 52px"></div>
-                              
-                              <div>
-                                <md-icon style="cursor: pointer;" ng-if="!vm.lotes_remitos[0].editar || ($index !== vm.lotes_remitos[0].editar_index)" class="md-menu-origin material-icons md-20" ng-class="{'toolbar-mailActivado': paso.colr_email, 'toolbar-iconoDesactivado': !paso.colr_email}" ng-click="vm.emailEnviado($index)">email</md-icon>
-                              </div>
-
-
-                           <md-menu ng-if="!vm.lotes_remitos[0].editar" md-offset="0 -5" md-position-mode="target-right bottom" style="font-size: 0.8em !important; padding: 0px !important">
-                           <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="vm.openMenu($mdMenu, $event, item, $index)">
-                              <md-icon class="md-menu-origin material-icons md-24 toolbar-gray">more_vert</md-icon>
-                            </md-button>
-                          <md-menu-content width="4">
-                            <md-menu-item>
-                              <md-button ng-click="vm.editarItem($index, falso)">Editar registro</md-button>
                             </md-menu-item>
-                            
-                            
-                             <md-menu-item>
-                              <md-menu style="padding: 0 !important">
-                                  <md-menu-item style="">
-                                 <md-button ng-click="ctrl.announceClick($index)">
-                  <div layout="row">
-                    <p flex>Tipo envio</p>
-                    <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">keyboard_arrow_right</md-icon>
-                  </div>
-              </md-button>
-                      </md-menu-item>
-                      <md-menu-content>
-                        <md-menu-item style="background-color: #EF6C00; color: white">
-                          <md-button ng-click="vm.cambiarTipoEnvio($event, $index, 1)">
-                            <md-icon style="margin-right: 5px !important" class="material-icons md-18">{{menu_item.icon}}</md-icon>Aceptar lote
+                            <md-menu-content>
+                              <md-menu-item>
+                                <md-button ng-click="vm.filtrarDetalle(vm.filtros.calidad, $event)">
+                                  Filtrar calidad
+                                </md-button>
+                              </md-menu-item>
+                              <md-menu-item>
+                                <md-button ng-click="vm.filtrarDetalle(vm.filtros.aceptar, $event)">
+                                  Filtrar aceptar
+                                </md-button>
+                              </md-menu-item>
+                            </md-menu-content>
+                          </md-menu>
+                        </md-menu-item>
+                        <md-menu-item>
+                          <md-menu style="padding: 0 !important">
+                            <md-menu-item style="">
+                              <md-button ng-click="ctrl.announceClick($index)">
+                                <div layout="row">
+                                  <p flex>Tipo lote</p>
+                                  <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">keyboard_arrow_right</md-icon>
+                                </div>
+                              </md-button>
+                            </md-menu-item>
+                            <md-menu-content>
+                              <md-menu-item>
+                                <md-button ng-click="vm.filtrarDetalle(vm.filtros.notificada, $event)">
+                                  Notificadas
+                                </md-button>
+                              </md-menu-item>
+                              <md-menu-item>
+                                <md-button ng-click="vm.filtrarDetalle(vm.filtros.no_notificada, $event)">
+                                  No-notificadas
+                                </md-button>
+                              </md-menu-item>
+                            </md-menu-content>
+                          </md-menu>
+                        </md-menu-item>
+                        <md-menu-item>
+                          <md-menu style="padding: 0 !important">
+                            <md-menu-item style="">
+                              <md-button ng-click="ctrl.announceClick($index)">
+                                <div layout="row">
+                                  <p flex>Zona</p>
+                                  <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">keyboard_arrow_right</md-icon>
+                                </div>
+                              </md-button>
+                            </md-menu-item>
+                            <md-menu-content>
+                              <md-menu-item>
+                                <md-button ng-click="vm.filtrarDetalle(vm.filtros.norte, $event)">
+                                  Norte
+                                </md-button>
+                              </md-menu-item>
+
+                              <md-menu-item>
+                                <md-button ng-click="vm.filtrarDetalle(vm.filtros.sur, $event)">
+                                  Sur
+                                </md-button>
+                              </md-menu-item>
+                            </md-menu-content>
+                          </md-menu>
+                        </md-menu-item>
+                          </md-menu>
+
+                    <md-button  class="md-icon-button toolbar-gray">
+                      <input class="ng-hide" id="input-file-id" name="files[]" multiple type="file" on-read-file="vm.leerCSV( contents )"/>
+                      <label for="input-file-id" class="material-icons md-16 green_big">playlist_add</label>
+                    </md-button>
+
+                    <md-menu ng-if="!vm.lotes_remitos[0].editar" md-position-mode="target-right target">
+                      <md-button  class="md-icon-button toolbar-gray">
+                        <md-icon class="material-icons md-16 toolbar-gray" ng-click="vm.openMenu($mdMenu, $event)">menu</md-icon>
+                      </md-button>
+                      <md-menu-content width="4">
+                        <md-menu-item>
+                         <md-menu style="padding: 0 !important">
+                            <md-menu-item style="">
+                              <md-button ng-click="ctrl.announceClick($index)">
+                                <div layout="row">
+                                  <p flex>Seleccionados</p>
+                                  <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">keyboard_arrow_right</md-icon>
+                                </div>
+                              </md-button>
+                            </md-menu-item>
+                            <md-menu-content>
+                              <md-menu-item style="background-color: #EF6C00; color: white">
+                                  <md-button ng-click="vm.cambiarTipoEnvio($event, -1, 1)">
+                                    <md-icon style="" class="material-icons md-18">{{menu_item.icon}}</md-icon>Aceptar lotes
+                                  </md-button>
+                                </md-menu-item>
+
+                                <md-menu-item style="background-color: #1565C0; color: white">
+                                  <md-button ng-click="vm.cambiarTipoEnvio($event, -1, 2)">
+                                    <span>Enviar lotes a calidad</span>
+                                  </md-button>
+                                </md-menu-item>
+                                <md-divider></md-divider>
+                                 <md-menu-item style="background-color: white; color: red">
+                                  <md-button ng-click="vm.borrarItem(-1, false)">
+                                    <md-icon style="margin-right: 5px !important" class="material-icons md-18 red">delete</md-icon>Borrar lotes
+                                  </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                          </md-menu>
+                        </md-menu-item>
+                        <md-menu-item>
+                          <md-button>
+                          <input class="ng-hide" id="input-file-id" name="files[]" multiple type="file" on-read-file="vm.leerCSV( contents )"/>
+                           <label for="input-file-id" class="" style="font-size: 12px !important">Desde CSV</label>
                           </md-button>
                         </md-menu-item>
-
-                        <md-menu-item style="background-color: #1565C0; color: white">
-                          <md-button ng-click="vm.cambiarTipoEnvio($event, $index, 2)">
-                            <md-icon style="margin-right: 5px !important" class="material-icons md-18">{{menu_item.icon}}</md-icon>Enviar lote a calidad
-                          </md-button>
-                        </md-menu-item>
-
-                        <md-menu-item style="background-color: #C62828; color: white">
-                          <md-button ng-click="vm.cambiarTipoEnvio($event, $index, 3)">
-                            <md-icon style="margin-right: 5px !important" class="material-icons md-18">{{menu_item.icon}}</md-icon>
-                            Actas no-notificadas
+                        <md-menu-divider></md-menu-divider>
+                        <md-menu-item>
+                          <md-button ng-click="vm.crearLote(null, true)">
+                            Carga manual
                           </md-button>
                         </md-menu-item>
                       </md-menu-content>
-                     
-                              </md-menu>
-                            </md-menu-item>
-                            
-                            <md-menu-divider></md-menu-divider>
-                            <md-menu-item>
-                              <md-button ng-click="vm.editarNota($index)">Editar nota</md-button>
-                            </md-menu-item>
-                             <md-menu-divider></md-menu-divider>
-                            <md-menu-item>
-                              <md-button ng-click="vm.borrarItem($index, falso)">
-                                  <div layout="row" layout->
-                                    <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">delete_forever</md-icon>
-                                    <p flex>Eliminar registro</p>
+                    </md-menu>
+                  </div>
+                  <div layout="row" class="md-toolbar-tools-card" flex="nogrow" ng-if="vm.lotes_remitos[0].editar">
+                      <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
+                        <md-icon class="material-icons md-24 green_big" ng-click="vm.actualizarItem(falso, -1)">check_circle</md-icon>
+                      </md-button>
+                      <md-button class="md-icon-button md-mini toolbar-gray" aria-label="Favorite" >
+                        <md-icon class="material-icons md-24 red" ng-click="vm.cancelarEdicionItem(false, false)">cancel</md-icon>
+                      </md-button>
+                  </div>
+                </div>
+              </md-toolbar>
+
+              <md-list class="md-dense" style="height: 345px; overflow-y: auto;min-width: 100% !important"> <!-- listado propiamente dicho -->
+                <md-list-item  ng-repeat="paso in vm.obj_vista_modelo.detalle track by $index" class="dense-item-list" ng-class="vm.setearCssFila( $index )" ng-if="paso.uid !== 'D'" flex="100">
+                  <div  layout="column" flex style="height: auto !important; border-bottom: 0px solid lightgray">
+                    <div layout="row">
+                    <!-- CAMPOS VISTA -->
+                      
+                        <md-checkbox md-no-ink class="red md-checkbox-small dotted" ng-click="vm.seleccionarLote(this, $event)" ng-checked="vm.esFilaSeleccionada(this)"></md-checkbox>
+                      
+                      <div ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" style="margin-right:5px" >{{($index + 1) + ' -'}}</div>
+                      <md-icon ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="material-icons md-18 toolbar-gray" style="margin-right:5px" ng-click="vm.borrarItem($index, false)">delete</md-icon>
+                      <md-checkbox style="margin-right:0; margin-left: 0" ng-if="" class="md-primary"></md-checkbox>
+                      <div ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" style="font-weight: bolder; margin-right: 5px" flex>
+                        <span style="font-size:13px;">{{paso.remito}}</span>
+                      </div>
+                      <md-truncate ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" flex>
+                        <span style="font-size:12px">{{paso.lote}}</span>
+                      </md-truncate>
+                      <md-truncate ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" flex>
+                        <span style="font-size:12px">{{paso.actas}}</span><span ng-show="paso.indice_no_notificada > 0" style="font-size:12px"> ({{paso.indice_no_notificada}}%)</span>
+                      </md-truncate>
+                      <md-truncate ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" flex>
+                        <span style="font-size:12px">{{paso.notificada}}</span>
+                      </md-truncate>
+                      <md-truncate ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" flex>
+                        <span style="font-size:12px">{{paso.zona}}</span>
+                      </md-truncate>
+
+                      <!-- CAMPOS EDITABLES -->
+                      <md-input-container ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="md-block" flex>
+                         <label ng-if="false" style="font-size: 16px !important; color: gray; font-weight: 600;">Remito</label>
+                        <input md-truncate ng-model="vm.obj_vista_modelo.detalle[$index].remito">
+                      </md-input-container>
+
+                      <md-input-container ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="md-block" flex>
+                         <label ng-if="false" style="font-size: 16px !important; color: gray; font-weight: 600;">Lote</label>
+                        <input md-truncate ng-model="vm.obj_vista_modelo.detalle[$index].lote">
+                      </md-input-container>
+
+                      <md-input-container ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="md-block" flex>
+                         <label ng-if="false" style="font-size: 16px !important; color: gray; font-weight: 600;">actas</label>
+                        <input md-truncate ng-model="vm.obj_vista_modelo.detalle[$index].actas">
+                      </md-input-container>
+
+                      <md-input-container ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="md-block" flex>
+                         <label ng-if="false" style="font-size: 16px !important; color: gray; font-weight: 600;">Notificada</label>
+                        <md-select ng-model="vm.lotes_remitos[0].items[$index].notificada">
+                          <md-option value="no">
+                            NO
+                          </md-option>
+                          <md-option value="si">
+                            SI
+                          </md-option>
+                        </md-select>
+                      </md-input-container>
+
+                      <md-input-container ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="md-block" flex>
+                         <label ng-if="false" style="font-size: 16px !important; color: gray; font-weight: 600;">Zona</label>
+                        <md-select ng-model="vm.lotes_remitos[0].items[$index].zona">
+                          <md-option value="norte">
+                            Norte
+                          </md-option>
+                          <md-option value="sur">
+                            Sur
+                          </md-option>
+                        </md-select>
+                      </md-input-container>
+                      <!-- FIN CAMPOS EDITABLES -->                
+
+                      <div ng-if="vm.obj_vista_modelo.detalle[$index].notificada == 'SI'">
+                        <md-icon style="cursor: pointer;" ng-if="!vm.lotes_remitos[0].editar || ($index !== vm.lotes_remitos[0].editar_index)" class="md-menu-origin material-icons md-20" ng-class="{'toolbar-grayActivado': paso.colr_rech, 'toolbar-iconoDesactivado': !paso.colr_rech}" ng-click="vm.rechazoProcesado($index)">cancel</md-icon>
+
+                        <md-icon style="cursor: pointer;" ng-if="!vm.lotes_remitos[0].editar || ($index !== vm.lotes_remitos[0].editar_index)" class="md-menu-origin material-icons md-20" ng-class="{'toolbar-checkActivado': paso.colr_proc, 'toolbar-iconoDesactivado': !paso.colr_proc}" ng-click=" vm.remitoProcesado($index)">check_circle</md-icon>
+                      </div>
+
+                      <div ng-if="vm.obj_vista_modelo.detalle[$index].notificada == 'NO'" style="width: 52px"></div>
+                      
+                      <div>
+                        <md-icon style="cursor: pointer;" ng-if="!vm.lotes_remitos[0].editar || ($index !== vm.lotes_remitos[0].editar_index)" class="md-menu-origin material-icons md-20" ng-class="{'toolbar-mailActivado': paso.colr_email, 'toolbar-iconoDesactivado': !paso.colr_email}" ng-click="vm.emailEnviado($index)">email</md-icon>
+                      </div>
+
+                      <md-menu ng-if="!vm.lotes_remitos[0].editar" md-offset="0 -5" md-position-mode="target-right bottom" style="font-size: 0.8em !important; padding: 0px !important">
+                        <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="vm.openMenu($mdMenu, $event, item, $index)">
+                          <md-icon class="md-menu-origin material-icons md-24 toolbar-gray">more_vert</md-icon>
+                        </md-button>
+                        <md-menu-content width="4">
+                          <md-menu-item>
+                            <md-button ng-click="vm.editarItem($index, falso)">Editar registro</md-button>
+                          </md-menu-item>
+                          <md-menu-item>
+                            <md-menu style="padding: 0 !important">
+                              <md-menu-item style="">
+                                <md-button ng-click="ctrl.announceClick($index)">
+                                  <div layout="row">
+                                    <p flex>Tipo envio</p>
+                                    <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">keyboard_arrow_right</md-icon>
                                   </div>
-                              </md-button>
-                            </md-menu-item>
-                            
-                          </md-menu-content>
-                        </md-menu>
-                          </div>
+                                </md-button>
+                              </md-menu-item>
+                              <md-menu-content>
+                                <md-menu-item style="background-color: #EF6C00; color: white">
+                                  <md-button ng-click="vm.cambiarTipoEnvio($event, $index, 1)">
+                                    <md-icon style="margin-right: 5px !important" class="material-icons md-18">{{menu_item.icon}}</md-icon>Aceptar lote
+                                  </md-button>
+                                </md-menu-item>
 
-                            <div layout="row" style="padding: 0px !important">
-                              <label ng-show="(paso.nota.editar === false && paso.nota.texto !== '')" style="padding: 0!important">
-                                <md-icon style="line-height: 14px !important; padding: 0 !important; margin: 0px !important; max-height: 14px !important; max-width: 14px !important; min-height: 14px !important; min-width: 14px !important" class="md-menu-origin material-icons md-14 red">notification_important</md-icon>
-                                <span style="color: #F44336; font-size: 10px; margin: 0px !important; padding: 0px !important">{{vm.obj_vista_modelo.detalle[$index].nota.texto}}</span>
-                              </label>
+                                <md-menu-item style="background-color: #1565C0; color: white">
+                                  <md-button ng-click="vm.cambiarTipoEnvio($event, $index, 2)">
+                                    <md-icon style="margin-right: 5px !important" class="material-icons md-18">{{menu_item.icon}}</md-icon>Enviar lote a calidad
+                                  </md-button>
+                                </md-menu-item>
 
-                              <md-input-container style="padding: 0 !important; margin: 0 !important; line-height: 14px !important;" ng-show="paso.nota.editar" class="md-block" flex >
-                                <input type="text" name="nota" ng-model="vm.obj_vista_modelo.detalle[$index].nota.texto" style="color: gray; font-size: 10px; border-bottom: 1px solid red" ng-model-options="{updateOn : 'change blur'}" ng-change="vm.editarNota($index)">
-                              </md-input-container>
-                            </div>
+                                <md-menu-item style="background-color: #C62828; color: white">
+                                  <md-button ng-click="vm.cambiarTipoEnvio($event, $index, 3)">
+                                    <md-icon style="margin-right: 5px !important" class="material-icons md-18">{{menu_item.icon}}</md-icon>
+                                    Actas no-notificadas
+                                  </md-button>
+                                </md-menu-item>
+                              </md-menu-content>
+                            </md-menu>
+                          </md-menu-item>
+                              
+                          <md-menu-divider></md-menu-divider>
+                          
+                          <md-menu-item>
+                            <md-button ng-click="vm.editarNota($index)">Editar nota</md-button>
+                          </md-menu-item>
+                          
+                          <md-menu-divider></md-menu-divider>
 
-                          </div>
-                        <md-divider ng-if="!$last"></md-divider>
-                        </md-list-item>
-                         
-                      </md-list>
-                    </md-card>
+                          <md-menu-item>
+                            <md-button ng-click="vm.borrarItem($index, falso)">
+                                <div layout="row" layout->
+                                  <md-icon md-menu-align-target class="md-menu-origin material-icons md-24 toolbar-gray" style="margin: auto 3px auto 0;">delete_forever</md-icon>
+                                  <p flex>Eliminar registro</p>
+                                </div>
+                            </md-button>
+                          </md-menu-item>
+                        </md-menu-content>
+                      </md-menu>
+                    </div>
+                    <div layout="row" style="padding: 0px !important">
+                      <label ng-show="(paso.nota.editar === false && paso.nota.texto !== '')" style="padding: 0!important">
+                        <md-icon style="line-height: 14px !important; padding: 0 !important; margin: 0px !important; max-height: 14px !important; max-width: 14px !important; min-height: 14px !important; min-width: 14px !important" class="md-menu-origin material-icons md-14 red">notification_important</md-icon>
+                        <span style="color: #F44336; font-size: 10px; margin: 0px !important; padding: 0px !important">{{vm.obj_vista_modelo.detalle[$index].nota.texto}}</span>
+                      </label>
+
+                      <md-input-container style="padding: 0 !important; margin: 0 !important; line-height: 14px !important;" ng-show="paso.nota.editar" class="md-block" flex >
+                        <input type="text" name="nota" ng-model="vm.obj_vista_modelo.detalle[$index].nota.texto" style="color: gray; font-size: 10px; border-bottom: 1px solid red" ng-model-options="{updateOn : 'change blur'}" ng-change="vm.editarNota($index)">
+                      </md-input-container>
+                    </div>
                   </div>
-                  </div>
-                <!-- FIN COMPONENTE PASOS -->
+                  <md-divider ng-if="!$last"></md-divider>
+                </md-list-item>
+              </md-list>
+            </md-card-content>
+          </md-card>
+        </div>
 
-              </md-card-content>
+        <div flex="100"> <!-- PIE -->
+          <md-card>
+            <md-card-content style="padding: 0 !important">
               <div layout="row" style="padding: 3px !important; font-size: 11px;border: solid 0px red">
-                <div layout="column" flex style="border: solid 0px red" flex="65">
-                   
-                  <div layout="row" layout-align="start center" flex="65">
-                   NORTE: {{vm.estadisticas.zona_norte.total}} { no-notif: {{vm.estadisticas.zona_norte.no_notificadas}} | aceptar: {{vm.estadisticas.zona_norte.aceptado}}/{{vm.estadisticas.zona_norte.aceptar}} | calidad: {{vm.estadisticas.zona_norte.en_calidad}}/{{vm.estadisticas.zona_norte.calidad}} | email: {{vm.estadisticas.zona_norte.email}}/{{vm.estadisticas.zona_norte.total}} } 
+                    <div layout="column" flex style="border: solid 0px red" flex="65">
+                       
+                      <div layout="row" layout-align="start center" flex="65">
+                       NORTE: {{vm.estadisticas.zona_norte.total}} { no-notif: {{vm.estadisticas.zona_norte.no_notificadas}} | aceptar: {{vm.estadisticas.zona_norte.aceptado}}/{{vm.estadisticas.zona_norte.aceptar}} | calidad: {{vm.estadisticas.zona_norte.en_calidad}}/{{vm.estadisticas.zona_norte.calidad}} | email: {{vm.estadisticas.zona_norte.email}}/{{vm.estadisticas.zona_norte.total}} } 
+                      </div>
+
+                      <div layout="row" layout-align="start center" flex>
+                       SUR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{vm.estadisticas.zona_sur.total}} { no-notif: {{vm.estadisticas.zona_sur.no_notificadas}} | aceptar: {{vm.estadisticas.zona_sur.aceptado}}/{{vm.estadisticas.zona_sur.aceptar}} | calidad: {{vm.estadisticas.zona_sur.en_calidad}}/{{vm.estadisticas.zona_sur.calidad}} | email: {{vm.estadisticas.zona_sur.email}}/{{vm.estadisticas.zona_sur.total}} }
+                      </div>
+                      
+                      
+
+                    </div>
+                    <div layout="row" layout-align="end enter" flex>
+                      <md-menu md-position-mode="target-right target">
+                        <md-button  class="md-icon-button toolbar-gray">
+                          <md-icon class="material-icons md-16 toolbar-gray" ng-click="vm.openMenu($mdMenu, $event)">mail</md-icon>
+                        </md-button>
+                        <md-menu-content width="4">
+                          <md-menu-item ng-if="(vm.estadisticas.zona_sur.calidad + vm.estadisticas.zona_norte.calidad) > 0">
+                            <md-button ng-click="vm.generarNotificacion(2)">
+                              Notificacion calidad
+                            </md-button>
+                          </md-menu-item>
+                          <md-menu-divider></md-menu-divider>
+                          <md-menu-item ng-if="(vm.estadisticas.zona_sur.aceptar + vm.estadisticas.zona_norte.aceptar) > 0">
+                            <md-button ng-click="vm.generarNotificacion(1)">
+                              Notificacion aceptadas/rechazadas
+                            </md-button>
+                          </md-menu-item>
+                          <md-menu-divider></md-menu-divider>
+                          <md-menu-item ng-if="(vm.estadisticas.zona_sur.no_notificadas + vm.estadisticas.zona_norte.no_notificadas) > 0">
+                            <md-button ng-click="vm.generarNotificacion(3)">
+                              Notificacion no-notificadas
+                            </md-button>
+                          </md-menu-item>
+                        </md-menu-content>
+                      </md-menu>
+                    </div>
                   </div>
+            </md-card-content>
+          </md-card>
+        </div>
+        
+      </div>
 
-                  <div layout="row" layout-align="start center" flex>
-                   SUR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{vm.estadisticas.zona_sur.total}} { no-notif: {{vm.estadisticas.zona_sur.no_notificadas}} | aceptar: {{vm.estadisticas.zona_sur.aceptado}}/{{vm.estadisticas.zona_sur.aceptar}} | calidad: {{vm.estadisticas.zona_sur.en_calidad}}/{{vm.estadisticas.zona_sur.calidad}} | email: {{vm.estadisticas.zona_sur.email}}/{{vm.estadisticas.zona_sur.total}} }
-                  </div>
-                  
-                  
-
-                </div>
-                <div layout="row" layout-align="end enter" flex>
-                  <md-menu md-position-mode="target-right target">
-                    <md-button  class="md-icon-button toolbar-gray">
-                      <md-icon class="material-icons md-16 toolbar-gray" ng-click="vm.openMenu($mdMenu, $event)">mail</md-icon>
-                    </md-button>
-                    <md-menu-content width="4">
-                      <md-menu-item ng-if="(vm.estadisticas.zona_sur.calidad + vm.estadisticas.zona_norte.calidad) > 0">
-                        <md-button ng-click="vm.generarNotificacion(2)">
-                          Notificacion calidad
-                        </md-button>
-                      </md-menu-item>
-                      <md-menu-divider></md-menu-divider>
-                      <md-menu-item ng-if="(vm.estadisticas.zona_sur.aceptar + vm.estadisticas.zona_norte.aceptar) > 0">
-                        <md-button ng-click="vm.generarNotificacion(1)">
-                          Notificacion aceptadas/rechazadas
-                        </md-button>
-                      </md-menu-item>
-                      <md-menu-divider></md-menu-divider>
-                      <md-menu-item ng-if="(vm.estadisticas.zona_sur.no_notificadas + vm.estadisticas.zona_norte.no_notificadas) > 0">
-                        <md-button ng-click="vm.generarNotificacion(3)">
-                          Notificacion no-notificadas
-                        </md-button>
-                      </md-menu-item>
-                    </md-menu-content>
-                  </md-menu>
-                </div>
-              </div>
-            </md-card>
-
-
-            
-            
-          
       
 
-     
+           
+      
+      
 
+
+      
     </md-content>
 
 
