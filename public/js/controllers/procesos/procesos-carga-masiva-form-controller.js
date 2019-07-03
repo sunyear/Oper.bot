@@ -202,8 +202,6 @@
           
           if(id_proceso_masivo > 0){
             
-
-            
              CLASE._$state.go('procesos.carga-masiva-lotes',{idProcesoMasivo: id_proceso_masivo, filtro: ''},{
                 // prevent the events onStart and onSuccess from firing
                 notify:false,
@@ -598,8 +596,9 @@
     };
 
 
-    emailEnviado( index ){
+    emailEnviado( index, event ){
 
+      event.stopPropagation();
       this.obj_vista_modelo.detalle[index].uid = 'U';
       this.obj_vista_modelo.detalle[index].colr_email = !this.obj_vista_modelo.detalle[index].colr_email;
       this._actualizarEstadisticas();
@@ -607,24 +606,26 @@
     };
 
 
-    remitoProcesado( index ){
-
+    remitoProcesado( index, event ){
+      
+      event.stopPropagation();
       this.obj_vista_modelo.detalle[index].uid = 'U';
       this.obj_vista_modelo.detalle[index].colr_rech = false;
       this.obj_vista_modelo.detalle[index].colr_proc = !this.obj_vista_modelo.detalle[index].colr_proc;
       this._actualizarEstadisticas();
+      
 
     };
 
 
+    rechazoProcesado( index, event ){
 
-    rechazoProcesado( index ){
-
+      event.stopPropagation();
       this.obj_vista_modelo.detalle[index].colr_proc = false;
       this.obj_vista_modelo.detalle[index].uid = 'U';
       this.obj_vista_modelo.detalle[index].colr_rech = !this.obj_vista_modelo.detalle[index].colr_rech;
       this._actualizarEstadisticas();
-       
+      
     };
 
 
@@ -664,8 +665,9 @@
     generarNotificacion (tipo_notificacion, ev) {
 
         let envio_actas = {}, templateUrl = '';
+        console.log(this.dataset.detalle)
 
-        switch (this.dataset.cabecera.tipo_proceso){
+        switch (this.obj_vista_modelo.cabecera.tipo_proceso){
           case 'REPROCESO': templateUrl = './views/procesos/proc-masivo-gen-notif-reproc-template.html';
             break;
           case 'CARGA MASIVA': templateUrl = './views/procesos/proc-masivo-gen-notif-template.html';
@@ -673,11 +675,14 @@
         };
 
         switch (tipo_notificacion){
-          case 1: envio_actas = this._$filter('filter')(this.dataset.detalle, {id_tipo_envio: '1'}) //<-- ACEPTADAS
+          //this.dataset.detalle
+          case 1: envio_actas = this._$filter('filter')(this.obj_vista_modelo.detalle, {id_tipo_envio: '1'}) //<-- ACEPTADAS
             break;
-          case 2: envio_actas = this._$filter('filter')(this.dataset.detalle, {id_tipo_envio: '2'}) //<-- CALIDAD
+          case 2: envio_actas = this._$filter('filter')(this.obj_vista_modelo.detalle, {id_tipo_envio: '2'}) //<-- CALIDAD
             break;
-          case 3: envio_actas = this._$filter('filter')(this.dataset.detalle, {id_tipo_envio: '3'}) //<-- NO_NOTIFICADAS
+          case 3: envio_actas = this._$filter('filter')(this.obj_vista_modelo.detalle, {id_tipo_envio: '3'}) //<-- NO_NOTIFICADAS
+            break;
+          case 4: envio_actas = this._$filter('filter')(this.obj_vista_modelo.detalle, {id_tipo_envio: '!3'}) //<-- NOTIFICADAS
             break;
         };
 
@@ -851,28 +856,34 @@
       this.eliminarFiltro();
       
       if(desde_db){
+
         let proceso_masivo_lotes_promise = this._procesosMasivosService.obtenerProcesosMasivosLotes(  this.obj_vista_modelo.cabecera.id_proceso_masivo )
+        //this.obj_vista_modelo = [];
         proceso_masivo_lotes_promise.then(
-          (proceso_masivo_lotes) => _actualizarVista( proceso_masivo_lotes,  CLASE ),
+          (proceso_masivo_lotes) => {this.obj_vista_modelo = proceso_masivo_lotes; this._actualizarEstadisticas();},//_actualizarVista( proceso_masivo_lotes,  CLASE ),
           (err) => console.log(err)
         );
       }else if(this.dataset.cabecera.id_proceso_masivo > 0){
-        _actualizarVista(this.dataset, this)
+        //_actualizarVista(this.dataset, this)
+        this.obj_vista_modelo = this.dataset;
       }
         
        //funcion interna 
-      function _actualizarVista( carga_masiva_lotes, ProcesoCargaMasiva ){
+      function _actualizarVista( proceso_masivo_lotes, ProcesoCargaMasiva ){
 
-        console.log(carga_masiva_lotes)
+        console.log(proceso_masivo_lotes)
+
+        ProcesoCargaMasiva.obj_vista_modelo.detalle = [];
         //levanto la informacion en la cabecera
-        ProcesoCargaMasiva.obj_vista_modelo.cabecera = carga_masiva_lotes.cabecera;
+        ProcesoCargaMasiva.obj_vista_modelo.cabecera = proceso_masivo_lotes.cabecera;
         //levanto la informacion en el detalle
-        ProcesoCargaMasiva.obj_vista_modelo.detalle = angular.copy(carga_masiva_lotes.detalle)//angular.copy(carga_masiva_lotes.detalle)
-        //actualizo los calculos de la estadistica
-        ProcesoCargaMasiva._actualizarEstadisticas();
-        //console.log(ProcesoCargaMasiva.estadisticas)
+        //ProcesoCargaMasiva.obj_vista_modelo.detalle = angular.copy(carga_masiva_lotes.detalle)
+        angular.copy(proceso_masivo_lotes.detalle, ProcesoCargaMasiva.obj_vista_modelo.detalle)
+        //angular.extend(proceso_masivo_lotes.detalle, ProcesoCargaMasiva.obj_vista_modelo.detalle)
       }
 
+      //actualizo los calculos de la estadistica
+      this._actualizarEstadisticas();
     };
 
 

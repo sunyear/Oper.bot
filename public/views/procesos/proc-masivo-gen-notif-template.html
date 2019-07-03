@@ -94,6 +94,13 @@
             ---
           </p>
         </md-card> 
+
+
+        <md-card ng-if="dataset_notificadas.length > 0">         
+          <p style="line-height: 18px; font-size: 13px" ng-repeat="proceso_masivo in dataset_notificadas track by $index">
+            <span>/srv/recurso-produccion/sijai/CECAITRA/Lote{{proceso_masivo.lote}}</span></br>
+          </p>          
+        </md-card>
             
       </md-dialog-content>
       

@@ -124,46 +124,7 @@
   }
 
 
-md-checkbox .md-icon {
-  transform: scale(.7);
-}
 
-md-checkbox {padding: 0px !important; margin: 0px !important;}
-  
-
-md-checkbox.md-checked.red .md-icon {
- background-color: rgb(0, 0, 0);
- border-color: rgb(0, 0, 0);
-}
-
-
-
-md-checkbox.dotted .md-icon {
- border-width: 1px;
- border-style: solid;
- border-color: lightgray;
-}
-
-
-  md-checkbox.md-checked.red .md-icon {
- background-color: rgb(0, 0, 0);
- border-color: rgb(0, 0, 0);
-}
-
-md-checkbox .md-container:after {box-sizing: border-box;
-      content: '';
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;}
-
-
-input:focus,
-select:focus,
-textarea:focus {
-    outline: none;
-}
 
 .highlight {
   
@@ -458,36 +419,27 @@ md-input-container.lll .md-input{
 md-checkbox {padding: 0px !important; margin: 0px !important;}
   
   .md-label {
-    margin-left: 5px !important;
+    margin-left: 0px !important;
   }
+
+
+md-checkbox.md-checked.black .md-icon {
+ background-color: transparent !important;
+ border-color: none !important;
+ color: black !important;
 }
-
-md-checkbox.md-checked.red .md-icon {
- background-color: rgb(0, 0, 0);
- border-color: rgb(0, 0, 0);
-}
-
-
 
 md-checkbox.dotted .md-icon {
- border-width: 1px;
+ border-width: 0px;
  border-style: solid;
  border-color: lightgray;
 }
 
-md-checkbox .md-container:after {box-sizing: border-box;
-      content: '';
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;}
+md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !important; }
+.fila_seleccionada:hover{background-color:rgb(255, 247, 196)!important}
 
-
-input:focus,
-select:focus,
-textarea:focus {
-    outline: none;
+.data-grid-selected-row {
+  background-color: rgb(255, 247, 196);
 }
 
 </style>         
@@ -560,7 +512,7 @@ textarea:focus {
                 <div  class="md-toolbar-tools md-toolbar-tools-card" layout="row" layout-fill>
                   <div layout="row" flex="grow" class="card-header-toolbar" style="border: 0px solid red">
                     <div layout="row" flex="grow" class="card-header-toolbar">
-                      <md-checkbox class="red md-checkbox-small dotted" ng-click="vm.seleccionarTodo(this, $event)" ng-checked="vm.todosSeleccionados()" md-indeterminate="vm.isIndeterminate()"></md-checkbox>
+                      <md-checkbox class="black md-checkbox-small dotted" ng-click="vm.seleccionarTodo(this, $event)" ng-checked="vm.todosSeleccionados()" md-indeterminate="vm.isIndeterminate()"></md-checkbox>
                       <span md-truncate flex>Remito</span>  
                     </div>
                     <div layout="row" flex="grow" class="card-header-toolbar">
@@ -680,7 +632,7 @@ textarea:focus {
                             <md-menu-content>
                               <md-menu-item style="background-color: #EF6C00; color: white">
                                   <md-button ng-click="vm.cambiarTipoEnvio($event, -1, 1)">
-                                    <md-icon style="" class="material-icons md-18">{{menu_item.icon}}</md-icon>Aceptar lotes
+                                    <span>Aceptar lotes</span>
                                   </md-button>
                                 </md-menu-item>
 
@@ -725,16 +677,16 @@ textarea:focus {
               </md-toolbar>
 
               <md-list class="md-dense" style="height: 345px; overflow-y: auto;min-width: 100% !important"> <!-- listado propiamente dicho -->
-                <md-list-item  ng-repeat="paso in vm.obj_vista_modelo.detalle track by $index" class="dense-item-list" ng-class="vm.setearCssFila( $index )" ng-if="paso.uid !== 'D'" flex="100">
-                  <div  layout="column" flex style="height: auto !important; border-bottom: 0px solid lightgray">
-                    <div layout="row">
+                <md-list-item  ng-repeat="paso in vm.obj_vista_modelo.detalle track by $index" class="dense-item-list" ng-class="vm.setearCssFila( $index )" ng-class="{'data-grid-selected-row': vm.esFilaSeleccionada(this), 'fila_seleccionada': vm.esFilaSeleccionada(this)}" ng-if="paso.uid !== 'D'" flex="100" style="margin-left: 0px !important; padding-left: 0px !important">
+                  <div  layout="column" flex style="height: auto !important; border-bottom: 0px solid lightgray;margin-left: 0px !important; padding-left: 0px !important">
+                    <div layout="row" >
                     <!-- CAMPOS VISTA -->
                       
-                        <md-checkbox md-no-ink class="red md-checkbox-small dotted" ng-click="vm.seleccionarLote(this, $event)" ng-checked="vm.esFilaSeleccionada(this)"></md-checkbox>
+                      <md-checkbox md-no-ink class="black md-checkbox-small dotted" ng-click="vm.seleccionarLote(this, $event)" ng-checked="vm.esFilaSeleccionada(this)"></md-checkbox>
                       
                       <div ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" style="margin-right:5px" >{{($index + 1) + ' -'}}</div>
                       <md-icon ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="material-icons md-18 toolbar-gray" style="margin-right:5px" ng-click="vm.borrarItem($index, false)">delete</md-icon>
-                      <md-checkbox style="margin-right:0; margin-left: 0" ng-if="" class="md-primary"></md-checkbox>
+                      
                       <div ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" style="font-weight: bolder; margin-right: 5px" flex>
                         <span style="font-size:13px;">{{paso.remito}}</span>
                       </div>
@@ -793,15 +745,17 @@ textarea:focus {
                       <!-- FIN CAMPOS EDITABLES -->                
 
                       <div ng-if="vm.obj_vista_modelo.detalle[$index].notificada == 'SI'">
-                        <md-icon style="cursor: pointer;" ng-if="!vm.lotes_remitos[0].editar || ($index !== vm.lotes_remitos[0].editar_index)" class="md-menu-origin material-icons md-20" ng-class="{'toolbar-grayActivado': paso.colr_rech, 'toolbar-iconoDesactivado': !paso.colr_rech}" ng-click="vm.rechazoProcesado($index)">cancel</md-icon>
+                        <md-icon style="cursor: pointer;" ng-if="!vm.lotes_remitos[0].editar || ($index !== vm.lotes_remitos[0].editar_index)" class="md-menu-origin material-icons md-20 " ng-class="{'toolbar-grayActivado': paso.colr_rech, 'toolbar-iconoDesactivado': !paso.colr_rech}" ng-click="vm.rechazoProcesado($index, $event)">cancel</md-icon>
 
-                        <md-icon style="cursor: pointer;" ng-if="!vm.lotes_remitos[0].editar || ($index !== vm.lotes_remitos[0].editar_index)" class="md-menu-origin material-icons md-20" ng-class="{'toolbar-checkActivado': paso.colr_proc, 'toolbar-iconoDesactivado': !paso.colr_proc}" ng-click=" vm.remitoProcesado($index)">check_circle</md-icon>
+                        <md-icon style="cursor: pointer;" ng-if="!vm.lotes_remitos[0].editar || ($index !== vm.lotes_remitos[0].editar_index)" class="md-menu-origin material-icons md-20" ng-class="{'toolbar-checkActivado': paso.colr_proc, 'toolbar-iconoDesactivado': !paso.colr_proc}" ng-click=" vm.remitoProcesado($index, $event)">check_circle</md-icon>
                       </div>
 
                       <div ng-if="vm.obj_vista_modelo.detalle[$index].notificada == 'NO'" style="width: 52px"></div>
                       
                       <div>
-                        <md-icon style="cursor: pointer;" ng-if="!vm.lotes_remitos[0].editar || ($index !== vm.lotes_remitos[0].editar_index)" class="md-menu-origin material-icons md-20" ng-class="{'toolbar-mailActivado': paso.colr_email, 'toolbar-iconoDesactivado': !paso.colr_email}" ng-click="vm.emailEnviado($index)">email</md-icon>
+                       
+                        <md-icon style="cursor: pointer;" ng-if="!vm.lotes_remitos[0].editar || ($index !== vm.lotes_remitos[0].editar_index)" class="md-menu-origin material-icons md-20" ng-class="{'toolbar-mailActivado': paso.colr_email, 'toolbar-iconoDesactivado': !paso.colr_email}" ng-click="vm.emailEnviado($index, $event)">email</md-icon>
+                      
                       </div>
 
                       <md-menu ng-if="!vm.lotes_remitos[0].editar" md-offset="0 -5" md-position-mode="target-right bottom" style="font-size: 0.8em !important; padding: 0px !important">
@@ -920,6 +874,12 @@ textarea:focus {
                           <md-menu-item ng-if="(vm.estadisticas.zona_sur.no_notificadas + vm.estadisticas.zona_norte.no_notificadas) > 0">
                             <md-button ng-click="vm.generarNotificacion(3)">
                               Notificacion no-notificadas
+                            </md-button>
+                          </md-menu-item>
+                          <md-menu-divider></md-menu-divider>
+                          <md-menu-item ng-if="(vm.estadisticas.zona_sur.aceptar + vm.estadisticas.zona_norte.aceptar + vm.estadisticas.zona_sur.calidad + vm.estadisticas.zona_norte.calidad) > 0">
+                            <md-button ng-click="vm.generarNotificacion(4)">
+                              Copiar lote
                             </md-button>
                           </md-menu-item>
                         </md-menu-content>
