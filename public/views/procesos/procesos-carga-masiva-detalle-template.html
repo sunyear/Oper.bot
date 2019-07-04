@@ -442,6 +442,13 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
   background-color: rgb(255, 247, 196);
 }
 
+
+.list-item-nuevo{
+  /*border: solid 1px green !important;*/
+}
+
+
+
 </style>         
 
 
@@ -529,7 +536,7 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
                     </div>
                   </div>
                   <div class="menu-demo-container" layout="row">
-                    <md-menu ng-if="!vm.lotes_remitos[0].editar" md-position-mode="target-right target">
+                    <md-menu ng-if="!vm.lotes_remitos[0].editar" md-position-mode="target-right target"> <!-- MENU FILTRO -->
                       <md-button  class="md-icon-button toolbar-gray">
                         <md-icon class="material-icons md-16" ng-class="{'toolbar-gray': !vm.esVisible(), orange600: vm.esVisible()}" ng-click="vm.openMenu($mdMenu, $event)">filter_list</md-icon>
                       </md-button>
@@ -677,14 +684,15 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
               </md-toolbar>
 
               <md-list class="md-dense" style="height: 345px; overflow-y: auto;min-width: 100% !important"> <!-- listado propiamente dicho -->
-                <md-list-item  ng-repeat="paso in vm.obj_vista_modelo.detalle track by $index" class="dense-item-list" ng-class="vm.setearCssFila( $index )" ng-class="{'data-grid-selected-row': vm.esFilaSeleccionada(this), 'fila_seleccionada': vm.esFilaSeleccionada(this)}" ng-if="paso.uid !== 'D'" flex="100" style="margin-left: 0px !important; padding-left: 0px !important">
+                <md-list-item  ng-repeat="paso in vm.obj_vista_modelo.detalle track by $index" class="dense-item-list" ng-class="vm.setearCssFila( $index )" ng-if="paso.uid !== 'D'" flex="100" style="margin-left: 0px !important; padding-left: 0px !important">
                   <div  layout="column" flex style="height: auto !important; border-bottom: 0px solid lightgray;margin-left: 0px !important; padding-left: 0px !important">
                     <div layout="row" >
                     <!-- CAMPOS VISTA -->
                       
                       <md-checkbox md-no-ink class="black md-checkbox-small dotted" ng-click="vm.seleccionarLote(this, $event)" ng-checked="vm.esFilaSeleccionada(this)"></md-checkbox>
                       
-                      <div ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" style="margin-right:5px" >{{($index + 1) + ' -'}}</div>
+                      <div ng-if="(!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index ) && paso.uid !== 'I'" style="margin-right:5px" >{{($index + 1) + ' -'}}</div>
+                      <div ng-if="paso.uid === 'I'" style="margin-right:5px" >{+}</div>
                       <md-icon ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="material-icons md-18 toolbar-gray" style="margin-right:5px" ng-click="vm.borrarItem($index, false)">delete</md-icon>
                       
                       <div ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" style="font-weight: bolder; margin-right: 5px" flex>

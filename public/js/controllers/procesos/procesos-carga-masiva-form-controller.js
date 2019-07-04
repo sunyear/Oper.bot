@@ -23,14 +23,15 @@
             fecha_proceso: ''
           },
           detalle: [],
-          registro_edit: {
+          filtro_aplicado: {},
+        }
+
+        this.registro_edit = {
             remito_orig: null,
             lote_orig: null,
             notificada_orig: null,
             zona_orig: null
-          },
-          filtro_aplicado: {},
-        }
+          }
 
         this.dataset = data; //"data" se instancia en el enrutador (lote.js) que resuelve la promesa (prommise)
 
@@ -311,6 +312,7 @@
         colr_proc: false, 
         colr_email: false,
         indice_no_notificada: 0,
+        es_item_nuevo: true
       }
       
       this.obj_vista_modelo.detalle.splice(0,0,item_data); //SE INSERTA EL REGISTRO AL INICIO DE LA COLECCION
@@ -327,6 +329,7 @@
         this.obj_vista_modelo.detalle[0].zona = item.zona;
         this.obj_vista_modelo.detalle[0].id_tipo_envio = item.id_tipo_envio;
         this.obj_vista_modelo.detalle[0].indice_no_notificada = Math.round(item.indice_no_notificada);
+        this.obj_vista_modelo.detalle[0].es_item_nuevo = item.es_item_nuevo;
       }
       
       //es_carga_manual@boolean
@@ -337,6 +340,7 @@
         console.log(this.obj_vista_modelo.detalle)
         //this.actualizarItem( es_carga_manual, index );
       }
+      console.log(this.obj_vista_modelo.detalle)
     };
 
     /*
@@ -366,6 +370,7 @@
           colr_proc: false, 
           colr_email: false,
           indice_no_notificada: Math.round(item.indice_no_notificada),
+          es_item_nuevo: true
         }
         
         this.obj_vista_modelo.detalle.splice(0,0,item_data); //SE INSERTA EL REGISTRO AL INICIO DE LA COLECCION
@@ -376,6 +381,8 @@
           var index =  this.obj_vista_modelo.detalle.length-1;
           this.editarItem(index, true)
         }
+
+        console.log(this.obj_vista_modelo.detalle)
 
         this._actualizarEstadisticas();
       }
@@ -389,11 +396,12 @@
         this.lotes_remitos[0].editar_index = index;
         
         if(nuevo){
+
             this.lotes_remitos[0].editar_item_nuevo = true;
         }else{
             this.lotes_remitos[0].editar_item_nuevo = false;
         }
-          
+          console.log(this.obj_vista_modelo)
         this.obj_vista_modelo.registro_edit.remito_orig = this.obj_vista_modelo.detalle[index].remito;
         this.obj_vista_modelo.registro_edit.lote_orig = this.obj_vista_modelo.detalle[index].lote;
         this.obj_vista_modelo.registro_edit.actas_orig = this.obj_vista_modelo.detalle[index].actas;
@@ -645,7 +653,8 @@
         'fila_nueva_edicion': ( this.lotes_remitos[0].editar_index !== null && index === this.lotes_remitos[0].editar_index),
         'tipos_proceso_aceptar': ( this.obj_vista_modelo.detalle[index].id_tipo_envio === 1 ),
         'tipos_proceso_calidad': ( this.obj_vista_modelo.detalle[index].id_tipo_envio === 2 ),
-        'tipos_proceso_no-notificada': ( this.obj_vista_modelo.detalle[index].id_tipo_envio === 3 )
+        'tipos_proceso_no-notificada': ( this.obj_vista_modelo.detalle[index].id_tipo_envio === 3 ),
+        'list-item-nuevo': (this.obj_vista_modelo.detalle[index].uid === 'I')
       };
 
       return ( css_fila );
@@ -824,6 +833,17 @@
 
     };
 
+
+    esFilaNueva( fila ){
+
+      let fila_nueva = false;
+
+      console.log(fila)
+
+      return ( fila_nueva );
+
+    };
+
     //FIN METODOS PUBLICOS
 
 
@@ -854,18 +874,24 @@
 
       this.filas_seleccionadas = []; //quito la seleccion de todas las filas.
       this.eliminarFiltro();
+
+      desde_db = true;
       
       if(desde_db){
-
-        let proceso_masivo_lotes_promise = this._procesosMasivosService.obtenerProcesosMasivosLotes(  this.obj_vista_modelo.cabecera.id_proceso_masivo )
+        //console.log(this._$state.params)
+        let id_proceso_masivo_int = (this.obj_vista_modelo.cabecera.id_proceso_masivo > 0)?this.obj_vista_modelo.cabecera.id_proceso_masivo:this._$state.params.idProcesoMasivo;
+        let proceso_masivo_lotes_promise = this._procesosMasivosService.obtenerProcesosMasivosLotes(  id_proceso_masivo_int )
         //this.obj_vista_modelo = [];
+        //this.obj_vista_modelo = proceso_masivo_lotes
         proceso_masivo_lotes_promise.then(
-          (proceso_masivo_lotes) => {this.obj_vista_modelo = proceso_masivo_lotes; this._actualizarEstadisticas();},//_actualizarVista( proceso_masivo_lotes,  CLASE ),
+          (proceso_masivo_lotes) => {this.obj_vista_modelo = proceso_masivo_lotes; this.obj_vista_modelo.registro_edit = this.registro_edit; this._actualizarEstadisticas();},//_actualizarVista( proceso_masivo_lotes,  CLASE ),
           (err) => console.log(err)
         );
       }else if(this.dataset.cabecera.id_proceso_masivo > 0){
         //_actualizarVista(this.dataset, this)
-        this.obj_vista_modelo = this.dataset;
+        //this.obj_vista_modelo = this.dataset;
+        //angular.copy(this.dataset, this.obj_vista_modelo.detalle)
+        //angular.extend(this.dataset, this.obj_vista_modelo.detalle)
       }
         
        //funcion interna 
@@ -878,7 +904,8 @@
         ProcesoCargaMasiva.obj_vista_modelo.cabecera = proceso_masivo_lotes.cabecera;
         //levanto la informacion en el detalle
         //ProcesoCargaMasiva.obj_vista_modelo.detalle = angular.copy(carga_masiva_lotes.detalle)
-        angular.copy(proceso_masivo_lotes.detalle, ProcesoCargaMasiva.obj_vista_modelo.detalle)
+        //angular.copy(proceso_masivo_lotes.detalle, ProcesoCargaMasiva.obj_vista_modelo.detalle)
+
         //angular.extend(proceso_masivo_lotes.detalle, ProcesoCargaMasiva.obj_vista_modelo.detalle)
       }
 
