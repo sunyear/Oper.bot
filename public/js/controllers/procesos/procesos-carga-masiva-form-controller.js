@@ -181,7 +181,9 @@
       
       if(this.obj_vista_modelo.cabecera.fecha_proceso !== '' && this.obj_vista_modelo.cabecera.id_tipo_proceso !== ''){
 
-        this.obj_vista_modelo.cabecera.uid = (this.obj_vista_modelo.cabecera.id_proceso_masivo === 0)?'I': 'U';
+       // console.log(this.obj_vista_modelo.cabecera.id_proceso_masivo == 0)
+
+        this.obj_vista_modelo.cabecera.uid = (this.obj_vista_modelo.cabecera.id_proceso_masivo == 0)?'I': 'U';
 
         
         if(this.obj_vista_modelo.cabecera.id_proceso_masivo === 0){
@@ -200,6 +202,8 @@
         );
 
         function __actualizarVista( CLASE, id_proceso_masivo ){
+
+          
           
           if(id_proceso_masivo > 0){
             
@@ -674,7 +678,7 @@
     generarNotificacion (tipo_notificacion, ev) {
 
         let envio_actas = {}, templateUrl = '';
-        console.log(this.dataset.detalle)
+        this.obj_vista_modelo.cabecera.tipo_proceso
 
         switch (this.obj_vista_modelo.cabecera.tipo_proceso){
           case 'REPROCESO': templateUrl = './views/procesos/proc-masivo-gen-notif-reproc-template.html';

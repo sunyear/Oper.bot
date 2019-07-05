@@ -539,8 +539,8 @@
                 */
                 function guardarProcesoMasivo( obj_datos ){
 
-                    
                     const consulta = 'procesos_masivos/guardarProcesoMasivo'
+                    console.log(obj_datos)
                     const res = basedatosservice.crudCreate( obj_datos, consulta )
                             .then(
                                 function procesarRespuesta( resData ){

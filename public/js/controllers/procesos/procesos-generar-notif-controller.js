@@ -12,7 +12,8 @@
 
                 //console.log($filter('filter')(acta_pdf, {id_tipo_envio: '2'}))
                 $scope.dataset_notificadas = [];
-
+ 
+                    console.log( actas_notif)
                 $scope.tipo_notificacion = actas_notif.tipo_notificacion;
                 if($scope.tipo_notificacion == 2){
                     $scope.dataset_norte = $filter('filter')(actas_notif.actas, { zona: 'NORTE'});
