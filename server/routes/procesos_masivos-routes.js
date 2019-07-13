@@ -403,11 +403,12 @@ module.exports = {
 							});
 		   				}
 	   				}
-	   								
-					query_res.on('end', function( result_query) {	 	
-				 		client.end();								 	
-				 		//return res.json(results)
-					});
+	   				if(arr_obj_insert.length > 0 || arr_obj_update.length > 0 || arr_obj_delete.length > 0){
+						query_res.on('end', function( result_query) {	 	
+					 		client.end();								 	
+					 		//return res.json(results)
+						});
+					}
 	   			});
 				
 			if( id_proceso_masivo > 999999999){

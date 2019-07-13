@@ -179,7 +179,8 @@
 
     guardar(  ){
       
-      if(this.obj_vista_modelo.cabecera.fecha_proceso !== '' && this.obj_vista_modelo.cabecera.id_tipo_proceso !== ''){
+      if( (this.obj_vista_modelo.cabecera.fecha_proceso !== '' && this.obj_vista_modelo.cabecera.id_tipo_proceso !== '')){
+        // || (this.obj_vista_modelo.cabecera.fecha_proceso !== '' && this.obj_vista_modelo.cabecera.id_tipo_proceso !== '' &&  this.dataset.detalle.length > 0)
 
        // console.log(this.obj_vista_modelo.cabecera.id_proceso_masivo == 0)
 
@@ -193,7 +194,7 @@
         this.obj_vista_modelo.cabecera.fecha_proceso = moment(moment(this.obj_vista_modelo.cabecera.fecha_proceso).toDate()).format('YYYY-MM-DD'); 
        
         
-        //console.log(this.obj_vista_modelo.detalle)
+        console.log(this.obj_vista_modelo)
         let rta = this._procesosMasivosService.guardarProcesoMasivo( this.obj_vista_modelo )
 
         rta.then(
