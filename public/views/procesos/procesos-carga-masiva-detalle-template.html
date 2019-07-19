@@ -505,15 +505,7 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
         <div flex="100" layout="column"> <!-- LISTADO-->
           <md-card flex="100" style="border: red solid 0px; height: 100% !important"> <!-- LISTADO -->
             <md-card-content style="padding: 0 !important; height: 100% !important" flex="100">
-              <div ng-if="vm.tooltip_filtrar_visible" style="" layout="row" flex="100" layout-aling="center center">                      
-                <div flex style="background-color: none; font-size: 12px;">
-                  Filtros aplicados: {{vm.obj_vista_modelo.filtro_aplicado.texto}}
-                  <span style="text-decoration: underline; color: blue; font-size: 12px; cursor: pointer" ng-click="vm.eliminarFiltro( true )">quitar filtro</span>
-                </div>
-                <div style="background-color: none">
-                  <md-icon ng-if="false" style="line-height: 16px !important; min-height: 16px !important; min-width: 16px !important; width: 16px !important; height: 16px !important; margin-left: 5px" class="material-icons md-16 md-light" ng-click="vm.eliminarFiltro()">cancel</md-icon>
-                </div>
-              </div>
+              
 
               <md-toolbar style="min-height: 36px;">
                 <div  class="md-toolbar-tools md-toolbar-tools-card" layout="row" layout-fill>
@@ -637,33 +629,52 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
                               </md-button>
                             </md-menu-item>
                             <md-menu-content>
-                              <md-menu-item style="background-color: #EF6C00; color: white">
+                              <md-menu-item style="background-color: rgba(239,108,0,0.7); color: white">
                                   <md-button ng-click="vm.cambiarTipoEnvio($event, -1, 1)">
-                                    <span>Aceptar lotes</span>
+                                    <span>Enviar lote a procesar</span>
                                   </md-button>
                                 </md-menu-item>
 
-                                <md-menu-item style="background-color: #1565C0; color: white">
+                                <md-menu-item style="background-color: rgba(21, 101, 192, 0.7); color: white">
                                   <md-button ng-click="vm.cambiarTipoEnvio($event, -1, 2)">
                                     <span>Enviar lotes a calidad</span>
+                                  </md-button>
+                                </md-menu-item>
+
+                                <md-divider></md-divider>
+                                  <md-menu-item>
+                                  <md-button ng-click="vm.borrarItem(-1, false)">
+                                   <span>Marcar como [aceptado]</span>
+                                  </md-button>
+                                </md-menu-item>
+                                <md-menu-item >
+                                  <md-button ng-click="vm.borrarItem(-1, false)">
+                                    <span>Marcar como [rechazado]</span>
+                                  </md-button>
+                                </md-menu-item>
+                                <md-menu-item >
+                                  <md-button ng-click="vm.borrarItem(-1, false)">
+                                    <span>Marcar como [email enviado]</span>
                                   </md-button>
                                 </md-menu-item>
                                 <md-divider></md-divider>
                                  <md-menu-item style="background-color: white; color: red">
                                   <md-button ng-click="vm.borrarItem(-1, false)">
-                                    <md-icon style="margin-right: 5px !important" class="material-icons md-18 red">delete</md-icon>Borrar lotes
+                                    <md-icon style="" class="material-icons md-18 red">delete</md-icon>Borrar lotes
                                   </md-button>
                                 </md-menu-item>
                             </md-menu-content>
                           </md-menu>
                         </md-menu-item>
+                         <md-divider></md-divider>
                         <md-menu-item>
+
                           <md-button>
                           <input class="ng-hide" id="input-file-id" name="files[]" multiple type="file" on-read-file="vm.leerCSV( contents )"/>
                            <label for="input-file-id" class="" style="font-size: 12px !important">Desde CSV</label>
                           </md-button>
                         </md-menu-item>
-                        <md-menu-divider></md-menu-divider>
+                       
                         <md-menu-item>
                           <md-button ng-click="vm.crearLote(null, true)">
                             Carga manual
@@ -682,8 +693,18 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
                   </div>
                 </div>
               </md-toolbar>
-
-              <md-list class="md-dense" style="height: 345px; overflow-y: auto;min-width: 100% !important"> <!-- listado propiamente dicho -->
+              <div ng-if="vm.tooltip_filtrar_visible" style="" layout="row" flex="100" layout-aling="center center">                      
+                <div flex style="background-color: none; font-size: 12px;">
+                  Filtros aplicados: {{vm.obj_vista_modelo.filtro_aplicado.texto}}
+                  <span style="text-decoration: underline; color: blue; font-size: 12px; cursor: pointer" ng-click="vm.eliminarFiltro( true )">quitar filtro</span>
+                </div>
+              </div>
+              <div ng-if="(vm.filas_seleccionadas.length >0)" style="" layout="row" flex="100" layout-aling="center center">                      
+                <div flex style="background-color: none; font-size: 12px; padding-left: 5px;">
+                  {{vm.filas_seleccionadas.length}} seleccionados
+                </div>
+              </div>
+              <md-list ng-if="!vm.esta_cargando" class="md-dense" style="height: 345px; overflow-y: auto;min-width: 100% !important"> <!-- listado propiamente dicho -->
                 <md-list-item  ng-repeat="paso in vm.obj_vista_modelo.detalle track by $index" class="dense-item-list" ng-class="vm.setearCssFila( $index )" ng-if="paso.uid !== 'D'" flex="100" style="margin-left: 0px !important; padding-left: 0px !important">
                   <div  layout="column" flex style="height: auto !important; border-bottom: 0px solid lightgray;margin-left: 0px !important; padding-left: 0px !important">
                     <div layout="row" >
@@ -692,7 +713,7 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
                       <md-checkbox md-no-ink class="black md-checkbox-small dotted" ng-click="vm.seleccionarLote(this, $event)" ng-checked="vm.esFilaSeleccionada(this)"></md-checkbox>
                       
                       <div ng-if="(!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index ) && paso.uid !== 'I'" style="margin-right:5px" >{{($index + 1) + ' -'}}</div>
-                      <div ng-if="paso.uid === 'I'" style="margin-right:5px" >{+}</div>
+                      <div ng-if="paso.uid === 'I'" style="margin-right:5px" >{+} {{$index +1}}</div>
                       <md-icon ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="material-icons md-18 toolbar-gray" style="margin-right:5px" ng-click="vm.borrarItem($index, false)">delete</md-icon>
                       
                       <div ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" style="font-weight: bolder; margin-right: 5px" flex>
@@ -787,7 +808,7 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
                               <md-menu-content>
                                 <md-menu-item style="background-color: #EF6C00; color: white">
                                   <md-button ng-click="vm.cambiarTipoEnvio($event, $index, 1)">
-                                    <md-icon style="margin-right: 5px !important" class="material-icons md-18">{{menu_item.icon}}</md-icon>Aceptar lote
+                                    <md-icon style="margin-right: 5px !important" class="material-icons md-18">{{menu_item.icon}}</md-icon>Enviar lote a procesar
                                   </md-button>
                                 </md-menu-item>
 
@@ -840,6 +861,9 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
                   <md-divider ng-if="!$last"></md-divider>
                 </md-list-item>
               </md-list>
+              <div ng-if="vm.esta_cargando" layout="row" layout-sm="column" style="margin-top: 10px; margin-bottom: 10px;" layout-align="center center">
+                  <md-progress-circular md-mode="indeterminate" md-diameter="20"></md-progress-circular>
+              </div>
             </md-card-content>
           </md-card>
         </div>

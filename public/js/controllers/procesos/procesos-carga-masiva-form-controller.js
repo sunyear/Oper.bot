@@ -14,6 +14,7 @@
         this._$scope = $scope;
         this.moment = moment;
        
+        this.esta_cargando = false;
 
         this.obj_vista_modelo = {
           cabecera: {
@@ -862,7 +863,7 @@
     activate( ){
 
 
-
+     // this.esta_cargando = true;
       this._cargarDatosVista( false );
 
     };
@@ -877,6 +878,8 @@
       let carga_masiva_db = [];
       let CLASE = this;
 
+
+      this.esta_cargando = true;
       this.filas_seleccionadas = []; //quito la seleccion de todas las filas.
       this.eliminarFiltro();
 
@@ -889,7 +892,13 @@
         //this.obj_vista_modelo = [];
         //this.obj_vista_modelo = proceso_masivo_lotes
         proceso_masivo_lotes_promise.then(
-          (proceso_masivo_lotes) => {this.obj_vista_modelo = proceso_masivo_lotes; this.obj_vista_modelo.registro_edit = this.registro_edit; this._actualizarEstadisticas();},//_actualizarVista( proceso_masivo_lotes,  CLASE ),
+          (proceso_masivo_lotes) => {
+            
+            this.obj_vista_modelo = proceso_masivo_lotes; 
+            this.obj_vista_modelo.registro_edit = this.registro_edit; 
+            this.esta_cargando = false;
+            this._actualizarEstadisticas();
+          },//_actualizarVista( proceso_masivo_lotes,  CLASE ),
           (err) => console.log(err)
         );
       }else if(this.dataset.cabecera.id_proceso_masivo > 0){
