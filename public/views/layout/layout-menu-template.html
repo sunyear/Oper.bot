@@ -165,7 +165,7 @@
                  <md-icon class="material-icons md-18 gray" style="margin-left:0px">dashboard</md-icon>           
                     <span style="color: rgba(255, 255, 255, 0.7); margin-left: -30px">Tablero</span>
                 </md-list-item>
-                <md-list-item class="" ng-click="null" ui-sref="procesos.carga-masiva"  ui-sref-active="item-menu-activo">
+                <md-list-item class="" ng-click="null" ui-sref="procesos.carga-masiva"  ng-class="{'item-menu-activo': menu_activo('procesos.carga-masiva')}">
                   <md-icon class="material-icons md-18 gray" style="margin-left: 0px">group_work</md-icon>           
                   <span style="color: rgba(255, 255, 255, 0.7); margin-left: -30px">Carga masiva</span>
                 </md-list-item>

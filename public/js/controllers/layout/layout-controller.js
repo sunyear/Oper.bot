@@ -11,6 +11,7 @@
         function LayoutController($scope, $rootScope, $state, moment, $filter, $log, $document, $http, $q, $timeout, $mdSidenav, $urlRouter, loteService, PROCESOS) {
 
                 var vm = this;
+                $scope.$state = $state;
 
                 vm.header = {
                     "titulo": '',
@@ -22,6 +23,11 @@
                         actualizarHeaderBar( $state.current.name ); 
                     }
                 );
+
+                $scope.menu_activo = function( ruta_activada ){
+                    let ruta_actual = $state.current.name;
+                    return ( (ruta_actual.indexOf(ruta_activada)) > -1 )
+                }
 
 
 

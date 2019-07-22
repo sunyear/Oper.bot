@@ -896,20 +896,20 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
                               Notificacion calidad
                             </md-button>
                           </md-menu-item>
-                          <md-menu-divider></md-menu-divider>
+                         
                           <md-menu-item ng-if="(vm.estadisticas.zona_sur.aceptar + vm.estadisticas.zona_norte.aceptar) > 0">
                             <md-button ng-click="vm.generarNotificacion(1)">
                               Notificacion aceptadas/rechazadas
                             </md-button>
                           </md-menu-item>
-                          <md-menu-divider></md-menu-divider>
+                         
                           <md-menu-item ng-if="(vm.estadisticas.zona_sur.no_notificadas + vm.estadisticas.zona_norte.no_notificadas) > 0">
                             <md-button ng-click="vm.generarNotificacion(3)">
                               Notificacion no-notificadas
                             </md-button>
                           </md-menu-item>
-                          <md-menu-divider></md-menu-divider>
-                          <md-menu-item ng-if="(vm.estadisticas.zona_norte.total + vm.estadisticas.zona_zur.total) - (vm.estadisticas.zona_norte.no_notificadas + vm.estadisticas.zona_sur.no_notificadas)">
+                          
+                          <md-menu-item ng-if="( (vm.estadisticas.zona_norte.total + vm.estadisticas.zona_sur.total) - (vm.estadisticas.zona_norte.no_notificadas + vm.estadisticas.zona_sur.no_notificadas) > 0)">
                             <md-button ng-click="vm.generarNotificacion(4)">
                               Copiar lote
                             </md-button>
