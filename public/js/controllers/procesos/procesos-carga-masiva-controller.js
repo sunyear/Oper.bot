@@ -13,6 +13,8 @@
 
         this.dataset = data;
 
+        //console.log(this.dataset)
+
         this.texto_buscado = '';
 
         this.menu_visible = -1;
@@ -193,7 +195,7 @@
       }
       
 
-      console.log(this.caso_reproducciones)
+      //console.log(this.caso_reproducciones)
       event.stopPropagation();
 
     };
@@ -247,7 +249,7 @@
           //console.log(carga_masiva_db)
           carga_masiva_db.then(
               (eliminado) => {
-                console.log(eliminado)
+                //console.log(eliminado)
                   //this.obj_vista_modelo.detalle.splice(0,0,item_data); 
                   controlador.dataset.splice(indice_dataset,1);
                   controlador._cargarProcesosMasivos()
@@ -306,7 +308,7 @@
 
       var obj_fecha_hora = new Date( );
       var fecha_actual = obj_fecha_hora.toLocaleDateString() + ' ' + obj_fecha_hora.toLocaleTimeString();
-      console.log(obj_fecha_hora)
+      //console.log(obj_fecha_hora)
 
     }
 
@@ -316,7 +318,7 @@
       let controlador = this;
       
         //if(typeof(this.dataset) === 'undefined'){
-          console.log(busq)
+          //console.log(busq)
 
           if(busq === ''){
             this.filtros_procesos_masivos.busq = busq;
@@ -351,7 +353,7 @@
         //console.log(carga_masiva_db)
         carga_masiva_db.then(
             (resultado) => {
-              console.log(resultado)
+              //console.log(resultado)
                 //this.obj_vista_modelo.detalle.splice(0,0,item_data); 
                 //this.dataset.splice(indice_dataset,1);
                 //this._cargarProcesosMasivos()

@@ -85,7 +85,7 @@
 
                 function obtenerProcesosMasivos( str_busqueda = '' ){
 
-                    console.log(str_busqueda)
+                    //console.log(str_busqueda)
 
                     let consulta = 'procesos_masivos/vista';
 
@@ -124,12 +124,13 @@
 
                     }
                     
-                    console.log(consulta)
+                    //console.log(consulta)
 
                    var return_data = basedatosservice.crudRead( consulta );
                     return  $q.when ( return_data )
                             .then(
                                 function ProcesosMasivos( procesos_masivos ){
+                                    //console.log(procesos_masivos)
                                     var tmp_procesos_masivos = [];
                                     for (var i=0;i<procesos_masivos.length;i++){
                                         
@@ -144,6 +145,7 @@
                                                 'lotes_sur': procesos_masivos[i].lotes_sur,
                                                 'total_actas': procesos_masivos[i].total_actas,
                                                 'cantidad_rechazos': procesos_masivos[i].cantidad_rechazos,
+                                                'cantidad_no_notif': procesos_masivos[i].cantidad_no_notif,
                                                 'email_enviado': ( (parseInt(procesos_masivos[i].lotes_sur) + parseInt(procesos_masivos[i].lotes_norte)) == procesos_masivos[i].email_enviado),
                                                 'pend_norte': procesos_masivos[i].pend_norte,
                                                 'pend_sur': procesos_masivos[i].pend_sur
@@ -167,7 +169,7 @@
                     //console.log(id_proceso_masivo)
                     var return_data = basedatosservice.crudRead( consulta );
 
-                    console.log(consulta)
+                    //console.log(consulta)
 
                     return  $q.when ( return_data )
                             .then(

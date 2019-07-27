@@ -2,7 +2,9 @@
 Database Connection Settings
 *********************************************************/
 
-exports.conString = "postgres://postgres:relativi@localhost:5432/preval_db";
+//exports.conString = "postgres://postgres:relativi@localhost:5432/preval_db";
+exports.conString = "postgres://postgres:relativi@127.0.0.1:5432/preval_db";
+
 
 
 

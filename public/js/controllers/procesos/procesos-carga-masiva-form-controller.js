@@ -613,33 +613,64 @@
     emailEnviado( index, event ){
 
       event.stopPropagation();
-      this.obj_vista_modelo.detalle[index].uid = 'U';
-      this.obj_vista_modelo.detalle[index].colr_email = !this.obj_vista_modelo.detalle[index].colr_email;
-      this._actualizarEstadisticas();
+      
+      if(index > -1){
+        this.obj_vista_modelo.detalle[index].uid = 'U';
+        this.obj_vista_modelo.detalle[index].colr_email = !this.obj_vista_modelo.detalle[index].colr_email;
+      }else{
+        this.filas_seleccionadas.forEach(
+          function (fila_seleccionada){
+            this.obj_vista_modelo.detalle[fila_seleccionada].uid = 'U';
+            this.obj_vista_modelo.detalle[fila_seleccionada].colr_email = !this.obj_vista_modelo.detalle[fila_seleccionada].colr_email;
+          }
+        ,this);
+      }
 
+      this._actualizarEstadisticas();
     };
 
 
     remitoProcesado( index, event ){
       
       event.stopPropagation();
-      this.obj_vista_modelo.detalle[index].uid = 'U';
-      this.obj_vista_modelo.detalle[index].colr_rech = false;
-      this.obj_vista_modelo.detalle[index].colr_proc = !this.obj_vista_modelo.detalle[index].colr_proc;
-      this._actualizarEstadisticas();
-      
 
+      if(index > -1){
+        this.obj_vista_modelo.detalle[index].uid = 'U';
+        this.obj_vista_modelo.detalle[index].colr_rech = false;
+        this.obj_vista_modelo.detalle[index].colr_proc = !this.obj_vista_modelo.detalle[index].colr_proc;
+      }else{
+        this.filas_seleccionadas.forEach(
+          function (fila_seleccionada){
+            this.obj_vista_modelo.detalle[fila_seleccionada].uid = 'U';
+            this.obj_vista_modelo.detalle[fila_seleccionada].colr_rech = false;
+            this.obj_vista_modelo.detalle[fila_seleccionada].colr_proc = !this.obj_vista_modelo.detalle[fila_seleccionada].colr_proc;
+          }
+        ,this);
+      }
+      
+      this._actualizarEstadisticas();
     };
 
 
     rechazoProcesado( index, event ){
 
       event.stopPropagation();
-      this.obj_vista_modelo.detalle[index].colr_proc = false;
-      this.obj_vista_modelo.detalle[index].uid = 'U';
-      this.obj_vista_modelo.detalle[index].colr_rech = !this.obj_vista_modelo.detalle[index].colr_rech;
+
+      if(index > -1){
+        this.obj_vista_modelo.detalle[index].colr_proc = false;
+        this.obj_vista_modelo.detalle[index].uid = 'U';
+        this.obj_vista_modelo.detalle[index].colr_rech = !this.obj_vista_modelo.detalle[index].colr_rech;
+      }else{
+        this.filas_seleccionadas.forEach(
+          function (fila_seleccionada){
+            this.obj_vista_modelo.detalle[fila_seleccionada].colr_proc = false;
+            this.obj_vista_modelo.detalle[fila_seleccionada].uid = 'U';
+            this.obj_vista_modelo.detalle[fila_seleccionada].colr_rech = !this.obj_vista_modelo.detalle[fila_seleccionada].colr_rech;
+          } 
+        ,this);
+      }
+           
       this._actualizarEstadisticas();
-      
     };
 
 

@@ -643,17 +643,17 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
 
                                 <md-divider></md-divider>
                                   <md-menu-item>
-                                  <md-button ng-click="vm.borrarItem(-1, false)">
+                                  <md-button ng-click="vm.remitoProcesado(-1, $event)">
                                    <span>Marcar como [aceptado]</span>
                                   </md-button>
                                 </md-menu-item>
                                 <md-menu-item >
-                                  <md-button ng-click="vm.borrarItem(-1, false)">
+                                  <md-button ng-click="vm.rechazoProcesado(-1, $event)">
                                     <span>Marcar como [rechazado]</span>
                                   </md-button>
                                 </md-menu-item>
                                 <md-menu-item >
-                                  <md-button ng-click="vm.borrarItem(-1, false)">
+                                  <md-button ng-click="vm.emailEnviado(-1, $event)">
                                     <span>Marcar como [email enviado]</span>
                                   </md-button>
                                 </md-menu-item>

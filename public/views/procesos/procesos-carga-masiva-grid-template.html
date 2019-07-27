@@ -289,7 +289,7 @@ md-grid-tile:hover {
               <br>
               <span>Total Actas: {{proceso_masivo.total_actas}}</span>
               <br>
-              <span>Rechazos: <span style="color: red;">{{proceso_masivo.cantidad_rechazos || 0}}</span></span>
+              <span>No-notif / Rechazos: <span style="color: blue;">{{proceso_masivo.cantidad_no_notif || 0}}</span> / <span style="color: red;">{{proceso_masivo.cantidad_rechazos || 0}}</span></span>
               <br ng-hide="proceso_masivo.email_enviado">
               <span ng-hide="proceso_masivo.email_enviado" style="color: red;">emails pendientes</span>
 
