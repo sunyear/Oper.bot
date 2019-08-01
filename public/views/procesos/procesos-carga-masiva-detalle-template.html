@@ -712,8 +712,8 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
                       
                       <md-checkbox md-no-ink class="black md-checkbox-small dotted" ng-click="vm.seleccionarLote(this, $event)" ng-checked="vm.esFilaSeleccionada(this)"></md-checkbox>
                       
-                      <div ng-if="(!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index ) && paso.uid !== 'I'" style="margin-right:5px" >{{($index + 1) + ' -'}}</div>
-                      <div ng-if="paso.uid === 'I'" style="margin-right:5px" >{+} {{$index +1}}</div>
+                      <div ng-if="(!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index ) && paso.uid !== 'I'" style="margin-right:5px" >{{($index + 1 -(vm.contador_insercion)) + ' -'}}</div>
+                      <div ng-if="paso.uid === 'I'" style="margin-right:5px" >{+} {{vm.contador_insercion}}</div>
                       <md-icon ng-if="vm.lotes_remitos[0].editar && vm.lotes_remitos[0].editar_index === $index" class="material-icons md-18 toolbar-gray" style="margin-right:5px" ng-click="vm.borrarItem($index, false)">delete</md-icon>
                       
                       <div ng-if="!vm.lotes_remitos[0].editar || vm.lotes_remitos[0].editar_index !== $index" class="md-ellipsis" style="font-weight: bolder; margin-right: 5px" flex>

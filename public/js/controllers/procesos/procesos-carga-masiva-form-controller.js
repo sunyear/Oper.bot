@@ -15,6 +15,7 @@
         this.moment = moment;
        
         this.esta_cargando = false;
+        this.contador_insercion = 0;
 
         this.obj_vista_modelo = {
           cabecera: {
@@ -219,6 +220,7 @@
                 // inherit the current params on the url
                 inherit:true
             });
+            CLASE.contador_insercion = 0;
             CLASE.obj_vista_modelo.cabecera.id_proceso_masivo = id_proceso_masivo;
             CLASE._$toast.show({
               hideDelay   : 2000,
@@ -380,6 +382,7 @@
         }
         
         this.obj_vista_modelo.detalle.splice(0,0,item_data); //SE INSERTA EL REGISTRO AL INICIO DE LA COLECCION
+        this.contador_insercion ++;
 
         //es_carga_manual@boolean
         //se utiliza para determinar si la fila se carga leyendo el CSV (FALSE) o completando manualmente los campos (TRUE)        

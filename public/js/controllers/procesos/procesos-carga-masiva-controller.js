@@ -298,11 +298,25 @@
     };
 
 
+    //se devuelve el modificador css por un problema del framework ya que falla al usar una clase css
+    devolverEstiloProceso( tipo_proceso ){
+
+      switch (tipo_proceso) {
+        case 'CARGA MASIVA': return 'rgba(0, 0, 0, 0.68)';
+          break;
+        case 'REPROCESO': return 'rgba(10, 30, 90, 0.8)';
+          break;
+      }
+
+    };
+
     //METODOS PRIVADOS
 
     _activate(  ){
 
       //console.log(this.filtros_procesos_masivos)
+
+      console.log(this.devolverEstiloProceso('CARGA MASIVA'))
 
       //this._cargarProcesosMasivos();
 

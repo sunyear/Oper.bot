@@ -163,6 +163,15 @@ md-grid-tile:hover {
   cursor: pointer;
 };
 
+.cargamasivaStyle {
+  
+  background: rgba(42, 82, 20, 0.68) !important;
+};
+
+.reprocesoStyle {
+  background: rgba(0, 0, 0, 0.68);
+};
+
 </style>
 <!-- FIN CONFIG TEMPLATE -->
 
@@ -303,9 +312,9 @@ md-grid-tile:hover {
           </div>
 
         </div>
-
-          <md-grid-tile-footer style="background: rgba(0, 0, 0, 0.68);">
-            <h3 layout="row" layout-align="center" class="titulo_caso_prueba_grid" ng-click="vm.verDetalles(proceso_masivo, $event)">
+          <!-- style="background: rgba(0, 0, 0, 0.68);" -->
+          <md-grid-tile-footer ng-style="{'background': vm.devolverEstiloProceso( proceso_masivo.tipo_proceso )}">
+            <h3 layout="row" layout-align="center" ng-click="vm.verDetalles(proceso_masivo, $event)">
               <span>
                 {{proceso_masivo.tipo_proceso}}
                 <br>
