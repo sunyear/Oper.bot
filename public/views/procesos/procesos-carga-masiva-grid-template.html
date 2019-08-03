@@ -17,7 +17,8 @@
   .material-icons.black { color: #000000; }
   .material-icons.red {color: rgb(255, 51, 51);}
   .material-icons.green_big {color: rgb(36, 191, 1);}
-  .material-icons.fadeout {color: rgba(76, 175, 80, 0.2);}
+  .material-icons.fadeoutg {color: rgba(76, 175, 80, 0.2);}
+  .material-icons.fadeouty {color: rgba(231, 241, 54, 0.6);}
 
 
   #md-sidenav-val, #md-sidenav-val.md-locked-open, #md-sidenav-val.md-closed.md-locked-open-add-active {
@@ -305,7 +306,10 @@ md-grid-tile:hover {
             </div>
 
             <div ng-if="proceso_masivo.pend_sur == 0 && proceso_masivo.pend_norte == 0 && proceso_masivo.email_enviado" flex="30" layout="row" layout-align="center center">
-              <md-icon class="material-icons md-36 fadeout" ng-click="vm.buscarProcesoMasivo()">check</md-icon>
+              <md-icon class="material-icons md-36 fadeoutg" ng-click="vm.buscarProcesoMasivo()">check</md-icon>
+            </div>
+            <div ng-if="proceso_masivo.pend_sur > 0 && proceso_masivo.pend_norte > 0 || !proceso_masivo.email_enviado" flex="30" layout="row" layout-align="center center">
+              <md-icon class="material-icons md-36 orange600" ng-click="vm.buscarProcesoMasivo()">warning</md-icon>
             </div>
             
 
