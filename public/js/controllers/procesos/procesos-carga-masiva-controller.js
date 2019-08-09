@@ -310,6 +310,13 @@
 
     };
 
+    esProcesoInconcluso(){
+
+      
+
+      return ( es_proceso_inconcluso );
+    }
+
     //METODOS PRIVADOS
 
     _activate(  ){

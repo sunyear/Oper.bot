@@ -511,8 +511,9 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
                 <div  class="md-toolbar-tools md-toolbar-tools-card" layout="row" layout-fill>
                   <div layout="row" flex="grow" class="card-header-toolbar" style="border: 0px solid red">
                     <div layout="row" flex="grow" class="card-header-toolbar">
+
                       <md-checkbox class="black md-checkbox-small dotted" ng-click="vm.seleccionarTodo(this, $event)" ng-checked="vm.todosSeleccionados()" md-indeterminate="vm.isIndeterminate()"></md-checkbox>
-                      <span md-truncate flex>Remito</span>  
+                      <span md-truncate flex>Remito</span>
                     </div>
                     <div layout="row" flex="grow" class="card-header-toolbar">
                       <span md-truncate flex>Lote</span>
@@ -528,6 +529,10 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
                     </div>
                   </div>
                   <div class="menu-demo-container" layout="row">
+                    <md-button  class="md-icon-button toolbar-gray">
+                      <input class="ng-hide" id="input-file-id" name="files[]" multiple type="file" on-read-file="vm.leerCSV( contents )"/>
+                      <label for="input-file-id" class="material-icons md-16 green_big">playlist_add</label>
+                    </md-button>
                     <md-menu ng-if="!vm.lotes_remitos[0].editar" md-position-mode="target-right target"> <!-- MENU FILTRO -->
                       <md-button  class="md-icon-button toolbar-gray">
                         <md-icon class="material-icons md-16" ng-class="{'toolbar-gray': !vm.esVisible(), orange600: vm.esVisible()}" ng-click="vm.openMenu($mdMenu, $event)">filter_list</md-icon>
@@ -608,10 +613,7 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
                         </md-menu-item>
                           </md-menu>
 
-                    <md-button  class="md-icon-button toolbar-gray">
-                      <input class="ng-hide" id="input-file-id" name="files[]" multiple type="file" on-read-file="vm.leerCSV( contents )"/>
-                      <label for="input-file-id" class="material-icons md-16 green_big">playlist_add</label>
-                    </md-button>
+                    
 
                     <md-menu ng-if="!vm.lotes_remitos[0].editar" md-position-mode="target-right target">
                       <md-button  class="md-icon-button toolbar-gray">
@@ -644,17 +646,17 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
                                 <md-divider></md-divider>
                                   <md-menu-item>
                                   <md-button ng-click="vm.remitoProcesado(-1, $event)">
-                                   <span>Marcar como [aceptado]</span>
+                                   <span><md-icon style="cursor: pointer;" class="toolbar-checkActivado">check_circle</md-icon> [aceptado]</span>
                                   </md-button>
                                 </md-menu-item>
                                 <md-menu-item >
                                   <md-button ng-click="vm.rechazoProcesado(-1, $event)">
-                                    <span>Marcar como [rechazado]</span>
+                                    <span><md-icon style="cursor: pointer;" class="toolbar-grayActivado">cancel</md-icon> [rechazado]</span>
                                   </md-button>
                                 </md-menu-item>
                                 <md-menu-item >
                                   <md-button ng-click="vm.emailEnviado(-1, $event)">
-                                    <span>Marcar como [email enviado]</span>
+                                    <span><md-icon style="cursor: pointer;" class="toolbar-mailActivado">email</md-icon> [email enviado]</span>
                                   </md-button>
                                 </md-menu-item>
                                 <md-divider></md-divider>
@@ -698,13 +700,18 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
                   Filtros aplicados: {{vm.obj_vista_modelo.filtro_aplicado.texto}}
                   <span style="text-decoration: underline; color: blue; font-size: 12px; cursor: pointer" ng-click="vm.eliminarFiltro( true )">quitar filtro</span>
                 </div>
+
               </div>
-              <div ng-if="(vm.filas_seleccionadas.length >0)" style="" layout="row" flex="100" layout-aling="center center">                      
-                <div flex style="background-color: none; font-size: 12px; padding-left: 5px;">
-                  {{vm.filas_seleccionadas.length}} seleccionados
-                </div>
-              </div>
+               
               <md-list ng-if="!vm.esta_cargando" class="md-dense" style="height: 345px; overflow-y: auto;min-width: 100% !important"> <!-- listado propiamente dicho -->
+                <div style="z-index: 99" ng-if="false" style="" layout="row" flex="100" layout-aling="center center">                      
+                  <div flex style="background-color: none; font-size: 12px; padding-left: 5px;">
+                    {{vm.filas_seleccionadas.length}} seleccionados
+                  </div>                
+                </div>
+
+                 
+
                 <md-list-item  ng-repeat="paso in vm.obj_vista_modelo.detalle track by $index" class="dense-item-list" ng-class="vm.setearCssFila( $index )" ng-if="paso.uid !== 'D'" flex="100" style="margin-left: 0px !important; padding-left: 0px !important">
                   <div  layout="column" flex style="height: auto !important; border-bottom: 0px solid lightgray;margin-left: 0px !important; padding-left: 0px !important">
                     <div layout="row" >
@@ -882,9 +889,12 @@ md-checkbox.md-checked .md-icon:after { border-color: blue; border-width: 3px !i
                        SUR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{vm.estadisticas.zona_sur.total}} { no-notif: {{vm.estadisticas.zona_sur.no_notificadas}} | aceptar: {{vm.estadisticas.zona_sur.aceptado}}/{{vm.estadisticas.zona_sur.aceptar}} | calidad: {{vm.estadisticas.zona_sur.en_calidad}}/{{vm.estadisticas.zona_sur.calidad}} | email: {{vm.estadisticas.zona_sur.email}}/{{vm.estadisticas.zona_sur.total}} }
                       </div>
                       
-                      
+                     
 
                     </div>
+                     <div ng-if="(vm.filas_seleccionadas.length >0)">
+                        {{vm.filas_seleccionadas.length}} seleccionados
+                      </div>
                     <div layout="row" layout-align="end enter" flex>
                       <md-menu md-position-mode="target-right target">
                         <md-button  class="md-icon-button toolbar-gray">
