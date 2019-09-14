@@ -26,6 +26,7 @@
                     guardarParams: guardarParams,
                     obtenerProcesosMasivos: obtenerProcesosMasivos,
                     obtenerProcesosMasivosLotes: obtenerProcesosMasivosLotes,
+                    obtenerProcesosAutomaticos: obtenerProcesosAutomaticos,
                     guardarProcesoMasivo: guardarProcesoMasivo,
                     eliminarProcesoMasivo: eliminarProcesoMasivo
 
@@ -238,6 +239,11 @@
                                 }
                             )
                 };
+
+                function obtenerProcesosAutomaticos(){
+
+                    return $q.when ( {} );
+                }
 
 
                 function generarArchivos( actas ){

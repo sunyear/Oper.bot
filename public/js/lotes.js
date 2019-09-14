@@ -141,6 +141,20 @@
                         }
                     }
                 })
+                .state('procesos.carga-automatica', {
+                    url: '/carga-automatica',
+                    views: {
+                        "@app": {
+                            //templateUrl: './views/procesos/procesos-carga-masiva-template.html',
+                            templateUrl: './views/procesos/procesos-carga-auto-grid-template.html',
+                            controller: 'ProcesosCargaAutomaticaController',
+                            controllerAs: 'vm',
+                            resolve: {
+                                data: obtenerProcesosAutomaticos
+                            }
+                        }
+                    }
+                })
                 /************ FIN PROCESOS ************/
                 /**************************************/
                 .state('seguimiento', {
@@ -587,6 +601,9 @@
             return ( procesosMasivosService.obtenerProcesosMasivos() )
         }
 
+        function obtenerProcesosAutomaticos($stateParams, procesosMasivosService ){
+            return ( procesosMasivosService.obtenerProcesosAutomaticos() )
+        }
         
 
 })();
